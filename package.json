@@ -1,8 +1,15 @@
 {
-  "name": "Vaction",
-  "description": "Bot Discord 24h/24",
+  "name": "package",
   "version": "1.0.0",
-  "engines": {
-    "node": "8.9.4"
+  "description": "Bot Discord By Windo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Windo",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "discord.js-commando": "^0.9.0"
   }
 }
