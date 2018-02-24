@@ -103,7 +103,7 @@ bot.on('ready', () => {
 
 });
 
-bot.login('NDA5NzIwMTQ3NDM2MjQwODk2.DVitZg.I7nMe6cMPSCF2SjiC_kiAosRQrM');
+bot.login('ttt');
 
 bot.on("guildMemberAdd", member => {
     let role = member.guild.roles.find("name", "Member");
