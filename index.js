@@ -74,12 +74,12 @@ bot.on('message', message => {
             console.log(randnum);
         }
         if (randnum === 1){
-            message.reply("Merci je vais très bien")
+            message.reply("Vaction à votre service !")
             console.log(randnum);
 
         }
         if (randnum ===2){
-            message.reply("Je ne vais pas très bien merci de te soucier de moi !");
+            message.reply("Je vous écoute !");
             console.log(randnum);
         }
     }
