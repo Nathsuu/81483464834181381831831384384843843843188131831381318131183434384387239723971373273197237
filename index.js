@@ -103,7 +103,7 @@ bot.on('ready', () => {
 
 });
 
-bot.login('ttt');
+bot.login(process.env.TOKEN);
 
 bot.on("guildMemberAdd", member => {
     let role = member.guild.roles.find("name", "Member");
