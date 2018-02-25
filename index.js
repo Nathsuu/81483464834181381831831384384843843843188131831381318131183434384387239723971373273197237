@@ -788,4 +788,4 @@ var logs = 'logs';
 }
     guild.channels.find(`name`, `${logs}`).send(`${user.username} was just unbanned!`);
 });
-client.login("token")
+client.login("process.env.TOKEN")
