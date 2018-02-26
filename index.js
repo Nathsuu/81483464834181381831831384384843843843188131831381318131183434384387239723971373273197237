@@ -38,6 +38,7 @@ bot.on('message', message => {
     if (msg.startsWith(prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         async function purge() {
+            message.channel.send('Les messages ont bien été \`supprimés \`!');
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
 
             // Now, we want to check if the user has the `bot-commander` role, you can change this to whatever you want.
@@ -59,7 +60,6 @@ bot.on('message', message => {
 
             // Deleting the messages
             message.channel.bulkDelete(fetched)
-            message.channel.send('Les messages ont bien été \`supprimés \`!');
                 .catch(error => message.channel.send(`Error: ${error}`)); // If it finds an error, it posts it into the channel.
 
         }
