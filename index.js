@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 // Global Settings
-const prefix = "V!"; // This is the prefix, you can change it to whatever you want.
+const prefix = 'v'; // This is the prefix, you can change it to whatever you want.
 
 // Listener Event: Runs whenever a message is received.
 bot.on('message', message => {
