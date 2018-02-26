@@ -39,7 +39,6 @@ bot.on('message', message => {
         // We have to wrap this in an async since awaits only work in them.
         async function purge() {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
-            message.channel.send('Les messages ont bien été \`supprimés \`!');
 
             // Now, we want to check if the user has the `bot-commander` role, you can change this to whatever you want.
             if (!message.member.roles.find("name", "bot-commander")) { // This checks to see if they DONT have it, the "!" inverts the true/false
@@ -60,6 +59,7 @@ bot.on('message', message => {
 
             // Deleting the messages
             message.channel.bulkDelete(fetched)
+            message.channel.send('Les messages ont bien été \`supprimés \`!');
                 .catch(error => message.channel.send(`Error: ${error}`)); // If it finds an error, it posts it into the channel.
 
         }
