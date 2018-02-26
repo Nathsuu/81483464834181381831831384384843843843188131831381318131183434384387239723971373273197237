@@ -42,7 +42,7 @@ bot.on('message', message => {
 
             // Now, we want to check if the user has the `bot-commander` role, you can change this to whatever you want.
             if (!message.member.roles.find("name", "bot-commander")) { // This checks to see if they DONT have it, the "!" inverts the true/false
-                message.channel.send('You need the \`bot-commander\` role to use this command.'); // This tells the user in chat that they need the role.
+                message.channel.send('Vous avez besoin du rôle \`bot-commander\` pour utiliser cette commande.'); // This tells the user in chat that they need the role.
                 return; // this returns the code, so the rest doesn't run.
             }
 
@@ -96,7 +96,7 @@ function random(min, max) {
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
-    bot.user.setPresence({ game: {name: 'Vaction | ~help | Développed by Windo | WinDino' , type: 0}});
+    bot.user.setPresence({ game: {name: 'Vaction | ~help | by WinDino' , type: 0}});
 
     // We can post into the console that the bot launched.
     console.log('Bot started.');
