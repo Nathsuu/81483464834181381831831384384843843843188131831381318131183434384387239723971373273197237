@@ -49,7 +49,7 @@ bot.on('message', message => {
             // We want to check if the argument is a number
             if (isNaN(args[0])) {
                 // Sends a message to the channel.
-                message.channel.send('Please use a number as your arguments. \n Usage: ' + prefix + 'clear <amount>'); //\n means new line.
+                message.channel.send('Veuillez utiliser un nombre comme argument. \n Usage: ' + prefix + 'clear <nombre>'); //\n means new line.
                 // Cancels out of the script, so the rest doesn't run.
                 return;
             }
