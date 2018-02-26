@@ -1,9 +1,59 @@
 // Calling Packages
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const client = new Discord.Client();
 
 // Global Settings
 const prefix = '~'; // This is the prefix, you can change it to whatever you want.
+
+var news, count;
+
+function reset() {
+	count = 0;
+	var today = new Date(),
+	    time = today.getTime();
+	today.setHours(0);
+	today.setMinutes(0);
+	today.setSeconds(0);
+	setTimeout(reset, (today.getTime() + 86400000) - time);
+}
+
+client.on('ready', () => {
+	news = client.channels.find('name', 'annonces');
+	reset();
+});
+
+client.on('message', message => {
+	if (message.author.bot != true) {
+		if (message.channel == news) {
+			message.delete();
+		} else {
+			var author = message.author,
+			    content = message.content,
+			    tokens = content.split(' '),
+			    embed = new Discord.RichEmbed();
+			switch (tokens.shift()) {
+				case '/help':
+					message.delete();
+					embed.setTitle('__Commandes :__');
+					embed.addField('/help', 'Affiche ce message');
+					embed.addField('/news message', 'Poste une annonce');
+					author.send({ embed: embed });
+					break;
+				case '/news':
+					message.delete();
+					if (message.member.roles.exists('name', 'Annonceur')) {
+						embed.setAuthor(author.username, author.avatarURL);
+						news.send('@everyone Annonces ' + count + '\n' + tokens.join(' '), { embed: embed });
+						count++;
+					} else {
+						message.reply('vous devez avoir le rôle @Annonceur pour utiliser cette commande.');
+					}
+					break;
+			}
+		}
+	}
+});
 
 // Listener Event: Runs whenever a message is received.
 bot.on('message', message => {
