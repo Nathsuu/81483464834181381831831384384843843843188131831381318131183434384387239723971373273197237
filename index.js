@@ -23,7 +23,7 @@ bot.on('message', message => {
         message.channel.send('Ping!'); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
 
     }
-    if (message.content === prefix + 'HELP'){
+    if (message.content === prefix + "aide"){
         var help_embed = new Discord.RichEmbed()
         .setColor('#E2FB00')
         .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
