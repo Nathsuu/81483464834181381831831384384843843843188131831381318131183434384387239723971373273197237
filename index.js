@@ -79,7 +79,7 @@ bot.on('message', message => {
 
         }
         if (randnum ===2){
-            message.reply("Je vous écoute !");
+            message.reply("Vaction à votre écoute !");
             console.log(randnum);
         }
     }
