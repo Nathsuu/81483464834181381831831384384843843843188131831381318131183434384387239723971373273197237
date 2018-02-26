@@ -60,7 +60,6 @@ bot.on('message', message => {
             // Deleting the messages
             message.channel.bulkDelete(fetched)
                 .catch(error => message.channel.send(`Error: ${error}`)); // If it finds an error, it posts it into the channel.
-            message.channel.send('Les messages ont bien été \`supprimés \`! :punch::skin-tone-1:');
         }
 
         // We want to make sure we call the function whenever the purge command is run.
