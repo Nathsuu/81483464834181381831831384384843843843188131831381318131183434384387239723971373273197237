@@ -103,7 +103,7 @@ bot.on('message',message => {
 } else if (message.content == ("v!support")){
 	message.reply('contact nous : WinDino, Discord Support : https://discord.gg/qfYACVE !');
 } else if(message.content.startsWith('v!botname')){
-	bot.user.setUsername(message.content.substr(9));
+	client.user.setUsername(message.content.substr(9));
 } else if (message.content === "v!stats") {
 	let m = " ";
 	m += "Il y a actuellement $(message.guild.channels.size} channels sur ce serveur \n";
