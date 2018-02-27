@@ -94,19 +94,17 @@ function random(min, max) {
 }
 
 bot.on('message',message => {
-	if(message.content == "test"){
-	message.reply('test !');
-} else if (message.content == ("bonjour")){
-	message.reply('bonjour à toi ');
-} else if (message.content == ("!help")){
-	message.reply('Les commandes qui existent pour l instant sont !support, !twitch, !thanks, !merci et bonjour, le reste à venir...');
-} else if (message.content == ("!twitch")){
-	message.reply('La chaîne twitch de Fayssal est https://www.twitch.tv/fayssal_le_pgm/');
-} else if (message.content == ("!support")){
-	message.reply('contact Line : Fayssalz, Discord : https://discord.gg/59Tak99, et mail : fayssal.twitch@gmail.com');
-} else if(message.content.startsWith('!botname')){
-	client.user.setUsername(message.content.substr(9));
-} else if (message.content == "!stats") {
+} else if (message.content == ("Bonjour")){
+	message.reply('bonjour à toi !');
+} else if (message.content == ("v!help")){
+	message.reply('Les commandes qui existent pour l instant sont v!support, v!youtube, le reste à venir...');
+} else if (message.content == ("v!youtube")){
+	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
+} else if (message.content == ("v!support")){
+	message.reply('contact nous : WinDino, Discord Support : https://discord.gg/qfYACVE !');
+} else if(message.content.startsWith('v!botname')){
+	bot.user.setUsername(message.content.substr(9));
+} else if (message.content === "v!stats") {
 	let m = " ";
 	m += "Il y a actuellement $(message.guild.channels.size} channels sur ce serveur \n";
 	m += 'Je suis en compagnie de $(message.guilde.members.size} membres';
