@@ -108,7 +108,36 @@ bot.on('message',message => {
 	let m = " ";
 	m += "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux. \n";
 	m += 'Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Il faut avoir le rôle \`bot-commander\` pour contrôler les messages clear pour le bot (~clear <nombre>). Dites \`Vaction\`ou \`Bonjour\` et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement) pour celà, il suffit d avoir un channel s appellant \`logs\`. Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`,\`v!support\` ou \`v!bot\`et \`v!invite\`';
-	message.author.sendMessage(m).catch(console.log);	
+	message.author.sendMessage(m).catch(console.log);
+	message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "This is an embed",
+    url: "http://google.com",
+    description: "This is a test embed to showcase what they look like and what they can do.",
+    fields: [{
+        name: "Fields",
+        value: "They can have different fields with small headlines."
+      },
+      {
+        name: "Masked links",
+        value: "You can put [masked links](http://google.com) inside of rich embeds."
+      },
+      {
+        name: "Markdown",
+        value: "You can put all the *usual* **__Markdown__** inside of them."
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© Example"
+    }
+  }
+});
 }
 });
 
