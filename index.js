@@ -24,11 +24,7 @@ bot.on('message', fonction(message) {
  
     if (input === prefix + 'STATS') {
 	    
-	    bot.sendMessage(message, '**Bot Stats**'\n\n' + 
-	    '**Users:** ' + bot.users.length +	    
-	    '\n**Servers:** ' + bot.servers.length +	
-	    '\n**Channels:** ' + bot.channels.length
-	    );		    
+	    bot.sendMessage(message, '**Bot Stats**'\n\n' + '**Users:** ' + bot.users.length + '\n**Servers:** ' + bot.servers.length + '\n**Channels:** ' + bot.channels.length);		    
     }
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
