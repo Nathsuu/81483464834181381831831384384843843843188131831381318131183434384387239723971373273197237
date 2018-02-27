@@ -14,9 +14,6 @@ bot.on('message', message => {
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
     let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
 	
-    // Commands
-    let role = message.guild.roles.find("name", "Test");
-
      // Let's pretend you mentioned the user you want to add a role to (!addrole @user Role Name):
     let member = message.mentions.members.first();
 
