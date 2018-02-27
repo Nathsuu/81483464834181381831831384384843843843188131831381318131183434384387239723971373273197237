@@ -110,9 +110,6 @@ bot.on('message',message => {
 	m += 'Dites \`Vaction\`ou \`Bonjour\` et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement) pour celà, il suffit d avoir un channel s appellant \`logs\`.';
 	m += " \n";	
 	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`,\`v!support\` ou \`v!bot\` et \`v!invite\`.';
-	m += "Il y a actuellement $(message.guild.channels.size} channels sur ce serveur \n";
-	m += 'Je suis en compagnie de $(message.guilde.members.size} membres';
-	m += 'Je suis présent dans ${client.guild.size} \n';
 	message.author.sendMessage(m).catch(console.log);
 }
 });
