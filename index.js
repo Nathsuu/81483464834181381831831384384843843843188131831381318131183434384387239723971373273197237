@@ -14,18 +14,6 @@ bot.on('message', message => {
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
     let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
 	
-     // Let's pretend you mentioned the user you want to add a role to (!addrole @user Role Name):
-    let member = message.mentions.members.first();
-
-     // or the person who made the command: let member = message.member;
-
-     // Add the role!
-     member.addRole(role).catch(console.error);
-
-     // Remove a role!
-     member.removeRole(role).catch(console.error);
-     }	
-	
     // Ping
     if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
 
