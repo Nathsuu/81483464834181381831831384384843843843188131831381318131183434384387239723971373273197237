@@ -100,8 +100,6 @@ bot.on('message',message => {
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 } else if (message.content == ("v!support")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
-} else if(message.content.startsWith('v!botname')){
-	client.user.setUsername(message.content.substr(9));
 } else if (message.content == "v!help") {
 	let m = " ";
 	m += "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux. \n";
