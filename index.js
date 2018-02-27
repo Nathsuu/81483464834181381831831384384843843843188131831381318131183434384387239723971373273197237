@@ -96,8 +96,6 @@ function random(min, max) {
 bot.on('message',message => {
 	if (message.content == ("Bonjour")){
 	message.reply('Bonjour à toi !');
-} else if(message.content.startsWith('botname')){
-	client.user.setUsername(message.content.substr(9));
 } else if (message.content == ("v!youtube")){
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 } else if (message.content == ("v!support")){
