@@ -95,18 +95,22 @@ function random(min, max) {
 
 bot.on('message',message => {
 	if (message.content == ("Bonjour")){
-	message.reply('bonjour à toi ');
-} else if (message.content == ("twitch")){
-	message.reply('La chaîne twitch de Fayssal est https://www.twitch.tv/fayssal_le_pgm/');
-} else if (message.content == ("support")){
-	message.reply('contact Line : Fayssalz, Discord : https://discord.gg/59Tak99, et mail : fayssal.twitch@gmail.com');
-} else if(message.content.startsWith('botname')){
-	bot.user.setUsername(message.content.substr(9));
-} else if (message.content == "!help") {
+	message.reply('Bonjour à toi !');
+} else if (message.content == ("v!youtube")){
+	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
+} else if (message.content == ("v!support")){
+	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
+} else if (message.content == "v!help") {
 	let m = " ";
 	m += "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux. \n";
 	m += 'Le bot peut mettre un grade automatique au nom de Member si celuis ci est dans les rôles. Il faut avoir le rôle bot-commander pour contrôler les messages clear pour le bot (~clear <nombre>). Dites Vaction et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement).';
 	message.author.sendMessage(m).catch(console.log);
+        var help_embed = new Discord.RichEmbed()
+        .setColor('#E2FB00')
+        .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
+        .addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de Member si celuis ci est dans les rôles. Il faut avoir le rôle bot-commander pour contrôler les messages clear pour le bot (~clear <nombre>). Dites Vaction et le bot vous répondra. Le bot dispose aussi d'un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement).")
+        .addField("Commandes du bot !", "~help : Affiche les commandes du bot.")
+        .addField("Clear message", "~clear <nombre> : Clear les nombres de messages entrée")	
 }
 });
 
