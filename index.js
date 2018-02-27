@@ -22,7 +22,7 @@ bot.on('message', fonction(message) {
     }
     //Stats Commands
  
-    if (input === prefix + 'STATS') {
+    if (input === prefix + 'STATS'){
 	    
 	    bot.sendMessage(message, '**Bot Stats**'\n\n' + '**Users:** ' + bot.users.length + '\n**Servers:** ' + bot.servers.length + '\n**Channels:** ' + bot.channels.length);		    
     }
