@@ -94,14 +94,18 @@ function random(min, max) {
 }
 
 bot.on('message',message => {
-} else if (message.content == ("Bonjour")){
+	if(message.content == "test"){
+	message.reply('test !');
+} else if (message.content == ("bonjour")){
 	message.reply('bonjour à toi ');
-} else if (message.content == ("!help")){
-	message.reply('Les commandes qui existent pour l instant sont !support, !youtube, le reste à venir...');
-} else if (message.content == ("!youtube")){
-	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ ');
-} else if (message.content == ("!support")){
-	message.reply('Contacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
+} else if (message.content == ("twitch")){
+	message.reply('La chaîne twitch de Fayssal est https://www.twitch.tv/fayssal_le_pgm/');
+} else if (message.content == ("support")){
+	message.reply('contact Line : Fayssalz, Discord : https://discord.gg/59Tak99, et mail : fayssal.twitch@gmail.com');
+} else if(message.content.startsWith('botname')){
+	bot.user.setUsername(message.content.substr(9));
+} else if (message.content == ("!sedeco")){
+	bot.off;
 } else if (message.content == "!help") {
 	let m = " ";
 	m += "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux. \n";
