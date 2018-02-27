@@ -103,14 +103,14 @@ bot.on('message',message => {
 } else if (message.content == "v!help") {
 	let m = " ";
 	m += "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux. \n";
-	m += 'Le bot peut mettre un grade automatique au nom de Member si celuis ci est dans les rôles. Il faut avoir le rôle bot-commander pour contrôler les messages clear pour le bot (~clear <nombre>). Dites Vaction et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement).';
+	m += 'Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Il faut avoir le rôle \`bot-commander\` pour contrôler les messages clear pour le bot (~clear <nombre>). Dites Vaction et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement).';
 	message.author.sendMessage(m).catch(console.log);	
 }
 });
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
-    bot.user.setPresence({ game: {name: 'Vaction | ~help | by WinDino' , type: 0}});
+    bot.user.setPresence({ game: {name: 'Vaction | v!help | by WinDino' , type: 0}});
 
     // We can post into the console that the bot launched.
     console.log('Bot started.');
