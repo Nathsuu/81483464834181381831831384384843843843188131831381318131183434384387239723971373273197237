@@ -94,30 +94,18 @@ function random(min, max) {
 }
 
 bot.on('message',message => {
-	if(message.content == "test"){
-	message.reply('test !');
-} else if (message.content == ("bonjour")){
+} else if (message.content == ("Bonjour")){
 	message.reply('bonjour à toi ');
 } else if (message.content == ("!help")){
-	message.reply('Les commandes qui existent pour l instant sont !support, !twitch, !thanks, !merci et bonjour, le reste à venir...');
-} else if (message.content == ("!twitch")){
-	message.reply('La chaîne twitch de Fayssal est https://www.twitch.tv/fayssal_le_pgm/');
+	message.reply('Les commandes qui existent pour l instant sont !support, !youtube, le reste à venir...');
+} else if (message.content == ("!youtube")){
+	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 } else if (message.content == ("!support")){
-	message.reply('contact Line : Fayssalz, Discord : https://discord.gg/59Tak99, et mail : fayssal.twitch@gmail.com');
-} else if (message.content == ("!fayssal")){
-	message.reply('Tommy je te baise :Kappa:');
-} else if (message.content == ("!thanks")){
-	message.reply('Thanks for the people in the DiscordJs server and for Born');
-} else if (message.content == ("!merci")){
-	message.reply('Merci aux membres du serveur Discordjs et à Born, le chef de Imperium Fight pour leurs aides à résoudre les problèmes');
-} else if(message.content.startsWith('!botname')){
-	bot.user.setUsername(message.content.substr(9));
-} else if (message.content == ("!sedeco")){
-	bot.off;
-} else if (message.content == "!stats") {
+	message.reply('Contacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
+} else if (message.content == "v!help") {
 	let m = " ";
-	m += "Il y a actuellement $(message.guild.channels.size} channels sur ce serveur \n";
-	m += 'Je suis en compagnie de $(message.guilde.members.size} membres';
+	m += "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux. \n";
+	m += 'Le bot peut mettre un grade automatique au nom de Member si celuis ci est dans les rôles. Il faut avoir le rôle bot-commander pour contrôler les messages clear pour le bot (~clear <nombre>). Dites Vaction et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement).';
 	m += 'Je suis présent dans ${client.guild.size} \n';
 	message.author.sendMessage(m).catch(console.log);
 }
