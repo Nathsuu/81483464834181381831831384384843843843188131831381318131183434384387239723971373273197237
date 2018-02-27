@@ -40,6 +40,7 @@ bot.on('message', message => {
 
      // Remove a role!
      member.removeRole(role).catch(console.error);
+     }	
 	
     // Ping
     if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
