@@ -93,6 +93,27 @@ function random(min, max) {
 
 }
 
+client.on('message',message => {
+	if(message.content == "test"){
+	message.reply('test !');
+} else if (message.content == ("bonjour")){
+	message.reply('bonjour à toi ');
+} else if (message.content == ("!help")){
+	message.reply('Les commandes qui existent pour l instant sont !support, !twitch, !thanks, !merci et bonjour, le reste à venir...');
+} else if (message.content == ("!twitch")){
+	message.reply('La chaîne twitch de Fayssal est https://www.twitch.tv/fayssal_le_pgm/');
+} else if (message.content == ("!support")){
+	message.reply('contact Line : Fayssalz, Discord : https://discord.gg/59Tak99, et mail : fayssal.twitch@gmail.com');
+} else if(message.content.startsWith('!botname')){
+	client.user.setUsername(message.content.substr(9));
+} else if (message.content == "!stats") {
+	let m = " ";
+	m += "Il y a actuellement $(message.guild.channels.size} channels sur ce serveur \n";
+	m += 'Je suis en compagnie de $(message.guilde.members.size} membres';
+	m += 'Je suis présent dans ${client.guild.size} \n';
+	message.author.sendMessage(m).catch(console.log);
+}
+});
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
