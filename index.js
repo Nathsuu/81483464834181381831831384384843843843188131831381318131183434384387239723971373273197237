@@ -20,7 +20,7 @@ bot.on('message', message => {
     if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
 
         // Now, let's send a response.
-        message.channel.send('Ping!'); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
+        message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
 
     }
     if (message.content === prefix + "help"){
