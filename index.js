@@ -15,17 +15,6 @@ bot.on('message', message => {
     let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
 	
     // Commands
-    if(message.member.roles.has(role.id)) {
-	    console.log(`Yay, the author of the message has the role!`);
-    } else {
-	    console.log(`Nope, noppers, nadda.`);
-    }
-     // Check if they have one of many roles
-    if(message.member.roles.some(r=>["Test", "Test2"].includes(r.name)) ) {
-     // has one of the roles
-    } else {
-     // has none of the roles
-    }
     let role = message.guild.roles.find("name", "Test");
 
      // Let's pretend you mentioned the user you want to add a role to (!addrole @user Role Name):
