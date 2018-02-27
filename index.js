@@ -99,7 +99,7 @@ bot.on('message',message => {
 } else if (message.content == ("!help")){
 	message.reply('Les commandes qui existent pour l instant sont !support, !youtube, le reste à venir...');
 } else if (message.content == ("!youtube")){
-	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
+	message.reply('La chaîne youtube de WinDino est ');
 } else if (message.content == ("!support")){
 	message.reply('Contacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 } else if (message.content == "v!help") {
