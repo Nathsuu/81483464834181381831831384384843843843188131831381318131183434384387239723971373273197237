@@ -13,9 +13,34 @@ bot.on('message', message => {
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
     let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
+    let myRole = message.guild.roles.get("264410914592129025");	
+    let myRole = message.guild.roles.find("name", "Moderators");
 	
     // Commands
+    if(message.member.roles.has(role.id)) {
+	    console.log(`Yay, the author of the message has the role!`);
+    } else {
+	    console.log(`Nope, noppers, nadda.`);
+    }
+     // Check if they have one of many roles
+    if(message.member.roles.some(r=>["Test", "Test2"].includes(r.name)) ) {
+     // has one of the roles
+    } else {
+     // has none of the roles
+    }
+    let role = message.guild.roles.find("name", "Test");
 
+     // Let's pretend you mentioned the user you want to add a role to (!addrole @user Role Name):
+    let member = message.mentions.members.first();
+
+     // or the person who made the command: let member = message.member;
+
+     // Add the role!
+     member.addRole(role).catch(console.error);
+
+     // Remove a role!
+     member.removeRole(role).catch(console.error);
+	
     // Ping
     if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
 
