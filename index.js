@@ -93,7 +93,7 @@ function random(min, max) {
 
 }
 
-client.on('message',message => {
+bot.on('message',message => {
 	if(message.content == "test"){
 	message.reply('test !');
 } else if (message.content == ("bonjour")){
