@@ -94,9 +94,7 @@ function random(min, max) {
 }
 
 bot.on('message',message => {
-	if(message.content == "test"){
-	message.reply('test !');
-} else if (message.content == ("bonjour")){
+} else if (message.content == ("Bonjour")){
 	message.reply('bonjour à toi ');
 } else if (message.content == ("twitch")){
 	message.reply('La chaîne twitch de Fayssal est https://www.twitch.tv/fayssal_le_pgm/');
