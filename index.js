@@ -20,12 +20,6 @@ bot.on('message', fonction(message) {
         // Now, let's send a response.
         message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
     }
-    //Stats Commands
- 
-    if (input === prefix + 'STATS'){
-	    
-	    bot.sendMessage(message, '**Bot Stats**'\n\n' + '**Users:** ' + bot.users.length + '\n**Servers:** ' + bot.servers.length + '\n**Channels:** ' + bot.channels.length);		    
-    }
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor('#E2FB00')
