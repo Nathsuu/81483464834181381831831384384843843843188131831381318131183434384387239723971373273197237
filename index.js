@@ -109,16 +109,16 @@ bot.on('message',message => {
 	message.reply('Bonjour à toi !');
 } else if (message.content == ("v!youtube")){
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
-	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!youtube\`")
+	bot.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!youtube\`")
 } else if (message.content == ("v!support")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
-	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!support\`")
+	bot.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!support\`")
 } else if (message.content == ("v!bot")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
-	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!bot\`")
+	bot.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!bot\`")
 } else if (message.content == ("v!invite")){
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
-	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!invite\`")
+	bot.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!invite\`")
 	
 } else if (message.content == "v!help") {
 	let m = " ";
