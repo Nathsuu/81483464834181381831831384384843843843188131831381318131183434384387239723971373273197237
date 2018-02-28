@@ -39,10 +39,7 @@ bot.on('message', message => {
 
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Utilise moi ! \`v!help\`")  
-	message.guild.channels.get('<CHANNEL ID>').createInvite().then(invite =>
-								       message.channel.send(invite.url)
-);    
+        bot.channels.find("name","vchannel").send("Welcome!")  
     }    
 
     // Purge
@@ -110,13 +107,11 @@ bot.on('message',message => {
 } else if (message.content == ("v!youtube")){
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 } else if (message.content == ("v!support")){
-	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');)
+	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 } else if (message.content == ("v!bot")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 } else if (message.content == ("v!invite")){
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
-
-	
 } else if (message.content == "v!help") {
 	let m = " ";
 	m += "La commande \`v!help\` a bien été exécuté !\n";
