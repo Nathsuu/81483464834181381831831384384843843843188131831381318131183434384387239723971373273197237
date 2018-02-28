@@ -39,7 +39,10 @@ bot.on('message', message => {
 
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Utilise moi ! \`v!help\` ")  
+        bot.channels.find("name","vchannel").send("Utilise moi ! \`v!help\`")  
+	message.guild.channels.get('<CHANNEL ID>').createInvite().then(invite =>
+								       message.channel.send(invite.url)
+);    
     }    
 
     // Purge
@@ -106,18 +109,24 @@ bot.on('message',message => {
 	message.reply('Bonjour à toi !');
 } else if (message.content == ("v!youtube")){
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
+	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!youtube\`")
 } else if (message.content == ("v!support")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
+	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!support\`")
 } else if (message.content == ("v!bot")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
+	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!bot\`")
 } else if (message.content == ("v!invite")){
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
+	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!invite\`")
+	
 } else if (message.content == "v!help") {
 	let m = " ";
 	m += "La commande \`v!help\` a bien été exécuté !\n";
 	m += " \n";
 	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`,\`v!support\` ou \`v!bot\` et \`v!invite\`.';
 	message.author.sendMessage(m).catch(console.log);
+	client.channels.get("409708031048286208").send("${member.user.username} a utilisé la commande \`v!help\`")
 }
 });
 
