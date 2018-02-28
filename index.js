@@ -137,6 +137,3 @@ bot.on("guildMemberAdd", member => {
     member.guild.channels.find("name", "vchannel").send(`${member.user.username} viens de rejoindre le serveur.`)
     member.addRole(role)
 })
-
-bot.login(process.env.TOKEN);
-
