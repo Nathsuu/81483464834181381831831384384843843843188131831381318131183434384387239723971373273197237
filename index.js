@@ -39,13 +39,8 @@ bot.on('message', message => {
     }
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","general").send("Salutation, voici mon premier et dernier message dans le salon general ou public. Ici le développeur du bot qui vous parle. Veillez à créer un channel textuel : vchannel , pour avoir directement tous les logs de Vaction et les messages comme celui-ci qui seront maintenant dans ce channel. Je vous remercie !")  
+        bot.channels.find("name","vchannel").send("Utilise moi avec \`v!help\`! ")  
     } 
-    if (message.content === prefix + "globalwindinovaction"){
-        message.delete();
-        bot.channels.find("name","public").send("Salutation, voici mon premier et dernier message dans le salon general ou public. Ici le développeur du bot qui vous parle. Veillez à créer un channel textuel : vchannel , pour avoir directement tous les logs de Vaction et les messages comme celui-ci qui seront maintenant dans ce channel. Je vous remercie !")  
-    } 	
-	
     // Purge
     if (msg.startsWith(prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
