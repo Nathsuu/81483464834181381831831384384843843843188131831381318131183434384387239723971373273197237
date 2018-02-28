@@ -109,7 +109,7 @@ bot.on('message',message => {
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
 } else if (message.content == "v!help") {
 	let m = " ";
-	m += "La commande \`v!help\` a bien été exécuté\n";
+	m += "La commande \`v!help\` a bien été exécuté !\n";
 	m += " \n";
 	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`,\`v!support\` ou \`v!bot\` et \`v!invite\`.';
 	message.author.sendMessage(m).catch(console.log);
