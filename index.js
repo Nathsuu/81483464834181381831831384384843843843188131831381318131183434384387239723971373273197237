@@ -41,7 +41,7 @@ bot.on('message', message => {
 
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Welcome!") 
+        bot.channels.find("name","vchannel").send("Crash du bot par la commande : v!support FIX !") 
 
     }    
 
