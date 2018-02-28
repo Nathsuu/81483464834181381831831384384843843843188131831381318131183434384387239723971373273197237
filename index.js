@@ -30,9 +30,7 @@ bot.on('message', message => {
         .addField(":gear: Configuration", "\`setchannel\`, \`setwelcome\`, \`setAutoRole\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`support\`, \`bot\`, \`youtube\`, \`invite\`")
         .addField(":sweat_drops: NSFW", "\`girl\`")
-        .addField(":sparkles: Stats", "Total serveurs: Soon")
-        .addField("Total utilisateurs: Soon")
-        .addField("[Serveur Support]")	
+        .addField(":sparkles: Stats", "Total serveurs: Soon", "Total utilisateurs: Soon", "[Serveur Support]")
     message.channel.sendEmbed(help_embed)
         console.log("Commande Help demandée !");
     }
