@@ -14,11 +14,6 @@ bot.on('message', message => {
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
     let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.	
     var input = message.content.toUpperCase();
-    // Ping
-    if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
-
-        // Now, let's send a response.
-        message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
     }
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
