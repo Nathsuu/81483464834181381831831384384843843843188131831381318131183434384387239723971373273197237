@@ -39,7 +39,8 @@ bot.on('message', message => {
 
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Welcome!")    
+        bot.channels.find("name","vchannel").send("Welcome!") 
+
     }    
 
     // Purge
@@ -138,4 +139,6 @@ bot.on("guildMemberAdd", member => {
     member.addRole(role)
     	
 })
+
+
 
