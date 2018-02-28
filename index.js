@@ -39,9 +39,7 @@ bot.on('message', message => {
 
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Welcome!") 
-	client.sendFile(message, 'http://i.imgur.com/6CbxaPc.jpg', 'kappa.jpg', 'Check out this cool file!', (err, m) => {
-                if (err) console.log(err);   
+        bot.channels.find("name","vchannel").send("Welcome!")    
     }    
 
     // Purge
