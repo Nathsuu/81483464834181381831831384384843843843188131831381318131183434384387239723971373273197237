@@ -31,7 +31,7 @@ bot.on('message', message => {
         .addField(":clipboard: Utilitaire", "\`help\`, \`support\`, \`bot\`, \`youtube\`, \`invite\`")
         .addField(":sweat_drops: NSFW", "\`girl\`")
         .addField("-", "Total serveurs: \`Soon\`, Total utilisateurs: \`Soon\`")	
-        .addField(":eye: Support", "[Serveur Support](https://discord.gg/qfYACVE)", true)	
+        .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)	
         .setFooter("VacBot | Vaction | by WinDino")	
     message.channel.sendEmbed(help_embed)
         console.log("Commande Help demandée !");
