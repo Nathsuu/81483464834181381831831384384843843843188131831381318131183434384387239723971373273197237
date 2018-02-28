@@ -112,9 +112,6 @@ bot.on('message',message => {
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 } else if (message.content == ("v!invite")){
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
-} else if (message.content == ("v!globalwindinovaction")){
-	message.delete();
-        bot.channels.find("name","vchannel").send("Utilise moi avec \`v!help\`! ")
 } else if (message.content == "v!help") {
 	let m = " ";
 	m += "La commande \`v!help\` a bien été exécuté !\n";
