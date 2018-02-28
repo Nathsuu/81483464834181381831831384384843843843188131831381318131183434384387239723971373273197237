@@ -108,8 +108,6 @@ bot.on('message',message => {
 	message.reply('Bonjour à toi !');
 } else if (message.content == ("v!youtube")){
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
-} else if (message.content == ("v!support")){
-	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 } else if (message.content == ("v!bot")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 } else if (message.content == ("v!invite")){
