@@ -39,8 +39,7 @@ bot.on('message', message => {
     }
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Utilise moi avec \`v!help\`! ")
-	bot.channels.find("name","logs").send("Utilise moi avec \`v!help\`! ")    
+        bot.channels.find("name","vchannel").send("Utilise moi avec \`v!help\`! ")    
     } 
     // Purge
     if (msg.startsWith(prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
