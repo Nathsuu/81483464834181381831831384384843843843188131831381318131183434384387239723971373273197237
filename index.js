@@ -116,7 +116,7 @@ bot.on('message',message => {
 	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`,\`v!support\` ou \`v!bot\` et \`v!invite\`.';
 	message.author.sendMessage(m).catch(console.log);
 }
-});
+
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
