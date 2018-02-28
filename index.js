@@ -139,7 +139,7 @@ bot.login(process.env.TOKEN);
 
 bot.on("guildMemberAdd", member => {
     let role = member.guild.roles.find("name", "Member");
-    member.guild.channels.find("name", "vchannel").send(`${member.user.username} viens de rejoindre le serveur.`)
+    member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
     member.addRole(role)
 })
 
