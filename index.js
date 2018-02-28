@@ -32,7 +32,7 @@ bot.on('message', message => {
         .addField(":sweat_drops: NSFW", "\`girl\`")
         .addField("-", "Total serveurs: \`Soon\`, Total utilisateurs: \`Soon\`")	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)	
-        .setFooter("VacBot | Vaction | by WinDino")	
+        .setFooter("VacBot | Vaction | by WinDino | v!help demander par ${this.client.users.size.toLocaleString()}")	
     message.channel.sendEmbed(help_embed)
         console.log("Commande Help demandée !");
     }
