@@ -116,7 +116,7 @@ bot.on('message',message => {
 	let m = " ";
 	m += "La commande \`v!help\` a bien été exécuté !\n";
 	m += " \n";
-	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`,\`v!support\` ou \`v!bot\` et \`v!invite\`.';
+	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.';
 	message.author.sendMessage(m).catch(console.log);
 }
 });
@@ -138,8 +138,3 @@ bot.on("guildMemberAdd", member => {
     member.addRole(role)
     	
 })
-
-
-
-
-
