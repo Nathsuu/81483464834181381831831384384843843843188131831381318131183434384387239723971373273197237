@@ -24,7 +24,7 @@ bot.on('message', message => {
         // Now, let's send a response.
         message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
     }
-    if (!['pc','xbl','psn'].includes(args[0])) return message.channel.send('**Please Include the platforme: '!fortine [ pc | xbl | psn ] <username>`**');
+    if (!['pc','xbl','psn'].includes(args[0])) return message.channel.send('**Please Include the platforme: '!fortnite [ pc | xbl | psn ] <username>`**');
     if (!args[1]) return message.channel.send('** Please Include the username: `!fortine [ pc | xbl | psn ] <username>`**');
 
     platform = args.shift();
