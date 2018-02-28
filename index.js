@@ -123,7 +123,7 @@ bot.on('message',message => {
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
-    client.setStreaming('Vaction | v!help | by WinDino', 'https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ', 1);	
+    bot.user.setPresence({ game: {name: 'Vaction | v!help | by WinDino' , type: 0}});	
 
     // We can post into the console that the bot launched.
     console.log('Bot started.');
