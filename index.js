@@ -20,6 +20,7 @@ bot.on('message', message => {
 
         // Now, let's send a response.
         message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
+	message.channel.send('Pong !');    
     }
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
