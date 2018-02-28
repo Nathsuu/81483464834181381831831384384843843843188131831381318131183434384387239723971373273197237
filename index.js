@@ -39,7 +39,9 @@ bot.on('message', message => {
 
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Welcome!")  
+        bot.channels.find("name","vchannel").send("Welcome!") 
+	client.sendFile(message, 'http://i.imgur.com/6CbxaPc.jpg', 'kappa.jpg', 'Check out this cool file!', (err, m) => {
+                if (err) console.log(err);   
     }    
 
     // Purge
@@ -106,29 +108,25 @@ bot.on('message',message => {
 	message.reply('Bonjour à toi !');
 } else if (message.content == ("v!youtube")){
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
-	bot.channels.find("id","409708031048286208").send("Quelqu'un a utilisé la commande \`v!youtube\`")
 } else if (message.content == ("v!support")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
-	bot.channels.find("id","409708031048286208").send("Quelqu'un a utilisé la commande \`v!support\`")
 } else if (message.content == ("v!bot")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
-	bot.channels.find("id","409708031048286208").send("Quelqu'un a utilisé la commande \`v!bot\`")
 } else if (message.content == ("v!invite")){
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
-	bot.channels.find("id","409708031048286208").send("Quelqu'un a utilisé la commande \`v!invite\`")
 } else if (message.content == "v!help") {
 	let m = " ";
 	m += "La commande \`v!help\` a bien été exécuté !\n";
 	m += " \n";
 	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`,\`v!support\` ou \`v!bot\` et \`v!invite\`.';
 	message.author.sendMessage(m).catch(console.log);
-	bot.channels.find("id","409708031048286208").send("Quelqu'un a utilisé la commande \`v!help\`")
 }
 });
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
     bot.user.setPresence({ game: {name: 'Vaction | v!help | by WinDino' , type: 0}});
+    client.setStreaming('Vaction | v!help | by WinDino', 'https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ', 1);	
 
     // We can post into the console that the bot launched.
     console.log('Bot started.');
@@ -141,5 +139,6 @@ bot.on("guildMemberAdd", member => {
     let role = member.guild.roles.find("name", "Member");
     member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
     member.addRole(role)
+    	
 })
 
