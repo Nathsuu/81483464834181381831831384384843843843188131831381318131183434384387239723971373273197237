@@ -1,8 +1,6 @@
 // Calling Packages
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const Fortnite = require('fortnite');
-const client = new Fortnite('process.env.TRN');
 
 // Global Settings
 const prefix = 'v!'; // This is the prefix, you can change it to whatever you want.
