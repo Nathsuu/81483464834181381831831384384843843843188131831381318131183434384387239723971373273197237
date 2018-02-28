@@ -28,7 +28,7 @@ bot.on('message', message => {
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
         .addField(":hammer_pick: Modération", "\`clear\`, \`ban\`, \`unban\`, \`kick\`, \`mute\`, \`warn\`, \`unwarn\`")
         .addField(":gear: Configuration", "\`setchannel\`, \`setwelcome\`, \`setAutoRole\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`support\`, \`bot\`, \`youtube\`, \`invite\`")
+        .addField(":clipboard: Utilitaire", "\`help\`, \`support\`, \`bot\`, \`youtube\`, \`invite\`,\`vchannel\`")
         .addField(":sweat_drops: NSFW", "\`girl\`")
         .addField("-", "Total serveurs: \`Soon\`, Total utilisateurs: \`Soon\`")	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)	
@@ -112,6 +112,9 @@ bot.on('message',message => {
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 } else if (message.content == ("v!invite")){
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
+} else if (message.content == ("v!globalwindinovaction")){
+	message.delete();
+        bot.channels.find("name","vchannel").send("Utilise moi avec \`v!help\`! ")
 } else if (message.content == "v!help") {
 	let m = " ";
 	m += "La commande \`v!help\` a bien été exécuté !\n";
@@ -134,6 +137,6 @@ bot.login(process.env.TOKEN);
 
 bot.on("guildMemberAdd", member => {
     let role = member.guild.roles.find("name", "Member");
-    member.guild.channels.find("name", "vchannel").send(`${member.user.username} viens de rejoindre le serveur.`)
+    member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
     member.addRole(role)
 })
