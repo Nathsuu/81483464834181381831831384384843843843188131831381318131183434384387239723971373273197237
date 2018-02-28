@@ -24,23 +24,24 @@ bot.on('message', message => {
         var help_embed = new Discord.RichEmbed()
         .setColor('#E2FB00')
         .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
-        .addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Il faut avoir le rôle \`bot-commander\` pour contrôler les messages clear pour le bot \`~clear <nombre>\`. Dites \`Vaction\`ou \`Bonjour\` et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement) pour celà, il suffit d avoir un channel s appellant \`vchannel\`.")
+        .addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Il faut avoir le rôle \`bot-commander\` pour contrôler les messages clear pour le bot \`~clear <nombre>\`. Dites \`Vaction\`ou \`Bonjour\` et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement) pour celà, il suffit d avoir un channel s appellant \`logs\`.")
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
         .addField(":hammer_pick: Modération", "\`clear\`, \`ban\`, \`unban\`, \`kick\`, \`mute\`, \`warn\`, \`unwarn\`")
         .addField(":gear: Configuration", "\`setchannel\`, \`setwelcome\`, \`setAutoRole\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`support\`, \`bot\`, \`youtube\`, \`invite\`,\`vchannel\`")
+        .addField(":clipboard: Utilitaire", "\`help\`, \`support\`, \`bot\`, \`youtube\`, \`invite\`")
         .addField(":sweat_drops: NSFW", "\`girl\`")
         .addField("-", "Total serveurs: \`Soon\`, Total utilisateurs: \`Soon\`")	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)	
         .setFooter("VacBot | Vaction | by WinDino")	
     message.channel.sendEmbed(help_embed)
         console.log("Commande Help demandée !");
-	
     }
+
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Utilise moi avec \`v!help\`! ")    
-    } 
+        bot.channels.find("name","vchannel").send("Utilise moi ! \`v!help\` ")  
+    }    
+
     // Purge
     if (msg.startsWith(prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
@@ -133,6 +134,9 @@ bot.login(process.env.TOKEN);
 
 bot.on("guildMemberAdd", member => {
     let role = member.guild.roles.find("name", "Member");
-    member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
+    member.guild.channels.find("name", "vchannel").send(`${member.user.username} viens de rejoindre le serveur.`)
     member.addRole(role)
 })
+
+bot.login(process.env.TOKEN);
+
