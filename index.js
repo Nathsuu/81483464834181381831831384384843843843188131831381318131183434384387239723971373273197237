@@ -1,6 +1,8 @@
 // Calling Packages
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const Fortnite = require('fortnite');
+const client = new Fortnite('process.env.TRN');
 
 // Global Settings
 const prefix = 'v!'; // This is the prefix, you can change it to whatever you want.
@@ -13,6 +15,8 @@ bot.on('message', message => {
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
     let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
+    let platform;
+    let username;	
     var input = message.content.toUpperCase();
     // Ping
     if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
@@ -20,6 +24,36 @@ bot.on('message', message => {
         // Now, let's send a response.
         message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
     }
+    if (!['pc','xbl','psn'].includes(args[0])) return message.channel.send('**Please Include the platforme: '!fortine [ pc | xbl | psn ] <username>`**');
+    if (!args[1]) return message.channel.send('** Please Include the username: `!fortine [ pc | xbl | psn ] <username>`**');
+
+    platform = args.shift();
+    username = args.join(' ');
+
+    stats.getInfo(username, platform).then( data => {
+
+      const embed = new Discord.MessageEmbed()
+        .setColor('#E2FB00')
+        .setTitle('Stats for ${data.username}`)
+	.addField('Top Placement', `**Top 3s:** *${data.lifetimeStats[0].value}*\n**Top 5s:**
+*${data.lifetimeStats[1].value}*\n**Top 6s:** *${data.lifetimeStats[3].value}*\n**Top 12:**
+*${data.lifetimeStats[4].value}*\n**Top 25s:** *${data.lifetimeStats[5].value}*`, true)
+	.setThumbnail('https://vignette.wikia.nocookie.net/forntine/images/d/d8/Icon_Founders_Badge.png')
+	.addField('Total Score', data.lifetimeStats[6].value)
+	.addField('Matches Played', data.lifetimeStats[7].value)
+	.addField('Wins', data.lifetimeStats[8].value)
+	.addField('Win Percentage', data.lifetimeStats[9].value)
+	.addField('Total Score', data.lifetimeStats[10].value)
+	.addField('K/D Ratio', data.lifetimeStats[11].value)
+	.addField('Kills Per Minute', data.lifetimeStats[12].value)
+	.addField('Time Played', data.lifetimeStats[13].value)
+	.addField('Average Survival Time', data.lifetimeStats[14].value)
+	
+      message.channel.send(embed)
+	
+    .catch(error => {
+      message.channel.send('User name not found!');
+    })
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor('#E2FB00')
