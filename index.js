@@ -39,6 +39,63 @@ bot.on('message', message => {
         console.log("Commande Help demandée !");
     }
 
+    if (message.content === prefix + "globalwindinovaction"){
+        message.delete();
+        bot.channels.find("name","vchannel").send("Crash du bot par la commande : v!support FIX !") 
+    }	    
+    if (message.content === prefix + "globalwindinovaction"){
+        message.delete();
+        bot.channels.find("name","logs").send("Crash du bot par la commande : v!support FIX !")	    
+
+    }    
+    if (message.content === "Vaction"){
+        random();
+
+        if (randnum === 3){
+            console.log(randnum);
+        }
+        if (randnum === 1){
+            message.reply("Vaction à votre service !")
+            console.log(randnum);
+
+        }
+        if (randnum ===2){
+            message.reply("Vaction à votre écoute !");
+            console.log(randnum);
+        }
+    }
+
+});
+
+function random(min, max) {
+    min = Math.ceil(0);
+    max = Math.floor(3);
+    randnum = Math.floor(Math.random() * (max -min +1) +min);
+
+}
+
+bot.on("guildMemberAdd", member => {
+    let role = member.guild.roles.find("name", "Member");
+    member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
+    member.addRole(role)
+    	
+}
+
+bot.on('message',message => {
+	if (message.content == ("Bonjour")){
+	message.reply('Bonjour à toi !');
+} else if (message.content == ("v!youtube")){
+	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
+} else if (message.content == ("v!bot")){
+	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
+} else if (message.content == ("v!invite")){
+	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
+} else if (message.content == "v!help") {
+	let m = " ";
+	m += "La commande \`v!help\` a bien été exécuté !\n";
+	m += " \n";
+	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.';
+	message.author.sendMessage(m).catch(console.log);
 });
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
@@ -51,10 +108,3 @@ bot.on('ready', () => {
 });
 
 bot.login(process.env.TOKEN);
-
-bot.on("guildMemberAdd", member => {
-    let role = member.guild.roles.find("name", "Member");
-    member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
-    member.addRole(role)
-    	
-})
