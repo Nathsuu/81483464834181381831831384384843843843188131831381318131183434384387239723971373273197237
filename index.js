@@ -42,15 +42,7 @@ bot.on('message', message => {
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
         bot.channels.find("name","vchannel").send("Crash \`FIX\` !") 
-    }	
-		// invite command
-		case "invite":
-			client.generateInvite(['ADMINISTRATOR', 'SEND_MESSAGES', 'MANAGE_GUILD', 'MANAGE_ROLES', 'MANAGE_CHANNELS', 'KICK_MEMBERS', 'READ_MESSAGES', 'BAN_MEMBERS', 'SEND_MESSAGES'])
-			.then(link => {
-				message.channel.send(`Here is a invite, you can add me to own servers already: ${link}`);
-			});
-			break;	
-
+    }		
 });
 
 bot.on('message',message => {
