@@ -34,6 +34,7 @@ bot.on('message', message => {
         .addField(":sweat_drops: NSFW", "\`girl\`")
         .addField("-", "Total serveurs: \`Soon\`, Total utilisateurs: ${client.users.size}")
 	.setDescription(`Response time: ${m.createdTimestamp - message.createdTimestamp}ms`)
+        .setAuthor("Pong!", "https://cdn.discordapp.com/attachments/347288279357456387/348647441815306241/ping.png")	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)	
         .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
