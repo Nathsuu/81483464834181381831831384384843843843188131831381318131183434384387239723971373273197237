@@ -41,12 +41,7 @@ bot.on('message', message => {
 
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
-        bot.channels.find("name","vchannel").send("Crash du bot par la commande : v!support FIX !") 
-    }	    
-    if (message.content === prefix + "globalwindinovaction"){
-        message.delete();
-        bot.channels.find("name","logs").send("Crash du bot par la commande : v!support FIX !")	    
-
+        bot.channels.find("name","vchannel").send("Crash du bot par la commande : v!support FIX !") 	    	    
     }    
     if (message.content === "Vaction"){
         random();
@@ -79,7 +74,7 @@ bot.on("guildMemberAdd", member => {
     member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
     member.addRole(role)
     	
-}
+});
 
 bot.on('message',message => {
 	if (message.content == ("Bonjour")){
