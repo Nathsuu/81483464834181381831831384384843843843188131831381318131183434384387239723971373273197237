@@ -94,9 +94,7 @@ bot.on('message',message => {
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
-    bot.user.setPresence({ game: {name: 'Vaction | v!help | by WinDino' , type: 0}});
-    bot.channels.find("name","vchannel").send("Je suis de nouveau disponible !")
-    bot.channels.find("name","logs").send("Je suis de nouveau disponible !")	
+    bot.user.setPresence({ game: {name: 'Vaction | v!help | by WinDino' , type: 0}});	
 
     // We can post into the console that the bot launched.
     console.log('Bot started.');
