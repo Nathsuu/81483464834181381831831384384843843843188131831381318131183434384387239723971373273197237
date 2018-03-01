@@ -39,39 +39,6 @@ bot.on('message', message => {
         console.log("Commande Help demandée !");
     }
 
-    if (message.content === prefix + "globalwindinovaction"){
-        message.delete();
-        bot.channels.find("name","vchannel").send("Crash du bot par la commande : v!support FIX !") 
-    }	    
-    if (message.content === prefix + "globalwindinovaction"){
-        message.delete();
-        bot.channels.find("name","logs").send("Crash du bot par la commande : v!support FIX !")	    
-
-    }    
-    if (message.content === "Vaction"){
-        random();
-
-        if (randnum === 3){
-            console.log(randnum);
-        }
-        if (randnum === 1){
-            message.reply("Vaction à votre service !")
-            console.log(randnum);
-
-        }
-        if (randnum ===2){
-            message.reply("Vaction à votre écoute !");
-            console.log(randnum);
-        }
-    }
-
-});
-
-function random(min, max) {
-    min = Math.ceil(0);
-    max = Math.floor(3);
-    randnum = Math.floor(Math.random() * (max -min +1) +min);
-
 });
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
