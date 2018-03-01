@@ -34,8 +34,7 @@ bot.on('message', message => {
         .addField(":sweat_drops: NSFW", "\`girl\`")
         .addField("-", "Total serveurs: \`Soon\`, Total utilisateurs: \`Soon\`")	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
-        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
-	.setTimestamp() 
+        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL) 
     message.channel.sendEmbed(help_embed)
         console.log("Commande Help demandée !");
     }
