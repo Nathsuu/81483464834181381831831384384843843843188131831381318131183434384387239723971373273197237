@@ -34,7 +34,8 @@ bot.on('message', message => {
         .addField(":sweat_drops: NSFW", "\`girl\`")
         .addField("-", "Total serveurs: \`Soon\`, Total utilisateurs: \`Soon\`")	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)	
-        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL");	
+        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
         console.log("Commande Help demandée !");
     }
@@ -43,6 +44,7 @@ bot.on('message', message => {
         message.delete();
         bot.channels.find("name","vchannel").send("Crash \`FIX\` !") 
     }		
+
 });
 
 bot.on('message',message => {
