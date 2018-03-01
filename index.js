@@ -22,24 +22,6 @@ bot.on('message', message => {
         message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
 	message.channel.send("pong!");    
     }
-    if (message.content === prefix + "help"){
-        var help_embed = new Discord.RichEmbed()
-        .setColor('#E2FB00')
-	.setAuthor("Vaction | VacBot", "https://image.noelshack.com/fichiers/2018/09/4/1519899146-17332945-138497173341771-651541625360613376-n-copie.jpg")
-        .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
-        .addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Il faut avoir le rôle \`bot-commander\` pour contrôler les messages clear pour le bot \`~clear <nombre>\`. Dites \`Vaction\`ou \`Bonjour\` et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement) pour celà, il suffit d avoir un channel s appellant \`logs\`.")
-        .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
-        .addField(":hammer_pick: Modération", "\`clear\`, \`ban\`, \`unban\`, \`kick\`, \`mute\`, \`warn\`, \`unwarn\`")
-        .addField(":gear: Configuration", "\`setchannel\`, \`setwelcome\`, \`setAutoRole\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`")
-        .addField(":sweat_drops: NSFW", "\`girl\`")
-        .addField("-", "Total serveurs: \`Soon\`, Total utilisateurs: \`Soon\`")	
-        .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
-        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
-	.setTimestamp() 
-    message.channel.sendEmbed(help_embed)
-        console.log("Commande Help demandée !");
-    }
 	
     if (message.content === prefix + "globalwindinovaction"){
         message.delete();
