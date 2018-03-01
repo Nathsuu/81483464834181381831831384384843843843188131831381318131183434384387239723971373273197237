@@ -8,18 +8,12 @@ const prefix = 'v!'; // This is the prefix, you can change it to whatever you wa
 // Listener Event: Runs whenever a message is received.
 
 bot.on('message', message => {
-
-    // Variables - Variables make it easy to call things, since it requires less typing.
-    let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
-    let sender = message.author; // This variable takes the message, and finds who the author is.
-    let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
-    let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.	
-    var input = message.content.toUpperCase();
     // Ping
     if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
 
         // Now, let's send a response.
-        message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.    
+        message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
+	message.channel.send("pong!");    
     }
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
