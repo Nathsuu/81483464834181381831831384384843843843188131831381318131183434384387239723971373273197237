@@ -39,27 +39,6 @@ bot.on('message', message => {
         console.log("Commande Help demandée !");
     }
 
-    if (message.content === prefix + "globalwindinovaction"){
-        message.delete();
-        bot.channels.find("name","vchannel").send("Crash du bot par la commande : v!support FIX !") 	    	    
-    }    
-    if (message.content === "Vaction"){
-        random();
-
-        if (randnum === 3){
-            console.log(randnum);
-        }
-        if (randnum === 1){
-            message.reply("Vaction à votre service !")
-            console.log(randnum);
-
-        }
-        if (randnum ===2){
-            message.reply("Vaction à votre écoute !");
-            console.log(randnum);
-        }
-    }
-
 });
 
 function random(min, max) {
@@ -68,13 +47,6 @@ function random(min, max) {
     randnum = Math.floor(Math.random() * (max -min +1) +min);
 
 }
-
-bot.on("guildMemberAdd", member => {
-    let role = member.guild.roles.find("name", "Member");
-    member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
-    member.addRole(role)
-    	
-});
 
 bot.on('message',message => {
 	if (message.content == ("Bonjour")){
@@ -91,6 +63,7 @@ bot.on('message',message => {
 	m += " \n";
 	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.';
 	message.author.sendMessage(m).catch(console.log);
+}
 });
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
@@ -103,3 +76,10 @@ bot.on('ready', () => {
 });
 
 bot.login(process.env.TOKEN);
+
+bot.on("guildMemberAdd", member => {
+    let role = member.guild.roles.find("name", "Member");
+    member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
+    member.addRole(role)
+    	
+})
