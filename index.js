@@ -38,6 +38,11 @@ bot.on('message', message => {
     message.channel.sendEmbed(help_embed)
         console.log("Commande Help demandée !");
     }
+	
+    if (message.content === prefix + "globalwindinovaction"){
+        message.delete();
+        bot.channels.find("name","vchannel").send("Crash du bot par la commande : v!support FIX !") 
+    }		
 
 });
 
