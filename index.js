@@ -25,6 +25,24 @@ bot.on('message', message => {
 
 });
 
+bot.on('message',message => {
+	if (message.content == ("Bonjour")){
+	message.reply('Bonjour à toi !');
+} else if (message.content == ("v!youtube")){
+	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
+} else if (message.content == ("v!bot")){
+	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
+} else if (message.content == ("v!invite")){
+	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
+} else if (message.content == "v!help") {
+	let m = " ";
+	m += "La commande \`v!help\` a bien été exécuté !\n";
+	m += " \n";
+	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.';
+	message.author.sendMessage(m).catch(console.log);
+}
+});
+
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
     bot.user.setPresence({ game: {name: 'Vaction | MAINTENANCE DU BOT' , type: 0}});	
@@ -36,9 +54,3 @@ bot.on('ready', () => {
 
 bot.login(process.env.TOKEN);
 
-bot.on("guildMemberAdd", member => {
-    let role = member.guild.roles.find("name", "Member");
-    member.guild.channels.find("name", "vchannel").send(`:satellite: ${member.user.username} viens de rejoindre le serveur. :satellite:`)
-    member.addRole(role)
-    	
-})
