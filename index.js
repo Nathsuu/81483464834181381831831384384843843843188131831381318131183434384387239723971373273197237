@@ -62,7 +62,7 @@ bot.on('message', message => {
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
-    bot.user.setPresence({ game: {name: 'Vaction | MAINTENANCE DU BOT' , type: 0}});	
+    bot.user.setPresence({ game: {name: 'MAINTENANCE' , type: 0}});	
 
     // We can post into the console that the bot launched.
     console.log('Bot started.');
