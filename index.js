@@ -39,7 +39,7 @@ bot.on('message', message => {
 	message.author.sendMessage(m).catch(console.log);
     }
 });	
-bot.on('message', message => {
+
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor('#E2FB00')
