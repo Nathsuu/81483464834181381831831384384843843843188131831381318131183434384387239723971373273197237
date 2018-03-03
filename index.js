@@ -7,6 +7,18 @@ const prefix = 'v!'; // This is the prefix, you can change it to whatever you wa
 
 // Listener Event: Runs whenever a message is received.
 
+// Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
+bot.on('ready', () => {
+    bot.user.setPresence({ game: {name: 'MAINTENANCE' , type: 0}});	
+
+    // We can post into the console that the bot launched.
+    console.log('Bot started.');
+
+});
+
+bot.login(process.env.TOKEN);
+
+
 bot.on('message', message => {
 
     // Variables - Variables make it easy to call things, since it requires less typing.
@@ -35,13 +47,6 @@ bot.on('message', message => {
     if (message.content == ("v!invite")){
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
 }
-     if (message.content == "v!help") {
-	let m = " ";
-	m += "La commande \`v!help\` a bien été exécuté !\n";
-	m += " \n";
-	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.';
-	message.author.sendMessage(m).catch(console.log);
-    }
 	
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
@@ -59,19 +64,9 @@ bot.on('message', message => {
         .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
+	    message.author.send("La commande \`v!help\` a bien été exécuté !\nPlusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.")
         console.log("Commande Help demandée !");
     }
 	
 });	
-
-// Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
-bot.on('ready', () => {
-    bot.user.setPresence({ game: {name: 'MAINTENANCE' , type: 0}});	
-
-    // We can post into the console that the bot launched.
-    console.log('Bot started.');
-
-});
-
-bot.login(process.env.TOKEN);
 
