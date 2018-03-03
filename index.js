@@ -34,9 +34,9 @@ bot.on('message', message => {
         message.channel.send("pong!");    
     }	
 
-    if (message.content == ("Bonjour")){
-	guild.channel.get('409708031048286208').send(`${user.username} a dit Bonjour`);    
+    if (message.content == ("Bonjour")){    
 	message.reply('Bonjour à toi !');
+	guild.channel.get('409708031048286208').send(`${user.username} a dit Bonjour`);    
 }
     if (message.content == ("v!youtube")){
 	guild.channel.get('409708031048286208').send(`${user.username} a utilisé v!youtube.`);     
