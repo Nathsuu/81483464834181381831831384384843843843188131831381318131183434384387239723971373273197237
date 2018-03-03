@@ -19,7 +19,7 @@ bot.on('ready', () => {
 bot.login(process.env.TOKEN);
 bot.on('message', message =>{
 if(message.content === 'test'){
-message.author.reply('test')
+message.author.send('test')
 }
 });
 
