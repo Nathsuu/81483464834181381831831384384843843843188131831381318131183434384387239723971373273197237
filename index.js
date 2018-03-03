@@ -38,8 +38,6 @@ bot.on('message', message => {
 	m += 'Plusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.';
 	message.author.sendMessage(m).catch(console.log);
     }
-});	
-bot.on('message', message => {
 	
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
