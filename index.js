@@ -35,19 +35,15 @@ bot.on('message', message => {
     }	
 
     if (message.content == ("Bonjour")){    
-	message.reply('Bonjour à toi !');
-	guild.channel.get('409708031048286208').send(`${user.username} a dit Bonjour`);    
+	message.reply('Bonjour à toi !');    
 }
-    if (message.content == ("v!youtube")){
-	guild.channel.get('409708031048286208').send(`${user.username} a utilisé v!youtube.`);     
+    if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 }
-    if (message.content == ("v!bot")){
-	guild.channel.get('409708031048286208').send(`${user.username} a utilisé v!bot.`);    
+    if (message.content == ("v!bot")){    
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 }
-    if (message.content == ("v!invite")){
-	guild.channel.get('409708031048286208').send(`${user.username} a utilisé v!invite.`);    
+    if (message.content == ("v!invite")){    
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
 }
 	
@@ -68,7 +64,6 @@ bot.on('message', message => {
 	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
 	    message.author.send("La commande \`v!help\` a bien été exécuté !\nPlusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.")
-	    guild.channel.get('409708031048286208').send(`${user.username} a utilisé v!help.`);
         console.log("Commande Help demandée !");
     }
 	
