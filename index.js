@@ -55,7 +55,7 @@ const prefix = 'v!'; // This is the prefix, you can change it to whatever you wa
     message.channel.send('Username not found!');
  
   })
- 
+} 
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
