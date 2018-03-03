@@ -10,7 +10,8 @@ const prefix = 'v!'; // This is the prefix, you can change it to whatever you wa
 
   let platform;
   let username;
- 
+
+exports.run = (client, message, args, tools) => {
   // There are only 3 platform options: pc, xbl, psn. We need to make sure they are typing one of these.
  
   // Also, make sure you are using return statements when something evaluates to false and you want it to exit,
