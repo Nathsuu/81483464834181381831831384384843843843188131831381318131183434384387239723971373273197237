@@ -25,13 +25,17 @@ bot.on('message', message => {
 
     if (message.content == ("Bonjour")){
 	message.reply('Bonjour à toi !');
-} else if (message.content == ("v!youtube")){
+}
+    if (message.content == ("v!youtube")){
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
-} else if (message.content == ("v!bot")){
+}
+    if (message.content == ("v!bot")){
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
-} else if (message.content == ("v!invite")){
+}
+    if (message.content == ("v!invite")){
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
-} else if (message.content == "v!help") {
+}
+     if (message.content == "v!help") {
 	let m = " ";
 	m += "La commande \`v!help\` a bien été exécuté !\n";
 	m += " \n";
