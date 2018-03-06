@@ -76,11 +76,9 @@ bot.on('message', message => {
 	message.reply('Bonjour à toi !');    
 }
     if (message.content == ("v!ginv")){    
-	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
-	message.reply(`Generated bot invite link: ${link}`);    
-	    
-  .then(link => {
-    console.log(`Generated bot invite link: ${link}`);  
+	client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+	  .then(link => {
+		message.reply(`Generated bot invite link: ${link}`);
 }	
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
