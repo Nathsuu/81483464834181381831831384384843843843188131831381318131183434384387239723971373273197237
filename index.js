@@ -36,10 +36,10 @@ bot.on('message', message => {
             return message.reply(":x: L'utilisateur est introuvable ou impossible à expulser.")
         }
         if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
-            return message.reply("Je n'ai pas la permission KICK_MEMBERS pour faire ceci.").catch(console.error);
+            return message.reply("Je n'ai pas la permission \`KICK_MEMBERS\` pour faire ceci.").catch(console.error);
         }
         kickMember.kick().then(member => {
-            message.reply(`${member.user.username} a été expulsé avec succès.`).catch(console.error);
+            message.reply(`${member.user.username} a été kick :boot:`).catch(console.error);
             message.guild.channels.find("name", "vchannel").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`)
         }).catch(console.error)
        
