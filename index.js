@@ -1,4 +1,5 @@
 // Calling Packages
+// Calling Packages
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 // This command requires the package 'fortnite'.
@@ -23,7 +24,7 @@ bot.on('message', message => {
     command = args.shift().toLowerCase();
  
     if (command === "kick") {
-        let modRole = message.guild.roles.find("name", "Test");
+        if (!message.member.permissions.has('ADMINISTRATOR'))
         if(!message.member.roles.has(modRole.id)) {
             return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
         }
@@ -45,7 +46,7 @@ bot.on('message', message => {
     }
  
     if (command === "ban") {
-        let modRole = message.guild.roles.find("name", "Test");
+        if (!message.member.permissions.has('ADMINISTRATOR'))
         if(!message.member.roles.has(modRole.id)) {
             return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
         }
@@ -55,12 +56,12 @@ bot.on('message', message => {
             message.reply(`${member.user.username} a été banni avec succès.`).catch(console.error);
             message.guild.channels.find("name", "general").send(`**${member.user.username}** a été banni du discord par **${message.author.username}**`)
         }).catch(console.error)
-}})
+    }
+
 
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
     let sender = message.author; // This variable takes the message, and finds who the author is.
-    let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces
-    let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.	
+    let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces	
     var input = message.content.toUpperCase();
 	
     // Ping
