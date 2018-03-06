@@ -26,10 +26,10 @@ bot.on('message', message => {
     if (command === "kick") {
         if (!message.member.permissions.has('KICK_MEMBERS'))
         if(!message.member.roles.has(modRole.id)) {
-            return bot.sendMessage(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
         if(message.mentions.users.size === 0) {
-            return bot.sendMessage(":x: Vous n'avez mentionnée aucun utilisateur !").catch(console.error);
+            return message.reply(":x: Vous n'avez mentionnée aucun utilisateur !").catch(console.error);
         }
         let kickMember = message.guild.member(message.mentions.users.first());
         if(!kickMember) {
