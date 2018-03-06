@@ -76,7 +76,7 @@ bot.on('message', message => {
 	message.reply('Bonjour à toi !');    
 }
     if (message.content == ("v!ginv")){    
-	client.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+	bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
 	  .then(link => {
 		message.reply(`Generated bot invite link: ${link}`);
 }	
