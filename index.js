@@ -26,7 +26,7 @@ bot.on('message', message => {
     if (command === "kick") {
         if (!message.member.permissions.has('KICK_MEMBERS'))
         if(!message.member.roles.has(modRole.id)) {
-            return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
         if(message.mentions.users.size === 0) {
             return message.reply(":x: Vous n'avez mentionnée aucun utilisateur !").catch(console.error);
@@ -36,7 +36,7 @@ bot.on('message', message => {
             return message.reply(":x: L'utilisateur est introuvable ou impossible à expulser.")
         }
         if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
-            return message.reply("Je n'ai pas la permission \`KICK_MEMBERS\` pour faire ceci.").catch(console.error);
+            return message.reply(":x: Je n'ai pas la permission \`KICK_MEMBERS\` pour faire ceci.").catch(console.error);
         }
         kickMember.kick().then(member => {
             message.reply(`${member.user.username} a été kick :boot:`).catch(console.error);
@@ -48,10 +48,10 @@ bot.on('message', message => {
     if (command === "ban") {
         if (!message.member.permissions.has('BAN_MEMBERS'))
         if(!message.member.roles.has(modRole.id)) {
-            return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
         const member = message.mentions.members.first();
-        if (!member) return message.reply("Merci de mentionner l'utilisateur à bannir.");	
+        if (!member) return message.reply(":x: Vous n'avez mentionnée aucun utilisateur !");	
         member.ban().then(member => {
             message.reply(`${member.user.username} a été banni :boot:`).catch(console.error);
             message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été banni du discord par **${message.author.username}** :boot:`)	
