@@ -20,13 +20,6 @@ bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
 	
-	
-    // Variables - Variables make it easy to call things, since it requires less typing.
-    let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
-    let sender = message.author; // This variable takes the message, and finds who the author is.
-    let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces
-    let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.	
-    var input = message.content.toUpperCase();
     const args = message.content.slice(prefix.length).split(/+/);
     command = args.shift().toLowerCase();
 	
@@ -51,7 +44,7 @@ bot.on('message', message => {
 }
 
     if (command ==='BAN') {
-	let modRole = message.guild.member.hasPermission("BAN_MEMBERS")
+	let modRole = message.guild.roles.find("name", "Test");
 	if(!message.member.roles.has(modRole.id)) {
             return message.reply("Tu n'as pas la permission de faire cette commande.").catch(console.error);
         }
@@ -65,7 +58,11 @@ bot.on('message', message => {
 }			       
 	    
 		
-
+    let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
+    let sender = message.author; // This variable takes the message, and finds who the author is.
+    let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces
+    let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.	
+    var input = message.content.toUpperCase();
 	
     // Ping
     if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
