@@ -29,7 +29,7 @@ bot.on('message', message => {
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
         if(message.mentions.users.size === 0) {
-            return message.reply(":x: Vous n'avez mentionnée aucun utilisateur !").catch(console.error);
+            return message.reply(":x: Vous n'avez mentionné aucun utilisateur !").catch(console.error);
         }
         let kickMember = message.guild.member(message.mentions.users.first());
         if(!kickMember) {
@@ -51,7 +51,7 @@ bot.on('message', message => {
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
         const member = message.mentions.members.first();
-        if (!member) return message.reply(":x: Vous n'avez mentionnée aucun utilisateur !");	
+        if (!member) return message.reply(":x: Vous n'avez mentionné aucun utilisateur !");	
         member.ban().then(member => {
             message.reply(`${member.user.username} a été banni :boot:`).catch(console.error);
             message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été banni du discord par **${message.author.username}** :boot:`)	
