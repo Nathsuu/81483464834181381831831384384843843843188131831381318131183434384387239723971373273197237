@@ -78,7 +78,7 @@ bot.on('message', message => {
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 }
-    if (message.content == ("Image")){    
+    if (message.content == ("v!image")){    
 	message.reply('https://image.noelshack.com/fichiers/2018/10/2/1520355922-17332945-138497173341771-651541625360613376-n-copie.jpg');    
 }	
     if (message.content == ("v!bot")){    
