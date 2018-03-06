@@ -55,6 +55,10 @@ bot.on('message', message => {
         member.ban().then(member => {
             message.reply(`${member.user.username} a été banni avec succès.`).catch(console.error);
             message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été banni du discord par **${message.author.username}** :boot:`)
+	var help_embed = new Discord.RichEmbed()
+            .setColor('#E2FB00')
+	    .setAuthor("Vaction | VacBot", "https://image.noelshack.com/fichiers/2018/09/4/1519899146-17332945-138497173341771-651541625360613376-n-copie.jpg")
+            .addField("test1", "test")	
         }).catch(console.error)
     }
 
