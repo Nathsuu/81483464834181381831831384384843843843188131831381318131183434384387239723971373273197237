@@ -56,7 +56,7 @@ bot.on('message', message => {
             message.reply(`${member.user.username} a été banni avec succès.`).catch(console.error);
             message.guild.channels.find("name", "general").send(`**${member.user.username}** a été banni du discord par **${message.author.username}**`)
         }).catch(console.error)
-})	    
+}	    
 	    
 		
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
