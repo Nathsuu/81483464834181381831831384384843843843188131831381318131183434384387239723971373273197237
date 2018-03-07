@@ -105,7 +105,7 @@ bot.on('message', message => {
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
         .addField(":hammer_pick: Modération", "\`clear\`, \`ban\`, \`unban\`, \`kick\`, \`mute\`, \`warn\`, \`unwarn\`")
         .addField(":gear: Configuration", "\`setchannel\`, \`setwelcome\`, \`setAutoRole\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`")
+        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`")
         .addField(":sweat_drops: NSFW", "\`girl\`")	
         .addField(":floppy_disk: Total serveurs:", "\`Soon\`")
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
@@ -116,6 +116,9 @@ bot.on('message', message => {
 	    message.author.send("La commande \`v!help\` a bien été exécuté !\nPlusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.")
         console.log("Commande Help demandée !");
     }
-	
+	if (message.content === prefix + "servlist"){
+        message.channel.send("```" + bot.guilds.array().map( g => g.name + " | " + g.members.size ).join(" membres\n") + "```")   
+    }
+
 });	
 
