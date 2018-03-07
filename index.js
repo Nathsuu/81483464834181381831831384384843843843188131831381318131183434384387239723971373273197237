@@ -15,7 +15,7 @@ bot.on('ready', () => {
 
 });
 
-bot.login(prosses.env.TOKEN);
+bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
     let command = message.content.split(" ")[0];
