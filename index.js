@@ -22,7 +22,7 @@ bot.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();
  
-    if (command === 'KICK') {
+    if (command === "kick") {
         if (!message.member.permissions.has('KICK_MEMBERS'))
         if(!message.member.roles.has(modRole.id)) {
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
@@ -49,7 +49,7 @@ bot.on('message', message => {
        
         
  
-    if (command === 'BAN') {
+    if (command === "ban") {
         if (!message.member.permissions.has('BAN_MEMBERS'))
         if(!message.member.roles.has(modRole.id)) {
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
