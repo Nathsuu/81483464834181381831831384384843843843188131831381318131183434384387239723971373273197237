@@ -77,50 +77,6 @@ bot.on('message', message => {
 }	
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
-}
-    if (message.content == ("v!test")){     
-    message.channel.sendMessage({
-        embed: {
-          type: 'rich',
-          description: '',
-          fields: [{
-            name: 'Pseudo',
-            value: getvalueof.username,
-            inline: true
-          }, {
-            name: 'User id',
-            value: getvalueof.id,
-            inline: true
-          },{
-            name: 'Discriminateur',
-            value: getvalueof.discriminator,
-            inline: true
-},{
-            name: 'Status',
-            value: status,
-            inline: true
-},{
-            name: 'Bot',
-            value: checkbot,
-            inline: true
-}],
-        image: {
-      url: getvalueof.avatarURL
-        },
-          color: 0xE46525,
-          footer: {
-            text: 'by Jorisvidéo',
-            proxy_icon_url: ' '
-          },
-
-          author: {
-            name: membername,
-            icon_url: memberavatar,
-            proxy_icon_url: ' '
-          }
-        }
-
-
 }	
     if (message.content == ("v!image")){    
 	message.reply('https://image.noelshack.com/fichiers/2018/10/2/1520355922-17332945-138497173341771-651541625360613376-n-copie.jpg');    
