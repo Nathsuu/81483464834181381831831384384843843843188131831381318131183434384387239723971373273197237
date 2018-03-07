@@ -15,7 +15,7 @@ bot.on('ready', () => {
 
 });
 
-bot.login(process.env.TOKEN);
+bot.login(prosses.env.TOKEN);
 
 bot.on('message', message => {
     let command = message.content.split(" ")[0];
@@ -65,6 +65,7 @@ bot.on('message', message => {
             message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été banni du discord par **${message.author.username}** :boot:`)	
         }).catch(console.error)
     }
+
     if(message.content.startsWith(prefix + "setgame")){
         let args = message.content.split(` `).slice(1);
         message.delete()
@@ -76,24 +77,10 @@ bot.on('message', message => {
         console.log("j'ai changé mon jeu en : " + args.join(` `))
         }else{
         message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
-        }    
         }
-	
-    if(message.content.startsWith(prefix + "say")){
-       let args = message.content.split(` `).slice(1);
-       message.delete()
-       if (!args){
-       args = null;
         }
-       if(message.author.id == "282123215537569793"){
-     
-       message.channel.send(args.join(` `))
-       }else{
-       message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
-       }
-       }
-	
-	
+
+
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces	
@@ -130,10 +117,10 @@ bot.on('message', message => {
         .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
         .addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Il faut avoir le rôle \`bot-commander\` pour contrôler les messages clear pour le bot \`~clear <nombre>\`. Dites \`Vaction\`ou \`Bonjour\` et le bot vous répondra. Le bot dispose aussi d un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement) pour celà, il suffit d avoir un channel s appellant \`logs\`.")
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
-        .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-Soon\`, \`warn-soon\`,")
-        .addField(":gear: Configuration", "\`setgame\`, ")
+        .addField(":hammer_pick: Modération", "\`clear\`, \`ban\`, \`unban\`, \`kick\`, \`mute\`, \`warn\`, \`unwarn\`")
+        .addField(":gear: Configuration", "\`setchannel\`, \`setwelcome\`, \`setAutoRole\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`")
-        .addField("💋 NSFW", "\`girl-soon\`")	
+        .addField(":sweat_drops: NSFW", "\`girl\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
