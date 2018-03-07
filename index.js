@@ -39,7 +39,7 @@ bot.on('message', message => {
 	}	
 	if(!message.guild.channels.exists("name", "vchannel")){
 	    message.guild.createChannel('vchannel');
-	}	
+		
         kickMember.kick().then(member => {
             message.reply(`${member.user.username} a été expulsé avec succès.`).catch(console.error);
 	    message.guild.channels.find("name", "general").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`)
