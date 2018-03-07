@@ -39,7 +39,7 @@ bot.on('message', message => {
 	}	
 	if(!message.guild.channels.exists("name", "vchannel")){
 	    message.guild.createChannel('vchannel');
-	    message.reply(`${member.user.username} le channel vchannel viens d'être créer.`).catch(console.error);	
+	    message.reply(`**${message.author.username}** le channel vchannel viens d'être créer.`).catch(console.error);	
 	}	
         kickMember.kick().then(member => {
             message.reply(`${member.user.username} a été expulsé avec succès.`).catch(console.error);
