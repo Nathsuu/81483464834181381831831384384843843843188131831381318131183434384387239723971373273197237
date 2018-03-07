@@ -46,7 +46,7 @@ bot.on('message', message => {
                   text: "Message par Emiliabot."
                 }
               }}).catch(console.error);
-      }).then(message.guild.channels.find('name','vchannel').sendMessage({
+        }).then(message.guild.channels.find('name','vchannel').sendMessage({
               embed: {
                 type: 'rich',
                 description: '',
@@ -62,11 +62,11 @@ bot.on('message', message => {
                   name: '**Action <~>**',
                   value: "Kick",
                   inline: true
-      },{
+        },{
                   name: 'Modérateur',
                   value: message.author.username,
                   inline: true
-      }],
+        }],
              
                 color: 0xD30000,
                 footer: {
@@ -80,10 +80,10 @@ bot.on('message', message => {
                   proxy_icon_url: ' '
                 }
               }
-      })).catch(console.error);
+        })).catch(console.error);
               }   
        
-    }
+        }
  
     if (command === "ban") {
         if (!message.member.permissions.has('BAN_MEMBERS'))
