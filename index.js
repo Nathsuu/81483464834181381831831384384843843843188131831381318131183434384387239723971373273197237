@@ -46,7 +46,9 @@ bot.on('message', message => {
 	    message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été expulsé du discord par **${message.author.username}**`)
 	}).catch(console.error)	
     }
-       
+       if(message.content === "random"){
+       message.author.send("https://source.unsplash.com/random")
+       }
         
  
     if (command === "ban") {
