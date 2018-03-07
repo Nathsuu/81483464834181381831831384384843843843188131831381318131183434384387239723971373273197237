@@ -119,7 +119,7 @@ bot.on('message', message => {
         .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-Soon\`, \`warn-soon\`,")
         .addField(":gear: Configuration", "\`setgame\`, ")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`")
-        .addField(":sweat_drops: NSFW", "\`girl-soon\`")	
+        .addField("💋 NSFW", "\`girl-soon\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
