@@ -1,5 +1,4 @@
 // Calling Packages
-// Calling Packages
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 // This command requires the package 'fortnite'.
@@ -39,9 +38,50 @@ bot.on('message', message => {
             return message.reply(":x: Je n'ai pas la permission \`KICK_MEMBERS\` pour faire ceci.").catch(console.error);
         }
         kickMember.kick().then(member => {
-            return message.reply(`${member.user.username} a été kick :boot:`).catch(console.error);
-            message.guild.channels.find("name", "vchannel").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}`)
-        }).catch(console.error)
+            message.channel.sendMessage("", {embed: {
+                title: "Succès :white_check_mark:",
+                color: 0xff0000,
+                description: `${member.user.username}`+` à bien été kick`,
+                footer: {
+                  text: "Message par Emiliabot."
+                }
+              }}).catch(console.error);
+      }).then(message.guild.channels.find('name','vchannel').sendMessage({
+              embed: {
+                type: 'rich',
+                description: '',
+                fields: [{
+                  name: '**L\'utilisateur <~>**',
+                  value: kickMember.user.username,
+                  inline: true
+                }, {
+                  name: 'User id',
+                  value: kickMember.id,
+                  inline: true
+                },{
+                  name: '**Action <~>**',
+                  value: "Kick",
+                  inline: true
+      },{
+                  name: 'Modérateur',
+                  value: message.author.username,
+                  inline: true
+      }],
+             
+                color: 0xD30000,
+                footer: {
+                  text: 'Moderation',
+                  proxy_icon_url: ' '
+                },
+      
+                author: { 
+                  name: kickMember.user.username + "#"+ kickMember.user.discriminator,
+                  icon_url: " ",
+                  proxy_icon_url: ' '
+                }
+              }
+      })).catch(console.error);
+              }   
        
     }
  
