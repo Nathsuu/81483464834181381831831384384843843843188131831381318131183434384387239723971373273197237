@@ -77,7 +77,9 @@ bot.on('message', message => {
         }else{
         message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
         }
-        }
+	    
+    }
+	
 	
 
 
