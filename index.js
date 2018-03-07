@@ -107,7 +107,7 @@ bot.on('message', message => {
         .addField(":gear: Configuration", "\`setchannel\`, \`setwelcome\`, \`setAutoRole\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`")
         .addField(":sweat_drops: NSFW", "\`girl\`")	
-        .addField(":floppy_disk: Total serveurs:", "\`Soon\`")
+        .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
