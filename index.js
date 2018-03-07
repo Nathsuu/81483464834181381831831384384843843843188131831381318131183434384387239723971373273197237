@@ -65,7 +65,7 @@ bot.on('message', message => {
             message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été banni du discord par **${message.author.username}** :boot:`)	
         }).catch(console.error)
     }
-    if(msg.content === prefix + 'setgame'){
+    if(msg.content === prefix + "setgame"){
         if(msg.author.id === '282123215537569793'){
         let args = message.content.split(` `).slice(1);
         bot.user.setGame(args.join(" "))
