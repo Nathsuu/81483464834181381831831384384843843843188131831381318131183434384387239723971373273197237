@@ -69,12 +69,12 @@ bot.on('message', message => {
     }
 
     if(message.content.startsWith(prefix + "setgame")){
-        let args = message.content.split(` `).slice(1);
+        let args = message.content.split(" ").slice(1);
         message.delete()
         if (!args){
         args = null; }
         if(message.author.id == "282123215537569793" || "317603352592777227"){
-        bot.user.setGame(args.join(` `))
+        bot.user.setGame(args.join(" "))
         message.channel.send("J'ai changé mon jeu en : " + args.join(` `))
         console.log("j'ai changé mon jeu en : " + args.join(` `))
         }else{
