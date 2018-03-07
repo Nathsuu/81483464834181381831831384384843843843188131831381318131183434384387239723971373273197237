@@ -76,12 +76,9 @@ bot.on('message', message => {
         console.log("j'ai changé mon jeu en : " + args.join(` `))
         }else{
         message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
+        }    
         }
-	    
-    }
 	
-	
-
 
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
     let sender = message.author; // This variable takes the message, and finds who the author is.
