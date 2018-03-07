@@ -38,15 +38,8 @@ bot.on('message', message => {
             return message.reply(":x: Je n'ai pas la permission \`KICK_MEMBERS\` pour faire ceci.").catch(console.error);
 	}	
 	if(!message.guild.channels.exists("name", "vchannel")){
-	           message.guild.createChannel('vchannel');
-	title: "Erreur:",
-        color: 0xff0000,
-        description: " :no_entry_sign: Le salon textuel `vchannel` n'existait pas, je viens de le créer pour vous :white_check_mark: , Veuillez réessayer :wink:",
-        footer: {
-        text: "Message par Vaction."
-        }
-        }}).catch(console.error);
-        } 		
+	    message.guild.createChannel('vchannel');
+	}	
         kickMember.kick().then(member => {
             message.reply(`${member.user.username} a été expulsé avec succès.`).catch(console.error);
 	    message.guild.channels.find("name", "general").send(`**${member.user.username} a été expulsé du discord par **${message.author.username}**`)
