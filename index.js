@@ -47,7 +47,7 @@ bot.on('message', message => {
 	}).catch(console.error)	
     }
        if(message.content === "random"){
-       message.author.send("https://source.unsplash.com/random")
+       message.channel.send("https://source.unsplash.com/random")
        }
         
  
