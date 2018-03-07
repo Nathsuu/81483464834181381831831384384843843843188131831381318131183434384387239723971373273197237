@@ -79,27 +79,6 @@ bot.on('message', message => {
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 }
     if (message.content == ("v!test")){     
-    var memberavatar = message.author.avatarURL
-    var membername = message.author.username
-    var mentionned = message.mentions.users.first();
-    var getvalueof;
-      if(mentionned){
-          var getvalueof = mentionned;
-     } else {	  
-          var getvalueof = message.author;
-      }
-
-      if(getvalueof.bot == true){
-          var checkbot = "L'utilisateur est un bot";
-      } else {
-          var checkbot = "N'est pas un bot";
-      }
-      if(getvalueof.presence.status == 'online'){
-        var status = "En ligne"; 
-      }else {
-        var status = "Hors ligne";
-      }
-
     message.channel.sendMessage({
         embed: {
           type: 'rich',
