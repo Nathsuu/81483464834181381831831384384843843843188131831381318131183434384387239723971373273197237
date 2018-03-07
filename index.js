@@ -36,7 +36,7 @@ bot.on('message', message => {
         }
         if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
             return message.reply(":x: Je n'ai pas la permission \`KICK_MEMBERS\` pour faire ceci.").catch(console.error);
-		   if(!message.guild.channels.exists("name", "vchannel")){
+	if(!message.guild.channels.exists("name", "vchannel")){
 	           message.guild.createChannel('vchannel');
 	    return message.channel.sendMessage("", {embed: {
                    title: "Erreur:",
