@@ -94,12 +94,6 @@ bot.on('message', message => {
 }
     if (message.content == ("v!invite")){    
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
-}
-    if (message.content == ("v!channel")){
-            } else {
-		    (!message.guild.channels.exists("name", "vchannel")){
-	            message.guild.createChannel('vchannel');
-	            message.reply(`Le channel \`vchannel\` viens d'être créer.`).catch(console.error);	    	
 }	
 	
     if (message.content === prefix + "help"){
