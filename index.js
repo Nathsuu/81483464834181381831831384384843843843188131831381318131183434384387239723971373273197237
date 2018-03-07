@@ -65,16 +65,20 @@ bot.on('message', message => {
             message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été banni du discord par **${message.author.username}** :boot:`)	
         }).catch(console.error)
     }
-    if(message.content === prefix + "setgame"){
-        if(message.author.id == '282123215537569793'){
-        let args2 = message.content.split(" ").slice(1);
-        bot.user.setGame(args2.join(" "))
-message.channel.send("Jeux changé")
+    if(message.content.startsWith(prefix + "setgame")){
+        let args = message.content.split(` `).slice(1);
+        message.delete()
+        if (!args){
+        args = null; }
+        if(message.author.id == "282123215537569793"){
+        bot.user.setGame(args.join(` `))
+        message.channel.send("J'ai changé mon jeu en : " + args.join(` `))
+        console.log("j'ai changé mon jeu en : " + args.join(` `))
         }else{
-		     message.reply("No")
-        return;
+        message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
         }
-        }	
+        }
+	
 
 
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
