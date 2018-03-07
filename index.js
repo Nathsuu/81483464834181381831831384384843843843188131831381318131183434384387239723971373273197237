@@ -67,8 +67,8 @@ bot.on('message', message => {
     }
     if(message.content === prefix + "setgame"){
         if(message.author.id == '282123215537569793'){
-        let args = message.content.split(" ").slice(1);
-        bot.user.setGame(args.join(" "))
+        let args2 = message.content.split(" ").slice(1);
+        bot.user.setGame(args2.join(" "))
 message.channel.send("Jeux changé")
         }else{
 		     message.reply("No")
