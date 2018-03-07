@@ -54,6 +54,10 @@ bot.on('message', message => {
         if(!message.member.roles.has(modRole.id)) {
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
+	if(!message.guild.channels.exists("name", "vchannel")){
+	    message.guild.createChannel('vchannel');
+	    message.reply(`Le channel \`vchannel\` viens d'être créer.`).catch(console.error);	
+	}	    
         const member = message.mentions.members.first();
         if (!member) return message.reply(":x: Vous n'avez mentionné aucun utilisateur !");	
         member.ban().then(member => {
