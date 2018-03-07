@@ -24,7 +24,6 @@ bot.on('message', message => {
  
     if (command === "kick") {
         if (!message.member.permissions.has('KICK_MEMBERS'))
-        if(!message.member.roles.has(modRole.id)) {
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
         if(message.mentions.users.size === 0) {
