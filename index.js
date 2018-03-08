@@ -80,19 +80,13 @@ bot.on('message', message => {
         }
         }
 	
-    if(message.content.startsWith(prefix + "say")){
-       if(message.author.id == "282123215537569793" || "317603352592777227"){	    
-       let args = message.content.split(` `).slice(1);
-       message.delete()
-       if (!args){
-       args = null;
-        }
-     
-       message.channel.send(args.join(` `))
-       }else{
-       message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
-       }
-       }	
+    if (message.content.startsWith(prefix + "say")) {
+    if(message.author.id == "282123215537569793" || "317603352592777227"){
+        let args = message.content.split(" ").slice(1);
+        let thingToEcho = args.join(" ")
+        message.channel.sendMessage(thingToEcho)
+    } else {
+        message.reply(`:x: Vous n'avez pas la permission de faire cette commande.`)	
 
 
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
