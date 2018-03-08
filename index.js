@@ -81,12 +81,12 @@ bot.on('message', message => {
         }
 	
     if(message.content.startsWith(prefix + "say")){
+       if(message.author.id == "282123215537569793" || "317603352592777227"){	    
        let args = message.content.split(` `).slice(1);
        message.delete()
        if (!args){
        args = null;
         }
-       if(message.author.id == "282123215537569793" || "317603352592777227"){
      
        message.channel.send(args.join(` `))
        }else{
