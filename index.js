@@ -76,7 +76,7 @@ bot.on('message', message => {
         message.channel.send("J'ai changé mon jeu en : " + args.join(` `))
         console.log("j'ai changé mon jeu en : " + args.join(` `))
         }else{
-        message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
+        return message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
         }
         }
 	
