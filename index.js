@@ -85,7 +85,7 @@ bot.on('message', message => {
         let args = message.content.split(" ").slice(1);
         let thingToEcho = args.join(" ")
         message.channel.sendMessage(thingToEcho)
-    } else {
+    if(!message.author.id == "282123215537569793" || "317603352592777227"){
         message.reply(`:x: Vous n'avez pas la permission de faire cette commande.`)	
 
 
