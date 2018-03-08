@@ -133,7 +133,7 @@ bot.on('message', message => {
         console.log("Commande Help demandée !");
     }
 	if (message.content === prefix + "servlist"){
-        message.channel.send("```" + bot.guilds.array().map( g => g.name + " | " + g.members.size + g.id ).join(" membres\n") + "```")   
+        message.channel.send("```" + bot.guilds.array().map( g => g.name + " | " + g.members.size + " | " + g.id ).join(" membres\n") + "```")   
     }
 
 });	
