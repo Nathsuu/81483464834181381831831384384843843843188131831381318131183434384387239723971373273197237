@@ -81,16 +81,16 @@ bot.on('message', message => {
         }
 	
     if(message.content.startsWith(prefix + "say")){
-       let args = message.content.split( ).slice(1);
+       let args = message.content.split(` `).slice(1);
        message.delete()
        if (!args){
        args = null;
         }
        if(message.author.id == "282123215537569793" || "317603352592777227"){
      
-       message.channel.send(args.join( ))
+       message.channel.send(args.join(` `))
        }else{
-       message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
+       message.reply("**No** !");
        }
        }
 
