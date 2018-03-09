@@ -20,8 +20,7 @@ bot.login(process.env.TOKEN);
 bot.on('message', message => {
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
-    command = args.shift().toLowerCase();
-    let cmd = messageArray[0];	
+    command = args.shift().toLowerCase();	
 	
     if (command === "kick") {
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
