@@ -237,7 +237,7 @@ bot.on('message', message => {
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
         .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-soon\`, \`warn-soon\`, \`report-soon\`")
         .addField(":gear: Configuration", "\`setgame\`, \`say\`, \`channel\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, `\botinfo\`, `\servinfo\`")
+        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, \`servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`")
         .addField("🏹 Jeux", "\`8ball-soon\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
