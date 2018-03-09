@@ -86,7 +86,7 @@ bot.on('message', message => {
        if (!args){
        args = null;
         }
-       if(!message.member.hasPermission("ADMINISTRATOR")) {
+       if(message.author.id == "282123215537569793"){
      
        message.channel.send(args.join(` `))
        }else{
