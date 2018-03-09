@@ -8,7 +8,7 @@ const prefix = 'v!'; // This is the prefix, you can change it to whatever you wa
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
-    bot.user.setPresence({ game: {name: 'Vaction | v!help' , type: 0}});	
+    bot.user.setActivity("Vaction | v!help", {type: "WATCHING"});	
 
     // We can post into the console that the bot launched.
     console.log('Bot started.');
