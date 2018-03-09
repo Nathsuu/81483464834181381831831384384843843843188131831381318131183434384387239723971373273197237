@@ -76,7 +76,7 @@ bot.on('message', message => {
         message.channel.send("J'ai changé mon jeu en : " + args.join(` `))
         console.log("j'ai changé mon jeu en : " + args.join(` `))
         }else{
-        return message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
+        return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.");
         }
         }
 	
@@ -86,7 +86,7 @@ bot.on('message', message => {
        if (!args){
        args = null;
         }
-       if(message.author.id == "282123215537569793"){
+       if(!message.member.hasPermission("ADMINISTRATOR")) {
      
        message.channel.send(args.join(` `))
        }else{
