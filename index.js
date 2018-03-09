@@ -86,7 +86,7 @@ bot.on('message', message => {
        if (!args){
        args = null;
         }
-       if(message.author.id == "282123215537569793","317603352592777227"){
+       if(message.author.id == "282123215537569793"){
      
        message.channel.send(args.join(` `))
        }else{
