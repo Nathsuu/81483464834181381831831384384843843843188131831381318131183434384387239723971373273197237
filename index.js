@@ -1,7 +1,6 @@
 // Calling Packages
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-// This command requires the package 'fortnite'.
 
 // Global Settings
 const prefix = 'v!'; // This is the prefix, you can change it to whatever you want. 
@@ -22,7 +21,7 @@ bot.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();	
 	
-    if (command === "kick") {
+    if (command === "kickancien") {
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
@@ -48,24 +47,130 @@ bot.on('message', message => {
        if(message.content === "random"){
        message.channel.send("https://source.unsplash.com/random")
        }
-        
- 
-    if (command === "ban") {
-	if(!message.member.hasPermission("KICK_MEMBERS")) {	
-            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
-        }
-	if(!message.guild.channels.exists("name", "vchannel")){
-	    message.guild.createChannel('vchannel');
-	    message.reply(`Le channel \`vchannel\` viens d'être créer.`).catch(console.error);	
-	}	    
-        const member = message.mentions.members.first();
-        if (!member) return message.reply(":x: Vous n'avez mentionné aucun utilisateur !");	
-        member.ban().then(member => {
-            message.reply(`${member.user.username} a été banni :boot:`).catch(console.error);
-            message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été banni du discord par **${message.author.username}** :boot:`)	
-        }).catch(console.error)
-    }
 
+    if (command === "8ball") {
+    if(!args[2]) return message.reply("Donne moi une question");
+    let replies = ["Oui.", "Non.", "Je ne sais pas", "Redonne moi une question"];
+	    
+    let result = Math.floor((Math.random() * replies.lenght));
+    let question = args.slice(1).join(" ");
+	    
+    let ballembed = new Discord.RichEmbed()
+    .setAuthor(message.author.tag)
+    .setColor("#FF9900")
+    .addField("Question", question)
+    .addField("Réponse", replies[result]);
+    message.channel.send(ballembed);	
+    }	    
+	    
+	
+    if (command === "botinfo") {
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setDescription("Information du Bot")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Nom du Bot", bot.user.username)
+    .addField("Créer le", bot.user.createdAt);
+
+    return message.channel.send(botembed);
+  }	
+	
+  if (command === "servinfo") {	
+    let sicon = message.guild.iconURL;
+    let serverembed = new Discord.RichEmbed()
+    .setDescription("Information du Discord")
+    .setColor("#15f153")
+    .setThumbnail(sicon)
+    .addField("Nom du Disord", message.guild.name)
+    .addField("Créer le", message.guild.createdAt)
+    .addField("Vous avez rejoint", message.member.joinedAt)
+    .addField("Total Membre", message.guild.memberCount);
+
+    return message.channel.send(serverembed);
+  }	
+
+  if (command === "kick") {	
+    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur !");
+    let kReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MESSAGES\` pour faire ceci.");
+    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
+
+    let kickEmbed = new Discord.RichEmbed()
+    .setDescription("Kick")
+    .setColor("#e56b00")
+    .addField("Utilisateur Kick", `${kUser} avec l'ID ${kUser.id}`)
+    .addField("Kick par", `<@${message.author.id}> with ID ${message.author.id}`)
+    .addField("Kick de", message.channel)
+    .addField("Temps", message.createdAt)
+    .addField("Raison", kReason);
+
+    let kickChannel = message.guild.channels.find(`name`, "vchannel");
+    if(!kickChannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
+	  
+
+    message.guild.member(kUser).kick(kReason);
+    kickChannel.send(kickEmbed);
+
+    return;
+  }	
+	
+  if (command === "ban") {
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur !");
+    let bReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
+
+    let banEmbed = new Discord.RichEmbed()
+    .setDescription("Ban")
+    .setColor("#bc0000")
+    .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
+    .addField("Ban par", `<@${message.author.id}> avec l'ID ${message.author.id}`)
+    .addField("Ban de", message.channel)
+    .addField("Temps", message.createdAt)
+    .addField("Raison", bReason);
+
+    let incidentchannel = message.guild.channels.find(`name`, "vchannel");
+    if(!incidentchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
+
+    message.guild.member(bUser).ban(bReason);
+    incidentchannel.send(banEmbed);
+
+
+    return;
+  }	  
+
+  if (command === "report") {
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur !");
+    let rreason = args.join(" ").slice(22);
+
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("Report")
+    .setColor("#15f153")
+    .addField("Utilisateur Report", `${rUser} avec l'ID: ${rUser.id}`)
+    .addField("Report par", `${message.author} avec l'ID: ${message.author.id}`)
+    .addField("Channel", message.channel)
+    .addField("Temps", message.createdAt)
+    .addField("Raison", rreason);
+
+    let reportschannel = message.guild.channels.find(`name`, "vchannel");
+    if(!reportschannel) return message.channel.send("x:Impossible de trouver le canal \`vchannel\`.");
+
+
+    message.delete().catch(O_o=>{});
+    reportschannel.send(reportEmbed);
+
+    return;
+  }
+	
+    if(message.content.startsWith(prefix + "channel")){          
+    for (var name of args) {
+        message.guild.createChannel(name)
+    };
+  }	    
     if(message.content.startsWith(prefix + "setgame")){
         let args = message.content.split(" ").slice(1);
         message.delete()
@@ -90,7 +195,7 @@ bot.on('message', message => {
      
        message.channel.send(args.join(` `))
        }else{
-       return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.");
+       return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut pour le moment.");
        }
        }
 
@@ -128,11 +233,11 @@ bot.on('message', message => {
         .setColor('#E2FB00')
 	.setAuthor("Vaction | VacBot | French Bot", "https://image.noelshack.com/fichiers/2018/09/4/1519899146-17332945-138497173341771-651541625360613376-n-copie.jpg")
         .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
-        .addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Le bot dispose aussi d'un logs join et leave de serveur (pour que les modérateurs si retrouve plus rapidement) pour celà, il suffit d'avoir un channel s'appellant \`vchannel\`.")
+	.addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Le bot dispose aussi d'un logs pour que les modérateurs si retrouve plus rapidement pour celà, il suffit d'avoir un channel s'appellant \`vchannel\`.")
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
-        .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-soon\`, \`warn-soon\`,")
-        .addField(":gear: Configuration", "\`setgame\`, \`say\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`")
+        .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-soon\`, \`warn-soon\`, \`report-soon\`")
+        .addField(":gear: Configuration", "\`setgame\`, \`say\`, \`channel\`")
+        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, `\botinfo\`, `\servinfo\`")
         .addField("💋 NSFW", "\`e-girl\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
