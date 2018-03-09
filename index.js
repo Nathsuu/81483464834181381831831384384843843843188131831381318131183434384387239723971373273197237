@@ -78,9 +78,6 @@ bot.on('message', message => {
     .addField("Réponse", replies[result]);
     message.channel.send(ballembed);	 
     }
-
-    message.delete().catch(O_o=>{});
-    reportschannel.send(reportEmbed);	
 	
     if (command === "botinfo") {
     let bicon = bot.user.displayAvatarURL;
@@ -253,7 +250,7 @@ bot.on('message', message => {
         .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
 	.addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Le bot dispose aussi d'un logs pour que les modérateurs si retrouve plus rapidement pour celà, il suffit d'avoir un channel s'appellant \`vchannel\`.")
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
-        .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-soon\`, \`warn-soon\`, \`report\`")
+        .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-soon\`, \`warn-soon\`, \`report-soon\`")
         .addField(":gear: Configuration", "\`setgame\`, \`say\`, \`channel\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, `\botinfo\`, `\servinfo\`")
         .addField("💋 NSFW", "\`e-girl\`")	
