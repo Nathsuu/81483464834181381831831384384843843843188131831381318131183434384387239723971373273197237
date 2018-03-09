@@ -14,6 +14,22 @@ bot.on('ready', () => {
 
 });
 
+bot.on("channelCreate", async channel => {
+  console.log(`${channel.name} a été crée.`);
+	
+  let sChannel = channel.guild.channels.find(`name`, "vchannel");
+  sChannel.send(`${channel} a été crée`);
+
+});
+
+bot.on("channelDelete", async channel => {
+  console.log(`${channel.name} a été supprimé.`);
+	
+  let sChannel = channel.guild.channels.find(`name`, "vchannel");
+  sChannel.send(`${channel} a été supprimé`);
+
+});
+
 bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
@@ -21,7 +37,7 @@ bot.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();	
 	
-    if (command === "kickancien") {
+    if (command === "KickAncienPasTouche") {
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
@@ -47,7 +63,7 @@ bot.on('message', message => {
        if(message.content === "random"){
        message.channel.send("https://source.unsplash.com/random")
        }
-
+	
     if (command === "8ball") {
     if(!args[2]) return message.reply("Donne moi une question");
     let replies = ["Oui.", "Non.", "Je ne sais pas", "Redonne moi une question"];
@@ -60,9 +76,11 @@ bot.on('message', message => {
     .setColor("#FF9900")
     .addField("Question", question)
     .addField("Réponse", replies[result]);
-    message.channel.send(ballembed);	
-    }	    
-	    
+    message.channel.send(ballembed);	 
+    }
+
+    message.delete().catch(O_o=>{});
+    reportschannel.send(reportEmbed);	
 	
     if (command === "botinfo") {
     let bicon = bot.user.displayAvatarURL;
@@ -80,7 +98,7 @@ bot.on('message', message => {
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setDescription("Information du Discord")
-    .setColor("#15f153")
+    .setColor("#E2FB00")
     .setThumbnail(sicon)
     .addField("Nom du Disord", message.guild.name)
     .addField("Créer le", message.guild.createdAt)
@@ -99,7 +117,7 @@ bot.on('message', message => {
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("Kick")
-    .setColor("#e56b00")
+    .setColor("#E2FB00")
     .addField("Utilisateur Kick", `${kUser} avec l'ID ${kUser.id}`)
     .addField("Kick par", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kick de", message.channel)
@@ -125,7 +143,7 @@ bot.on('message', message => {
 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Ban")
-    .setColor("#bc0000")
+    .setColor("#E2FB00")
     .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
     .addField("Ban par", `<@${message.author.id}> avec l'ID ${message.author.id}`)
     .addField("Ban de", message.channel)
@@ -149,7 +167,7 @@ bot.on('message', message => {
 
     let reportEmbed = new Discord.RichEmbed()
     .setDescription("Report")
-    .setColor("#15f153")
+    .setColor("#E2FB00")
     .addField("Utilisateur Report", `${rUser} avec l'ID: ${rUser.id}`)
     .addField("Report par", `${message.author} avec l'ID: ${message.author.id}`)
     .addField("Channel", message.channel)
@@ -237,9 +255,8 @@ bot.on('message', message => {
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
         .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-soon\`, \`warn-soon\`, \`report-soon\`")
         .addField(":gear: Configuration", "\`setgame\`, \`say\`, \`channel\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, \`servlist\`, \`botinfo\`, `\servinfo\`")
-        .addField("💋 Nsfw", "\`e-girl\`")
-        .addField("🏹 Jeux", "\`8ball-soon\`")	
+        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, `\botinfo\`, `\servinfo\`")
+        .addField("💋 NSFW", "\`e-girl\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
