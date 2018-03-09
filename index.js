@@ -90,7 +90,7 @@ bot.on('message', message => {
      
        message.channel.send(args.join(` `))
        }else{
-       return message.reply(":x: Vous n'avez pas la permission de faire cette commande.");
+       return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.");
        }
        }
 
