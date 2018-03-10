@@ -23,10 +23,10 @@ bot.on("channelCreate", async channel => {
 });
 
 bot.on("channelDelete", async channel => {
-  console.log(`${channel.name} a été supprimé.`);
+  console.log(`Un channel a été supprimé.`);
 	
   let sChannel = channel.guild.channels.find(`name`, "vchannel");
-  sChannel.send(`${channel} a été supprimé`);
+  sChannel.send(`Un channel a été supprimé`);
 
 });
 
