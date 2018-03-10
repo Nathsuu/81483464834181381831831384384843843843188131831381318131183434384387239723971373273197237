@@ -169,7 +169,7 @@ bot.on('message', message => {
     .addField("Raison", rreason);
 
     let reportschannel = message.guild.channels.find(`name`, "vchannel");
-    if(!reportschannel) return message.channel.send("x:Impossible de trouver le canal \`vchannel\`.");
+    if(!reportschannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
 
 
     message.delete().catch(O_o=>{});
