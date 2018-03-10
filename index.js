@@ -60,8 +60,8 @@ bot.on('message', message => {
 	    message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été expulsé du discord par **${message.author.username}**`)
 	}).catch(console.error)	
     }
-       if(message.content === "v!cat"){
-       message.channel.send("http://random.cat/meow")
+       if(message.content === "v!random"){
+       message.channel.send("https://source.unsplash.com/random)
        }
 	
     if (command === "8ball") {
@@ -254,7 +254,7 @@ bot.on('message', message => {
         .addField(":gear: Configuration", "\`setgame\`, \`say\`, \`channel\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`")
-        .addField(":space_invader: Jeux", "\`8ball-soon\`, \`cat\`")	
+        .addField(":space_invader: Jeux", "\`8ball-soon\`, \`random\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
