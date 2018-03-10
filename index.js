@@ -164,7 +164,7 @@ bot.on('message', message => {
     .setColor("#E2FB00")
     .addField("Utilisateur Report", `${rUser} avec l'ID: ${rUser.id}`)
     .addField("Report par", `${message.author} avec l'ID: ${message.author.id}`)
-    .addField("Channel", message.channel)
+    .addField("Depuis le Channel", message.channel)
     .addField("Temps", message.createdAt)
     .addField("Raison", rreason);
 
