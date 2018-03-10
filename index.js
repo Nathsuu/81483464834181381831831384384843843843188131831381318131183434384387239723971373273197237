@@ -117,7 +117,7 @@ bot.on('message', message => {
     .setColor("#E2FB00")
     .addField("Utilisateur Kick", `${kUser} avec l'ID ${kUser.id}`)
     .addField("Kick par", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kick de", message.channel)
+    .addField("Kick depuis", message.channel)
     .addField("Temps", message.createdAt)
     .addField("Raison", kReason);
 
@@ -143,7 +143,7 @@ bot.on('message', message => {
     .setColor("#E2FB00")
     .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
     .addField("Ban par", `<@${message.author.id}> avec l'ID ${message.author.id}`)
-    .addField("Ban de", message.channel)
+    .addField("Ban depuis", message.channel)
     .addField("Temps", message.createdAt)
     .addField("Raison", bReason);
 
