@@ -15,10 +15,10 @@ bot.on('ready', () => {
 });
 
 bot.on("channelCreate", async channel => {
-  console.log(`${channel.name} a été crée.`);
+  console.log(`${channel.name} a été créé.`);
 	
   let sChannel = channel.guild.channels.find(`name`, "vchannel");
-  sChannel.send(`${channel} a été crée`);
+  sChannel.send(`${channel} a été créé`);
 
 });
 
