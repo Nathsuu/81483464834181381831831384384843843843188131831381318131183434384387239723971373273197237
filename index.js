@@ -253,7 +253,7 @@ bot.on('message', message => {
         .addField(":gear: Configuration", "\`setgame\`, \`say\`, \`channel\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`")
-        .addField(":space_invader: Jeux", "\`8ball-soon\`, \`random\`")	
+        .addField(":space_invader: Jeux", "\`8ball-soon\`, \`random-soon\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
