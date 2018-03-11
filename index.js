@@ -183,14 +183,15 @@ function doMagic8BallVoodoo() {
 
     return;
   }	
-  if (command === "calin") {
-  var help_embed = new Discord.RichEmbed()
-    .setTitle (":heart: | " + message.author.username + " Fait un calin a "  + getvalueof.username)
-    .setColor("#e60d0d")
-    .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif%22)
-    .setFooter (message.author.username + "⎜ m!calin")
-    message.channel.sendEmbed(help_embed)
-    }	
+
+var help_embed = new Discord.RichEmbed()
+             .setTitle (":heart: | " + message.author.username + " Fait un calin a " )
+             .setColor("#e60d0d")
+             .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
+             .setFooter (message.author.username ")
+             message.channel.sendEmbed(help_embed)
+
+     }
 
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
