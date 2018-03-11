@@ -74,12 +74,17 @@ bot.on('message', message => {
 	}).catch(console.error)	
     }
 	
-    if (command === "8ball") {
-    if(!args[2]) return message.reply("Donne moi une question");
-    let replies = ["Oui.", "Non.", "Je ne sais pas", "Redonne moi une question"];
-	    
-    let result = Math.floor((Math.random() * replies.lenght));
-    let question = args.slice(1).join(" ");
+function doMagic8BallVoodoo() {
+    var rand = ['Yes', 'No', 'Why are you even trying?', 'What do you think? NO', 'Maybe', 'Never', 'Yep'];
+
+    return rand[Math.floor(Math.random()*rand.length)];
+}
+
+// Later in the code:
+if(input == "v!8BALL")
+{
+    bot.reply(message, 'Your anwser is: ' + doMagic8BallVoodoo());
+}
 	    
     let ballembed = new Discord.RichEmbed()
     .setAuthor(message.author.tag)
