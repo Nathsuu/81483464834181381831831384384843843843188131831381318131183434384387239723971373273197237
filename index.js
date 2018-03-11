@@ -199,10 +199,10 @@ message.react("✅");
     message.channel.send("", { embed: { 
       color: 16758725,      
   fields: [{        
-    name: ':inbox_tray: **Input**',     
+    name: '📥 **Input**',     
       value: '\`\`\`' + code + '\`\`\`'         
 },{     
-      name: ':outbox_tray: **Output**', 
+      name: '📤 **Output**', 
           value: '\`\`\`' + str + '\`\`\`'  
         }], 
       footer: {     
@@ -210,15 +210,14 @@ message.react("✅");
 message.channel.send("", { embed: { 
       color: 16758725,      
   fields: [{        
-    name: ':inbox_tray: **Input**',     
+    name: '📥 **Input**',     
       value: '\`\`\`' + code + '\`\`\`'         
 },{     
-      name: ':outbox_tray: **Output**', 
+      name: '📤 **Output**', 
           value: '\`\`\`' + err + '\`\`\`'  
         }], 
       footer: {     
-    text: `request by @${message.author.username}`    }     }});    } }}
-}       
+    text: `request by @${message.author.username}`    }     }});    } }    
 	
 	
     if(message.content.startsWith(prefix + "say")){
