@@ -308,10 +308,10 @@ message.channel.send("", { embed: {
 	
     if(message.content.startsWith ("v!calin")) {
        var help_embed = new Discord.RichEmbed()
-       .setTitle (":heart: | " + message.author.username + " Fait un calin a " )
+       .setTitle (":heart: | " + message.author.username + " Fait un calin a " + message.user.username)
        .setColor("#e60d0d")
        .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
-       .setFooter (message.author.username)
+       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
        }	
