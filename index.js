@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 
 // Global Settings
 const prefix = 'v!'; // This is the prefix, you can change it to whatever you want. 
-
+var resultOpts = ["Result", "Exact result", "Decimal approximation"];
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 bot.on('ready', () => {
     bot.user.setActivity("Vaction | v!help", {type: "WATCHING"});	
