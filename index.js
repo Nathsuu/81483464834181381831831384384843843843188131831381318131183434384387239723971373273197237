@@ -80,7 +80,7 @@ function doMagic8BallVoodoo() {
     return rand[Math.floor(Math.random()*rand.length)];
 }
 
-    if (message.content === "!8ball") {
+    if (command === "8ball") {
     	var sayings = ["It is certain",
 										"It is decidedly so",
 										"Without a doubt",
