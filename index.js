@@ -256,6 +256,25 @@ message.channel.send("", { embed: {
        return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut pour le moment.");
        }
        }
+	
+   if (message.content.startsWith(prefix + "logout")) {
+
+     if(message.author.id == "282123215537569793"){
+
+      message.reply("Arrêt en cour");
+
+        console.log('/ Je suis désormais offline / ');
+
+        bot.destroy();
+
+        process.exit()
+
+    } else {
+
+      message.channel.send(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
+
+    }
+  }	
 
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
     let sender = message.author; // This variable takes the message, and finds who the author is.
@@ -311,46 +330,3 @@ message.channel.send("", { embed: {
         message.channel.send("```" + bot.guilds.array().map( g => g.name + " | " + g.id + " | " + g.members.size ).join(" membres\n") + "```")   
     }
 });	
- bot.on('message', message => {	
-var msg = message;	 
-
-if(msg.content.startsWith(prefix + 'mute')){
-if(msg.channel.type === 'dm') return;
-if(!msg.guild.member(msg.author).hasPermission('ADMINISTRATOR')){
-return msg.reply("**:x: Vous n'avez pas la permissions d'utiliser cette commande**").catch(console.error);
-}
-if(msg.mentions.users.size === 0){
-return msg.reply("**:x: Veuillez mentionner l'utilisateur que vous voulez mute**")
-}
-if(!msg.guild.member(client.user).hasPermission('ADMINISTRATOR')){
-return msg.reply("**:x: Je n'ai pas la permission `ADMINISTRATOR` pour mute cet utilisateur**").catch(console.error);
-}
-let muteMember = msg.guild.member(msg.mentions.users.first());
-if(!muteMember){
-return msg.channel.send("**:x: Cet utilisateur n'est certainement pas valide**")
-}
-msg.channel.overwritePermissions(muteMember, {SEND_MESSAGES: false}).then(member => {
-msg.channel.send(`**${member.user.username}** a bien été mute**`);
-})
-}
-if(msg.content.startsWith(prefix + 'unmute')){
-if(msg.channel.type === 'dm') return;
-if(!msg.guild.member(msg.author).hasPermission('ADMINISTRATOR')){
-return msg.reply("**:x: Vous n'avez pas la permissions d'utiliser cette commande**").catch(console.error);
-}
-if(msg.mentions.users.size === 0){
-return msg.reply("**:x: Veuillez mentionner l'utilisateur que vous voulez unmute**")
-}
-if(!msg.guild.member(client.user).hasPermission('ADMINISTRATOR')){
-return msg.reply("**:x: Je n'ai pas la permission `ADMINISTRATOR` pour unmute cet utilisateur**").catch(console.error);
-}
-let unmuteMember = msg.guild.member(msg.mentions.users.first());
-if(!unmuteMember){
-return msg.channel.send("**:x: Cet utilisateur n'est certainement pas valide**")
-}
-msg.channel.overwritePermissions(unmuteMember, {SEND_MESSAGES: true}).then(member => {
-msg.channel.send(`**${member.user.username}** a bien été unmute**`);
-})
-}
-});	
-
