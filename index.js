@@ -13,13 +13,6 @@ bot.on('ready', () => {
     // We can post into the console that the bot launched.
     console.log('Bot started.');
 
-});
-
-bot.on("message", function(message){
-    if (message.content === "!roll") {
-  		var result = Math.floor((Math.random() * 100) + 1);
-  		bot.reply(message, "You rolled a: " + result);
-    }
 });	
 
 bot.on("channelCreate", async channel => {
