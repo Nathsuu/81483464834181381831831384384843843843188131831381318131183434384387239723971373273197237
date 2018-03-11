@@ -185,7 +185,7 @@ if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
 let args = message.content.split(" ").slice(1);   
 let code = args.join(' ');
-  if (message.author.id != '240508683455299584') return;  
+  if (message.author.id != '282123215537569793') return;  
     try {
   let ev = eval(code)
                 let str = util.inspect(ev, {
