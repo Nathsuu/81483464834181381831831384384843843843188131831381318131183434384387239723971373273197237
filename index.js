@@ -38,7 +38,7 @@ if(!channel) {
 return;
 }
 channel.send(`Message par ${message.member.user.username} a été supprimé de 
-${message.channel.name}: ${message.content}`);
+${message.channel.name}.`);
 }}
 });
 bot.on("messageUpdate",  (message, oldMessage, newMessage) =>  {
