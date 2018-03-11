@@ -179,68 +179,6 @@ bot.on('message', message => {
     return;
   }	
 	
-function eval(message,prefix,client){
-
-if (message.content.startsWith(prefix + "eval")) {
-var util = require("util");
-let args = message.content.split(" ").slice(1);   
-let code = args.join(' ');
-  if (message.author.id != '282123215537569793') return;  
-    try {
-  let ev = eval(code)
-                let str = util.inspect(ev, {
-                    depth: 1
-                })
-                 str = `${str.replace(new RegExp(`${client.token}|${token}`, "g"), "nop?")}`;
-                if(str.length > 1800) {
-                    str = str.substr(0, 1800)
-                    str = str + "..."
-                }
-                message.delete(); 
-message.react("✅");
-    message.channel.send("", { embed: { 
-      color: 16758725,      
-  fields: [{        
-    name: ':inbox_tray: **Input**',     
-      value: '\`\`\`' + code + '\`\`\`'         
-},{     
-      name: ':outbox_tray: **Output**', 
-          value: '\`\`\`' + str + '\`\`\`'  
-        }], 
-      footer: {     
-    text: `request by @${message.author.username}`    }     }});} catch (err) {   message.react("❌");
-message.channel.send("", { embed: { 
-      color: 16758725,      
-  fields: [{        
-    name: ':inbox_tray: **Input**',     
-      value: '\`\`\`' + code + '\`\`\`'         
-},{     
-      name: ':outbox_tray: **Output**', 
-          value: '\`\`\`' + err + '\`\`\`'  
-        }], 
-      footer: {     
-    text: `request by @${message.author.username}`    }     }});    } }}
-    module.exports = eval	
-	
-    if(message.content.startsWith(prefix + "channel")){          
-    for (var name of args) {
-        message.guild.createChannel(name)
-    };
-  }	    
-    if(message.content.startsWith(prefix + "setgame")){
-        let args = message.content.split(" ").slice(1);
-        message.delete()
-        if (!args){
-        args = null; }
-        if(message.author.id == "282123215537569793"){
-        bot.user.setGame(args.join(" "))
-        message.channel.send("J'ai changé mon jeu en : " + args.join(` `))
-        console.log("j'ai changé mon jeu en : " + args.join(` `))
-        }else{
-        return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.");
-        }
-        }
-	
     if(message.content.startsWith(prefix + "say")){
        let args = message.content.split(` `).slice(1);
        message.delete()
