@@ -230,7 +230,7 @@ message.react("✅");
           value: '\`\`\`' + str + '\`\`\`'  
         }], 
       footer: {     
-    text: `request by @${message.author.username}`    }     }});} catch (err) {   message.react("❌");
+    text: `Demande par @${message.author.username}`    }     }});} catch (err) {   message.react("❌");
 message.channel.send("", { embed: { 
       color: 16758725,      
   fields: [{        
@@ -241,7 +241,7 @@ message.channel.send("", { embed: {
           value: '\`\`\`' + err + '\`\`\`'  
         }], 
       footer: {     
-    text: `request by @${message.author.username}`    }     }});    } }    
+    text: `Demande par @${message.author.username}`    }     }});    } }    
 	
 	
     if(message.content.startsWith(prefix + "say")){
