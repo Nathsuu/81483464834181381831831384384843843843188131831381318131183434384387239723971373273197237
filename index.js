@@ -184,15 +184,6 @@ function doMagic8BallVoodoo() {
     return;
   }	
 
-var help_embed = new Discord.RichEmbed()
-             .setTitle (":heart: | " + message.author.username + " Fait un calin a " )
-             .setColor("#e60d0d")
-             .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
-             .setFooter (message.author.username ")
-             message.channel.sendEmbed(help_embed)
-
-     }
-
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
 let args = message.content.split(" ").slice(1);   
@@ -320,4 +311,14 @@ message.channel.send("", { embed: {
 	if (message.content === prefix + "servlist"){
         message.channel.send("```" + bot.guilds.array().map( g => g.name + " | " + g.id + " | " + g.members.size ).join(" membres\n") + "```")   
     }
+	
+   if(message.content.startsWith ("v!calin")) {
+var help_embed = new Discord.RichEmbed()
+             .setTitle (":heart: | " + message.author.username + " Fait un calin a " )
+             .setColor("#e60d0d")
+             .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
+             .setFooter (message.author.username ")
+             message.channel.sendEmbed(help_embed)
+
+     }	
 });	
