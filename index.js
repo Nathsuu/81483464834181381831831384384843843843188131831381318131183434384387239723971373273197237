@@ -271,7 +271,7 @@ message.channel.send("", { embed: {
 	.addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celuis ci est dans les rôles. Le bot dispose aussi d'un logs pour que les modérateurs si retrouve plus rapidement pour celà, il suffit d'avoir un channel s'appellant \`vchannel\`.")
         .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")	
         .addField(":hammer_pick: Modération", "\`clear-soon\`, \`ban\`, \`kick\`, \`mute-soon\`, \`warn-soon\`, \`report\`")
-        .addField(":gear: Configuration", "\`setgame\`, \`say\`, \`channel\`")
+        .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\, \`eval\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`")
         .addField(":space_invader: Jeux", "\`8ball-soon\`, \`random-soon\`")	
