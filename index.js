@@ -85,14 +85,7 @@ if(input == "v!8BALL")
 {
     bot.reply(message, 'Your anwser is: ' + doMagic8BallVoodoo());
 }
-	    
-    let ballembed = new Discord.RichEmbed()
-    .setAuthor(message.author.tag)
-    .setColor("#FF9900")
-    .addField("Question", question)
-    .addField("Réponse", replies[result]);
-    message.channel.send(ballembed);	 
-    }
+	  
 	
     if (command === "botinfo") {
     let bicon = bot.user.displayAvatarURL;
