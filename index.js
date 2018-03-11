@@ -177,7 +177,7 @@ bot.on('message', message => {
 
     return;
   }	  
-
+var msg = message;
 if(msg.content.startsWith(prefix + 'mute')){
 if(msg.channel.type === 'dm') return;
 if(!msg.guild.member(msg.author).hasPermission('ADMINISTRATOR')){
