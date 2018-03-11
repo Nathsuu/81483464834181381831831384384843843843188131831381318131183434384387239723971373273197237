@@ -317,7 +317,7 @@ message.channel.send("", { embed: {
        .setTitle (":heart: | " + message.author.username + " Fait un calin a " )
        .setColor("#e60d0d")
        .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
-       .setFooter (message.author.username ")
+       .setFooter (message.author.username)
        message.channel.sendEmbed(help_embed)
 
        }	
