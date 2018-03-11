@@ -183,7 +183,7 @@ function doMagic8BallVoodoo() {
 
     return;
   }	
-  if (command === "report") {
+  if (command === "calin") {
   var help_embed = new Discord.RichEmbed()
     .setTitle (":heart: | " + message.author.username + " Fait un calin a "  + getvalueof.username)
     .setColor("#e60d0d")
