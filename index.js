@@ -218,6 +218,7 @@ message.channel.send("", { embed: {
         }], 
       footer: {     
     text: `request by @${message.author.username}`    }     }});    } }}
+    }   
 	
 	
     if(message.content.startsWith(prefix + "say")){
