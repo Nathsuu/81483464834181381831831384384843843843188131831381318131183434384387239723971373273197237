@@ -176,7 +176,7 @@ bot.on('message', message => {
     reportschannel.send(reportEmbed);
 
     return;
-  }
+  }	
 	
     if(message.content.startsWith(prefix + "channel")){          
     for (var name of args) {
