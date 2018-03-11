@@ -124,6 +124,7 @@ bot.on('message', message => {
 
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
+	  kUser.kick()
 
     return;
   }	
@@ -149,7 +150,7 @@ bot.on('message', message => {
 
     message.guild.member(bUser).ban(bReason);
     incidentchannel.send(banEmbed);
-
+  bUser.ban()
 
     return;
   }	  
