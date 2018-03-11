@@ -217,8 +217,7 @@ message.channel.send("", { embed: {
           value: '\`\`\`' + err + '\`\`\`'  
         }], 
       footer: {     
-    text: `request by @${message.author.username}`    }     }});    } }}
-    }   
+    text: `request by @${message.author.username}`    }     }});    } }})  
 	
 	
     if(message.content.startsWith(prefix + "say")){
