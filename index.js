@@ -308,9 +308,39 @@ message.channel.send("", { embed: {
 	
     if(message.content.startsWith ("v!calin")) {
        var help_embed = new Discord.RichEmbed()
-       .setTitle (":heart: | " + message.author.username + " Fait un calin ")
+       .setTitle (":heart: | " + message.author.username + " fait un calin ")
        .setColor("#e60d0d")
        .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
+       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       message.channel.sendEmbed(help_embed)
+
+       }
+	
+    if(message.content.startsWith ("v!claque")) {
+       var help_embed = new Discord.RichEmbed()
+       .setTitle (":raised_hand: | " + message.author.username + " claque ")
+       .setColor("#e60d0d")
+       .setImage("https://cdn.weeb.sh/images/rJvR71KPb.gif")
+       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       message.channel.sendEmbed(help_embed)
+
+       }
+	
+    if(message.content.startsWith ("v!tire")) {
+       var help_embed = new Discord.RichEmbed()
+       .setTitle (":gun: | " + message.author.username + " tire ")
+       .setColor("#e60d0d")
+       .setImage("https://cdn.discordapp.com/attachments/419621640180334602/420298999543758858/SyunmEYiW.gif")
+       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       message.channel.sendEmbed(help_embed)
+
+       }
+	
+    if(message.content.startsWith ("v!bisou")) {
+       var help_embed = new Discord.RichEmbed()
+       .setTitle (":kiss: | " + message.author.username + " donne un bisou ")
+       .setColor("#e60d0d")
+       .setImage("https://cdn.weeb.sh/images/SJrBZrMBz.gif")
        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
