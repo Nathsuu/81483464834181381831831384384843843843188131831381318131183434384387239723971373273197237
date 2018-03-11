@@ -73,12 +73,6 @@ bot.on('message', message => {
 	    message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été expulsé du discord par **${message.author.username}**`)
 	}).catch(console.error)	
     }
-	
-function doMagic8BallVoodoo() {
-    var rand = ['Yes', 'No', 'Why are you even trying?', 'What do you think? NO', 'Maybe', 'Never', 'Yep'];
-
-    return rand[Math.floor(Math.random()*rand.length)];
-}
 	  
 	
     if (command === "botinfo") {
