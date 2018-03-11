@@ -179,8 +179,6 @@ bot.on('message', message => {
     return;
   }	
 
-function eval(message,prefix,client){
-
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
 let args = message.content.split(" ").slice(1);   
@@ -220,7 +218,7 @@ message.channel.send("", { embed: {
         }], 
       footer: {     
     text: `request by @${message.author.username}`    }     }});    } }}
-    module.exports = eval	
+	
 	
     if(message.content.startsWith(prefix + "say")){
        let args = message.content.split(` `).slice(1);
