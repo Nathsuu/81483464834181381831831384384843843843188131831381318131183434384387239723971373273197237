@@ -292,7 +292,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\`, \`eval\`, \`logout\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`")
-        .addField(":space_invader: Jeux", "\`8ball-soon\`, \`random-soon\`")	
+        .addField(":space_invader: Jeux - Autre", "\`8ball-soon\`, \`random-soon\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
@@ -336,7 +336,7 @@ message.channel.send("", { embed: {
 
        }
 	
-    if(message.content.startsWith ("v!bisou")) {
+    if(message.content.startsWith ("v!bisous")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":kiss: | " + message.author.username + " donne un bisou ")
        .setColor("#e60d0d")
