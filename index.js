@@ -41,7 +41,8 @@ bot.on("message", function(message){
 
 			var result = Math.floor((Math.random() * sayings.length) + 0);
 			bot.reply(message, sayings[result]);
-    }	
+    }
+});	
 
 bot.on("channelCreate", async channel => {
   console.log(`${channel.name} a été créé.`);
