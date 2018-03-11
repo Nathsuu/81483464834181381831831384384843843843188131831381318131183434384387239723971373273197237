@@ -312,6 +312,7 @@ message.channel.send("", { embed: {
     }
 });	
  bot.on('message', message => {	
+var msg = message;	 
 
 if(msg.content.startsWith(prefix + 'mute')){
 if(msg.channel.type === 'dm') return;
