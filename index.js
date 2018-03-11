@@ -40,17 +40,6 @@ return;
 channel.send(`Message par ${message.member.user.username} a été supprimé de 
 ${message.channel.name}.`);
 }}
-});
-bot.on("messageUpdate",  (message, oldMessage, newMessage) =>  {
-if(!message.author.bot){
-if(message.guild){
-const channel = message.guild.channels.find('name', 'vchannel');
-if(!channel) {
-return;
-}
-channel.send(`Message par ${message.author.username} a edité
-${message.content} à ${oldMessage}`);
-}}
 });	
 
 bot.login(process.env.TOKEN);
