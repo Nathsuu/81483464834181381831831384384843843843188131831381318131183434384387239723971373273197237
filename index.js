@@ -37,7 +37,7 @@ const channel = message.guild.channels.find('name', 'vchannel');
 if(!channel) {
 return;
 }
-channel.send(`Message par ${message.member.user.username} a été supprimé de 
+channel.send(`Un message de ${message.member.user.username} a été supprimé de 
 ${message.channel.name}.`);
 }}
 });	
