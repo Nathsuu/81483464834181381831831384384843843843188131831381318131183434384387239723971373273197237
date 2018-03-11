@@ -338,7 +338,7 @@ message.channel.send("", { embed: {
 	
     if(message.content.startsWith ("v!bisous")) {
        var help_embed = new Discord.RichEmbed()
-       .setTitle (":kiss: | " + message.author.username + " donne un bisou ")
+       .setTitle (":kiss: | " + message.author.username + " donne un bisous ")
        .setColor("#e60d0d")
        .setImage("https://cdn.weeb.sh/images/SJrBZrMBz.gif")
        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
