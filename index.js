@@ -6,13 +6,20 @@ const bot = new Discord.Client();
 const prefix = 'v!'; // This is the prefix, you can change it to whatever you want. 
 
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
-bot.on('ready', () => {
-    bot.user.setActivity("Vaction | v!help", {type: "WATCHING"});	
 
-    // We can post into the console that the bot launched.
-    console.log('Bot started.');
 
-});	
+bot.on("ready", () => {
+  setInterval(function(){
+    guilds = client.guilds.map(r => r.name);
+    lecture = Math.floor((Math.random() * guilds.length) + 1);
+    bot.user.setPresence({
+      activity:{
+        name: `${guilds[lecture]}`, 
+        type: 0
+      }
+    });
+  }, 60000);  
+});
 
 bot.on("channelCreate", async channel => {
   console.log(`${channel.name} a été créé.`);
