@@ -8,7 +8,7 @@ const prefix = 'v!'; // This is the prefix, you can change it to whatever you wa
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 
 
-bot.on("ready", () => {
+bot.on('ready', () => {
   setInterval(function(){
     guilds = ["Vaction | v!help", "v!help | French Bot", "Vaction | By WinDino"]
     lecture = Math.floor((Math.random() * guilds.length) + 1);
