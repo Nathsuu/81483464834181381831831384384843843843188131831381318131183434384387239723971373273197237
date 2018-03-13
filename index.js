@@ -15,7 +15,7 @@ bot.on("ready", () => {
     bot.user.setPresence({
       activity:{
         name: `${guilds[lecture]}`, 
-        type: 0
+        type: 3
       }
     });
   }, 60000);  
