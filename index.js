@@ -10,7 +10,7 @@ const prefix = 'v!'; // This is the prefix, you can change it to whatever you wa
 
 bot.on("ready", () => {
   setInterval(function(){
-    guilds = client.guilds.map(r => r.name);
+    guilds = bot.guilds.map(r => r.name);
     lecture = Math.floor((Math.random() * guilds.length) + 1);
     bot.user.setPresence({
       activity:{
