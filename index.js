@@ -95,7 +95,7 @@ bot.on('message', message => {
 
   if (command === "kick") {	
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur !");
+    if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");
     let kReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MESSAGES\` pour faire ceci.");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
@@ -122,7 +122,7 @@ bot.on('message', message => {
 	
   if (command === "ban") {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur !");
+    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
     let bReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
@@ -148,7 +148,7 @@ bot.on('message', message => {
 	
   if (command === "report") {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur !");
+    if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`");
     let rreason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
@@ -171,7 +171,7 @@ bot.on('message', message => {
   }
 	
   if (command === "8ball") {
-  if(!args[2]) return message.reply(":x: Donne moi une question");
+  if(!args[2]) return message.reply(":x: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
 
   let result = Math.floor((Math.random() * replies.length));
@@ -187,7 +187,7 @@ bot.on('message', message => {
   }
 	
   if (command === "flip") {
-  if(!args[0]) return message.reply(":x: Vous n'avez pas mentionné Pile ou Face !");	  
+  if(!args[0]) return message.reply(":x: Vous n'avez pas mentionné Pile ou Face ! Exemple : \`v!flip Face\`");	  
   let replies = ["Pile.", "Face."];
 
   let result = Math.floor((Math.random() * replies.length));
@@ -316,7 +316,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\`, \`eval\`, \`logout\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`")
-        .addField(":space_invader: Jeux - Autres", "\`8ball\`, \`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`")	
+        .addField(":space_invader: Jeux - Autres", "\`8ball\`, \`flip\`, \`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
@@ -382,7 +382,7 @@ message.channel.send("", { embed: {
 	
     if(message.content.startsWith ("v!e-girl")) {
        var help_embed = new Discord.RichEmbed()
-       .setTitle (":revolving_hearts: | e-girl ")
+       .setTitle (":revolving_hearts: | e-girl | Encore Soon ")
        .setColor("#E2FB00")
        .setImage("https://78.media.tumblr.com/93bc8521787c0b1dfe39293a99d18c4d/tumblr_ora9etSmp91tvq1hxo1_1280.jpg")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
