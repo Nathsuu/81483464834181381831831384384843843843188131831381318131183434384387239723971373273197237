@@ -35,18 +35,6 @@ bot.on("channelDelete", async channel => {
   let sChannel = channel.guild.channels.find(`name`, "vchannel");
   sChannel.send(`Un channel a été supprimé`);
 
-});
-
-bot.on("messageDelete",  function(message) {
-if(!message.author.bot){
-if(message.guild){
-const channel = message.guild.channels.find('name', 'vchannel');
-if(!channel) {
-return;
-}
-channel.send(`Un message de ${message.member.user.username} a été supprimé de 
-${message.channel.name}.`);
-}}
 });	
 
 bot.login(process.env.TOKEN);
