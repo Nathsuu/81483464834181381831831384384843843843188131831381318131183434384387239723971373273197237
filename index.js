@@ -169,6 +169,23 @@ bot.on('message', message => {
 
     return;
   }
+	
+  if (command === "8ball") {
+  if(!args[2]) return message.reply(":x: Donne moi une question");
+  let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
+
+  let result = Math.floor((Math.random() * replies.length));
+  let question = args.slice(1).join(" ");
+	
+  var help_embed = new Discord.RichEmbed()
+  .setAuthor("Vaction | VacBot | French Bot", "https://image.noelshack.com/fichiers/2018/09/4/1519899146-17332945-138497173341771-651541625360613376-n-copie.jpg")
+  .setColor("#E2FB00")
+  .addField("Question", question)
+  .addField("Réponse", replies[result])
+  .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL);
+  message.channel.sendEmbed(help_embed)
+	
+	
 		
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
