@@ -13,7 +13,7 @@ bot.on('ready', () => {
     guilds = ["Vaction | v!help", "v!help | French Bot", "Vaction | By WinDino"]
     lecture = Math.floor((Math.random() * guilds.length) + 1);
     bot.user.setPresence({
-      activity:{
+      game:{
         name: `${guilds[lecture]}`, 
         type: 3
       }
