@@ -193,12 +193,16 @@ bot.on('message', message => {
   let question = args.slice(0).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor("Vaction | Flip")
+  .setAuthor("💸 | Vaction | Flip")
   .setColor("#E2FB00")
   .addField("Votre pari", question)
   .addField("Réponse", replies[result])
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
+  }
+	
+  if (command === "flip") {
+  return message.channel.send(":x: Vous n'avez pas mentionné Pile ou Face !");
   }	
 	
 		
