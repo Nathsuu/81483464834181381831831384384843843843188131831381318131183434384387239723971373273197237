@@ -359,7 +359,6 @@ message.channel.send("", { embed: {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":revolving_hearts: | e-girl ")
        .setColor("#E2FB00")
-       .setImage("https://cdn.discordapp.com/attachments/395537994800693250/423232416392413220/04590.jpg")
        .setImage("https://78.media.tumblr.com/93bc8521787c0b1dfe39293a99d18c4d/tumblr_ora9etSmp91tvq1hxo1_1280.jpg")
        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
