@@ -187,7 +187,7 @@ bot.on('message', message => {
   }
 	
   if (command === "flip") {
-  if(!args[1]) return message.reply(":x: Vous n'avez pas mentionné Pile ou Face !");	  
+  if(!args[0]) return message.reply(":x: Vous n'avez pas mentionné Pile ou Face !");	  
   let replies = ["Pile.", "Face."];
 
   let result = Math.floor((Math.random() * replies.length));
