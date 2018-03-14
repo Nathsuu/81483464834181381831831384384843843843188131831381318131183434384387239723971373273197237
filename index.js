@@ -37,8 +37,7 @@ bot.on("channelDelete", async channel => {
 
 bot.login(process.env.TOKEN);
 
-bot.on('message', message => {	
-	
+bot.on('message', message => {
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();	
