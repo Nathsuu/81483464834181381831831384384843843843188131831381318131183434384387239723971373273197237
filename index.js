@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 
 // Global Settings
 const prefix = 'v!'; // This is the prefix, you can change it to whatever you want. 
-
+var randnum = 0;
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
 
 
@@ -39,12 +39,7 @@ bot.on("channelDelete", async channel => {
 
 bot.login(process.env.TOKEN);
 
-bot.on('message', message => {
-    function random(min, max) {
-        min = Math.ceil(0);
-        max = Math.floor(3);
-        randnum = Math.floor(Math.random() * (max - min +1) + min);
-     }		
+bot.on('message', message => {	
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -177,7 +172,11 @@ bot.on('message', message => {
 
     return;
   }
-	
+    function random(min, max) {
+        min = Math.ceil(0);
+        max = Math.floor(3);
+        randnum = Math.floor(Math.random() * (max - min +1) + min);
+     }		
      if (command === "e-girl") {	    
         if (randnum ==1){
 	    var help_embed = new Discord.RichEmbed()
