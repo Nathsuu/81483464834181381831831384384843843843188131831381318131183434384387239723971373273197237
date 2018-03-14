@@ -18,7 +18,7 @@ bot.on('ready', () => {
         type: 3
       }
     });
-  }, 60000);  
+  }, 80000);  
 });
 
 bot.on("channelCreate", async channel => {
