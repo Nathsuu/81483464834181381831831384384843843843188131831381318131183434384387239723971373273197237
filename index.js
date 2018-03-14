@@ -301,7 +301,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\`, \`eval\`, \`logout\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`")
-        .addField(":space_invader: Jeux - Autres", "\`8ball-soon\`, \`random-soon\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`")	
+        .addField(":space_invader: Jeux - Autres", "\`8ball\`, \`random-soon\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`")	
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
@@ -354,7 +354,17 @@ message.channel.send("", { embed: {
        message.channel.sendEmbed(help_embed)
 
        }
-	     
+	
+    if(message.content.startsWith ("v!random")) {
+       var help_embed = new Discord.RichEmbed()
+       .setTitle (":footprints: | Random "))
+       .setColor("#E2FB00")
+       .setImage("https://source.unsplash.com/random")
+       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       message.channel.sendEmbed(help_embed)
+
+       }
+	
     if(message.content.startsWith ("v!e-girl")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":revolving_hearts: | e-girl ")
