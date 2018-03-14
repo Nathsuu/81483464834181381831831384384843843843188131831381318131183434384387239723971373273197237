@@ -325,7 +325,7 @@ message.channel.send("", { embed: {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":gun: | " + message.author.username + " tire ")
        .setColor("#e60d0d")
-       .setImage("https://cdn.discordapp.com/attachments/419621640180334602/420298999543758858/SyunmEYiW.gif")
+       .setImage("http://image.noelshack.com/fichiers/2017/34/5/1503625646-a8c8c726-iloveimg-cropped-1.gif")
        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
