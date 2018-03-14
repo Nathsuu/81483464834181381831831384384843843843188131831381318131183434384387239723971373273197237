@@ -6,6 +6,11 @@ const bot = new Discord.Client();
 const prefix = 'v!'; // This is the prefix, you can change it to whatever you want. 
 var randnum = 0;
 // Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
+function random(min, max) {
+    min = Math.ceil(0);
+    max = Math.floor(3);
+    randnum = Math.floor(Math.random() * (max - min +1) + min);
+}
 
 
 bot.on('ready', () => {
@@ -39,11 +44,6 @@ bot.on("channelDelete", async channel => {
 
 bot.login(process.env.TOKEN);
 
-function random(min, max) {
-    min = Math.ceil(0);
-    max = Math.floor(3);
-    randnum = Math.floor(Math.random() * (max - min +1) + min);
-}
 bot.on('message', message => {	
 	
     let command = message.content.split(" ")[0];
