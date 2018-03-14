@@ -184,7 +184,7 @@ bot.on('message', message => {
   .addField("Réponse", replies[result])
   .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
-	
+  }	
 	
 		
 if (message.content.startsWith(prefix + "eval")) {
