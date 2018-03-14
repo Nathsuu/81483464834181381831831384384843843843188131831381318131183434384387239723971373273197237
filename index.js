@@ -359,7 +359,7 @@ message.channel.send("", { embed: {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":footprints: | Random ")
        .setColor("#E2FB00")
-       .setImage("http://writingexercises.co.uk/random-images.php")
+       .setImage("https://source.unsplash.com/user/erondu/1600x900")
        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
