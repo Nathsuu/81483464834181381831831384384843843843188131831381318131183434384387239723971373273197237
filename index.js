@@ -340,11 +340,11 @@ message.channel.send("", { embed: {
        message.channel.sendEmbed(help_embed)
 
        }
-function random(min, max) {
-    min = Math.ceil(0);
-    max = Math.floor(3);
-    randnum = Math.floor(Math.random() * (max - min +1) + min);
-}	
+    function random(min, max) {
+        min = Math.ceil(0);
+        max = Math.floor(3);
+        randnum = Math.floor(Math.random() * (max - min +1) + min);
+        }	
     if (message.content === prefix + "e-girl"){		    
         if (randnum ==1){
 	    var help_embed = new Discord.RichEmbed()
