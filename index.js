@@ -1,10 +1,10 @@
-// Calling Packages
+
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-// Global Settings
-const prefix = 'v!'; // This is the prefix, you can change it to whatever you want. 
-// Listener Event: Runs whenever the bot sends a ready event (when it first starts for example)
+
+const prefix = 'v!'; 
+
 
 bot.on('ready', () => {
   setInterval(function(){
@@ -36,7 +36,7 @@ bot.on("channelDelete", async channel => {
 });	
 
 bot.login(process.env.TOKEN);
-});
+
 bot.on('message', message => {
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -347,5 +347,5 @@ message.channel.send("", { embed: {
        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
-       }	     
+    }	     
 });	
