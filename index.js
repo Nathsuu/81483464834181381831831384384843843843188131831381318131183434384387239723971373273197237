@@ -187,7 +187,19 @@ bot.on('message', message => {
   }
 	
   if (command === "flip") {
-  return (Math.floor(Math.random() * 2) == 0) ? 'heads' : 'tails';
+  if(!args[2]) return message.reply(":x: Pile ou Face ?");
+  let replies = ["Pile.", "Face."];
+
+  let result = Math.floor((Math.random() * replies.length));
+  let question = args.slice(0).join(" ");
+	
+  var help_embed = new Discord.RichEmbed()
+  .setAuthor("Vaction | Flip")
+  .setColor("#E2FB00")
+  .addField("Pile ou Face", question)
+  .addField("Réponse", replies[result])
+  .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL);
+  message.channel.sendEmbed(help_embed)
   }	
 	
 		
