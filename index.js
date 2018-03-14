@@ -11,7 +11,7 @@ const prefix = 'v!'; // This is the prefix, you can change it to whatever you wa
 bot.on('ready', () => {
   setInterval(function(){
     guilds = ["Vaction | v!help", "Vaction | v!help | French Bot", "Vaction | By WinDino"]
-    lecture = Math.floor((Math.random() * guilds.length) + 1);
+    lecture = Math.floor((Math.random() * guilds.length));
     bot.user.setPresence({
       game:{
         name: `${guilds[lecture]}`, 
