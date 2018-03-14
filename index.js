@@ -178,11 +178,11 @@ bot.on('message', message => {
   let question = args.slice(0).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor("Vaction | 8ball")
+  .setAuthor("🎱 | Vaction | 8ball")
   .setColor("#E2FB00")
   .addField("Question", question)
   .addField("Réponse", replies[result])
-  .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL);
+  .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
   }
 	
@@ -193,11 +193,11 @@ bot.on('message', message => {
   let question = args.slice(0).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor("Vaction | Flip")
+  .setAuthor("💸 | Vaction | Flip")
   .setColor("#E2FB00")
-  .addField("Pile ou Face", question)
+  .addField("Votre pari", question)
   .addField("Réponse", replies[result])
-  .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL);
+  .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
   }	
 	
@@ -335,7 +335,7 @@ message.channel.send("", { embed: {
        .setTitle (":heart: | " + message.author.username + " fait un calin ")
        .setColor("#E2FB00")
        .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
-       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
        }
@@ -345,7 +345,7 @@ message.channel.send("", { embed: {
        .setTitle (":raised_hand: | " + message.author.username + " claque ")
        .setColor("#E2FB00")
        .setImage("https://cdn.weeb.sh/images/rJvR71KPb.gif")
-       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
        }
@@ -355,7 +355,7 @@ message.channel.send("", { embed: {
        .setTitle (":gun: | " + message.author.username + " tire ")
        .setColor("#E2FB00")
        .setImage("http://image.noelshack.com/fichiers/2017/34/5/1503625646-a8c8c726-iloveimg-cropped-1.gif")
-       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
        }
@@ -365,7 +365,7 @@ message.channel.send("", { embed: {
        .setTitle (":kiss: | " + message.author.username + " donne un bisous ")
        .setColor("#E2FB00")
        .setImage("https://cdn.weeb.sh/images/SJrBZrMBz.gif")
-       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
        }
@@ -375,7 +375,7 @@ message.channel.send("", { embed: {
        .setTitle (":footprints: | Random ")
        .setColor("#E2FB00")
        .setImage("https://source.unsplash.com/user/erondu/1600x900")
-       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
        }
@@ -385,7 +385,7 @@ message.channel.send("", { embed: {
        .setTitle (":revolving_hearts: | e-girl ")
        .setColor("#E2FB00")
        .setImage("https://78.media.tumblr.com/93bc8521787c0b1dfe39293a99d18c4d/tumblr_ora9etSmp91tvq1hxo1_1280.jpg")
-       .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
     }	     
