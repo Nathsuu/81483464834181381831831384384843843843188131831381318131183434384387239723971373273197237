@@ -187,7 +187,6 @@ bot.on('message', message => {
   }
 	
   if (command === "flip") {
-  return message.reply(":x: Pile ou Face ?");
   let replies = ["Pile.", "Face."];
 
   let result = Math.floor((Math.random() * replies.length));
