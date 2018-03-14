@@ -15,7 +15,7 @@ bot.on('ready', () => {
     bot.user.setPresence({
       game:{
         name: `${guilds[lecture]}`, 
-        type: 3
+        type: 4
       }
     });
   }, 60000);  
