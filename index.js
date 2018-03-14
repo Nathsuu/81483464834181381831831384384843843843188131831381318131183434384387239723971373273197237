@@ -175,7 +175,7 @@ bot.on('message', message => {
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
 
   let result = Math.floor((Math.random() * replies.length));
-  let question = args.slice(1).join(" ");
+  let question = args.slice(0).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
   .setAuthor("Vaction | 8ball")
