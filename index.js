@@ -193,7 +193,7 @@ bot.on('message', message => {
   let question = args.slice(0).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor("💸 | Vaction | Flip")
+  .setAuthor("Vaction | Flip")
   .setColor("#E2FB00")
   .addField("Votre pari", question)
   .addField("Réponse", replies[result])
@@ -374,7 +374,7 @@ message.channel.send("", { embed: {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":footprints: | Random ")
        .setColor("#E2FB00")
-       .setImage("https://source.unsplash.com/user/erondu/1600x900")
+       .setImage("https://source.unsplash.com/random")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
