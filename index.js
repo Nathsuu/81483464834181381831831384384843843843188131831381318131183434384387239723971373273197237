@@ -178,7 +178,7 @@ bot.on('message', message => {
   let question = args.slice(1).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor("Vaction | VacBot | French Bot", "https://image.noelshack.com/fichiers/2018/09/4/1519899146-17332945-138497173341771-651541625360613376-n-copie.jpg")
+  .setAuthor("Vaction | 8ball")
   .setColor("#E2FB00")
   .addField("Question", question)
   .addField("Réponse", replies[result])
