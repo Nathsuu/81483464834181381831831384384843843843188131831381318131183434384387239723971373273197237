@@ -171,7 +171,29 @@ bot.on('message', message => {
     reportschannel.send(reportEmbed);
 
     return;
-  }	
+  }
+	
+    function random(min, max) {
+        min = Math.ceil(0);
+        max = Math.floor(3);
+        randnum = Math.floor(Math.random() * (max - min +1) + min);
+     }	
+     if (command === "e-girl") {	    
+        if (randnum ==1){
+	    var help_embed = new Discord.RichEmbed()
+	    .setTitle (":kiss: | e-girl")
+	    .setImage("https://cdn.discordapp.com/attachments/395537994800693250/423232416392413220/04590.jpg")
+	    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+	    message.channel.sendEmbed(help_embed)
+	}
+	    
+        if (randnum ==2){
+	    var help_embed = new Discord.RichEmbed()
+	    .setTitle (":kiss: | e-girl")
+	    .setImage("https://78.media.tumblr.com/93bc8521787c0b1dfe39293a99d18c4d/tumblr_ora9etSmp91tvq1hxo1_1280.jpg")
+	    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+	    message.channel.sendEmbed(help_embed)
+	}	
 
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
@@ -339,26 +361,5 @@ message.channel.send("", { embed: {
        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
-       }
-    function random(min, max) {
-        min = Math.ceil(0);
-        max = Math.floor(3);
-        randnum = Math.floor(Math.random() * (max - min +1) + min);
-        }	
-    if (message.content === prefix + "e-girl"){		    
-        if (randnum ==1){
-	    var help_embed = new Discord.RichEmbed()
-	    .setTitle (":kiss: | e-girl")
-	    .setImage("https://cdn.discordapp.com/attachments/395537994800693250/423232416392413220/04590.jpg")
-	    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
-	    message.channel.sendEmbed(help_embed)
-	}
-	    
-        if (randnum ==2){
-	    var help_embed = new Discord.RichEmbed()
-	    .setTitle (":kiss: | e-girl")
-	    .setImage("https://78.media.tumblr.com/93bc8521787c0b1dfe39293a99d18c4d/tumblr_ora9etSmp91tvq1hxo1_1280.jpg")
-	    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
-	    message.channel.sendEmbed(help_embed)
-	}	    
+       }	    
 });	
