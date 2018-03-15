@@ -228,25 +228,19 @@ bot.on('message', message => {
   message.channel.sendEmbed(help_embed)
   }	
 	
-if (message.content == ("!fortine")){ 	 
+if (command === "fortnite") { 	 
 // This command requires the package 'fortnite'.
 const Fortnite = require('fortnite');
 const stats = new Fortnite(process.env.TRN); // This will be your API key from the description in replace of 'process.env.TRN'
-const Discord = require('discord.js');
 
   
   // Now, we have 2 variables we need input for, first the platform, then the username.
   let platform;
   let username;
   
-  // There are only 3 platform options: pc, xbl, psn. We need to make sure they are typing one of these.
-  
-  // Also, make sure you are using return statements when something evaluates to false and you want it to exit,
-  
-  // Since args contains the message contents, we can get the first item in the array to be the platform
-  if (!['pc','xbl','psn'].includes(args[0])) return message.channel.send('**Please Include the platform: `!fortnite [ pc | xbl | psn ] <username>`**');
+  if (!['pc','xbl','psn'].includes(args[0])) return message.channel.send('**Please Include the platform: `v!fortnite [ pc | xbl | psn ] <username>`**');
   // We also need the username, which would be args[1] & on...
-  if (!args[1]) return message.channel.send('**Please Include the username: `!fortnite [ pc | xbl | psn ] <username>`**');
+  if (!args[1]) return message.channel.send('**Please Include the username: `v!fortnite [ pc | xbl | psn ] <username>`**');
   
   // Assign Values
   platform = args.shift(); // This will shift the first item in the args array into platform.
