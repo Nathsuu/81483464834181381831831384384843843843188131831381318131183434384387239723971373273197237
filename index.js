@@ -213,7 +213,7 @@ bot.on('message', message => {
   .setAuthor("🔲 | Vaction | dé")
   .setColor("#E2FB00")
   .addField("Votre pari", question)
-  .addField("Coté gagnant", replies[result])
+  .addField("Nombre gagant", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
   }
