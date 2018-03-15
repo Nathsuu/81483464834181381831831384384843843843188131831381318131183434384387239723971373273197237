@@ -213,7 +213,7 @@ bot.on('message', message => {
   .setAuthor("🔲 | Vaction | dé")
   .setColor("#E2FB00")
   .addField("Votre pari", question)
-  .addField("Réponse", replies[result])
+  .addField("Réponse du Nombre", replies[result])
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
   }	
