@@ -222,7 +222,7 @@ bot.on('message', message => {
   let replies = [":tropical_fish:", ":boot:", ":shark:"];
 
   let result = Math.floor((Math.random() * replies.length));	  
-  return message.reply("tu as pêché "replies[result]);	  	
+  return message.reply("tu as pêché ");	  	
   }	
 		
 if (message.content.startsWith(prefix + "eval")) {
