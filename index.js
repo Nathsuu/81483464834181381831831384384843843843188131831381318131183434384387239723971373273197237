@@ -182,7 +182,7 @@ bot.on('message', message => {
   .setColor("#E2FB00")
   .addField("Question", question)
   .addField("Réponse", replies[result])
-  .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
+  .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
   }
 	
@@ -198,7 +198,7 @@ bot.on('message', message => {
   .setColor("#E2FB00")
   .addField("Votre pari", question)
   .addField("Réponse", replies[result])
-  .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
+  .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
   }
 	
@@ -214,7 +214,7 @@ bot.on('message', message => {
   .setColor("#E2FB00")
   .addField("Votre pari", question)
   .addField("Réponse du Nombre", replies[result])
-  .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
+  .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
   }
 	
@@ -226,8 +226,7 @@ bot.on('message', message => {
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🐋 | Vaction | Pêche")
   .setColor("#E2FB00")
-  .addField("Tu as pêché", replies[result])
-  .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
+  .addField("Tu as pêché", replies[result]);
   message.channel.sendEmbed(help_embed)
   }	
 		
