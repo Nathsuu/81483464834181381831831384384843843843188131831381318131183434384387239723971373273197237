@@ -2,6 +2,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const stats = new Fortnite(process.env.TRN);
+const Fortnite = require('fortnite');
 
 const prefix = 'v!'; 
 
@@ -229,8 +230,7 @@ bot.on('message', message => {
   message.channel.sendEmbed(help_embed)
   }	
 	
-if (message.content == ("!fortine")){ 
-const Fortnite = require('fortnite');	 
+if (message.content == ("!fortine")){ 	 
   // Now, we have 2 variables we need input for, first the platform, then the username.
   let platform;
   let username;
