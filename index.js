@@ -230,7 +230,6 @@ bot.on('message', message => {
   message.channel.sendEmbed(help_embed)
   }	
 	
-exports.run = (client, message, args, tools) => {
  
   // Now, we have 2 variables we need input for, first the platform, then the username.
   let platform;
