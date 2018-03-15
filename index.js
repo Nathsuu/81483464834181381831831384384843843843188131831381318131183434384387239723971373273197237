@@ -1,8 +1,6 @@
 
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const stats = new Fortnite(process.env.TRN);
-const Fortnite = require('fortnite');
 
 const prefix = 'v!'; 
 
@@ -231,26 +229,32 @@ bot.on('message', message => {
   }	
 	
 if (message.content == ("!fortine")){ 	 
+// This command requires the package 'fortnite'.
+const Fortnite = require('fortnite');
+const stats = new Fortnite(process.env.TRN); // This will be your API key from the description in replace of 'process.env.TRN'
+const Discord = require('discord.js');
+
+  
   // Now, we have 2 variables we need input for, first the platform, then the username.
   let platform;
   let username;
- 
+  
   // There are only 3 platform options: pc, xbl, psn. We need to make sure they are typing one of these.
- 
+  
   // Also, make sure you are using return statements when something evaluates to false and you want it to exit,
- 
+  
   // Since args contains the message contents, we can get the first item in the array to be the platform
   if (!['pc','xbl','psn'].includes(args[0])) return message.channel.send('**Please Include the platform: `!fortnite [ pc | xbl | psn ] <username>`**');
   // We also need the username, which would be args[1] & on...
   if (!args[1]) return message.channel.send('**Please Include the username: `!fortnite [ pc | xbl | psn ] <username>`**');
- 
+  
   // Assign Values
   platform = args.shift(); // This will shift the first item in the args array into platform.
   username = args.join(' '); // Now, we can combine args to form the username.
- 
+  
   // Fetch Data
   stats.getInfo(username, platform).then( data => { // Data will now hold the response, the full JSON tree can be found in the description.
-   
+    
     // Now, since we have all the correct data, we can output an error message, or the user stats.
     // We can form an embed to respond in chat, make sure you require Discord to form these.
     const embed = new Discord.MessageEmbed() // On the stable branch, this will be new Discord.RichEmbed()
@@ -267,21 +271,20 @@ if (message.content == ("!fortine")){
       .addField('Kills Per Minute', data.lifetimeStats[12].value, true)
       .addField('Time Played', data.lifetimeStats[13].value, true)
       .addField('Average Survival Time', data.lifetimeStats[14].value, true)
-   
+    
     // Now, we can test this command! Remeber, you can modify the output to what you think looks best.
     message.channel.send(embed)
-     
+      
   // All `data` can be found in the description.
-   
+    
   })
   .catch(error => { // We can start with the error, an error will return if the username is not found.
-   
+    
     message.channel.send('Username not found!');
- 
+  
   })
- 
+  
 }	
-	
 		
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
