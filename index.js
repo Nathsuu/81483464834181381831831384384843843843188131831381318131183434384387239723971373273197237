@@ -216,6 +216,13 @@ bot.on('message', message => {
   .addField("Réponse du Nombre", replies[result])
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
+  }
+	
+  if (command === "fish") {
+  let replies = [":tropical_fish:", ":boot:", ":shark:"];
+
+  let result = Math.floor((Math.random() * replies.length));	  
+  return message.reply("tu as pêché replies[result]");	  	
   }	
 		
 if (message.content.startsWith(prefix + "eval")) {
