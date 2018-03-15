@@ -219,12 +219,12 @@ bot.on('message', message => {
   }
 	
   if (command === "fish") {
-  let replies = [":tropical_fish:", ":boot:", ":shark:"];  
+  let replies = ["🦑", "🦐", "🦀", "🐚", "🐙", "🦈", "🐡", "🐠", "🐟", "🐬", "🐋", "🐳", "🐢"];  
 
   let result = Math.floor((Math.random() * replies.length));
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor(":shark: | Vaction | Pêche")
+  .setAuthor("🐋 | Vaction | Pêche")
   .setColor("#E2FB00")
   .addField("Tu as pêché", replies[result])
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL);
