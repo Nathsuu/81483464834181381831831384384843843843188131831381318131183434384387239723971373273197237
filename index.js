@@ -230,7 +230,7 @@ bot.on('message', message => {
   message.channel.sendEmbed(help_embed)
   }	
 	
- 
+ if (message.content == ("!fortine")){    
   // Now, we have 2 variables we need input for, first the platform, then the username.
   let platform;
   let username;
