@@ -5,8 +5,7 @@ if (message.channel.type === "dm") return;
 if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild.").catch(console.error);
 
 const user = message.mentions.users.first();
- const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2]) 
-if (!amount) return message.reply(':x: Veuillez spécifier une limite de message'); 
+ const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2])  
 if (!amount && !user) 
 
 if (!user){
