@@ -31,15 +31,15 @@ if(message.mentions.users.size === 0) {
             fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
 message.delete();
             message.channel.send(':warning: | '+mentionned.tag+' à été averti');
-message.mentions.users.first().send(`:warning: Warn |** depuis **${message.guild.name}** donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
+message.mentions.users.first().send(`:warning: Warn depuis **${message.guild.name}** donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
           } else {
-            message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+            message.channel.send(":x: Erreur ! Exemple : "+prefix+"warn <user> <raison>");
           }
         } else {
-          message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+          message.channel.send(":x: Erreur ! Exemple : "+prefix+"warn <user> <raison>");
         }
       } else {
-        message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+        message.channel.send(":x: Erreur ! Exemple : "+prefix+"warn <user> <raison>");
       }
     } else {
       message.channel.send(":x: Vous n'avez pas la permission `manage-guild`.");
@@ -72,11 +72,11 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
           }
           message.channel.send(arr.join('\n'));
         } else {
-          message.channel.send("Erreur mauvais usage: "+prefix+"seewarns <user> <raison>");
+          message.channel.send(":x: Erreur ! Exemple : "+prefix+"seewarn <user> <raison>");
           console.log(args);
         }
       } else {
-        message.channel.send("Erreur mauvais usage: "+prefix+"seewarns <user> <raison>");
+        message.channel.send(":x: Erreur ! Exemple : "+prefix+"seewarn <user> <raison>");
       }
     } else {
       message.channel.send(":x: Vous n'avez pas la permission `manage-guild`.");
@@ -84,7 +84,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
   }
 
 
-  if (message.content.startsWith(prefix+"clearwarns") || message.content === prefix + "clearwarns") {
+  if (message.content.startsWith(prefix+"clearwarns") || message.content === prefix + "clearwarn") {
 if (message.channel.type === "dm") return;
 
 if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild`.").catch(console.error);
@@ -114,7 +114,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
             if (Object.keys(warns[message.guild.id][mentioned.id]).length === 0) {
               delete warns[message.guild.id][mentioned.id];
             }
-            message.channel.send(`Le warn de **${mentioned.tag}**: **n°${args[1]}** a été enlevé avec succès!`);
+            message.channel.send(`Le warn de **${mentioned.tag}**: **n°${args[1]}** a été enlevé !`);
             return;
           } if (args[1] === "tout") {
             delete warns[message.guild.id][mentioned.id];
@@ -122,13 +122,13 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
             message.channel.send(`Les warns de **${mentioned.tag}** ont tous été enlevés avec succès!`);
             return;
           } else {
-            message.channel.send("Erreur mauvais usage: "+prefix+"clearwarns <utilisateur> <nombre|tout>");
+            message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarns <utilisateur> <nombre|tout>");
           }
         } else {
-          message.channel.send("Erreur mauvais usage: "+prefix+"clearwarns <utilisateur> <nombre|tout>");
+          message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarns <utilisateur> <nombre|tout>");
         }
       } else {
-       message.channel.send("Erreur mauvais usage: "+prefix+"clearwarns <utilisateur> <nombre|tout>");
+       message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarns <utilisateur> <nombre|tout>");
       }
   }
 }
