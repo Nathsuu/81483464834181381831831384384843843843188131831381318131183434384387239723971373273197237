@@ -1,7 +1,7 @@
-function warn(message,prefix,client){
+function warns(message,prefix,client){
   
 var fs = require('fs');
-let warns = JSON.parse(fs.readFileSync("./data/warn.json", "utf8"));
+let warns = JSON.parse(fs.readFileSync("./data/warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
 if (message.channel.type === "dm") return;
 var mentionned = message.mentions.users.first();
@@ -28,7 +28,7 @@ if(message.mentions.users.size === 0) {
                 time: date,
                 user: message.author.id};
             }
-            fs.writeFile("./data/warn.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
+            fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
 message.delete();
             message.channel.send(':warning: | '+mentionned.tag+' à été averti');
 message.mentions.users.first().send(`:warning: Warn |** depuis **${message.guild.name}** donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
