@@ -47,7 +47,7 @@ message.mentions.users.first().send(`:warning: Warn depuis **${message.guild.nam
   }
 }
 
-  if (message.content.startsWith(prefix+"seewarns")||message.content===prefix+"seewarns") {
+  if (message.content.startsWith(prefix+"seewarn")||message.content===prefix+"seewarns") {
 if (message.channel.type === "dm") return;
 if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild`.").catch(console.error);
     const mentioned = message.mentions.users.first();
@@ -84,7 +84,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
   }
 
 
-  if (message.content.startsWith(prefix+"clearwarns") || message.content === prefix + "clearwarn") {
+  if (message.content.startsWith(prefix+"clearwarn") || message.content === prefix + "clearwarn") {
 if (message.channel.type === "dm") return;
 
 if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild`.").catch(console.error);
