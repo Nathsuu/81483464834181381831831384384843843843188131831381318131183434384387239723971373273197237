@@ -47,7 +47,7 @@ const warns = require("./commands/warns.js");
 purge(message, prefix, bot)
 mute(message, prefix, bot)
 unmute(message, prefix, bot)
-warn(message, prefix, bot)	
+warns(message, prefix, bot)	
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
