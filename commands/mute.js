@@ -8,10 +8,10 @@ if(message.mentions.users.size === 0) {
 }
 let muteMember = message.guild.member(message.mentions.users.first());
 if(!muteMember) {
-  return message.channel.send(":x: Je ne suis pas sur que cet utilisateur existe...");
+  return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur !");
 }
 if(!message.guild.member(client.user).hasPermission("MANAGE_GUILD")) {
-  return message.reply(":x: Je n'ai pas la permission pour mute...").catch(console.error);
+  return message.reply(":x: Je n'ai pas la permission \`MANAGE_GUILD\` pour faire ceci.").catch(console.error);
 }
 message.channel.overwritePermissions(muteMember, { SEND_MESSAGES: false }).then(member => {
     message.channel.send(`**${muteMember.user.username}** est désormais mute dans **#${message.channel.name}** :mute:`)
