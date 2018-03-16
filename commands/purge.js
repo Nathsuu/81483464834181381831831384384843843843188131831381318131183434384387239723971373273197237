@@ -1,6 +1,6 @@
-ftunction purge(message,prefix,client){
+function purge(message,prefix,client){
 
-if (message.content.startsWith(prefix + "clear")) {
+if (message.content.startsWith(prefix + "purge")) {
 if (message.channel.type === "dm") return;
 if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild.").catch(console.error);
 
