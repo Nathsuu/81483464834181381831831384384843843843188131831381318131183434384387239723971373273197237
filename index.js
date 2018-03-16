@@ -417,5 +417,15 @@ message.channel.send("", { embed: {
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
-    }	     
+    }
+	
+    if(message.content.startsWith ("v!wasted")) {
+       var help_embed = new Discord.RichEmbed()
+       .setTitle (":boxing_glove: | Wasted")
+       .setColor("#E2FB00")
+       .setImage("https://cdn.weeb.sh/images/BJO2j1Fv-.gif")
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       message.channel.sendEmbed(help_embed)
+
+    }		
 });	
