@@ -41,10 +41,13 @@ bot.on('message', message => {
 	
 const purge = require("./commands/purge.js");
 const mute = require("./commands/mute.js");
-const unmute = require("./commands/unmute.js");	
+const unmute = require("./commands/unmute.js");
+const warn = require("./commands/warn.js");
+	
 purge(message, prefix, bot)
 mute(message, prefix, bot)
-unmute(message, prefix, bot)	
+unmute(message, prefix, bot)
+warn(message, prefix, bot)	
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
