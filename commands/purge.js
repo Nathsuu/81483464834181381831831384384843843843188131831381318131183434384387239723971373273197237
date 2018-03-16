@@ -1,4 +1,4 @@
-function purge(message,prefix,client){
+ftunction purge(message,prefix,client){
 
 if (message.content.startsWith(prefix + "clear")) {
 if (message.channel.type === "dm") return;
