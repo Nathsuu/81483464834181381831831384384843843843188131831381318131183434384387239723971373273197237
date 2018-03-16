@@ -40,7 +40,9 @@ bot.login(process.env.TOKEN);
 bot.on('message', message => {
 	
 const purge = require("./commands/purge.js");
-purge(message, prefix, bot)	
+const mute = require("./commands/mute.js");	
+purge(message, prefix, bot)
+mute(message, prefix, bot)	
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
