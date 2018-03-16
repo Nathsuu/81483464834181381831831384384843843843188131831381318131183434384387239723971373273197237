@@ -2,7 +2,7 @@ function purge(message,prefix,client){
 
 if (message.content.startsWith(prefix + "purge")) {
 if (message.channel.type === "dm") return;
-if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild.").catch(console.error);
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild`.").catch(console.error);
 
 const user = message.mentions.users.first();
  const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2]) 
