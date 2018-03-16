@@ -6,9 +6,9 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
 
 const user = message.mentions.users.first();
  const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2]) 
-if (!amount) return message.reply(':x: Veuillez mentionner une limite de message'); 
+if (!amount) return message.reply(':x: Veuillez mentionner une limite de message comprise entre 3 et 100'); 
 if (!amount && !user) 
-return message.reply(':x: Veuillez mentionner une limite de message');
+return message.reply(':x: Veuillez mentionner une limite de message comprise entre 3 et 100');
 if (!user){ 
 if(isNaN(message.content.split(' ')[1]) || parseInt(message.content.split(' ')[1]) < 2 || parseInt(message.content.split(' ')[1]) > 100){
 message.channel.send(':x: Veuillez mentionner une limite de message comprise entre 2 et 100')
