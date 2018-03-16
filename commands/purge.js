@@ -8,7 +8,7 @@ const user = message.mentions.users.first();
  const amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2]) 
 if (!amount) return message.reply(':x: Veuillez spécifier une limite de message'); 
 if (!amount && !user) 
-return message.reply(':x: Veuillez spécifier une limite de message');
+
 if (!user){
 if(isNaN(message.content.split(' ')[1]) || parseInt(message.content.split(' ')[1]) < 2 || parseInt(message.content.split(' ')[1]) > 100){
 message.channel.send(':x: Veuillez spécifier une limite de message comprise entre 2 et 100')
@@ -16,7 +16,7 @@ message.channel.send(':x: Veuillez spécifier une limite de message comprise ent
 }
 if(message.content.split(' ')[2]){
 if(isNaN(message.content.split(' ')[2]) || parseInt(message.content.split(' ')[2]) < 2 || parseInt(message.content.split(' ')[2]) > 100){
-message.channel.send(':x: mute Veuillez spécifier une limite de message comprise entre 2 et 100')
+message.channel.send(':x: Veuillez spécifier une limite de message comprise entre 2 et 100')
 }
 }
  message.channel.fetchMessages({ limit: amount, }).then((messages) => {
