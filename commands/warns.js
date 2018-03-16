@@ -132,4 +132,4 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
       }
   }
 }
-    module.exports = warn
+    module.exports = warns
