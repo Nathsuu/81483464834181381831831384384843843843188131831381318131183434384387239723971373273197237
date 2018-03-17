@@ -389,7 +389,7 @@ message.channel.send("", { embed: {
 
 
     message.delete().catch(O_o=>{});
-    reportschannel.send(help_embed);
+    requestchannel.send(help_embed);
 
     return;
   }	
