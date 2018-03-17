@@ -50,7 +50,20 @@ mute(message, prefix, bot)
 unmute(message, prefix, bot)
 warns(message, prefix, bot)
 pussy(client, message, args)	
-	
+
+    if (message.author.bot) return;
+    if (message.content.indexOf(prefix) !== 0) return;
+    if (message.channel.type === "dm") return;
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+
+    try {
+        let commandFile = require(./commandes/nsfw/${command}.js);
+        commandFile.run(client, message, args);
+    } catch (err) {
+        console.error(err);
+    }	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();	
