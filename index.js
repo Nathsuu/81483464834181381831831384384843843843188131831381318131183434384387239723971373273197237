@@ -378,9 +378,9 @@ message.channel.send("", { embed: {
         .setDescription("Request-Bot")
         .setColor("#E2FB00")
         .addField("Salut", `${message.author}`)
-        .addField(" ", `Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
-        .addField("Information", " ")    
-        .addField("Username:", `{rUsers}`)
+        .addField("truc", `Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
+        .addField("Information", "truc")    
+        .addField("Username:", "truc")
         .addField("Owner:", `${message.author}`) 
         .addField("ID / Prefix", idprefix, true);
 	  
