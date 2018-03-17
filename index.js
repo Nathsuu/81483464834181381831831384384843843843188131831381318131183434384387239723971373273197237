@@ -1,6 +1,7 @@
 
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+var request = require("superagent");
 
 
 const prefix = 'v!'; 
@@ -49,19 +50,6 @@ mute(message, prefix, bot)
 unmute(message, prefix, bot)
 warns(message, prefix, bot)	
 
-    if (message.author.bot) return;
-    if (message.content.indexOf(prefix) !== 0) return;
-    if (message.channel.type === "dm") return;
-
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-
-    try {
-        let commandFile = require(./commands/nfsw/${command}.js);
-        commandFile.run(client, message, args);
-    } catch (err) {
-        console.error(err);
-    }	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();	
@@ -528,5 +516,19 @@ message.channel.send("", { embed: {
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
-    }		
+    }
+	
+    if (message.author.bot) return;
+    if (message.content.indexOf(prefix) !== 0) return;
+    if (message.channel.type === "dm") return;
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+
+    try {
+        let commandFile = require(./commands/nsfw/${command}.js);
+        commandFile.run(client, message, args);
+    } catch (err) {
+        console.error(err);
+    }	
 });	
