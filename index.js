@@ -59,7 +59,7 @@ pussy(client, message, args)
     const command = args.shift().toLowerCase();
 
     try {
-        let commandFile = require(./commandes/nsfw/${command}.js);
+        let commandFile = require(./commands/nfsw/${command}.js);
         commandFile.run(client, message, args);
     } catch (err) {
         console.error(err);
