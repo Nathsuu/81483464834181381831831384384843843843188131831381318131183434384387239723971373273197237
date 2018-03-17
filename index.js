@@ -327,7 +327,9 @@ message.channel.send("", { embed: {
         message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
         message.channel.send("pong!");    
     }	
-
+    if (message.content == ("123456789")){    
+	message.reply('Bonjour à toi !');    
+}	
     if (message.content == ("Bonjour")){    
 	message.reply('Bonjour à toi !');    
 }	
