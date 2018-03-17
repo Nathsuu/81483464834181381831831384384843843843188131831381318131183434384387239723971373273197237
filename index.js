@@ -93,7 +93,7 @@ warns(message, prefix, bot)
   if (command === "servinfo") {	
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
-    .setDescription("Information du Discord")
+    .setDescription("Stats du serveur")
     .setColor("#E2FB00")
     .setThumbnail(sicon)
     .setTitle ("Information du Discord")
