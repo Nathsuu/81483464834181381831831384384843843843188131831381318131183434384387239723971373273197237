@@ -3,7 +3,7 @@ const Fortnite = require('fortnite');
 const stats = new Fortnite(process.env.TRN); 
 const Discord = require('discord.js');
 
-exports.run = (bot, message, args, tools) => {
+exports.run = (message, prefix, bot) => {
   
   let platform;
   let username;
