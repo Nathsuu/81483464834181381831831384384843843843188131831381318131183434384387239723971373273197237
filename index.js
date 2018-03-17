@@ -522,8 +522,6 @@ message.channel.send("", { embed: {
     if (message.content.indexOf(prefix) !== 0) return;
     if (message.channel.type === "dm") return;
 
-    const command = args.shift().toLowerCase();
-
     try {
         let commandFile = require(./commands/nsfw/${command}.js);
         commandFile.run(client, message, args);
