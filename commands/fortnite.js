@@ -1,5 +1,5 @@
 const stats = new Fortnite(process.env.TRN); 
-function Fortnite(message,prefix,client){
+function Fortnite(message,prefix,client,args){
   
   
   let platform;
