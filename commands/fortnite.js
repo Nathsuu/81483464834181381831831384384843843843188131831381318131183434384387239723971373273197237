@@ -1,4 +1,6 @@
+const stats = new Fortnite(process.env.TRN); 
 function Fortnite(message,prefix,client){
+  
   
   let platform;
   let username;
