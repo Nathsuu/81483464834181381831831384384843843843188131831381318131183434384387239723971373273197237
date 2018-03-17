@@ -181,6 +181,32 @@ warns(message, prefix, bot)
     return;
   }
 	
+  if (command === "request-bot") {
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\`");
+    let idprefix = args.join(" ").slice(22);
+	  
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("**Salut**" `${message.author}`)    
+    .setColor("#E2FB00")
+    .addField("", `Merci d'avoir soumis le bot, il sera invité sous peu.
+En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
+    .addField("Information", ``)
+    .addField("Username:", `{rUser}`)
+    .addField("Owner:", `${message.author}`) 
+    .addField("Bot Prefix:", "truc", true)
+    .addField("ID / Prefix", idprefix);
+
+    let idchannel = message.guild.channels.get("423552696411357204");
+    if(!idchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204``.");
+
+
+    message.delete().catch(O_o=>{});
+    idchannel.send(reportEmbed);
+
+    return;
+  }	
+	
   if (command === "8ball") {
   if(!args[2]) return message.reply(":x: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
@@ -326,10 +352,7 @@ message.channel.send("", { embed: {
         // Now, let's send a response.
         message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
         message.channel.send("pong!");    
-    }	
-    if (message.content == ("123456789")){    
-	message.reply('Bonjour à toi !');    
-}	
+    }		
     if (message.content == ("Bonjour")){    
 	message.reply('Bonjour à toi !');    
 }	
