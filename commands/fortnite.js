@@ -1,5 +1,4 @@
-// This command requires the package 'fortnite'.
-const Fortnite = require('fortnite');
+
 const stats = new Fortnite(process.env.TRN); // This will be your API key from the description in replace of 'process.env.TRN'
 const Discord = require('discord.js');
  
