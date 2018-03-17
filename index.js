@@ -186,7 +186,7 @@ warns(message, prefix, bot)
     if(!rUsers) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
     let idprefix = args.join(" ").slice(22);
 
-    var help_embed = new Discord.RichEmbed()
+    let requestEmbed = new Discord.RichEmbed()
     .setDescription("Request-Bot")
     .setColor("#E2FB00")
     .addField("Salut", `${message.author}`)
@@ -202,7 +202,7 @@ warns(message, prefix, bot)
     if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204``.");	  
 
     message.delete().catch(O_o=>{});
-    requestchannel.send(help_embed);
+    requestchannel.send(requestEmbed);
 
     return;
   }
@@ -414,6 +414,7 @@ message.channel.send("", { embed: {
         .addField("💋 Nsfw", "\`e-girl\`")
         .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`")
 	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\`")
+	.addBlankField()
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
