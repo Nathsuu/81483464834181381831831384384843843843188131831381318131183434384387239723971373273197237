@@ -49,7 +49,7 @@ purge(message, prefix, bot)
 mute(message, prefix, bot)
 unmute(message, prefix, bot)
 warns(message, prefix, bot)
-Fortnite(client, message, args, tools)	
+Fortnite(bot, message, args, tools)	
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
