@@ -297,7 +297,8 @@ warns(message, prefix, bot)
   message.guild.channels.get('420984288293683200').createInvite().then(invite =>
   message.channel.send(invite.url)
   ); 	  
-		
+  }
+	
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
 let args = message.content.split(" ").slice(1);   
