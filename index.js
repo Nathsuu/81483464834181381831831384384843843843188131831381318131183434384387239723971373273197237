@@ -186,7 +186,7 @@ warns(message, prefix, bot)
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
     let rreason = args.join(" ").slice(22);
 
-    let reportEmbed = new Discord.RichEmbed()
+    let requestbotEmbed = new Discord.RichEmbed()
     .setDescription("Request-Bot")
     .setColor("#E2FB00")
     .addField("Salut", `${message.author}`)
@@ -202,7 +202,7 @@ En attendant, vous pouvez lire les règles du bot dans #rules-info !`)
 
 
     message.delete().catch(O_o=>{});
-    reportschannel.send(reportEmbed);
+    reportschannel.send(requestbotEmbed);
 
     return;
   }	
