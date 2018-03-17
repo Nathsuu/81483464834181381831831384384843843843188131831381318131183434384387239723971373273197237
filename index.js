@@ -294,6 +294,12 @@ warns(message, prefix, bot)
   .addField("Tu as pêché", replies[result]);
   message.channel.sendEmbed(help_embed)
   }
+
+ if (command === "triggered") {
+
+ message.channel.send({file:{ attachment: "http://www.triggered-api.tk/api/v1/url=" + message.author.avatarURL , name: "triggered.gif"}})
+
+ }
 	
   if (command === "buildinvite") {	  
   message.guild.channels.get('341585907368984576').createInvite().then(invite =>
