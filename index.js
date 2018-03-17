@@ -81,7 +81,7 @@ warns(message, prefix, bot)
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setDescription("Information du Bot")
-    .setColor("#15f153")
+    .setColor("#E2FB00")
     .setThumbnail(bicon)
     .addField("Ping du Bot " + `${bot.pings[0]}` + " ms",true)
     .addField("Nom du Bot", bot.user.username)
