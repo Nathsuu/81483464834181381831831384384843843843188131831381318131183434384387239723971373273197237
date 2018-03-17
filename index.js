@@ -180,34 +180,7 @@ warns(message, prefix, bot)
 
     return;
   }
-
-  if (command === "request-bot") {
-    let rUsers = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUsers) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
-    let idprefix = args.join(" ").slice(22);
-
-     var help_embed = new Discord.RichEmbed()
-    .setDescription("Request-Bot")
-    .setColor("#E2FB00")
-    .addField("Salut", `${message.author}`)
-    .addField("", `Merci d'avoir soumis le bot, il sera invité sous peu.
-    En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
-    .addField("Information", ``)    
-    .addField("Username:", `{rUsers}`)
-    .addField("Owner:", `${message.author}`) 
-    .addField("ID / Prefix", idprefix, true);
-	  
-    let requestchannel = message.guild.channels.get("423552696411357204");
-    if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204``.");	  
-
-
-    message.delete().catch(O_o=>{});
-    reportschannel.send(help_embed);
-
-    return;
-  }	
-	
-	
+		
   if (command === "8ball") {
   if(!args[2]) return message.reply(":x: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
@@ -395,6 +368,32 @@ message.channel.send("", { embed: {
 	if (message.content === prefix + "servlist"){
         message.channel.send("```" + bot.guilds.array().map( g => g.name + " | " + g.id + " | " + g.members.size ).join(" membres\n") + "```")   
     }
+	
+  if (command === "request-bot") {
+    let rUsers = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUsers) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
+    let idprefix = args.join(" ").slice(22);
+
+        var help_embed = new Discord.RichEmbed()
+        .setDescription("Request-Bot")
+        .setColor("#E2FB00")
+        .addField("Salut", `${message.author}`)
+        .addField("", `Merci d'avoir soumis le bot, il sera invité sous peu.
+        En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
+        .addField("Information", ``)    
+        .addField("Username:", `{rUsers}`)
+        .addField("Owner:", `${message.author}`) 
+        .addField("ID / Prefix", idprefix, true);
+	  
+    let requestchannel = message.guild.channels.get("423552696411357204");
+    if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204``.");	  
+
+
+    message.delete().catch(O_o=>{});
+    reportschannel.send(help_embed);
+
+    return;
+  }	
 	
     if(message.content.startsWith ("v!calin")) {
        var help_embed = new Discord.RichEmbed()
