@@ -1,5 +1,5 @@
 const stats = new Fortnite(process.env.TRN); 
-function Fortnite(bot, message, args, tools) => {
+exports.run = (bot, message, args, tools) => {
   
   
   let platform;
