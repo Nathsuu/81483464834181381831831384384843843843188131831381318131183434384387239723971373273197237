@@ -1,6 +1,3 @@
-const Fortnite = require('fortnite');
-const stats = new Fortnite(process.env.TRN); 
-
 function fortnite(message,prefix,client){
   
   let platform;
