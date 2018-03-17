@@ -522,7 +522,6 @@ message.channel.send("", { embed: {
     if (message.content.indexOf(prefix) !== 0) return;
     if (message.channel.type === "dm") return;
 
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
     try {
