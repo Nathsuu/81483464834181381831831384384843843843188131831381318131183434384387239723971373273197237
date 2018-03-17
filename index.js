@@ -187,7 +187,7 @@ warns(message, prefix, bot)
     let idprefix = args.join(" ").slice(22);
 	  
     let reportEmbed = new Discord.RichEmbed()
-    .setDescription("**Salut**" `${message.author}`)    
+    .setDescription("**Salut**", `${message.author}`)    
     .setColor("#E2FB00")
     .addField("", `Merci d'avoir soumis le bot, il sera invité sous peu.
 En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
