@@ -186,19 +186,20 @@ warns(message, prefix, bot)
     if(!rUsers) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
     let idprefix = args.join(" ").slice(22);
 
-        var help_embed = new Discord.RichEmbed()
-        .setDescription("Request-Bot")
-        .setColor("#E2FB00")
-        .addField("Salut", `${message.author}`)
-        .addField("truc", `Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
-        .addField("Information", "truc")    
-        .addField("Username:", "truc")
-        .addField("Owner:", `${message.author}`) 
-        .addField("ID / Prefix", idprefix, true);
+    var help_embed = new Discord.RichEmbed()
+    .setDescription("Request-Bot")
+    .setColor("#E2FB00")
+    .addField("Salut", `${message.author}`)
+    .addField("truc", `Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
+    .addField("Information", "truc")    
+    .addField("Username:", "truc")
+    .addField("Owner:", `${message.author}`) 
+    .addField("ID / Prefix", idprefix, true)
+    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setTimestamp()	  
 	  
     let requestchannel = message.guild.channels.get("423552696411357204");
     if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204``.");	  
-
 
     message.delete().catch(O_o=>{});
     requestchannel.send(help_embed);
