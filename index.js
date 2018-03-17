@@ -83,7 +83,7 @@ warns(message, prefix, bot)
     .setDescription("Information du Bot")
     .setColor("#15f153")
     .setThumbnail(bicon)
-    .setDescription("Ping du Bot" + `${bot.pings[0]}` + " ms",true)
+    .addField("Ping du Bot " + `${bot.pings[0]}` + " ms",true)
     .addField("Nom du Bot", bot.user.username)
     .addField("Créer le", bot.user.createdAt);
 
