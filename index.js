@@ -205,6 +205,32 @@ warns(message, prefix, bot)
     requestchannel.send(help_embed);
 
     return;
+  }
+	
+  if (command === "ban") {
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
+    let bReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
+
+    let banEmbed = new Discord.RichEmbed()
+    .setDescription("Ban")
+    .setColor("#E2FB00")
+    .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
+    .addField("Ban par", `<@${message.author.id}> avec l'ID ${message.author.id}`)
+    .addField("Ban depuis", message.channel)
+    .addField("Temps", message.createdAt)
+    .addField("Raison", bReason);
+
+    let incidentchannel = message.guild.channels.find(`name`, "vchannel");
+    if(!incidentchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
+
+    message.guild.member(bUser).ban(bReason);
+    incidentchannel.send(banEmbed);
+  bUser.ban()
+
+    return;
   }	
 		
   if (command === "8ball") {
@@ -265,7 +291,12 @@ warns(message, prefix, bot)
   .setColor("#E2FB00")
   .addField("Tu as pêché", replies[result]);
   message.channel.sendEmbed(help_embed)
-  }	
+  }
+	
+  if (command === "buildinvite") {
+  message.guild.channels.get('420984288293683200').createInvite().then(invite =>
+  message.channel.send(invite.url)
+  ); 	  
 		
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
