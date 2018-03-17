@@ -6,7 +6,6 @@ function fortnite(bot, message, args, tools){
   let username;
   
   let command = message.content.split(" ")[0];
-  const args = message.content.slice(prefix.length).split(/ +/);
   command = args.shift().toLowerCase(); 
   
   if (command === "fortnite") {
