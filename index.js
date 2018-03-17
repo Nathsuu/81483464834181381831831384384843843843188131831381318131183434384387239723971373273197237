@@ -221,7 +221,7 @@ warns(message, prefix, bot)
   let question = args.slice(0).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor("🔲 | Vaction | dé")
+  .setAuthor(":game_die: | Vaction | dé")
   .setColor("#E2FB00")
   .addField("Votre pari", question)
   .addField("Nombre gagant", replies[result])
@@ -355,7 +355,7 @@ message.channel.send("", { embed: {
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`")
         .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`")
-	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`")
+	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\")
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
@@ -456,11 +456,21 @@ message.channel.send("", { embed: {
 	
     if(message.content.startsWith ("v!wasted")) {
        var help_embed = new Discord.RichEmbed()
-       .setTitle (":boxing_glove: | wested")
+       .setTitle (":boxing_glove: | Wasted")
        .setColor("#E2FB00")
        .setImage("https://cdn.weeb.sh/images/BJO2j1Fv-.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
-    }	
+    }
+	
+    if(message.content.startsWith ("v!dance")) {
+       var help_embed = new Discord.RichEmbed()
+       .setTitle (":headphones: | Dance")
+       .setColor("#E2FB00")
+       .setImage("https://cdn.discordapp.com/attachments/360034958129233930/414181135350890496/a.gif")
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       message.channel.sendEmbed(help_embed)
+
+    }		
 });	
