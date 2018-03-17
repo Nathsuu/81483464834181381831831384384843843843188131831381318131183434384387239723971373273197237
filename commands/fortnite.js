@@ -41,4 +41,4 @@ function fortnite(bot, message, args, tools){
   })
   
 }}
-    module.exports = Fortnite
+    module.exports = fortnite
