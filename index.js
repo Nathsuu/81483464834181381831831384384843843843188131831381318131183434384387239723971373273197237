@@ -42,14 +42,12 @@ bot.on('message', message => {
 const purge = require("./commands/purge.js");
 const mute = require("./commands/mute.js");
 const unmute = require("./commands/unmute.js");
-const warns = require("./commands/warns.js");
-const pussy = require("./commands/pussy.js");	
+const warns = require("./commands/warns.js");	
 	
 purge(message, prefix, bot)
 mute(message, prefix, bot)
 unmute(message, prefix, bot)
-warns(message, prefix, bot)
-pussy(client, message, args)	
+warns(message, prefix, bot)	
 
     if (message.author.bot) return;
     if (message.content.indexOf(prefix) !== 0) return;
