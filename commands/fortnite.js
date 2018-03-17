@@ -1,5 +1,5 @@
 const stats = new Fortnite(process.env.TRN); 
-exports.run = (bot, message, args, tools) => {
+function Fortnite(bot, message, args, tools){
   
   
   let platform;
@@ -40,4 +40,5 @@ exports.run = (bot, message, args, tools) => {
   
   })
   
-}
+}}
+    module.exports = Fortnite
