@@ -43,14 +43,14 @@ const purge = require("./commands/purge.js");
 const mute = require("./commands/mute.js");
 const unmute = require("./commands/unmute.js");
 const warns = require("./commands/warns.js");
-const fortnite = require("./commands/fortnite.js");
-const stats = new fortnite(process.env.TRN); 	
+const Fortnite = require("./commands/fortnite.js");
+const stats = new Fortnite(process.env.TRN); 	
 	
 purge(message, prefix, bot)
 mute(message, prefix, bot)
 unmute(message, prefix, bot)
 warns(message, prefix, bot)
-fortnite(message, prefix, bot)	
+Fortnite(message, prefix, bot)	
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
