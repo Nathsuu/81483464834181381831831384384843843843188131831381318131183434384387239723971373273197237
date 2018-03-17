@@ -54,5 +54,4 @@ function fortnite(message,prefix,client){
  
   })
  
-}}
-    module.exports = fortnite
+}
