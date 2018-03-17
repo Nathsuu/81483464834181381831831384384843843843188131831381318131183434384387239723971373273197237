@@ -42,14 +42,12 @@ bot.on('message', message => {
 const purge = require("./commands/purge.js");
 const mute = require("./commands/mute.js");
 const unmute = require("./commands/unmute.js");
-const warns = require("./commands/warns.js");
-const Fortnite = require("./commands/fortnite.js");	
+const warns = require("./commands/warns.js");	
 	
 purge(message, prefix, bot)
 mute(message, prefix, bot)
 unmute(message, prefix, bot)
-warns(message, prefix, bot)
-fortnite(bot, message, args, tools)	
+warns(message, prefix, bot)	
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
