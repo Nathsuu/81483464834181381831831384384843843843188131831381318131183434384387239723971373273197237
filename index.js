@@ -96,9 +96,12 @@ warns(message, prefix, bot)
     .setDescription("Information du Discord")
     .setColor("#E2FB00")
     .setThumbnail(sicon)
+    .setTitle ("Information du Discord")
     .addField("Nom du Discord", message.guild.name)
-    .addField("Créer le", message.guild.createdAt)
-    .addField("Vous avez rejoint", message.member.joinedAt)
+    .addField("Nom du Serveur", message.guild.name)
+    .addField("Propriétaire du serveur", message.guild.owner.user.username)
+    .addField("Créer le", message.guild.createdAt, true)
+    .addField("Vous avez rejoint", message.member.joinedAt,true)
     .addField("Total Membre", message.guild.memberCount);
 
     return message.channel.send(serverembed);
