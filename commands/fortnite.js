@@ -4,9 +4,10 @@ function fortnite(bot, message, args, tools){
   
   let platform;
   let username;
-
+  let command = message.content.split(" ")[0];
   
-  if (!['pc','xbl','psn'].includes(args[1])) return message.channel.send('**Please Include the platform: `!fortnite [ pc | xbl | psn ] <username>`**');
+  if (command === "fortnite") {  
+  if (!['pc','xbl','psn'].includes(args[0])) return message.channel.send('**Please Include the platform: `!fortnite [ pc | xbl | psn ] <username>`**');
 
   if (!args[1]) return message.channel.send('**Please Include the username: `!fortnite [ pc | xbl | psn ] <username>`**');
   
