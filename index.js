@@ -182,9 +182,9 @@ warns(message, prefix, bot)
   }
 
   if (command === "request-bot") {
-    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
-    let rreason = args.join(" ").slice(22);
+    let rUsers = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUsers) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
+    let idprefix = args.join(" ").slice(22);
 
     let requestbotEmbed = new Discord.RichEmbed()
     .setDescription("Request-Bot")
@@ -192,13 +192,13 @@ warns(message, prefix, bot)
     .addField("Salut", `${message.author}`)
     .addField("", `Merci d'avoir soumis le bot, il sera invité sous peu.
 En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
-    .addField("Infomration", ``)    
-    .addField("Username:", `{rUser}`)
+    .addField("Information", ``)    
+    .addField("Username:", `{rUsers}`)
     .addField("Owner:", `${message.author}`) 
-    .addField("ID / Prefix", rreason, true);;
+    .addField("ID / Prefix", idprefix, true);
 	  
-    let reportschannel = message.guild.channels.get("423552696411357204");
-    if(!reportschannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204``.");	  
+    let requestchannel = message.guild.channels.get("423552696411357204");
+    if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204``.");	  
 
 
     message.delete().catch(O_o=>{});
