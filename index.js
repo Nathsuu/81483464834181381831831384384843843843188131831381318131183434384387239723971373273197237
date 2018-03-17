@@ -299,7 +299,7 @@ warns(message, prefix, bot)
   message.guild.channels.get('guild.id').createInvite().then(invite =>
   message.channel.send(invite.url)
   ); 	  
-  }
+  }}
 	
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
