@@ -294,7 +294,9 @@ warns(message, prefix, bot)
   }
 	
   if (command === "buildinvite") {
-  message.guild.channels.get('420984288293683200').createInvite().then(invite =>
+  const getDefaultChannel = async (guild) => {
+  if(guild.channel.has(guild.id))	  
+  message.guild.channels.get('guild.id').createInvite().then(invite =>
   message.channel.send(invite.url)
   ); 	  
   }
