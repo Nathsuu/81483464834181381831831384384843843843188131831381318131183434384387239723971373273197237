@@ -1,4 +1,4 @@
-function fortnite(message,prefix,client){
+function Fortnite(message,prefix,client){
   
   let platform;
   let username;
