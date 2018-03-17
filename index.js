@@ -186,12 +186,12 @@ warns(message, prefix, bot)
     if(!rUsers) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
     let idprefix = args.join(" ").slice(22);
 
-    var requestbotEmbed = new Discord.RichEmbed()
+     var help_embed = new Discord.RichEmbed()
     .setDescription("Request-Bot")
     .setColor("#E2FB00")
     .addField("Salut", `${message.author}`)
     .addField("", `Merci d'avoir soumis le bot, il sera invité sous peu.
-En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
+    En attendant, vous pouvez lire les règles du bot dans #rules-info !`)    
     .addField("Information", ``)    
     .addField("Username:", `{rUsers}`)
     .addField("Owner:", `${message.author}`) 
@@ -202,7 +202,7 @@ En attendant, vous pouvez lire les règles du bot dans #rules-info !`)
 
 
     message.delete().catch(O_o=>{});
-    reportschannel.send(requestbotEmbed);
+    reportschannel.send(help_embed);
 
     return;
   }	
