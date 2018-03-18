@@ -2,7 +2,7 @@ const randomPuppy = require('random-puppy');
 const request = require('snekfetch');
 const fs = require("fs")
 
-exports.run = (client, message, args) => {
+exports.run = (bot, message, args) => {
     if (!message.channel.nsfw) return message.channel.send(":warning: Cette commande n'est pas executable dans un channel qui n'est pas NSFW :underage:.")
 
     var subreddits = [
