@@ -305,13 +305,7 @@ warns(message, prefix, bot)
   message.guild.channels.get('341585907368984576').createInvite().then(invite =>
   message.channel.send(invite.url)
   ); 	  
-  }
-	
-    if(command === "ping") {
-
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
-    }	
+  }	
 	
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
