@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const request = require('snekfetch');
 const fs = require("fs")
 
-exports.run = (client, message, args) => {
+exports.run = (bot, message, args) => {
     var max = 5244;
     var min = 1000;
     var MathRan = Math.floor(Math.random() * (max - min + 0)) + min;
