@@ -509,4 +509,15 @@ message.channel.send("", { embed: {
        message.channel.sendEmbed(help_embed)
 
     }
+	
+        if (message.author.bot) return;
+        if (message.content.indexOf(prefix) !== 0) return;
+        if (message.channel.type === "dm") return;
+   
+        try {
+            let commandFile = require(`./commands/nsfw/${command}.js`);
+            commandFile.run(client, message, args);
+        } catch (err) {
+            //console.error(err);
+        }
 });	
