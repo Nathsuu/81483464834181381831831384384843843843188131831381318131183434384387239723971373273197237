@@ -386,13 +386,11 @@ message.channel.send("", { embed: {
     let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces	
     var input = message.content.toUpperCase();
 	
-    // Ping
-    if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
+  if(command === "ping") {
 
-        // Now, let's send a response.
-        message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
-        message.channel.send("pong!");    
-    }		
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  }		
     if (message.content == ("Bonjour")){    
 	message.reply('Bonjour à toi !');    
 }	
