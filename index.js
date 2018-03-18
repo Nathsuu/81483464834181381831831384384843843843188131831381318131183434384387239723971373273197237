@@ -413,7 +413,7 @@ message.channel.send("", { embed: {
         .addField(":hammer_pick: Modération", "\`purge\`, \`ban\`, \`kick\`, \`mute\`, \`unmute\`, \`warn\`, \`seewarn\`, \`clearwarn\`, \`report\`")
         .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\`, \`eval\`, \`logout\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
-        .addField("💋 Nsfw", "\`e-girl\`")
+        .addField("💋 Nsfw", "\`e-girl\`, \`ass\`")
         .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`")
 	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\`, \`triggered\`")
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
