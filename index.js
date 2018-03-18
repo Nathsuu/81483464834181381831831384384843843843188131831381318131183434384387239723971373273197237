@@ -307,6 +307,12 @@ warns(message, prefix, bot)
   ); 	  
   }
 	
+    if(command === "ping") {
+
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+    }	
+	
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
 let args = message.content.split(" ").slice(1);   
@@ -385,12 +391,7 @@ message.channel.send("", { embed: {
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces	
     var input = message.content.toUpperCase();
-	
-  if(command === "ping") {
-
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-  }		
+			
     if (message.content == ("Bonjour")){    
 	message.reply('Bonjour à toi !');    
 }	
