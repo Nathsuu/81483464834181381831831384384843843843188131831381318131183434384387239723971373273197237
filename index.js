@@ -306,7 +306,7 @@ warns(message, prefix, bot)
   let rolls = Math.floor((Math.random() * 100) + 1);  
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor("🎚 | Vaction | Roll")
+  .setAuthor("🔮 | Vaction | Roll")
   .setColor("#E2FB00")
   .addField("Ton roll", rolls)
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
