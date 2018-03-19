@@ -237,7 +237,7 @@ warns(message, prefix, bot)
 	
 if(command === "rps") {
     var rps = args.join(" ");
-    if (!rps || rps != "rock" && rps != "paper" && rps != "scissors") {
+    if (!rps || rps != "roche" && rps != "papier" && rps != "ciseaux") {
       message.reply("S'il vous plaît entrer soit roche, papier ou ciseaux");
     } else {
       if (rps == "roche") {
@@ -257,10 +257,10 @@ if(command === "rps") {
       var botJanken = response[responsenum];
  
       var msgArray = [];
-      msgArray.push('Player: ' + rps +  '\n     **VS**\nSmileyBot: ' + botJanken);
+      msgArray.push('Player: ' + rps +  '\n     **VS**\nVaction: ' + botJanken);
  
       if (botJanken == rps) {
-        msgArray.push("```fix\nDraw!```");
+        msgArray.push("```fix\nDessiner !```");
       }
       else if (rps == ":right_facing_fist:" && botJanken == ":v:" ||
                rps == ":raised_hand:" && botJanken == ":right_facing_fist:" ||
