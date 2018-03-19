@@ -9,17 +9,7 @@ exports.run = (bot, message, args) => {
     var MathLoL = Math.round(MathRan);
     if (!message.channel.nsfw) {
         message.channel.send(":x: Cette commande est executable dans un channel NSFW :underage:.")
-       
-    var subreddits = [
-        'pussy',
-        'rearpussy',
-        'simps',
-        'vagina',
-        'MoundofVenus',
-        'PerfectPussies',
-        'spreading'
-        'e-girl'        
-    ]        
+              
     } else {
         
         
