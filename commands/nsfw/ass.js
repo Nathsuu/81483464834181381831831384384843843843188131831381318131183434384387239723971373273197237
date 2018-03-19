@@ -9,7 +9,20 @@ exports.run = (bot, message, args) => {
     var MathLoL = Math.round(MathRan);
     if (!message.channel.nsfw) {
         message.channel.send(":x: Cette commande est executable dans un channel NSFW :underage:.")
-    } else {   
+       
+    var subreddits = [
+        'pussy',
+        'rearpussy',
+        'simps',
+        'vagina',
+        'MoundofVenus',
+        'PerfectPussies',
+        'spreading'*
+        'e-girl'        
+    ]        
+    } else {
+        
+        
         var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
         request.get("http://media.obutts.ru/butts_preview/0" + MathLoL + ".jpg").then(r => {
             fs.writeFile(`${randomname}.jpg`, r.body)
