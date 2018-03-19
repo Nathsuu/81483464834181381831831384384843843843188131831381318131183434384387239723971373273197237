@@ -291,7 +291,8 @@ warns(message, prefix, bot)
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🐋 | Vaction | Pêche")
   .setColor("#E2FB00")
-  .addField("Tu as pêché", replies[result]);
+  .addField("Tu as pêché", replies[result])
+  .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
   }
 
@@ -307,7 +308,8 @@ warns(message, prefix, bot)
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🎚 | Vaction | Roll")
   .setColor("#E2FB00")
-  .addField("Ton roll", rolls);
+  .addField("Ton roll", rolls)
+  .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
   }	
 	
