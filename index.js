@@ -184,8 +184,8 @@ warns(message, prefix, bot)
   }
 	
   if (command === "request-bot") {
-    let rUsers = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUsers) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
+    let rUserss = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUserss) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
     let idprefix = args.join(" ").slice(22);
 
     let requestEmbed = new Discord.RichEmbed()
