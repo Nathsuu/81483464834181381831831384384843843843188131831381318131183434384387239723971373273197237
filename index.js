@@ -241,11 +241,11 @@ if(command === "pfc") {
       message.reply("S'il vous plaît entrer soit roche, papier ou ciseaux");
     } else {
       if (rps == "roche") {
-        rps = ":right_facing_fist:"
+        rps = ":right_facing_fist: Roche !"
       } else if (rps == "papier") {
-        rps = ":raised_hand:"
+        rps = ":raised_hand: Papier !"
       } else if (args == "ciseaux") {
-        rps = ":v:"
+        rps = ":v: Ciseaux !"
       }
  
       var response = [];
@@ -466,7 +466,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\`, \`eval\`, \`logout\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`, \`ass\`")
-        .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`, \`roll\`")
+        .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`, \`roll\`, \`pfc\`")
 	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\`, \`triggered\`")
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
