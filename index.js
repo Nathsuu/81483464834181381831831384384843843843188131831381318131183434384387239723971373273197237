@@ -237,14 +237,14 @@ if(command === "pfc") {
       if (botJanken == rps) {
         msgArray.push("```fix\nEgalité !```");
       }
-      else if (rps == ":right_facing_fist: Roche !" && botJanken == ":v:" ||
-               rps == ":raised_hand: Papier !" && botJanken == ":right_facing_fist:" ||
-               rps == ":v: Ciseaux !" && botJanken == ":raised_hand:") {
+      else if (rps == ":right_facing_fist: Roche !" && botJanken == ":v: Ciseaux !" ||
+               rps == ":raised_hand: Papier !" && botJanken == ":right_facing_fist: Roche !" ||
+               rps == ":v: Ciseaux !" && botJanken == ":raised_hand: Papier !") {
         msgArray.push("```diff\nVous gagnez !```");
       }
-      else if (rps == ":right_facing_fist: Roche !" && botJanken == ":raised_hand:" ||
-               rps == ":raised_hand: Papier !" && botJanken == ":v:" ||
-               rps == ":v: Ciseaux !" && botJanken == ":right_facing_fist:") {
+      else if (rps == ":right_facing_fist: Roche !" && botJanken == ":raised_hand: Papier !" ||
+               rps == ":raised_hand: Papier !" && botJanken == ":v: Ciseaux !" ||
+               rps == ":v: Ciseaux !" && botJanken == ":right_facing_fist: Roche !") {
         msgArray.push("```diff\nTu as perdu !```");
       }
       else msgArray.push("```fix\nQuelque chose s'est mal passé! Réessayer !```");
