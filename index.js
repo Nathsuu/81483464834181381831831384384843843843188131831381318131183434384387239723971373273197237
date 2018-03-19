@@ -390,10 +390,7 @@ message.channel.send("", { embed: {
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces	
     var input = message.content.toUpperCase();
-			
-    if (message.content == ("Bonjour")){    
-	message.reply('Bonjour à toi !');    
-}	
+				
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 }	
