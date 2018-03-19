@@ -302,12 +302,12 @@ warns(message, prefix, bot)
  }
 	
   if (command === "roll") {
-  let result = Math.floor((Math.random() * 100) + 1);  
+  let rolls = Math.floor((Math.random() * 100) + 1);  
 	
   var help_embed = new Discord.RichEmbed()
   .setAuthor(":level_slider: | Vaction | Roll")
   .setColor("#E2FB00")
-  .addField("Ton roll", replies[result]);
+  .addField("Ton roll", replies[rolls]);
   message.channel.sendEmbed(help_embed)
   }	
 	
