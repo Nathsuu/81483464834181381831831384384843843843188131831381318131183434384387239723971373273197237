@@ -17,7 +17,7 @@ exports.run = (bot, message, args) => {
         'vagina',
         'MoundofVenus',
         'PerfectPussies',
-        'spreading'*
+        'spreading'
         'e-girl'        
     ]        
     } else {
