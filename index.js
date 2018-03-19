@@ -265,12 +265,12 @@ if(command === "rps") {
       else if (rps == ":right_facing_fist:" && botJanken == ":v:" ||
                rps == ":raised_hand:" && botJanken == ":right_facing_fist:" ||
                rps == ":v:" && botJanken == ":raised_hand:") {
-        msgArray.push("```diff\n+ Vous gagnez !```");
+        msgArray.push("```diff\nVous gagnez !```");
       }
       else if (rps == ":right_facing_fist:" && botJanken == ":raised_hand:" ||
                rps == ":raised_hand:" && botJanken == ":v:" ||
                rps == ":v:" && botJanken == ":right_facing_fist:") {
-        msgArray.push("```diff\n- Tu as perdu !```");
+        msgArray.push("```diff\nTu as perdu !```");
       }
       else msgArray.push("```fix\nQuelque chose s'est mal passé! Réessayer !```");
  
