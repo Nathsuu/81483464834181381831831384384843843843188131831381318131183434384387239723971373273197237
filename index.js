@@ -238,13 +238,13 @@ warns(message, prefix, bot)
 if(command === "rps") {
     var rps = args.join(" ");
     if (!rps || rps != "rock" && rps != "paper" && rps != "scissors") {
-      message.reply("S'il vous plaît entrer soit rock, papier ou ciseaux");
+      message.reply("S'il vous plaît entrer soit roche, papier ou ciseaux");
     } else {
-      if (rps == "rock") {
+      if (rps == "roche") {
         rps = ":right_facing_fist:"
-      } else if (rps == "paper") {
+      } else if (rps == "papier") {
         rps = ":raised_hand:"
-      } else if (args == "scissors") {
+      } else if (args == "ciseaux") {
         rps = ":v:"
       }
  
