@@ -275,7 +275,7 @@ warns(message, prefix, bot)
   let question = args.slice(0).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor(":game_die: | Vaction | dé")
+  .setAuthor("🎲 | Vaction | dé")
   .setColor("#E2FB00")
   .addField("Votre pari", question)
   .addField("Nombre gagant", replies[result])
@@ -305,7 +305,7 @@ warns(message, prefix, bot)
   let rolls = Math.floor((Math.random() * 100) + 1);  
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor(":level_slider: | Vaction | Roll")
+  .setAuthor("🎚 | Vaction | Roll")
   .setColor("#E2FB00")
   .addField("Ton roll", rolls);
   message.channel.sendEmbed(help_embed)
