@@ -7,17 +7,8 @@ exports.run = (bot, message, args) => {
     if (!message.channel.nsfw) {
         message.channel.send(":x: Cette commande est executable dans un channel NSFW :underage:.")
 
-    var subreddits = [
-        'pussy',
-        'rearpussy',
-        'simps',
-        'vagina',
-        'MoundofVenus',
-        'PerfectPussies',
-        'spreading'
-    ]
     var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
-    } else { 
+ 
     randomPuppy(sub)
             .then(url => {
                 var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
