@@ -208,32 +208,7 @@ warns(message, prefix, bot)
 
     return;
   }
-	
-  if (command === "ban") {
-    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
-    let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
-
-    let banEmbed = new Discord.RichEmbed()
-    .setDescription("Ban")
-    .setColor("#E2FB00")
-    .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
-    .addField("Ban par", `<@${message.author.id}> avec l'ID ${message.author.id}`)
-    .addField("Ban depuis", message.channel)
-    .addField("Temps", message.createdAt)
-    .addField("Raison", bReason);
-
-    let incidentchannel = message.guild.channels.find(`name`, "vchannel");
-    if(!incidentchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
-
-    message.guild.member(bUser).ban(bReason);
-    incidentchannel.send(banEmbed);
-  bUser.ban()
-
-    return;
-  }	
+		
 	
 if(command === "pfc") {
     var rps = args.join(" ");
@@ -262,14 +237,14 @@ if(command === "pfc") {
       if (botJanken == rps) {
         msgArray.push("```fix\nEgalité !```");
       }
-      else if (rps == ":right_facing_fist:" && botJanken == ":v:" ||
-               rps == ":raised_hand:" && botJanken == ":right_facing_fist:" ||
-               rps == ":v:" && botJanken == ":raised_hand:") {
+      else if (rps == ":right_facing_fist: Roche !" && botJanken == ":v:" ||
+               rps == ":raised_hand: Papier !" && botJanken == ":right_facing_fist:" ||
+               rps == ":v: Ciseaux !" && botJanken == ":raised_hand:") {
         msgArray.push("```diff\nVous gagnez !```");
       }
-      else if (rps == ":right_facing_fist:" && botJanken == ":raised_hand:" ||
-               rps == ":raised_hand:" && botJanken == ":v:" ||
-               rps == ":v:" && botJanken == ":right_facing_fist:") {
+      else if (rps == ":right_facing_fist: Roche !" && botJanken == ":raised_hand:" ||
+               rps == ":raised_hand: Papier !" && botJanken == ":v:" ||
+               rps == ":v: Ciseaux !" && botJanken == ":right_facing_fist:") {
         msgArray.push("```diff\nTu as perdu !```");
       }
       else msgArray.push("```fix\nQuelque chose s'est mal passé! Réessayer !```");
