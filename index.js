@@ -234,6 +234,49 @@ warns(message, prefix, bot)
 
     return;
   }	
+	
+if(command === "rps") {
+    var rps = args.join(" ");
+    if (!rps || rps != "rock" && rps != "paper" && rps != "scissors") {
+      message.reply("S'il vous plaît entrer soit rock, papier ou ciseaux");
+    } else {
+      if (rps == "rock") {
+        rps = ":right_facing_fist:"
+      } else if (rps == "paper") {
+        rps = ":raised_hand:"
+      } else if (args == "scissors") {
+        rps = ":v:"
+      }
+ 
+      var response = [];
+      response.push(":right_facing_fist:");
+      response.push(":raised_hand:");
+      response.push(":v:");
+ 
+      var responsenum = Math.floor((Math.random())*3)
+      var botJanken = response[responsenum];
+ 
+      var msgArray = [];
+      msgArray.push('Player: ' + rps +  '\n     **VS**\nSmileyBot: ' + botJanken);
+ 
+      if (botJanken == rps) {
+        msgArray.push("```fix\nDraw!```");
+      }
+      else if (rps == ":right_facing_fist:" && botJanken == ":v:" ||
+               rps == ":raised_hand:" && botJanken == ":right_facing_fist:" ||
+               rps == ":v:" && botJanken == ":raised_hand:") {
+        msgArray.push("```diff\n+ Vous gagnez !```");
+      }
+      else if (rps == ":right_facing_fist:" && botJanken == ":raised_hand:" ||
+               rps == ":raised_hand:" && botJanken == ":v:" ||
+               rps == ":v:" && botJanken == ":right_facing_fist:") {
+        msgArray.push("```diff\n- Tu as perdu !```");
+      }
+      else msgArray.push("```fix\nQuelque chose s'est mal passé! Réessayer !```");
+ 
+      message.channel.send(msgArray);
+    }
+  }	
 		
   if (command === "8ball") {
   if(!args[2]) return message.reply(":x: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
