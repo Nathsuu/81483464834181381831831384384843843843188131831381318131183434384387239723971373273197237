@@ -8,7 +8,7 @@ exports.run = (bot, message, args) => {
     var MathRan = Math.floor(Math.random() * (max - min + 0)) + min;
     var MathLoL = Math.round(MathRan);
     if (!message.channel.nsfw) {
-        message.channel.send(":warning: Cette commande n'est pas executable dans un channel qui n'est pas NSFW :underage:.")
+        message.channel.send(":x: Cette commande est executable dans un channel NSFW :underage:.")
     } else {   
         var randomname = Math.floor(Math.random() * (99999999999999999999 - 11111111111111111111 + 0)) + 11111111111111111111;
         request.get("http://media.obutts.ru/butts_preview/0" + MathLoL + ".jpg").then(r => {
