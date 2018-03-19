@@ -231,7 +231,7 @@ if(command === "pfc") {
       var botJanken = response[responsenum];
  
       var msgArray = [];
-      msgArray.push('Joueur : ' + rps +  '\n     **VS**\nVaction: ' + botJanken);
+      msgArray.push('Joueur : ' + rps +  '\n     **VS**\nVaction : ' + botJanken);
  
       if (botJanken == rps) {
         msgArray.push("```fix\nEgalité !```");
