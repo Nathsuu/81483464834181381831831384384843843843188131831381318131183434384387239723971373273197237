@@ -301,6 +301,11 @@ warns(message, prefix, bot)
 
  }
 	
+    if (message.content === "v!roll") {
+  		var result = Math.floor((Math.random() * 100) + 1);
+  		bot.reply(message, "Ton roll : " + result);
+    }	
+	
   if (command === "buildinvite") {	  
   message.guild.channels.get('341585907368984576').createInvite().then(invite =>
   message.channel.send(invite.url)
@@ -414,7 +419,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\`, \`eval\`, \`logout\`")
         .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
         .addField("💋 Nsfw", "\`e-girl\`, \`ass\`")
-        .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`")
+        .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`, \`roll\`")
 	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\`, \`triggered\`")
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
