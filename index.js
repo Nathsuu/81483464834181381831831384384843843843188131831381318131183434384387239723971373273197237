@@ -211,7 +211,7 @@ warns(message, prefix, bot)
 		
 if(command === "pfc") {
     var rps = args.join(" ");
-    if (!rps || rps != "roche" && rps != "papier" && rps != "ciceaux") {
+    if (!rps || rps != "roche" && rps != "papier" && rps != "ciseaux") {
       message.reply("S'il vous plaît entrer soit roche, papier ou ciseaux");
     } else {
       if (rps == "roche") {
