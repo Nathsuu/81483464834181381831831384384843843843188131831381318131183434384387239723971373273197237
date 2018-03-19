@@ -517,6 +517,7 @@ message.channel.send("", { embed: {
         try {
             let commandFile = require(`./commands/nsfw/${command}.js`);
             commandFile.run(bot, message, args);
+	    commandFile.run(bot, message, args, tools);	
         } catch (err) {
             //console.error(err);
         }
