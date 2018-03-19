@@ -209,42 +209,41 @@ warns(message, prefix, bot)
     return;
   }
 		
-	
 if(command === "pfc") {
     var rps = args.join(" ");
-    if (!rps || rps != "roche" && rps != "papier" && rps != "ciseaux") {
+    if (!rps || rps != "roche" && rps != "papier" && rps != "ciceaux") {
       message.reply("S'il vous plaît entrer soit roche, papier ou ciseaux");
     } else {
       if (rps == "roche") {
-        rps = ":right_facing_fist: Roche !"
+        rps = ":right_facing_fist:"
       } else if (rps == "papier") {
-        rps = ":raised_hand: Papier !"
+        rps = ":raised_hand:"
       } else if (args == "ciseaux") {
-        rps = ":v: Ciseaux !"
+        rps = ":v:"
       }
  
       var response = [];
-      response.push(":right_facing_fist: Roche !");
-      response.push(":raised_hand: Papier !");
-      response.push(":v: Papier !");
+      response.push(":right_facing_fist:");
+      response.push(":raised_hand:");
+      response.push(":v:");
  
       var responsenum = Math.floor((Math.random())*3)
       var botJanken = response[responsenum];
  
       var msgArray = [];
-      msgArray.push('Joueur : ' + rps +  '\n     **VS**\nVaction: ' + botJanken);
+      msgArray.push('Player: ' + rps +  '\n     **VS**\nVaction: ' + botJanken);
  
       if (botJanken == rps) {
         msgArray.push("```fix\nEgalité !```");
       }
-      else if (rps == ":right_facing_fist: Roche !" && botJanken == ":v: Ciseaux !" ||
-               rps == ":raised_hand: Papier !" && botJanken == ":right_facing_fist: Roche !" ||
-               rps == ":v: Ciseaux !" && botJanken == ":raised_hand: Papier !") {
+      else if (rps == ":right_facing_fist:" && botJanken == ":v:" ||
+               rps == ":raised_hand:" && botJanken == ":right_facing_fist:" ||
+               rps == ":v:" && botJanken == ":raised_hand:") {
         msgArray.push("```diff\nVous gagnez !```");
       }
-      else if (rps == ":right_facing_fist: Roche !" && botJanken == ":raised_hand: Papier !" ||
-               rps == ":raised_hand: Papier !" && botJanken == ":v: Ciseaux !" ||
-               rps == ":v: Ciseaux !" && botJanken == ":right_facing_fist: Roche !") {
+      else if (rps == ":right_facing_fist:" && botJanken == ":raised_hand:" ||
+               rps == ":raised_hand:" && botJanken == ":v:" ||
+               rps == ":v:" && botJanken == ":right_facing_fist:") {
         msgArray.push("```diff\nTu as perdu !```");
       }
       else msgArray.push("```fix\nQuelque chose s'est mal passé! Réessayer !```");
