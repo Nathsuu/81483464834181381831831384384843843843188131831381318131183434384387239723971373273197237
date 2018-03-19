@@ -303,7 +303,7 @@ warns(message, prefix, bot)
 	
     if (message.content === "v!roll") {
   		var result = Math.floor((Math.random() * 100) + 1);
-  		bot.reply(message, "Ton roll : " + result);
+  		message.reply(message, "Ton roll : " + result);
     }	
 	
   if (command === "buildinvite") {	  
