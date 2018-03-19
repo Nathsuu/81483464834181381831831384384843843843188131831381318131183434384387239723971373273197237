@@ -307,7 +307,7 @@ warns(message, prefix, bot)
   var help_embed = new Discord.RichEmbed()
   .setAuthor(":level_slider: | Vaction | Roll")
   .setColor("#E2FB00")
-  .addField("Ton roll", replies[rolls]);
+  .addField("Ton roll", rolls[rolls]);
   message.channel.sendEmbed(help_embed)
   }	
 	
