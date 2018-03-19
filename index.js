@@ -260,7 +260,7 @@ if(command === "rps") {
       msgArray.push('Player: ' + rps +  '\n     **VS**\nVaction: ' + botJanken);
  
       if (botJanken == rps) {
-        msgArray.push("```fix\nDessiner !```");
+        msgArray.push("```fix\nEgalité !```");
       }
       else if (rps == ":right_facing_fist:" && botJanken == ":v:" ||
                rps == ":raised_hand:" && botJanken == ":right_facing_fist:" ||
