@@ -257,7 +257,7 @@ if(command === "rps") {
       var botJanken = response[responsenum];
  
       var msgArray = [];
-      msgArray.push('Player: ' + rps +  '\n     **VS**\nVaction: ' + botJanken);
+      msgArray.push('Joueur : ' + rps +  '\n     **VS**\nVaction: ' + botJanken);
  
       if (botJanken == rps) {
         msgArray.push("```fix\nEgalité !```");
