@@ -224,9 +224,9 @@ if(command === "pfc") {
       }
  
       var response = [];
-      response.push(":right_facing_fist:");
-      response.push(":raised_hand:");
-      response.push(":v:");
+      response.push(":right_facing_fist: Roche !");
+      response.push(":raised_hand: Papier !");
+      response.push(":v: Papier !");
  
       var responsenum = Math.floor((Math.random())*3)
       var botJanken = response[responsenum];
