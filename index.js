@@ -301,10 +301,15 @@ warns(message, prefix, bot)
 
  }
 	
-    if (message.content === "v!roll") {
-  	let result = Math.floor((Math.random() * 100) + 1);
-  	message.reply(message, "Ton roll : " + result);
-    }	
+  if (command === "roll") {
+  let result = Math.floor((Math.random() * 100) + 1);  
+	
+  var help_embed = new Discord.RichEmbed()
+  .setAuthor(":level_slider: | Vaction | Roll")
+  .setColor("#E2FB00")
+  .addField("Ton roll", replies[result]);
+  message.channel.sendEmbed(help_embed)
+  }	
 	
   if (command === "buildinvite") {	  
   message.guild.channels.get('341585907368984576').createInvite().then(invite =>
