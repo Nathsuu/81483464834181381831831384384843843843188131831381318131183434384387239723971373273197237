@@ -3,10 +3,21 @@ const randomPuppy = require('random-puppy');
 const request = require('snekfetch');
 const fs = require("fs")
 
+
 exports.run = (bot, message, args) => {
     if (!message.channel.nsfw) {
         message.channel.send(":x: Cette commande est executable dans un channel NSFW :underage:.")
 
+    var subreddits = [
+        'pussy',
+        'rearpussy',
+        'simps',
+        'vagina',
+        'MoundofVenus',
+        'PerfectPussies',
+        'spreading'
+    ]
+    
     var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
  
     randomPuppy(sub)
