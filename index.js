@@ -448,7 +448,6 @@ message.channel.send("", { embed: {
         .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
-	    message.author.send("La commande \`v!help\` a bien été exécuté !\nPlusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.")
         console.log("Commande Help demandée !");
     }
 	if (message.content === prefix + "servlist"){
