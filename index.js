@@ -429,6 +429,7 @@ message.channel.send("", { embed: {
 }	
 	
     if (message.content === prefix + "help"){
+	let sicon = message.guild.iconURL;    
         var help_embed = new Discord.RichEmbed()
         .setColor('#FF9900')
 	.setThumbnail(sicon)
