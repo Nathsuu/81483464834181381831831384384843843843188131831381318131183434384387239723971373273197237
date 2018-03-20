@@ -431,6 +431,7 @@ message.channel.send("", { embed: {
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor('#FF9900')
+	.setThumbnail(sicon)
 	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Voici la liste de mes commandes :")
         .addField(":gear: Configurations - Pour mon créateur", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```")
 	.addBlankField()	
@@ -440,9 +441,9 @@ message.channel.send("", { embed: {
 	.addBlankField()	
         .addField("💋 Nsfw", "```v!e-girl \nv!ass```")
 	.addBlankField()	
-	.addField(":frame_photo: Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered```")
+	.addField(":frame_photo: Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!triggered```")
 	.addBlankField()	
-        .addField(":clipboard: Utilitaires", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo \nv!servinfo```")
+        .addField(":clipboard: Utilitaires", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo \nv!bvn```")
 	.addBlankField()
         .addField(":floppy_disk: Total serveurs :", bot.guilds.size)
         .addField(":floppy_disk: Total utilisateurs :", bot.users.size)	
@@ -538,6 +539,16 @@ message.channel.send("", { embed: {
        message.channel.sendEmbed(help_embed)
 
     }
+	
+    if(message.content.startsWith ("v!bvn")) {
+       var help_embed = new Discord.RichEmbed()
+       .setTitle (":speech_left:  | Welcome")
+       .setColor("#FF9900")
+       .setImage("https://petitponey.owns-this.site/0f55e45a.gif")
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       message.channel.sendEmbed(help_embed)
+
+    }	
 	
         if (message.author.bot) return;
         if (message.content.indexOf(prefix) !== 0) return;
