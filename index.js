@@ -417,10 +417,7 @@ message.channel.send("", { embed: {
 				
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
-}	
-    if (message.content == ("v!prefix")){    
-	message.reply('Mon prefix est : v!');    
-}	
+}		
     if (message.content == ("v!bot")){    
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 }
@@ -440,6 +437,7 @@ message.channel.send("", { embed: {
         .addField(":hammer_pick: Modération", "```v!purge \nv!ban \nv!kick \nv!mute \nv!unmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```")
 	.addBlankField()	
         .addField(":space_invader: Jeux", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc```")
+	.addBlankField()	
         .addField("💋 Nsfw", "```v!e-girl \nv!ass```")
 	.addBlankField()	
 	.addField(":frame_photo: Images", "```v!random \nv!calin \nvclaque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered```")
