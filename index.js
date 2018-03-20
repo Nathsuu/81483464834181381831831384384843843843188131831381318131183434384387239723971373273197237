@@ -428,11 +428,9 @@ message.channel.send("", { embed: {
 	message.reply('Mon prefix est \`v!\`.');
 }	
 	
-    if (message.content === prefix + "help"){
-	let sicon = message.guild.iconURL;    
+    if (message.content === prefix + "help"){   
         var help_embed = new Discord.RichEmbed()
         .setColor('#FF9900')
-	.setThumbnail(sicon)
 	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Voici la liste de mes commandes :")
         .addField(":gear: Configurations - Pour mon créateur", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```")
 	.addBlankField()	
