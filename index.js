@@ -418,14 +418,17 @@ message.channel.send("", { embed: {
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 }	
-    if (message.content == ("v!avatar")){    
-	message.reply('https://image.noelshack.com/fichiers/2018/10/2/1520355922-17332945-138497173341771-651541625360613376-n-copie.jpg');    
+    if (message.content == ("v!prefix")){    
+	message.reply('Mon prefix est : v!');    
 }	
     if (message.content == ("v!bot")){    
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 }
     if (message.content == ("v!invite")){    
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
+}
+    if (message.content == ("v!prefix")){    
+	message.reply('Mon prefix est \`v!\`.');
 }	
 	
     if (message.content === prefix + "help"){
@@ -440,8 +443,8 @@ message.channel.send("", { embed: {
         .addField(":hammer_pick: Modération", "\`purge\`, \`ban\`, \`kick\`, \`mute\`, \`unmute\`, \`warn\`, \`seewarn\`, \`clearwarn\`, \`report\`")
         .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`, \`roll\`, \`pfc\`")
         .addField("💋 Nsfw", "\`e-girl\`, \`ass\`")	
-	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\`, \`triggered\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
+	.addField(":frame_photo: Images", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\`, \`triggered\`")
+        .addField(":clipboard: Utilitaire", "\`help\`, `\prefix\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
 	.addBlankField()
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
