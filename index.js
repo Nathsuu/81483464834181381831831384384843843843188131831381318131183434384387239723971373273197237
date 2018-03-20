@@ -445,7 +445,7 @@ message.channel.send("", { embed: {
         .addField(":clipboard: Utilitaire", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo \nv!servinfo```")
 	.addBlankField()
         .addField(":floppy_disk: Total serveurs :", bot.guilds.size)
-        .addField(":floppy_disk: Total utilisateurs :", bot.guilds.memberCount)	
+        .addField(":floppy_disk: Total utilisateurs :", bot.users.size)	
 	.addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount)
 	.addBlankField()	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
