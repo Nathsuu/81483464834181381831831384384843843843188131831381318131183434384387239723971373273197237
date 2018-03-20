@@ -440,7 +440,7 @@ message.channel.send("", { embed: {
 	.addBlankField()	
         .addField("💋 Nsfw", "```v!e-girl \nv!ass```")
 	.addBlankField()	
-	.addField(":frame_photo: Images", "```v!random \nv!calin \nvclaque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered```")
+	.addField(":frame_photo: Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered```")
 	.addBlankField()	
         .addField(":clipboard: Utilitaire", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo \nv!servinfo```")
 	.addBlankField()
