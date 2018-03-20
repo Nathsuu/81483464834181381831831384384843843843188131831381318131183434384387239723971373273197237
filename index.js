@@ -431,7 +431,7 @@ message.channel.send("", { embed: {
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor('#FF9900')
-	.addField("Vaction | VacBot | French Bot", "**:notepad_spiral: Voici la liste de mes commandes :**")
+	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Voici la liste de mes commandes :")
         .addField(":gear: Configuration - Pour mon créateur", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```")
 	.addBlankField()	
         .addField(":hammer_pick: Modération", "```v!purge \nv!ban \nv!kick \nv!mute \nv!unmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```")
