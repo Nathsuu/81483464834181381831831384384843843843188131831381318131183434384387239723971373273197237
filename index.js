@@ -445,6 +445,7 @@ message.channel.send("", { embed: {
 	.addBlankField()
         .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
 	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
+	.addBlankField()	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
