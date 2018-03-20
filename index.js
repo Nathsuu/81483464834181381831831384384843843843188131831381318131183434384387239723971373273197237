@@ -434,7 +434,7 @@ message.channel.send("", { embed: {
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
         .setColor('#FF9900')
-	.setAuthor("Vaction | VacBot | French Bot", ":bookmark: Voici la liste de mes commandes :")
+	.addField("Vaction | VacBot | French Bot", ":bookmark: Voici la liste de mes commandes :")
         .addField(":gear: Configuration - Pour mon créateur", "```v!setgame \n v!say \n v!channel \n eval \n logout```")	
         .addField(":hammer_pick: Modération", "\`purge\`, \`ban\`, \`kick\`, \`mute\`, \`unmute\`, \`warn\`, \`seewarn\`, \`clearwarn\`, \`report\`")
         .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`, \`roll\`, \`pfc\`")
