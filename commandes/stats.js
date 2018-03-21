@@ -20,7 +20,9 @@ module.exports.run = async (client, message) => {
   .addBlankField()
   .addField(":floppy_disk: Total serveurs :", client.guilds.size)
   .addField(":floppy_disk: Total utilisateurs :", client.users.size)
-  .addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount);
+  .addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount)
+  .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+	 .setTimestamp() 
   message.channel.send(embed)
 
 }
