@@ -278,7 +278,7 @@ if(command === "pfc") {
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🐋 | Vaction | Pêche")
   .setColor("#FF9900")
-  .addField("Tu as pêché", replies[result])
+  .addField("Tu as pêché" + replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
   }
@@ -295,7 +295,7 @@ if(command === "pfc") {
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🔮 | Vaction | Roll")
   .setColor("#FF9900")
-  .addField("Ton roll", rolls)
+  .addField("Ton roll" + rolls)
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
   }	
@@ -412,8 +412,8 @@ message.channel.send("", { embed: {
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
 	.addBlankField()	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
-	.addField(":chart_with_upwards_trend: Total serveurs :" + client.guilds.size, true)
-	.addField(":chart_with_downwards_trend: Total utilisateurs :" + client.users.size, true)
+	.addField(":chart_with_upwards_trend: Total serveurs :" + client.guilds.size + true)
+	.addField(":chart_with_downwards_trend: Total utilisateurs :" + client.users.size + true)
         .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
