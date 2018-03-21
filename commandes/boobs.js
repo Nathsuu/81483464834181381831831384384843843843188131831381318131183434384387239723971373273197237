@@ -9,15 +9,14 @@ module.exports.run = async (client, msg) => {
     var MathRan = Math.floor(Math.random() * (max - min + 0)) + min;
     var MathLoL = Math.round(MathRan);
 
-    if (!msg.channel.nsfw) return msg.channel.send("**:warning: Hum...Comment dire, ce n'est pas un salon pour les grand ici (NSFW)**");
+    if (!msg.channel.nsfw) return msg.channel.send(":x: Cette commande est executable dans un channel NSFW :underage:.");
 
 var embed = new Discord.RichEmbed()
 
 .setColor(0x6CD3F9)  
 .setTimestamp()
-.setAuthor('💦 Recherche de boobs')
 .setImage("http://media.oboobs.ru/boobs_preview/" + MathLoL + ".jpg")
-.setFooter(`demandé par @${msg.author.username}`)
+.setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
 msg.channel.send(embed);
         }
 
