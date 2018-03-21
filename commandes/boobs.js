@@ -13,10 +13,10 @@ module.exports.run = async (client, msg) => {
 
 var embed = new Discord.RichEmbed()
 
-.setColor(0x6CD3F9)  
-.setTimestamp()
+.setColor("#FF9900")  
 .setImage("http://media.oboobs.ru/boobs_preview/" + MathLoL + ".jpg")
 .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+.setTimestamp()
 msg.channel.send(embed);
         }
 
