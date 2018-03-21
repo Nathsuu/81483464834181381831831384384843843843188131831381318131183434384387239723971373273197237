@@ -429,11 +429,9 @@ message.channel.send("", { embed: {
 	message.reply('Mon prefix est \`v!\`.');
 }	
 	
-    if (message.content === prefix + "help"){
-        let bicon = client.user.displayAvatarURL;	    
+    if (message.content === prefix + "help"){	    
         var help_embed = new Discord.RichEmbed()
         .setColor('#FF9900')
-	.setThumbnail(bicon)
 	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Mes listes de mes commandes :")
 	.addBlankField()	
         .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!kick \nv!mute \nv!unmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```", true)
@@ -446,7 +444,7 @@ message.channel.send("", { embed: {
 	.addBlankField()	
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo```", true)
 	.addBlankField()	
-        .addField(":gear: Espaces Configurations - Pour mon créateur", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
+        .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
 	.addBlankField()
         .addField(":floppy_disk: Total serveurs :", client.guilds.size)
         .addField(":floppy_disk: Total utilisateurs :", client.users.size)	
