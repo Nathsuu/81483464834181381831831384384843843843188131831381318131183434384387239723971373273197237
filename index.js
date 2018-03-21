@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const prefix = 'v!'; 
 
 
-bot.on('ready', () => {
+client.on('ready', () => {
   setInterval(function(){
     guilds = ["Vaction | v!help", "Vaction | v!help | French Bot", "Vaction | by WinDino"]
     lecture = Math.floor((Math.random() * guilds.length));
