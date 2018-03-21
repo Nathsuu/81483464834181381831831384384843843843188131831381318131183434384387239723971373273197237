@@ -14,7 +14,7 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_GUILD")) {
   return message.reply(":x: Il me faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
 }
 message.channel.overwritePermissions(muteMember, { SEND_MESSAGES: false }).then(member => {
-    message.channel.send(`:white_check_mark: ${muteMember.user.username}** est mute !`)
+    message.channel.send(`:white_check_mark: **${muteMember.user.username}** est mute !`)
 })
 }}
     module.exports = mute
