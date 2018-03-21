@@ -18,22 +18,7 @@ client.on('ready', () => {
     });
   }, 80000);  
 });
-
-client.on("channelCreate", async channel => {
-  console.log(`${channel.name} a été créé.`);
 	
-  let sChannel = channel.guild.channels.find(`name`, "vchannel");
-  sChannel.send(`${channel} a été créé`);
-
-});
-
-client.on("channelDelete", async channel => {
-  console.log(`Un channel a été supprimé.`);
-	
-  let sChannel = channel.guild.channels.find(`name`, "vchannel");
-  sChannel.send(`Un channel a été supprimé`);
-
-});	
 
 client.login(process.env.TOKEN);
 
@@ -429,10 +414,6 @@ message.channel.send("", { embed: {
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo \nv!stats```", true)
 	.addBlankField()	
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
-	.addBlankField()
-        .addField(":floppy_disk: Total serveurs :", client.guilds.size)
-        .addField(":floppy_disk: Total utilisateurs :", client.users.size)	
-	.addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount)
 	.addBlankField()	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
