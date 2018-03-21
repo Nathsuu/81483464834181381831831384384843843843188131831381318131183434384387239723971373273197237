@@ -181,10 +181,10 @@ warns(message, prefix, client)
 		
 if(command === "pfc") {
     var rps = args.join(" ");
-    if (!rps || rps != "roche" && rps != "papier" && rps != "ciseaux") {
-      message.reply("S'il vous plaît entrer soit roche, papier ou ciseaux");
+    if (!rps || rps != "pierre" && rps != "papier" && rps != "ciseaux") {
+      message.reply("S'il vous plaît entrer soit pierre, papier ou ciseaux");
     } else {
-      if (rps == "roche") {
+      if (rps == "pierre") {
         rps = ":right_facing_fist:"
       } else if (rps == "papier") {
         rps = ":raised_hand:"
