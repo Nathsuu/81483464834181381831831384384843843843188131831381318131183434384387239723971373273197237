@@ -38,7 +38,7 @@ client.on("channelDelete", async channel => {
   
 });	
 
-client.login(prosses.env.TOKEN);
+client.login(process.env.TOKEN);
 
 client.on('message', message => {
 	
