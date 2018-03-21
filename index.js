@@ -43,10 +43,10 @@ const mute = require("./commands/mute.js");
 const unmute = require("./commands/unmute.js");
 const warns = require("./commands/warns.js");	
 	
-purge(message, prefix, bot)
-mute(message, prefix, bot)
-unmute(message, prefix, bot)
-warns(message, prefix, bot)	
+purge(message, prefix, client)
+mute(message, prefix, client)
+unmute(message, prefix, client)
+warns(message, prefix, client)	
 
 
         if (message.author.bot) return;
