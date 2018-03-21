@@ -15,7 +15,7 @@ var embed = new Discord.RichEmbed()
 
 .setColor("#FF9900")  
 .setImage("http://media.oboobs.ru/boobs_preview/" + MathLoL + ".jpg")
-.setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+.setFooter("VacBot | Vaction | Demande par " + msg.author.tag, msg.author.displayAvatarURL)
 .setTimestamp()
 msg.channel.send(embed);
         }
