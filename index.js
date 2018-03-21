@@ -560,35 +560,6 @@ message.channel.send("", { embed: {
         } catch (err) {
             //console.error(err);
         }
-	
-bot.commands = new Discord.Collection();
-
-fs.readdir("./commandes/", (err, files) => {
-
-  if(err) console.log(err);
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("Aucunes commandes trouvées :/");
-    return;
-  }
-
-  jsfile.forEach((f, i) =>{
-    let props = require(`./commandes/${f}`);
-    console.log(`${f} commande chargée!`);
-    client.commands.set(props.help.name, props);
-  });
-});
-
-
-bot.on("message", async msg => {
-  if(msg.author.bot) return;
-  if(msg.channel.type === "dm") return;
-
-  let messageArray = msg.content.toLowerCase().split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-  let commandfile = client.commands.get(cmd.split("v!")[1]);
-  if(commandfile) commandfile.run(client,msg,args);
 
 });	
 	
