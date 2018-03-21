@@ -278,7 +278,7 @@ if(command === "pfc") {
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🐋 | Vaction | Pêche")
   .setColor("#FF9900")
-  .addField("Tu as pêché" + replies[result])
+  .addField("Tu as pêché", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
   }
@@ -295,7 +295,7 @@ if(command === "pfc") {
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🔮 | Vaction | Roll")
   .setColor("#FF9900")
-  .addField("Ton roll" + rolls)
+  .addField("Ton roll", rolls)
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
   }	
