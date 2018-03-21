@@ -1,7 +1,7 @@
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
+var fs = require('fs');
 const prefix = 'v!'; 
 
 
