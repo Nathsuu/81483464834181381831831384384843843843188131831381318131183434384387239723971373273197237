@@ -5,7 +5,7 @@ let warns = JSON.parse(fs.readFileSync("./data/warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
 if (message.channel.type === "dm") return;
 var mentionned = message.mentions.users.first();
-if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild`.").catch(console.error);
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
 if(message.mentions.users.size === 0) {
   return message.channel.send(":x: Vous n'avez mentionnée aucun utilisateur !");
 }else{
@@ -49,7 +49,7 @@ message.mentions.users.first().send(`:exclamation: Vous venez d'être warn sur l
 
   if (message.content.startsWith(prefix+"seewarn")||message.content===prefix+"seewarns") {
 if (message.channel.type === "dm") return;
-if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild`.").catch(console.error);
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
     const mentioned = message.mentions.users.first();
     const args = message.content.split(' ').slice(1);
     if (message.member.hasPermission('MANAGE_GUILD')){
@@ -87,7 +87,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
   if (message.content.startsWith(prefix+"clearwarn") || message.content === prefix + "clearwarn") {
 if (message.channel.type === "dm") return;
 
-if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Vous n'avez pas la permission `manage-guild`.").catch(console.error);
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":x: Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
 
    const mentioned = message.mentions.users.first();
     const args = message.content.split(' ').slice(1);
