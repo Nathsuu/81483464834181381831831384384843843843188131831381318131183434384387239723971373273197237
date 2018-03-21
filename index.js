@@ -1,5 +1,4 @@
 
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var fs = require('fs');
@@ -34,8 +33,6 @@ client.on("channelDelete", async channel => {
   let sChannel = channel.guild.channels.find(`name`, "vchannel");
   sChannel.send(`Un channel a été supprimé`);
 
-
-  
 });	
 
 client.login(process.env.TOKEN);
@@ -85,10 +82,11 @@ warns(message, prefix, client)
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setDescription("Information du Bot")
-    .setColor("#15f153")
+    .setColor("#FF9900")
     .setThumbnail(bicon)
-    .addField("Nom du Bot", bot.user.username)
-    .addField("Créer le", bot.user.createdAt);
+    .addField("Ping du Bot ", + `${client.pings[0]}` + " ms",true)
+    .addField("Nom du Bot", client.user.username)
+    .addField("Créer le", client.user.createdAt);
 
     return message.channel.send(botembed);
   }	
@@ -97,7 +95,7 @@ warns(message, prefix, client)
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setDescription("Stats du serveur")
-    .setColor("#E2FB00")
+    .setColor("#FF9900")
     .setThumbnail(sicon)
     .setTitle ("Information du Discord")
     .addField("Nom du Discord", message.guild.name)
@@ -118,7 +116,7 @@ warns(message, prefix, client)
 
     let kickEmbed = new Discord.RichEmbed()
     .setDescription("Kick")
-    .setColor("#E2FB00")
+    .setColor("#FF9900")
     .addField("Utilisateur Kick", `${kUser} avec l'ID ${kUser.id}`)
     .addField("Kick par", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Kick depuis", message.channel)
@@ -145,7 +143,7 @@ warns(message, prefix, client)
 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Ban")
-    .setColor("#E2FB00")
+    .setColor("#FF9900")
     .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
     .addField("Ban par", `<@${message.author.id}> avec l'ID ${message.author.id}`)
     .addField("Ban depuis", message.channel)
@@ -169,7 +167,7 @@ warns(message, prefix, client)
 
     let reportEmbed = new Discord.RichEmbed()
     .setDescription("Report")
-    .setColor("#E2FB00")
+    .setColor("#FF9900")
     .addField("Utilisateur Report", `${rUser} avec l'ID: ${rUser.id}`)
     .addField("Report par", `${message.author} avec l'ID: ${message.author.id}`)
     .addField("Depuis le Channel", message.channel)
@@ -187,13 +185,13 @@ warns(message, prefix, client)
   }
 	
   if (command === "request-bot") {
-    let rUsers = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUsers) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
+    let rUserss = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUserss) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
     let idprefix = args.join(" ").slice(22);
 
     let requestEmbed = new Discord.RichEmbed()
     .setDescription("Request-Bot")
-    .setColor("#E2FB00")
+    .setColor("#FF9900")
     .addField("Salut", `${message.author}`)
     .addField("truc", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !")    
     .addField("Information", "truc")    
@@ -211,31 +209,48 @@ warns(message, prefix, client)
 
     return;
   }
-	
-  if (command === "ban") {
-    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
-    let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
-
-    let banEmbed = new Discord.RichEmbed()
-    .setDescription("Ban")
-    .setColor("#E2FB00")
-    .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
-    .addField("Ban par", `<@${message.author.id}> avec l'ID ${message.author.id}`)
-    .addField("Ban depuis", message.channel)
-    .addField("Temps", message.createdAt)
-    .addField("Raison", bReason);
-
-    let incidentchannel = message.guild.channels.find(`name`, "vchannel");
-    if(!incidentchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
-
-    message.guild.member(bUser).ban(bReason);
-    incidentchannel.send(banEmbed);
-  bUser.ban()
-
-    return;
+		
+if(command === "pfc") {
+    var rps = args.join(" ");
+    if (!rps || rps != "roche" && rps != "papier" && rps != "ciseaux") {
+      message.reply("S'il vous plaît entrer soit roche, papier ou ciseaux");
+    } else {
+      if (rps == "roche") {
+        rps = ":right_facing_fist:"
+      } else if (rps == "papier") {
+        rps = ":raised_hand:"
+      } else if (args == "ciseaux") {
+        rps = ":v:"
+      }
+ 
+      var response = [];
+      response.push(":right_facing_fist:");
+      response.push(":raised_hand:");
+      response.push(":v:");
+ 
+      var responsenum = Math.floor((Math.random())*3)
+      var botJanken = response[responsenum];
+ 
+      var msgArray = [];
+      msgArray.push('Joueur : ' + rps +  '\n     **VS**\nVaction : ' + botJanken);
+ 
+      if (botJanken == rps) {
+        msgArray.push("```fix\nEgalité !```");
+      }
+      else if (rps == ":right_facing_fist:" && botJanken == ":v:" ||
+               rps == ":raised_hand:" && botJanken == ":right_facing_fist:" ||
+               rps == ":v:" && botJanken == ":raised_hand:") {
+        msgArray.push("```diff\nVous gagnez !```");
+      }
+      else if (rps == ":right_facing_fist:" && botJanken == ":raised_hand:" ||
+               rps == ":raised_hand:" && botJanken == ":v:" ||
+               rps == ":v:" && botJanken == ":right_facing_fist:") {
+        msgArray.push("```diff\nTu as perdu !```");
+      }
+      else msgArray.push("```fix\nQuelque chose s'est mal passé! Réessayer !```");
+ 
+      message.channel.send(msgArray);
+    }
   }	
 		
   if (command === "8ball") {
@@ -247,7 +262,7 @@ warns(message, prefix, client)
 	
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🎱 | Vaction | 8ball")
-  .setColor("#E2FB00")
+  .setColor("#FF9900")
   .addField("Question", question)
   .addField("Réponse", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
@@ -263,7 +278,7 @@ warns(message, prefix, client)
 	
   var help_embed = new Discord.RichEmbed()
   .setAuthor("💸 | Vaction | Flip")
-  .setColor("#E2FB00")
+  .setColor("#FF9900")
   .addField("Votre pari", question)
   .addField("Réponse", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
@@ -278,8 +293,8 @@ warns(message, prefix, client)
   let question = args.slice(0).join(" ");
 	
   var help_embed = new Discord.RichEmbed()
-  .setAuthor(":game_die: | Vaction | dé")
-  .setColor("#E2FB00")
+  .setAuthor("🎲 | Vaction | dé")
+  .setColor("#FF9900")
   .addField("Votre pari", question)
   .addField("Nombre gagant", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
@@ -293,8 +308,9 @@ warns(message, prefix, client)
 	
   var help_embed = new Discord.RichEmbed()
   .setAuthor("🐋 | Vaction | Pêche")
-  .setColor("#E2FB00")
-  .addField("Tu as pêché", replies[result]);
+  .setColor("#FF9900")
+  .addField("Tu as pêché", replies[result])
+  .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
   }
 
@@ -304,11 +320,22 @@ warns(message, prefix, client)
 
  }
 	
+  if (command === "roll") {
+  let rolls = Math.floor((Math.random() * 100) + 1);  
+	
+  var help_embed = new Discord.RichEmbed()
+  .setAuthor("🔮 | Vaction | Roll")
+  .setColor("#FF9900")
+  .addField("Ton roll", rolls)
+  .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
+  message.channel.sendEmbed(help_embed)
+  }	
+	
   if (command === "buildinvite") {	  
   message.guild.channels.get('341585907368984576').createInvite().then(invite =>
   message.channel.send(invite.url)
   ); 	  
-  }
+  }	
 	
 if (message.content.startsWith(prefix + "eval")) {
 var util = require("util");
@@ -388,51 +415,45 @@ message.channel.send("", { embed: {
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces	
     var input = message.content.toUpperCase();
-	
-    // Ping
-    if (msg === prefix + 'PING') { // This checks if msg (the message but in all caps), is the same as the prefix + the command in all caps.
-
-        // Now, let's send a response.
-        message.delete(); // This 'sends' the message to the channel the message was in. You can change what is in the message to whatever you want.
-        message.channel.send("pong!");    
-    }		
-    if (message.content == ("Bonjour")){    
-	message.reply('Bonjour à toi !');    
-}	
+				
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
-}	
-    if (message.content == ("v!avatar")){    
-	message.reply('https://image.noelshack.com/fichiers/2018/10/2/1520355922-17332945-138497173341771-651541625360613376-n-copie.jpg');    
-}	
+}		
     if (message.content == ("v!bot")){    
 	message.reply('Conctacte moi : WinDino, Discord Support : https://discord.gg/qfYACVE');
 }
     if (message.content == ("v!invite")){    
 	message.reply('Invite moi : https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583');
+}
+    if (message.content == ("v!prefix")){    
+	message.reply('Mon prefix est \`v!\`.');
 }	
 	
     if (message.content === prefix + "help"){
+        let bicon = client.user.displayAvatarURL;	    
         var help_embed = new Discord.RichEmbed()
-        .setColor('#E2FB00')
-	.setAuthor("Vaction | VacBot | French Bot", "https://image.noelshack.com/fichiers/2018/09/4/1519899146-17332945-138497173341771-651541625360613376-n-copie.jpg")
-        .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
-	.addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celui-ci est dans les rôles. Le bot dispose aussi d'un logs pour que les modérateurs si retrouve plus rapidement pour celà, il suffit d'avoir un channel s'appellant \`vchannel\`.")
-        .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")
+        .setColor('#FF9900')
+	.setThumbnail(bicon)
+	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Mes listes de mes commandes :")
+	.addBlankField()	
+        .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!kick \nv!mute \nv!unmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```", true)	
+        .addField(":space_invader: Espaces Jeux", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc```", true)	
+        .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass```", true)
+	.addBlankField()	
+	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```")
+	.addBlankField()	
+        .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo```")
 	.addBlankField()
-        .addField(":hammer_pick: Modération", "\`purge\`, \`ban\`, \`kick\`, \`mute\`, \`unmute\`, \`warn\`, \`seewarn\`, \`clearwarn\`, \`report\`")
-        .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\`, \`eval\`, \`logout\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
-        .addField("💋 Nsfw", "\`e-girl\`")
-        .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`")
-	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\`, \`triggered\`")
-        .addField(":floppy_disk: Total serveurs:", client.guilds.size)
-	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
+        .addField(":gear: Espaces Configurations - Pour mon créateur", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```")
+	.addBlankField()
+        .addField(":floppy_disk: Total serveurs :", bot.guilds.size)
+        .addField(":floppy_disk: Total utilisateurs :", bot.users.size)	
+	.addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount)
+	.addBlankField()	
         .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
-        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
+        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
-	    message.author.send("La commande \`v!help\` a bien été exécuté !\nPlusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.")
         console.log("Commande Help demandée !");
     }
 	if (message.content === prefix + "servlist"){
@@ -443,7 +464,7 @@ message.channel.send("", { embed: {
     if(message.content.startsWith ("v!calin")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":heart: | " + message.author.username + " fait un calin ")
-       .setColor("#E2FB00")
+       .setColor("#FF9900")
        .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
@@ -453,7 +474,7 @@ message.channel.send("", { embed: {
     if(message.content.startsWith ("v!claque")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":raised_hand: | " + message.author.username + " claque ")
-       .setColor("#E2FB00")
+       .setColor("#FF9900")
        .setImage("https://cdn.weeb.sh/images/rJvR71KPb.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
@@ -463,7 +484,7 @@ message.channel.send("", { embed: {
     if(message.content.startsWith ("v!tire")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":gun: | " + message.author.username + " tire ")
-       .setColor("#E2FB00")
+       .setColor("#FF9900")
        .setImage("http://image.noelshack.com/fichiers/2017/34/5/1503625646-a8c8c726-iloveimg-cropped-1.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
@@ -473,7 +494,7 @@ message.channel.send("", { embed: {
     if(message.content.startsWith ("v!bisous")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":kiss: | " + message.author.username + " donne un bisous ")
-       .setColor("#E2FB00")
+       .setColor("#FF9900")
        .setImage("https://cdn.weeb.sh/images/SJrBZrMBz.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
@@ -483,17 +504,17 @@ message.channel.send("", { embed: {
     if(message.content.startsWith ("v!random")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":footprints: | Random | Encore Soon ")
-       .setColor("#E2FB00")
+       .setColor("#FF9900")
        .setImage("https://source.unsplash.com/random")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
        }
 	
-    if(message.content.startsWith ("v!e-girl")) {
+    if(message.content.startsWith ("v!girl")) {
        var help_embed = new Discord.RichEmbed()
-       .setTitle (":revolving_hearts: | e-girl | Encore Soon ")
-       .setColor("#E2FB00")
+       .setTitle (":revolving_hearts: | girl | Encore Soon ")
+       .setColor("#FF9900")
        .setImage("https://78.media.tumblr.com/93bc8521787c0b1dfe39293a99d18c4d/tumblr_ora9etSmp91tvq1hxo1_1280.jpg")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
@@ -503,7 +524,7 @@ message.channel.send("", { embed: {
     if(message.content.startsWith ("v!wasted")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":boxing_glove: | Wasted")
-       .setColor("#E2FB00")
+       .setColor("#FF9900")
        .setImage("https://cdn.weeb.sh/images/BJO2j1Fv-.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
@@ -513,13 +534,37 @@ message.channel.send("", { embed: {
     if(message.content.startsWith ("v!dance")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":headphones: | Dance")
-       .setColor("#E2FB00")
+       .setColor("#FF9900")
        .setImage("https://cdn.discordapp.com/attachments/360034958129233930/414181135350890496/a.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
 
-    } 
+    }
+	
+    if(message.content.startsWith ("v!bvn")) {
+       var help_embed = new Discord.RichEmbed()
+       .setTitle (":speech_left:  | Welcome")
+       .setColor("#FF9900")
+       .setImage("https://petitponey.owns-this.site/0f55e45a.gif")
+       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+       message.channel.sendEmbed(help_embed)
+
+    }	
+	
+        if (message.author.bot) return;
+        if (message.content.indexOf(prefix) !== 0) return;
+        if (message.channel.type === "dm") return;
+   
+        try {
+            let commandFile = require(`./commands/nsfw/${command}.js`);
+            commandFile.run(client, message, args);
+        } catch (err) {
+            //console.error(err);
+        }
+
 });	
+	
+
 
 
 client.commands = new Discord.Collection();
