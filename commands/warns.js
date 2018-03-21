@@ -30,7 +30,7 @@ if(message.mentions.users.size === 0) {
             }
             fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
 message.delete();
-            message.channel.send(':white_check_mark: | Vous venez d avertir '+mentionned.tag+' !');
+            message.channel.send(':white_check_mark: '+mentionned.tag+' a bien été averti !');
 message.mentions.users.first().send(`:exclamation: Vous venez d'être warn sur le serveur **${message.guild.name}** par **${message.author.username}**\n\n**Pour la Raison:** ` + args.slice(1).join(' '))
           } else {
             message.channel.send(":x: Erreur ! Exemple : "+prefix+"warn <user> <raison>");
