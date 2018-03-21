@@ -30,8 +30,8 @@ if(message.mentions.users.size === 0) {
             }
             fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
 message.delete();
-            message.channel.send(':warning: | '+mentionned.tag+' à été averti');
-message.mentions.users.first().send(`:warning: Warn depuis **${message.guild.name}** donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
+            message.channel.send(':white_check_mark: | Vous venez d avertir '+mentionned.tag+' !');
+message.mentions.users.first().send(`:exclamation: Vous venez d'être warn sur le serveur **${message.guild.name}** par **${message.author.username}**\n\n**Pour la Raison:** ` + args.slice(1).join(' '))
           } else {
             message.channel.send(":x: Erreur ! Exemple : "+prefix+"warn <user> <raison>");
           }
@@ -57,11 +57,11 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
         if (args[0] === "<@!"+mentioned.id+">"||args[0] === "<@"+mentioned.id+">") {
           try {
             if (warns[message.guild.id][mentioned.id] === undefined||Object.keys(warns[message.guild.id][mentioned.id]).length === 0) {
-              message.channel.send("**"+mentioned.tag+"** n'a aucun warn :eyes:");
+              message.channel.send("**"+mentioned.tag+"** n'a pas de warn :eyes:");
               return;
             }
           } catch (err) {
-            message.channel.send("**"+mentioned.tag+"** n'a aucun warn :eyes:");
+            message.channel.send("**"+mentioned.tag+"** n'a pas de warn :eyes:");
             return;
           }
           let arr = [];
@@ -96,7 +96,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
         if (args[0] === "<@!"+mentioned.id+">"||args[0] === "<@"+mentioned.id+">"){
           if (!isNaN(arg2)) {
             if (warns[message.guild.id][mentioned.id] === undefined) {
-              message.channel.send(mentioned.tag+" n'a aucun warn");
+              message.channel.send(mentioned.tag+" n'a pas de warn");
               return;
             } if (warns[message.guild.id][mentioned.id][arg2] === undefined) {
               message.channel.send(":x: Ce warn existe pas");
@@ -114,12 +114,12 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
             if (Object.keys(warns[message.guild.id][mentioned.id]).length === 0) {
               delete warns[message.guild.id][mentioned.id];
             }
-            message.channel.send(`Le warn de **${mentioned.tag}**: **n°${args[1]}** a été enlevé !`);
+            message.channel.send(`:white_check_mark: Le warn de **${mentioned.tag}**: **n°${args[1]}** a été enlevé !`);
             return;
           } if (args[1] === "tout") {
             delete warns[message.guild.id][mentioned.id];
             fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
-            message.channel.send(`Les warns de **${mentioned.tag}** ont tous été enlevés avec succès!`);
+            message.channel.send(`:white_check_mark:  Les warns de **${mentioned.tag}** ont tous été enlevés !`);
             return;
           } else {
             message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarns <utilisateur> <nombre|tout>");
