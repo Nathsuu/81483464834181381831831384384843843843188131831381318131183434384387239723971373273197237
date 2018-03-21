@@ -378,13 +378,7 @@ message.channel.send("", { embed: {
       message.channel.send(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
 
     }
-  }
-	
-  if (command === "tts") {
-     if(message.author.id == "282123215537569793"){
-      message.channel.send("Hey", {
-       tts: true
-  })	     
+  }     
 	  
 
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
