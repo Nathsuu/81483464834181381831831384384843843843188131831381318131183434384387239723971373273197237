@@ -428,7 +428,7 @@ message.channel.send("", { embed: {
 	message.reply('Mon prefix est \`v!\`.');
 }	
 	
-    if (message.content === prefix + "helpp"){
+    if (message.content === prefix + "help"){
         let bicon = bot.user.displayAvatarURL;	    
         var help_embed = new Discord.RichEmbed()
         .setColor('#FF9900')
@@ -460,30 +460,6 @@ message.channel.send("", { embed: {
 	if (message.content === prefix + "servlist"){
         message.channel.send("```" + bot.guilds.array().map( g => g.name + " | " + g.id + " | " + g.members.size ).join(" membres\n") + "```")   
     }
-	
-    if (message.content === prefix + "help"){
-        var help_embed = new Discord.RichEmbed()
-        .setColor('#E2FB00')
-	.setAuthor("Vaction | VacBot | French Bot", "https://image.noelshack.com/fichiers/2018/09/4/1519899146-17332945-138497173341771-651541625360613376-n-copie.jpg")
-        .addField("Description du Bot", "Le bot sert avant tout à rendre service à un joueur ou une communauté afin de les aider dans une tâche. Avec ses multiples fonctions, le Bot peut vous permettre de faire des sondages, mater des photos, faire de la musique ou tout simplement mettre des rôles automatiques pour les nouveaux.")
-	.addField("Informations du Bot", "Le bot peut mettre un grade automatique au nom de \`Member\` si celui-ci est dans les rôles. Le bot dispose aussi d'un logs pour que les modérateurs si retrouve plus rapidement pour celà, il suffit d'avoir un channel s'appellant \`vchannel\`.")
-        .addField("-", "Pour avoir de l'aide sur une commande, faites: \`v!help\`. Mon prefix est \`v!\`.")
-	.addBlankField()
-        .addField(":hammer_pick: Modération", "\`purge\`, \`ban\`, \`kick\`, \`mute\`, \`unmute\`, \`warn\`, \`seewarn\`, \`clearwarn\`, \`report\`")
-        .addField(":gear: Configuration - Pour mon créateur", "\`setgame\`, \`say\`, \`channel\`, \`eval\`, \`logout\`")
-        .addField(":clipboard: Utilitaire", "\`help\`, \`bot\`, \`youtube\`, \`invite\`, `\servlist\`, \`botinfo\`, `\servinfo\`")
-        .addField("💋 Nsfw", "\`e-girl\`")
-        .addField(":space_invader: Jeux", "\`8ball\`, \`flip\`, \`dé\`, \`fish\`")
-	.addField("💫 Autres", "\`random\`, \`calin\`, \`claque\`, \`tire\`, \`bisous\`, \`wasted\`, \`dance\`, \`triggered\`")
-        .addField(":floppy_disk: Total serveurs:", bot.guilds.size)
-	.addField(":floppy_disk: Utilisateurs sur le discord", message.guild.memberCount)
-        .addField(":eye: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
-        .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)
-	.setTimestamp() 
-    message.channel.sendEmbed(help_embed)
-	    message.author.send("La commande \`v!help\` a bien été exécuté !\nPlusieurs commandes s offre à vous pour contacter le support : \`v!youtube\`, \`v!bot\` et \`v!invite\`.")
-        console.log("Commande Help demandée !");
-    }	
 		
 	
     if(message.content.startsWith ("v!calin")) {
