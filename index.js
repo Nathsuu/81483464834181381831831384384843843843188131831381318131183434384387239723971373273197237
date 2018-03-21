@@ -89,23 +89,7 @@ warns(message, prefix, client)
     .addField("Créer le", client.user.createdAt);
 
     return message.channel.send(botembed);
-  }	
-	
-  if (command === "servinfo") {	
-    let sicon = message.guild.iconURL;
-    let serverembed = new Discord.RichEmbed()
-    .setDescription("Stats du serveur")
-    .setColor("#FF9900")
-    .setThumbnail(sicon)
-    .setTitle ("Information du Discord")
-    .addField("Nom du Discord", message.guild.name)
-    .addField("Propriétaire du serveur", message.guild.owner.user.username)
-    .addField("Créer le", message.guild.createdAt, true)
-    .addField("Vous avez rejoint", message.member.joinedAt,true)
-    .addField("Total Membre", message.guild.memberCount);
-
-    return message.channel.send(serverembed);
-  }	
+  }		
 
   if (command === "kick") {	
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -442,7 +426,7 @@ message.channel.send("", { embed: {
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)
 	.addBlankField()	
-        .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo```", true)
+        .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo \nv!stats```", true)
 	.addBlankField()	
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
 	.addBlankField()
