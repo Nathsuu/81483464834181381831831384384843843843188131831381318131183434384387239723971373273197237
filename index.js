@@ -38,7 +38,7 @@ client.on("channelDelete", async channel => {
   
 });	
 
-client.login('NDE3Njk4NTk0ODQyMjE0NDEy.DY8KSQ._G329kiVdJmN_5YYRTT0tt5hvCw');
+client.login('trrrrrr');
 
 client.on('message', message => {
 	
