@@ -413,7 +413,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)")
-        .addField(":paperclip:  Invitation du Bot", "[[Instation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")	
+        .addField(":paperclip:  Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")	
 	.addField(":chart_with_upwards_trend: Total serveurs :", client.guilds.size)
 	.addField(":chart_with_downwards_trend: Total utilisateurs :", client.users.size)
 	.addField(":bar_chart:  Utilisateurs sur le Discord :", message.guild.memberCount)	
