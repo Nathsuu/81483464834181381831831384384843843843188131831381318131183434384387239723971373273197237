@@ -436,13 +436,16 @@ message.channel.send("", { embed: {
 	.setThumbnail(bicon)
 	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Mes listes de mes commandes :")
 	.addBlankField()	
-        .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!kick \nv!mute \nv!unmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```", true)	
+        .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!kick \nv!mute \nv!unmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```", true)
+	.addBlankField()	
         .addField(":space_invader: Espaces Jeux", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc```", true)
 	.addBlankField()	
-        .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass```", true)	
+        .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
+	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)
 	.addBlankField()	
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!botinfo```", true)
+	.addBlankField()	
         .addField(":gear: Espaces Configurations - Pour mon créateur", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
 	.addBlankField()
         .addField(":floppy_disk: Total serveurs :", client.guilds.size)
@@ -563,9 +566,6 @@ message.channel.send("", { embed: {
 
 });	
 	
-
-
-
 client.commands = new Discord.Collection();
 
 fs.readdir("./commandes/", (err, files) => {
