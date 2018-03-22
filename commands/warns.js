@@ -61,14 +61,14 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
               return;
             }
           } catch (err) {
-            message.channel.send("**"+mentioned.tag+"** n'a pas de warn :eyes:");
+            message.channel.send("**"+mentioned.tag+"** n'a pas de warn.");
             return;
           }
           let arr = [];
-          arr.push(`**${mentioned.tag}** a **`+Object.keys(warns[message.guild.id][mentioned.id]).length+"** warns :eyes:");
+          arr.push(`**${mentioned.tag}** a **`+Object.keys(warns[message.guild.id][mentioned.id]).length+"** warns.");
           for (var warn in warns[message.guild.id][mentioned.id]) {
             arr.push(`**${warn}** - **"`+warns[message.guild.id][mentioned.id][warn].raison+
-            "**\" warn donné par **"+message.guild.members.find("id", warns[message.guild.id][mentioned.id][warn].user).user.tag+"** a/le **"+warns[message.guild.id][mentioned.id][warn].time+"**");
+            "**\" warn donné par **"+message.guild.members.find("id", warns[message.guild.id][mentioned.id][warn].user).user.tag+"** le **"+warns[message.guild.id][mentioned.id][warn].time+"**");
           }
           message.channel.send(arr.join('\n'));
         } else {
