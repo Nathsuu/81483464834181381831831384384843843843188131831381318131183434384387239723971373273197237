@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     return;
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.reply(":x: Vous n'avez mentionnée aucun utilisateur !");
+  if(!tomute) return message.reply(":x: Vous n'avez pas mentionné un nombre ! Exemple : `v!tempmute @User <1s/m/h/d>");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply(":x: Il me faut une raison.");
