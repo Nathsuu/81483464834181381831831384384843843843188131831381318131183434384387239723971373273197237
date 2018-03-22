@@ -49,7 +49,7 @@ module.exports.run = async (bot, message, args) => {
   .setDescription("TempMute")
   .setColor("#FF9900")
   .addField("Utilisateur Tempmute", tomute)
-  .addField("Tempmute par", `${message.author} avec l'ID ${message.author.id}`)
+  .addField("Tempmute par", `${message.author}`)
     .addField("Tempsmute depuis", message.channel)
   .addField("Temps du Tempmute", mutetime)
   .addField("Raison", reason);
