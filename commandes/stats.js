@@ -16,13 +16,12 @@ module.exports.run = async (client, message) => {
   .addField("Nom du Discord", message.guild.name)
   .addField("Propriétaire du Serveur", message.guild.owner.user.username)
   .addField("Serveur créer le", message.guild.createdAt, true)
-  .addField("Vous avez rejoint", message.member.joinedAt, true)
+  .addField("Vous avez rejoint le", message.member.joinedAt, true)
   .addBlankField()
   .addField(":floppy_disk: Total serveurs :", client.guilds.size)
   .addField(":floppy_disk: Total utilisateurs :", client.users.size)
   .addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount)
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-	 .setTimestamp() 
   message.channel.send(embed)
 
 }
