@@ -46,11 +46,11 @@ module.exports.run = async (bot, message, args) => {
   }
 
   let muteembed = new Discord.RichEmbed()
-  .setDescription("TempMute")
+  .setDescription("TempMute - Encore SOON")
   .setColor("#FF9900")
   .addField("Utilisateur Tempmute", tomute)
   .addField("Tempmute par", `${message.author}`)
-    .addField("Tempsmute depuis", message.channel)
+    .addField("Tempmute depuis", message.channel)
   .addField("Temps du Tempmute", mutetime)
   .addField("Raison", reason);
 
