@@ -116,19 +116,19 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
             }
             message.channel.send(`:white_check_mark: Le warn de **${mentioned.tag}**: **n°${args[1]}** a été enlevé !`);
             return;
-          } if (args[1] === "tout") {
+          } if (args[1] === "all") {
             delete warns[message.guild.id][mentioned.id];
             fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
             message.channel.send(`:white_check_mark:  Les warns de **${mentioned.tag}** ont tous été enlevés !`);
             return;
           } else {
-            message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarns <utilisateur> <nombre|tout>");
+            message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
           }
         } else {
-          message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarns <utilisateur> <nombre|tout>");
+          message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
         }
       } else {
-       message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarns <utilisateur> <nombre|tout>");
+       message.channel.send(":x: Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
       }
   }
 }
