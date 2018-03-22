@@ -409,7 +409,7 @@ message.channel.send("", { embed: {
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
-        .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!stats```", true)
+        .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!stats \nv!ping```", true)
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)")
