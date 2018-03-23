@@ -154,7 +154,7 @@ unmute(message, prefix, client)
   if (command === "request-bot") {
     let rUserss = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUserss) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
-    let idprefix = args.join(" ");
+    let idprefix = args.join(" ").slice(1);
     if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
 
     let requestEmbed = new Discord.RichEmbed()
