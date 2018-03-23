@@ -183,7 +183,6 @@ unmute(message, prefix, client)
     }else{
     return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.");
     }
-    }
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!approve-bot @User`");	  
 
