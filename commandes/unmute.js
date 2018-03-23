@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   }
 
       message.guild.channels.forEach(async (channel, id) => {
-      
+  }  
   try{
     await tomute.send(`:exclamation: Vous venez d'être unmute sur un serveur m'utilisant.`)
   }catch(e){
