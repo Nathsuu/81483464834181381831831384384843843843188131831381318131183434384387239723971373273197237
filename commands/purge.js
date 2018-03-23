@@ -25,7 +25,7 @@ const filterBy = user ? user.id : Client.user.id;
 messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
  }
  message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
-message.channel.send(":ok_hand: | messages supprimés " + `amount`);
+message.channel.send(":ok_hand: | " + amount + "messages supprimés");
     
 });
 }}
