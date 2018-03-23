@@ -159,7 +159,7 @@ unmute(message, prefix, client)
     .setColor("#FF9900")
     .setDescription("**Request-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !")       
-    .addField("Owner:", `${message.author}`) 
+    .addField("Owner :", `${message.author}`) 
     .addField("ID / Prefix", idprefix)
     .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
@@ -172,6 +172,29 @@ unmute(message, prefix, client)
 
     return;
   }
+
+  if (command === "approve-bot") {
+    if(!message.member.author.id == "282123215537569793") return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut pour le moment.");		  
+    let idprefix = args.join(" ").slice(0);
+    if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!approve-bot @User`");	  
+
+    let approuveEmbed = new Discord.RichEmbed()
+    .setColor("#FF9900")
+    .setDescription("**Approve-Bot**")
+    .addField("Information", "Merci d'avoir soumis le bot, il est désormais approuvé !")       
+    .addField("Owner :", idprefix) 
+    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setTimestamp()	  
+	  
+    let requestchannel = message.guild.channels.get("423552696411357204");
+    if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'iD du cannal est un channel du support du bot.");	  
+
+    message.delete().catch(O_o=>{});
+    requestchannel.send(requestEmbed);
+
+    return;
+  }	
+	
 		
 if(command === "pfc") {
     var rps = args.join(" ");
@@ -403,8 +426,8 @@ message.channel.send("", { embed: {
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
-        .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!stats \nv!ping```", true)
-        .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout```", true)
+        .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!stats \nv!ping \nv!request-bot```", true)
+        .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot```", true)
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)")
         .addField(":paperclip:  Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")	
