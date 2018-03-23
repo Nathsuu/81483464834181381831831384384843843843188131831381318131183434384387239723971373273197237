@@ -25,12 +25,10 @@ client.login(process.env.TOKEN);
 client.on('message', message => {
 	
 const purge = require("./commands/purge.js");
-const mute = require("./commands/mute.js");
 const unmute = require("./commands/unmute.js");
 const warns = require("./commands/warns.js");	
 	
 purge(message, prefix, client)
-mute(message, prefix, client)
 unmute(message, prefix, client)
 warns(message, prefix, client)	
 
