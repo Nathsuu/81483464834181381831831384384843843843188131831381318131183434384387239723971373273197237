@@ -15,14 +15,6 @@ module.exports.run = async (bot, message, args) => {
   let muterole = message.guild.roles.find(`name`, "vmuted");
   }
 
-      message.guild.channels.forEach(async (channel, id) => {
-  }  
-  try{
-    await tomute.send(`:exclamation: Vous venez d'être unmute sur un serveur m'utilisant.`)
-  }catch(e){
-    message.channel.send(`L'utilisateur a été unmute, mais sont DM est verrouillés.`)
-  }
-
   let muteembed = new Discord.RichEmbed()
   .setDescription("Unmute")
   .setColor("#FF9900")
