@@ -186,7 +186,7 @@ unmute(message, prefix, client)
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!approve-bot @User`");	  
 
-    let approuveEmbed = new Discord.RichEmbed()
+    let approveEmbed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Approve-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il est désormais approuvé !")       
@@ -198,7 +198,7 @@ unmute(message, prefix, client)
     if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'iD du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
-    requestchannel.send(requestEmbed);
+    requestchannel.send(approveEmbed);
 
     return;
   }	
