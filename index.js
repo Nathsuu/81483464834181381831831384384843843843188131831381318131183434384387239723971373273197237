@@ -174,7 +174,16 @@ unmute(message, prefix, client)
   }
 
   if (command === "approve-bot") {
-    if(!message.member.author.id == "282123215537569793") return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut pour le moment.");		  
+    if (!args){
+    args = null;
+    }
+    if(message.author.id == "282123215537569793"){
+     
+    message.channel.send(args.join(` `))
+    }else{
+    return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.");
+    }
+    }
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!approve-bot @User`");	  
 
