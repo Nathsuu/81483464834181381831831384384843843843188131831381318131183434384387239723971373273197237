@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply(":x: Vous n'avez pas mentionné un nombre ! Exemple : ``v!mute @User Insulte``");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
-  let reason = args.slice(2).join(" ");
+  let reason = args.slice(1).join(" ");
   if(!reason) return message.reply(":x: Il me faut une raison.");
 
   let muterole = message.guild.roles.find(`name`, "vmuted");
