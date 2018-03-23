@@ -154,18 +154,17 @@ unmute(message, prefix, client)
   if (command === "request-bot") {
     let rUserss = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUserss) return message.channel.send(":x: Vous n'avez mentionné aucun ID et prefix du bot ! Exemple : \`v!request-bot <ID DU BOT ICI> <PREFIX DU BOT ICI>\``");
-    let idprefix = args.join(" ");
-    if(!idprefix) return message.reply(":x: Il me faut l'ID du Bot.");	  
+    let idprefix = args.join(" ").slice(2);
+    if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot.");	  
 
     let requestEmbed = new Discord.RichEmbed()
     .setDescription("Request-Bot")
     .setColor("#FF9900")
     .addField("Salut", `${message.author}`)
-    .addField("truc", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !")    
-    .addField("Information", "truc")    
-    .addField("Username:", "truc")
+    .addField("truc", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !")       
+    .addField("Username/ID :", @idprefix)
     .addField("Owner:", `${message.author}`) 
-    .addField("ID / Prefix", idprefix, true)
+    .addField("ID / Prefix", idprefix)
     .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
