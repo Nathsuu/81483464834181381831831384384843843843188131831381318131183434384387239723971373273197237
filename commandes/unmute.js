@@ -27,16 +27,6 @@ module.exports.run = async (bot, message, args) => {
   if(!vchannelchannel) return message.reply(":x: Impossible de trouver le canal \`vchannel\`.");
   vchannelchannel.send(muteembed);
 
-  await(tomute.addRole(muterole.id));
-
-  setTimeout(function(){
-    tomute.removeRole(muterole.id);
-    message.channel.send(`:white_check_mark: <@${tomute.id}> a bien été unmute !`);
-  }, ms(mutetime));
-
-
-}
-
 module.exports.help = {
   name: "unmute"
 }
