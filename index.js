@@ -159,7 +159,7 @@ unmute(message, prefix, client)
 
     let requestEmbed = new Discord.RichEmbed()
     .setColor("#FF9900")
-    .setDescription("**Salut `${message.author.id}` !**")
+    .setDescription("**Request-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans #rules-info !")       
     .addField("Owner:", `${message.author}`) 
     .addField("ID / Prefix", idprefix)
