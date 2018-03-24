@@ -8,7 +8,7 @@ exports.run = (bot, message, args) => {
     var MathRan = Math.floor(Math.random() * (max - min + 0)) + min;
     var MathLoL = Math.round(MathRan);
     if (!message.channel.nsfw) {
-        message.channel.send("Cette commande n'est executable que dans un channel NSFW :underage:.")
+        message.channel.send("Cette commande n'est executable que dans un channel NSFW :underage:")
               
     } else {
         
