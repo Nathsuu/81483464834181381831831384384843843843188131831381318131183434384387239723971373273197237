@@ -172,37 +172,6 @@ unmute(message, prefix, client)
 
     return;
   }
-
-  if (command === "approve-bot") {
-    if (!args){
-    args = null;
-    }
-    if(message.author.id == "282123215537569793"){
-     
-    message.channel.send(args.join(` `))
-    }else{
-    return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.");
-    }
-    let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!approve-bot @User`");	  
-
-    let approveEmbed = new Discord.RichEmbed()
-    .setColor("#FF9900")
-    .setDescription("**Approve-Bot**")
-    .addField("Information", "Merci d'avoir soumis le bot, il est désormais approuvé !")       
-    .addField("Owner :", idprefix) 
-    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
-    .setTimestamp()	  
-	  
-    let requestchannel = message.guild.channels.get("423552696411357204");
-    if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'iD du cannal est un channel du support du bot.");	  
-
-    message.delete().catch(O_o=>{});
-    requestchannel.send(approveEmbed);
-
-    return;
-  }
-	
   if (command === "approve-bot") {
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
