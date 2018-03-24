@@ -165,7 +165,7 @@ unmute(message, prefix, client)
     .setTimestamp()	  
 	  
     let requestchannel = message.guild.channels.get("423552696411357204");
-    if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'iD du cannal est un channel du support du bot.");	  
+    if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
     requestchannel.send(requestEmbed);
@@ -188,7 +188,7 @@ unmute(message, prefix, client)
     .setTimestamp()	  
 	  
     let approvechannel = message.guild.channels.get("423552696411357204");
-    if(!approvechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'iD du cannal est un channel du support du bot.");	  
+    if(!approvechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
     approvechannel.send(approveEmbed);
