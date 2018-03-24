@@ -175,7 +175,7 @@ unmute(message, prefix, client)
   if (command === "approve-bot") {
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
-	if(!message.author.id== "282123215537569793")) {	
+	if(!message.author.id== "282123215537569793") {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }   	  
 
