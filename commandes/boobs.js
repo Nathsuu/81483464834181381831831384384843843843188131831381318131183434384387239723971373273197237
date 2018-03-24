@@ -9,7 +9,7 @@ module.exports.run = async (client, msg) => {
     var MathRan = Math.floor(Math.random() * (max - min + 0)) + min;
     var MathLoL = Math.round(MathRan);
 
-    if (!msg.channel.nsfw) return msg.channel.send(":x: Cette commande est executable dans un channel NSFW :underage:.");
+    if (!msg.channel.nsfw) return msg.channel.send(":x: Cette commande n'est executable que dans un channel NSFW :underage:.");
 
 var embed = new Discord.RichEmbed()
 
