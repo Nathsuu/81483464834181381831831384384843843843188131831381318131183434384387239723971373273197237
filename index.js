@@ -271,18 +271,6 @@ if(command === "pfc") {
   .addField("Réponse", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
-  }
-	
-  if(message.content.startsWith(prefix + 'reboot')){
-          if(message.author.id == '282123215537569793'){
-  {return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
-  } else {
-              console.log("Reboot")
-              setTimeout(function() {
-                  process.exit(1);
-              }, 3 * 1000)
-          }
-      }
   }	 
 	
   if (command === "dé") {
