@@ -317,7 +317,7 @@ if(command === "pfc") {
   var image = message.author.avatarURL; 
 
   } 
-  message.channel.send({ file: { attachment: "http://www.triggered-api.tk/api/v1/url=" + message.author.avatarURL.replace("jpg", "png"), name: "triggered.gif"  
+  message.channel.send({ file: { attachment: "http://www.triggered-api.tk/api/v1/url=" + image + message.author.avatarURL.replace("jpg", "png"), name: "triggered.gif"  
   }}) 
   }
 	
