@@ -304,7 +304,6 @@ if(command === "pfc") {
 
   if(message.content.startsWith(prefix + "triggered")) { 
   var image; 
-  var args = message.content.split(" ").slice(1).join(" "); 
   if(args){ 
   if(message.mentions.users.first()){
 
