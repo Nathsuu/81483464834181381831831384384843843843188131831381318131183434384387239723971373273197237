@@ -302,11 +302,25 @@ if(command === "pfc") {
   message.channel.sendEmbed(help_embed)
   }
 
- if (command === "triggered") {
+  if(message.content.startsWith(prefix + "triggered")) { 
+  var image; 
+  var args = message.content.split(" ").slice(1).join(" "); 
+  if(args){ 
+  if(message.mentions.users.first()){
 
- message.channel.send({file:{ attachment: "http://www.triggered-api.tk/api/v1/url=" + message.author.avatarURL , name: "triggered.gif"}})
+  var image = message.mentions.users.first().avatarURL; 
 
- }
+  }else{
+  var image = args; 
+  }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({ file: { attachment: "http://www.triggered-api.tk/api/v1/url=" + image, name: "triggered.gif" 
+  }}) 
+  }
 	
   if (command === "roll") {
   let rolls = Math.floor((Math.random() * 100) + 1);  
