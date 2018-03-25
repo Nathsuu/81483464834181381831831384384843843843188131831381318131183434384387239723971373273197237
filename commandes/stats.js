@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message) => {
  let sicon = message.guild.iconURL;
+ var getvalueof;
  const embed = new Discord.RichEmbed()
   .setTitle(`Stats du Serveur`)
   .setThumbnail(sicon)
@@ -17,6 +18,7 @@ module.exports.run = async (client, message) => {
   .addField("Propriétaire du Serveur", message.guild.owner.user.username)
   .addField("Serveur créer le", message.guild.createdAt, true)
   .addField("Vous avez rejoint le", message.member.joinedAt, true)
+  .addField(getvalueof.id).roles.array().map(g => "" + g.name + "").join(', ') 
   .addBlankField()
   .addField(":floppy_disk: Total serveurs :", client.guilds.size)
   .addField(":floppy_disk: Total utilisateurs :", client.users.size)
