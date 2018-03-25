@@ -302,7 +302,8 @@ if(command === "pfc") {
   message.channel.sendEmbed(help_embed)
   }
 
-  if(message.content.startsWith(prefix + "triggered")) { 
+  if(message.content.startsWith(prefix + "triggered")) {
+  if(!args[0]) return message.reply(":x: Vous n'avez pas mentionné une personne ! Exemple : \`v!triggered @User\`");	  
   var image; 
   if(args){ 
   if(message.mentions.users.first()){
