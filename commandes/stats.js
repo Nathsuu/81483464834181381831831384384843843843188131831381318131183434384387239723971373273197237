@@ -18,7 +18,7 @@ module.exports.run = async (client, message) => {
   .addField("Propriétaire du Serveur", message.guild.owner.user.username)
   .addField("Serveur créer le", message.guild.createdAt, true)
   .addField("Vous avez rejoint le", message.member.joinedAt, true)
-  .addField(getvalueof.id).roles.array().map(g => "" + g.name + "").join(', ') 
+  .addField(getvalueof).roles.array().map(g => "" + g.name + "").join(', ') 
   .addBlankField()
   .addField(":floppy_disk: Total serveurs :", client.guilds.size)
   .addField(":floppy_disk: Total utilisateurs :", client.users.size)
