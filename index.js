@@ -273,6 +273,19 @@ if(command === "pfc") {
   message.channel.sendEmbed(help_embed)
   }
 	
+ if(message.content.startsWith(prefix + 'reboot')){
+         if(message.author.id == '404244983101784076'){
+ {return message.reply("NOPPPP")
+ } else { 
+             message.channel.send(":bomb: | Reboot en cours")
+             console.log("Reboot")
+             setTimeout(function() {
+                 process.exit(1);
+             }, 3 * 1000)
+         }
+     }
+ }	 
+	
   if (command === "dé") {
   if(!args[0]) return message.reply(":x: Vous n'avez pas mentionné un nombre ! Exemple : \`v!dé 5\`");	  
   let replies = ["1", "2", "3", "4", "5", "6"];
