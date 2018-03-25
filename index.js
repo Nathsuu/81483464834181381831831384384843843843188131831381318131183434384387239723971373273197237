@@ -135,10 +135,9 @@ unmute(message, prefix, client)
     let reportEmbed = new Discord.RichEmbed()
     .setDescription("Report")
     .setColor("#FF9900")
-    .addField("Utilisateur Report", `${rUser} avec l'ID: ${rUser.id}`)
-    .addField("Report par", `${message.author} avec l'ID: ${message.author.id}`)
+    .addField("Utilisateur Report", `${rUser} ID: ${rUser.id}`)
+    .addField("Report par", `${message.author} ID: ${message.author.id}`)
     .addField("Depuis le Channel", message.channel)
-    .addField("Temps", message.createdAt)
     .addField("Raison", rreason);
 
     let reportschannel = message.guild.channels.find(`name`, "vchannel");
