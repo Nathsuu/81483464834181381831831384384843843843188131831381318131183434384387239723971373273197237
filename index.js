@@ -203,6 +203,9 @@ info(message, prefix, client)
     if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
 	if(!message.author.id== "282123215537569793") {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
+    let raison = args.join(" ").slice(0);
+    if(!raison) return message.reply(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");	  
+		
         } 	  
 
     let RefuseEmbed = new Discord.RichEmbed()
@@ -210,6 +213,7 @@ info(message, prefix, client)
     .setDescription("**Refuse-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot mais il a était refusé ! Si vous avez envie, vous pouvez toujours retenter votre chance.")       
     .addField("Owner :", rUser) 
+    .addField("Raison :", raison)    
     .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
