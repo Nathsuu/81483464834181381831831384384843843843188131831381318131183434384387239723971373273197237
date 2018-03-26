@@ -198,12 +198,12 @@ info(message, prefix, client)
     return;
   }
 	
-  if (command === "refuse-bot") {	  
+  if (command === "refuse-bot") {
+    let rreason = args.join(" ").slice(22);	  
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
 	if(!message.author.id== "282123215537569793") {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
-    let rreason = args.join(" ").slice(22);
         } 	  
 
     let RefuseEmbed = new Discord.RichEmbed()
