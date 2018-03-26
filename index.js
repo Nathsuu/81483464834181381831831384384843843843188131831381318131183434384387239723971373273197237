@@ -189,8 +189,8 @@ info(message, prefix, client)
     .addField("Owner :", rUser)   
 	  
 	  
-    let approvechannel = message.guild.channels.get("423552696411357204");
-    if(!approvechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
+    let approvechannel = message.guild.channels.get("427880171672961024");
+    if(!approvechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
     approvechannel.send(approveEmbed);
@@ -214,8 +214,8 @@ info(message, prefix, client)
     .addField("Refusé par :", `${message.author}`)     
     .addField("Raison :", rreason)   
 	  
-    let refusechannel = message.guild.channels.get("423552696411357204");
-    if(!refusechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
+    let refusechannel = message.guild.channels.get("427880171672961024");
+    if(!refusechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
     refusechannel.send(RefuseEmbed);
