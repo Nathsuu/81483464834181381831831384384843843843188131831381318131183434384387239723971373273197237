@@ -162,7 +162,7 @@ info(message, prefix, client)
     .addField("Information", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans __#rules-info__ !")       
     .addField("Owner :", `${message.author}`) 
     .addField("ID / Prefix", idprefix)
-    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
     let requestchannel = message.guild.channels.get("423552696411357204");
