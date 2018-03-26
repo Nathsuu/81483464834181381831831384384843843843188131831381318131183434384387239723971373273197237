@@ -184,9 +184,9 @@ info(message, prefix, client)
     let approveEmbed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Approve-Bot**")
-    .addField("Information", "Merci d'avoir soumis le bot, il est désormais __approuvé__ !") 
-    .addField("Approuvé par :", `${message.author}`)     
-    .addField("Owner :", rUser)   
+    .addField("Information", "Merci d'avoir soumis le bot, il est désormais __approuvé__ !")
+    .addField("Owner :", rUser)      
+    .addField("Approuvé par :", `${message.author}`)        
 	  
 	  
     let approvechannel = message.guild.channels.get("427880171672961024");
