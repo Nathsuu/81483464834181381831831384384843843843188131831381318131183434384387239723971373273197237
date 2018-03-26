@@ -1,8 +1,5 @@
 function info(message, prefix, client){
      if (message.content.startsWith(prefix + "info")) {
-        var moment = require("moment");
-    moment.locale("fr");
-  var temps = moment(message.createdTimestamp).format("LLLL");
   var memberavatar = message.author.avatarURL
   var membername = message.author.username
   var mentionned = message.mentions.users.first();
@@ -64,14 +61,6 @@ function info(message, prefix, client){
            value: etat,
            inline: true
         },{
-           name: "Sur discord depuis:",
-           value: "le " + moment(getvalueof.createdAt).format("LL"),
-           inline: true
-        },{            
-          name: "Sur le server depuis:",
-          value: "le " + moment(message.guild.members.get(getvalueof.id).joinedAt).format("LL"),
-          inline: true
-       },{
           name: "description des rôles :",
           value: "`\n" + message.guild.members.get(getvalueof.id).roles.array().map(g => "" + g.name + "").join(', ') + " `\n",
           inline: true
