@@ -3,6 +3,11 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message) => {
  let sicon = message.guild.iconURL;
  var getvalueof;
+ if(mentionned){
+ var getvalueof = mentionned;
+ }else {
+ var getvalueof = message.author;
+ }
  const embed = new Discord.RichEmbed()
   .setTitle(`Stats du Serveur`)
   .setThumbnail(sicon)
