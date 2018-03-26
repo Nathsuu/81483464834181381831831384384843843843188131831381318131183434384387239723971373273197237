@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message) => {
  let sicon = message.guild.iconURL;
+ var mentionned = message.mentions.users.first();
  var getvalueof;
  if(mentionned){
  var getvalueof = mentionned;
