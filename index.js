@@ -186,7 +186,7 @@ info(message, prefix, client)
     .setDescription("**Approve-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il est désormais __approuvé__ !")       
     .addField("Owner :", rUser) 
-    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setFooter("VacBot | Vaction | by WinDino")	  
     .setTimestamp()	  
 	  
     let approvechannel = message.guild.channels.get("423552696411357204");
@@ -212,7 +212,7 @@ info(message, prefix, client)
     .addField("Information", "Merci d'avoir soumis le bot mais il a était __refusé__ ! Si vous avez envie, vous pouvez toujours retenter votre chance.")       
     .addField("Owner :", rUser) 
     .addField("Raison :", rreason)    
-    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setFooter("VacBot | Vaction | by WinDino")	  
     .setTimestamp()	  
 	  
     let refusechannel = message.guild.channels.get("423552696411357204");
