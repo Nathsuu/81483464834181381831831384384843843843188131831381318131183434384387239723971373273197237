@@ -185,9 +185,9 @@ info(message, prefix, client)
     .setColor("#FF9900")
     .setDescription("**Approve-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il est désormais __approuvé__ !")       
-    .addField("Owner :", rUser) 
-    .setFooter("VacBot | Vaction | by WinDino")	  
-    .setTimestamp()	  
+    .addField("Owner :", rUser)
+    .addField("Approuvé par :", `${message.author}`)     
+	  
 	  
     let approvechannel = message.guild.channels.get("423552696411357204");
     if(!approvechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
@@ -211,9 +211,8 @@ info(message, prefix, client)
     .setDescription("**Refuse-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot mais il a était __refusé__ ! Si vous avez envie, vous pouvez toujours retenter votre chance.")       
     .addField("Owner :", rUser) 
-    .addField("Raison :", rreason)    
-    .setFooter("VacBot | Vaction | by WinDino")	  
-    .setTimestamp()	  
+    .addField("Raison :", rreason)
+    .addField("Refusé par :", `${message.author}`)    
 	  
     let refusechannel = message.guild.channels.get("423552696411357204");
     if(!refusechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
