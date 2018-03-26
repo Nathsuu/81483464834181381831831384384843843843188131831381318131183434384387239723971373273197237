@@ -219,7 +219,7 @@ info(message, prefix, client)
     if(!refusechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
-    requestchannel.send(RefuseEmbed);
+    refusechannel.send(RefuseEmbed);
 
     return;
   }	
