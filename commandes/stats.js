@@ -23,7 +23,7 @@ module.exports.run = async (client, message) => {
   .addField(":floppy_disk: Total utilisateurs :", client.users.size)
   .addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount)
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-  message.author.send(embed)
+  message.channel.send(embed)
 
 }
 
