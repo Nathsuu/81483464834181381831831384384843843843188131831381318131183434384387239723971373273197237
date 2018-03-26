@@ -173,11 +173,12 @@ info(message, prefix, client)
 
     return;
   }
+	
   if (command === "approve-bot") {
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
 	if(!message.author.id== "282123215537569793") {	
-            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
         }   	  
 
     let approveEmbed = new Discord.RichEmbed()
@@ -196,6 +197,30 @@ info(message, prefix, client)
 
     return;
   }
+	
+  if (command === "refuse-bot") {	  
+    let rUser = message.guild.member(message.mentions.users.first());
+    if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
+	if(!message.author.id== "282123215537569793") {	
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
+        } 	  
+
+    let RefuseEmbed = new Discord.RichEmbed()
+    .setColor("#FF9900")
+    .setDescription("**Refuse-Bot**")
+    .addField("Information", "Merci d'avoir soumis le bot mais il a était refusé ! Si vous avez envie, vous pouvez toujours retenter votre chance.")       
+    .addField("Owner :", rUser) 
+    .setFooter("VacBot | Vaction | by WinDino | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setTimestamp()	  
+	  
+    let refusechannel = message.guild.channels.get("423552696411357204");
+    if(!refusechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
+
+    message.delete().catch(O_o=>{});
+    requestchannel.send(RefuseEmbed);
+
+    return;
+  }	
 	
 	
 		
