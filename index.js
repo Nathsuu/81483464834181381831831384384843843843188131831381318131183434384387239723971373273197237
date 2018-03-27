@@ -83,7 +83,7 @@ info(message, prefix, client)
         }
     let bReason = args.join(" ").slice(22);	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
-            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }
 	if(!bUser.hasPermission("MANAGE_MESSAGES")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
@@ -114,7 +114,7 @@ info(message, prefix, client)
         }	  	  
     let kReason = args.join(" ").slice(22);	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
-            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         }
 	if(!kUser.hasPermission("MANAGE_MESSAGES")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
