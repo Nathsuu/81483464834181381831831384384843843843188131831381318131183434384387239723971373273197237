@@ -114,10 +114,7 @@ info(message, prefix, client)
         }	  	  
     let kReason = args.join(" ").slice(22);	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
-            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
-        }
-	if(!kUser.hasPermission("MANAGE_MESSAGES")) {	
-            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ou :x: vous n'avez pas la permission de faire cette commande. ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         }	  
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Kick")
