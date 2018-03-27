@@ -169,7 +169,7 @@ info(message, prefix, client)
     if(!blacklistchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
 	  
     message.guild.member(bUser);
-    banchannel.send(blacklistEmbed);
+    blacklistchannel.send(blacklistEmbed);
   bUser.ban()
 
     return;
