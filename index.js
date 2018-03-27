@@ -74,33 +74,7 @@ info(message, prefix, client)
 
     return message.channel.send(botembed);
   }		
-
-  if (command === "kick") {	
-    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");
-    let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MESSAGES\` pour faire ceci.");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
-
-    let kickEmbed = new Discord.RichEmbed()
-    .setDescription("Kick")
-    .setColor("#FF9900")
-    .addField("Utilisateur Kick", `${kUser} ID : ${kUser.id}`)
-    .addField("Kick par", `${message.author} ID : ${message.author.id}`)
-    .addField("Kick depuis", message.channel)
-    .addField("Temps", message.createdAt)
-    .addField("Raison", kReason);
-
-    let kickChannel = message.guild.channels.find(`name`, "vchannel");
-    if(!kickChannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
-	  
-
-    message.guild.member(kUser).kick(kReason);
-    kickChannel.send(kickEmbed);
-    kUser.kick()
-
-    return;
-  }		
+		
 	
   if (command === "ban") { 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -128,7 +102,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (command === "kickt") {	  
+  if (command === "kick") {	  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");
     let kReason = args.join(" ").slice(22);	  
@@ -136,11 +110,11 @@ info(message, prefix, client)
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande.");
 	  
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("Ban")
+    .setDescription("Kick")
     .setColor("#FF9900")
-    .addField("Utilisateur Banni", `${kUser} avec l'ID ${kUser.id}`)
-    .addField("Ban par", `${message.author} avec l'ID ${message.author.id}`)
-    .addField("Ban depuis", message.channel)
+    .addField("Utilisateur Kick", `${kUser} avec l'ID ${kUser.id}`)
+    .addField("Kick par", `${message.author} avec l'ID ${message.author.id}`)
+    .addField("Kick depuis", message.channel)
     .addField("Temps", message.createdAt)
     .addField("Raison", kReason);
 	  
@@ -150,7 +124,7 @@ info(message, prefix, client)
 
     message.guild.member(kUser).kick(kReason);
     banChannel.send(banEmbed);
-    kUser.ban()
+    kUser.kick()
 
     return;
   }	
