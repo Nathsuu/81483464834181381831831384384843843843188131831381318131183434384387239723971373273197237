@@ -162,13 +162,12 @@ info(message, prefix, client)
     .setColor("#FF9900")
     .addField("Utilisateur Blacklist", `${bUser} ID : ${bUser.id}`)
     .addField("Blacklist par", `${message.author} ID : ${message.author.id}`)
-    .addField("Blacklist depuis", message.channel)
-    .addField("Raison", "Blacklist");    
+    .addField("Blacklist depuis", message.channel) 
 
     let blacklistchannel = message.guild.channels.find(`name`, "vchannel");
     if(!blacklistchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
 	  
-    message.guild.member(bUser);
+    message.delete().catch(O_o=>{});
     blacklistchannel.send(blacklistEmbed);
   bUser.ban()
 
