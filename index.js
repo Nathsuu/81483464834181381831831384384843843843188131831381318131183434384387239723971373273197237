@@ -102,13 +102,13 @@ info(message, prefix, client)
     return;
   }		
 	
-  if (command === "ban") {
+  if (command === "ban") { 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
-    let bReason = args.join(" ").slice(22);
+    let bReason = args.join(" ").slice(22);	  
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
-
+	  
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Ban")
     .setColor("#FF9900")
@@ -128,13 +128,13 @@ info(message, prefix, client)
     return;
   }
 	
-  if (command === "kick") {	
+  if (command === "kick") {	  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
-    let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MESSAGES\` pour faire ceci.");
+    if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");
+    let kReason = args.join(" ").slice(22);	  
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
-  
+	  
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Ban")
     .setColor("#FF9900")
@@ -255,7 +255,7 @@ info(message, prefix, client)
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
     let blacklist = args.join(" ").slice(22);	  
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_SERVERS\` pour faire ceci.");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`ADMINISTRATOR\` pour faire ceci.");
     if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
     let blacklistembed = new Discord.RichEmbed()
