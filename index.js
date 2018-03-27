@@ -155,9 +155,9 @@ info(message, prefix, client)
     let bUser = message.guild.member(message.mentions.users.first());
     if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_SERVERS\` pour faire ceci.");
-    if(bUser.hasPermission("MANAGE_SERVERS")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
+    if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
-    let banEmbed = new Discord.RichEmbed()
+    let blacklistEmbed = new Discord.RichEmbed()
     .setDescription("**Blacklist**")
     .setColor("#FF9900")
     .addField("Utilisateur Blacklist", `${bUser} ID : ${bUser.id}`)
@@ -167,12 +167,14 @@ info(message, prefix, client)
 
     let blacklistchannel = message.guild.channels.find(`name`, "vchannel");
     if(!blacklistchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
-
-    blacklistchannel.send(banEmbed);
+	  
+    message.delete().catch(O_o=>{});
+    blacklistchannel.send(blacklistEmbed);
   bUser.ban()
 
     return;
-  }	
+  }
+		
 	
   if (command === "request-bot") {	  
     let idprefix = args.join(" ").slice(0);
