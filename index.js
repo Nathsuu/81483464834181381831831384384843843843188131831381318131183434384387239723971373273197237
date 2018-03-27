@@ -620,4 +620,8 @@ client.on("message", async msg => {
   if(commandfile) commandfile.run(client,msg,args);
 
 });
+
+let prefix = setprefix[message.guild.id].prefixes;
+
+});
 	
