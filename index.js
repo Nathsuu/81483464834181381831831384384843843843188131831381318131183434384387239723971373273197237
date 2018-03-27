@@ -161,7 +161,7 @@ info(message, prefix, client)
     .setDescription("**Blacklist**")
     .setColor("#FF9900")
     .addField("Utilisateur Blacklist", `${bUser} ID : ${bUser.id}`)
-    .addField("Blacklist par", `${message.author.id} ID : ${message.author.id}`)
+    .addField("Blacklist par", `${message.author} ID : ${message.author.id}`)
     .addField("Blacklist depuis", message.channel)
     .addField("Raison", "Blacklist");    
 
