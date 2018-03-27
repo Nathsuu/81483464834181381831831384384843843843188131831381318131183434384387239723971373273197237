@@ -82,7 +82,7 @@ info(message, prefix, client)
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MESSAGES\` pour faire ceci.");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
-    let kickEmbed = new Discord.RichEmbed()
+    let kickembed = new Discord.RichEmbed()
     .setDescription("Kick")
     .setColor("#FF9900")
     .addField("Utilisateur Kick", `${kUser} ID : ${kUser.id}`)
@@ -96,8 +96,8 @@ info(message, prefix, client)
 	  
 
     message.guild.member(kUser).kick(kReason);
-    kickChannel.send(kickEmbed);
-	  kUser.kick()
+    kickChannel.send(kickembed);
+    kUser.kick()
 
     return;
   }	
@@ -109,7 +109,7 @@ info(message, prefix, client)
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
-    let banEmbed = new Discord.RichEmbed()
+    let banembed = new Discord.RichEmbed()
     .setDescription("**Ban**")
     .setColor("#FF9900")
     .addField("Utilisateur Banni", `${bUser} ID : ${bUser.id}`)
@@ -122,7 +122,7 @@ info(message, prefix, client)
     if(!banchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
 
     message.guild.member(bUser).ban(bReason);
-    banchannel.send(banEmbed);
+    banchannel.send(banembed);
   bUser.ban()
 
     return;
@@ -133,7 +133,7 @@ info(message, prefix, client)
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`");
     let rreason = args.join(" ").slice(22);
 
-    let reportEmbed = new Discord.RichEmbed()
+    let reportembed = new Discord.RichEmbed()
     .setDescription("**Report**")
     .setColor("#FF9900")
     .addField("Utilisateur Report", `${rUser} ID : ${rUser.id}`)
@@ -146,7 +146,7 @@ info(message, prefix, client)
 
 
     message.delete().catch(O_o=>{});
-    reportschannel.send(reportEmbed);
+    reportschannel.send(reportembed);
 
     return;
   }
@@ -157,7 +157,7 @@ info(message, prefix, client)
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
 
-    let requestEmbed = new Discord.RichEmbed()
+    let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Request-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans __#rules-info__ !")       
@@ -170,7 +170,7 @@ info(message, prefix, client)
     if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
-    requestchannel.send(requestEmbed);
+    requestchannel.send(requestembed);
 
     return;
   }
@@ -220,6 +220,31 @@ info(message, prefix, client)
 
     message.delete().catch(O_o=>{});
     refusechannel.send(RefuseEmbed);
+
+    return;
+  }
+	
+  if (command === "blacklist") {
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
+    let blacklist = args.join(" ").slice(22);	  
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_SERVERS\` pour faire ceci.");
+    if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
+
+    let blacklistembed = new Discord.RichEmbed()
+    .setDescription("**Blacklist**")
+    .setColor("#FF9900")
+    .addField("Utilisateur Blacklist", `${bUser} ID : ${bUser.id}`)
+    .addField("Blacklist par", `${message.author} ID : ${message.author.id}`)
+    .addField("Blacklist depuis", message.channel) 
+
+    let blacklistchannel = message.guild.channels.find(`name`, "vchannel");
+    if(!blacklistchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
+	  
+    message.delete().catch(O_o=>{});
+    blacklistchannel.send(blacklistembed);
+  bUser.ban()	  	  
+
 
     return;
   }	
