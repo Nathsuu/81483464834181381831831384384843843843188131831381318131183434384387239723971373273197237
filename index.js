@@ -109,14 +109,14 @@ info(message, prefix, client)
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
-    let banembed = Discord.RichEmbed()
+    let banembed = new Discord.RichEmbed()
     .setDescription("**Ban**")
     .setColor("#FF9900")
     .addField("Utilisateur Banni", `${bUser} ID : ${bUser.id}`)
     .addField("Ban par", `${message.author.id} ID : ${message.author.id}`)
     .addField("Ban depuis", message.channel)
     .addField("Temps", message.createdAt)
-    .addField("Raison", bReason);
+    .addField("Raison", bReason)
 
     let banchannel = message.guild.channels.find(`name`, "vchannel");
     if(!banchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
