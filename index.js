@@ -166,10 +166,11 @@ info(message, prefix, client)
 
     let blacklistchannel = message.guild.channels.find(`name`, "vchannel");
     if(!blacklistchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
-	  
+
+  bUser.ban()	  
     message.delete().catch(O_o=>{});
     blacklistchannel.send(blacklistEmbed);
-  bUser.ban()
+
 
     return;
   }
