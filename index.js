@@ -97,7 +97,6 @@ info(message, prefix, client)
 
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickembed);
-    kUser.kick()
 
     return;
   }	
