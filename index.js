@@ -5,7 +5,6 @@ var fs = require('fs');
 
 const prefix = 'v!'; 
 
-
 client.on('ready', () => {
   setInterval(function(){
     guilds = ["Vaction | v!help", "Vaction | v!help | French Bot", "Vaction | by WinDino", `Vaction | ${client.guilds.size} Serveurs`, "Vaction | v!help", `Vaction | ${client.users.size} Utilisateurs`]
@@ -620,8 +619,3 @@ client.on("message", async msg => {
   if(commandfile) commandfile.run(client,msg,args);
 
 });
-
-let setprefix = setprefix[message.guild.id].setprefix;
-
-});
-	
