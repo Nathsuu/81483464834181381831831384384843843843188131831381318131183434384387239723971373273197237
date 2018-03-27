@@ -92,7 +92,7 @@ info(message, prefix, client)
     .addField("Raison", kReason);
 
     let kickChannel = message.guild.channels.find(`name`, "vchannel");
-    if(!kickChannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
+    if(!kickChannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
 	  
 
     message.guild.member(kUser).kick(kReason);
@@ -113,7 +113,7 @@ info(message, prefix, client)
     .setDescription("Ban")
     .setColor("#FF9900")
     .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
-    .addField("Ban par", `${message.author.id} avec l'ID ${message.author.id}`)
+    .addField("Ban par", `${message.author} avec l'ID ${message.author.id}`)
     .addField("Ban depuis", message.channel)
     .addField("Temps", message.createdAt)
     .addField("Raison", bReason);
@@ -126,7 +126,34 @@ info(message, prefix, client)
     bUser.ban()
 
     return;
-  }	  	
+  }
+	
+  if (command === "kick") {	
+    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
+    let kReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MESSAGES\` pour faire ceci.");
+    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
+  
+    let banEmbed = new Discord.RichEmbed()
+    .setDescription("Ban")
+    .setColor("#FF9900")
+    .addField("Utilisateur Banni", `${kUser} avec l'ID ${kUser.id}`)
+    .addField("Ban par", `${message.author} avec l'ID ${message.author.id}`)
+    .addField("Ban depuis", message.channel)
+    .addField("Temps", message.createdAt)
+    .addField("Raison", kReason);
+	  
+    let banChannel = message.guild.channels.find(`name`, "vchannel");
+    if(!banChannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
+	  
+
+    message.guild.member(kUser).kick(kReason);
+    banChannel.send(banEmbed);
+    kUser.ban()
+
+    return;
+  }	
 	
   if (command === "report") {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
