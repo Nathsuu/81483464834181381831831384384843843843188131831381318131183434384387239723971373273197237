@@ -4,7 +4,7 @@ const fs = require("fs");
 module.exports.run = async (bot, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("non");
-  if(!args[0] || args[0 == "help"]) return message.reply(":x: v!setprefix prefix");
+  if(!args[0] || args[0 == "help"]) return message.reply(":x: Vous n'avez mentionné aucun prefix ! Exemple : \`v!setprefix <PREFIX ICI>\`");
 
   let setprefix = JSON.parse(fs.readFileSync("./data/setprefix.json", "utf8"));
 
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
   let sEmbed = new Discord.RichEmbed()
   .setColor("#FF9900")
   .setTitle("Nouveau Prefix !")
-  .setDescription(`Votre nouveau prefix : ${args[0]}`);
+  .setDescription(`Votre nouveau prefix est maintenant sur ce serveur : ${args[0]}`);
 
   message.channel.send(sEmbed);
 
