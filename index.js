@@ -80,9 +80,12 @@ info(message, prefix, client)
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
     let bReason = args.join(" ").slice(22);	  
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
-    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande.");
-	  
+	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+        }
+	if(!bUser.hasPermission("MANAGE_MESSAGES")) {	
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+        }	  	  
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Ban")
     .setColor("#FF9900")
@@ -106,9 +109,12 @@ info(message, prefix, client)
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");
     let kReason = args.join(" ").slice(22);	  
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
-    if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande.");
-	  
+	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+        }
+	if(!kUser.hasPermission("MANAGE_MESSAGES")) {	
+            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+        }	  
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Kick")
     .setColor("#FF9900")
@@ -232,8 +238,7 @@ info(message, prefix, client)
 	if(!message.member.hasPermission("ADMINISTRATOR")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }	  
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`ADMINISTRATOR\` pour faire ceci.");
-	  
+  
     let blacklistembed = new Discord.RichEmbed()
     .setDescription("**Blacklist**")
     .setColor("#FF9900")
