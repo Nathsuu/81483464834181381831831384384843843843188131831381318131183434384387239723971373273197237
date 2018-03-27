@@ -1,8 +1,8 @@
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-let prefix = setprefix[message.guild.id].setprefix;
 
+const prefix = 'v!';
 
 client.on('ready', () => {
   setInterval(function(){
