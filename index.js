@@ -97,6 +97,7 @@ info(message, prefix, client)
 
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickembed);
+  kUser.kick()	  
 
     return;
   }	
@@ -108,7 +109,7 @@ info(message, prefix, client)
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
-    let banembed = new Discord.RichEmbed()
+    let banembed = Discord.RichEmbed()
     .setDescription("**Ban**")
     .setColor("#FF9900")
     .addField("Utilisateur Banni", `${bUser} ID : ${bUser.id}`)
