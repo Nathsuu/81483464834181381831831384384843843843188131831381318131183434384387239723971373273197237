@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-
+let prefix = setprefix[message.guild.id].setprefix;
 module.exports.run = async (bot, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("non");
