@@ -86,7 +86,7 @@ info(message, prefix, client)
     .setDescription("Kick")
     .setColor("#FF9900")
     .addField("Utilisateur Kick", `${kUser} ID : ${kUser.id}`)
-    .addField("Kick par", `${message.author.id} ID : ${message.author.id}`)
+    .addField("Kick par", `${message.author} ID : ${message.author.id}`)
     .addField("Kick depuis", message.channel)
     .addField("Temps", message.createdAt)
     .addField("Raison", kReason);
@@ -113,17 +113,17 @@ info(message, prefix, client)
     .setDescription("**Ban**")
     .setColor("#FF9900")
     .addField("Utilisateur Banni", `${bUser} ID : ${bUser.id}`)
-    .addField("Ban par", `${message.author.id} ID : ${message.author.id}`)
+    .addField("Ban par", `${message.author} ID : ${message.author.id}`)
     .addField("Ban depuis", message.channel)
     .addField("Temps", message.createdAt)
-    .addField("Raison", bReason)
+    .addField("Raison", bReason);
 
     let banchannel = message.guild.channels.find(`name`, "vchannel");
     if(!banchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
 
     message.guild.member(bUser).ban(bReason);
     banchannel.send(banembed);
-  bUser.ban()
+  bUser.ban()	 
 
     return;
   }	  	
