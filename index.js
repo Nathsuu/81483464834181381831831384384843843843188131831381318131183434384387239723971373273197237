@@ -152,7 +152,7 @@ info(message, prefix, client)
   }
 	
   if (command === "blacklist") {
-    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let bUser = message.guild.member(message.mentions.users.first());
     if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_SERVERS\` pour faire ceci.");
     if(bUser.hasPermission("MANAGE_SERVERS")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
