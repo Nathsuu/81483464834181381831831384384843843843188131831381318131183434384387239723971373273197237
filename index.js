@@ -78,7 +78,9 @@ info(message, prefix, client)
 	
   if (command === "ban") { 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
+	if(!bUser) {	
+            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
+        }
     let bReason = args.join(" ").slice(22);	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
@@ -107,7 +109,9 @@ info(message, prefix, client)
 	
   if (command === "kick") {	  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");
+	if(!kUser) {	
+            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
+        }	  	  
     let kReason = args.join(" ").slice(22);	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
