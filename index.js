@@ -621,7 +621,7 @@ client.on("message", async msg => {
 
 });
 
-let setprefix = setprefix[message.guild.id].prefixes;
+let setprefix = setprefix[message.guild.id].setprefix;
 
 });
 	
