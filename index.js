@@ -154,6 +154,7 @@ info(message, prefix, client)
   if (command === "blacklist") {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
+    let blacklist = args.join(" ").slice(0);	  
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_SERVERS\` pour faire ceci.");
     if(bUser.hasPermission("ADMINISTRATOR")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
@@ -166,10 +167,10 @@ info(message, prefix, client)
 
     let blacklistchannel = message.guild.channels.find(`name`, "vchannel");
     if(!blacklistchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
-
-  bUser.ban()	  
+	  
     message.delete().catch(O_o=>{});
     blacklistchannel.send(blacklistEmbed);
+  bUser.ban()	  	  
 
 
     return;
