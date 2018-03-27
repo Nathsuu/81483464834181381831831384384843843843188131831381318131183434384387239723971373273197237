@@ -12,7 +12,7 @@ module.exports.run = async (client, message) => {
  const embed = new Discord.RichEmbed()
   .setTitle(`Stats du Serveur`)
   .setThumbnail(sicon)
-  .setDescription(`Infos sur l'états de status des membre de \`${message.guild.name}\``)
+  .setDescription(`Infos sur l'états de status des membres de \`${message.guild.name}\``)
   .setColor("#FF9900")
   .addField('Online :', ":large_blue_circle: "  + message.guild.members.filter(m => m.presence.status == 'online').size, true)
   .addField('Offline :', ":white_circle: "  + message.guild.members.filter(m => m.presence.status == 'offline').size, true)
