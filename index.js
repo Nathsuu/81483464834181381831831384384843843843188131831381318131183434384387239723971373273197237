@@ -82,48 +82,48 @@ info(message, prefix, client)
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MESSAGES\` pour faire ceci.");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
-    let kickembed = new Discord.RichEmbed()
+    let kickEmbed = new Discord.RichEmbed()
     .setDescription("Kick")
     .setColor("#FF9900")
     .addField("Utilisateur Kick", `${kUser} ID : ${kUser.id}`)
     .addField("Kick par", `${message.author} ID : ${message.author.id}`)
     .addField("Kick depuis", message.channel)
     .addField("Temps", message.createdAt)
-    .addField("Raison", kReason)
+    .addField("Raison", kReason);
 
     let kickChannel = message.guild.channels.find(`name`, "vchannel");
     if(!kickChannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
 	  
 
     message.guild.member(kUser).kick(kReason);
-    kickChannel.send(kickembed);
-  kUser.kick()	  
+    kickChannel.send(kickEmbed);
+    kUser.kick()
 
     return;
-  }	
+  }		
 	
   if (command === "ban") {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
+    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send(":x: Je n'ai pas la permission \`MANAGE_MEMBERS\` pour faire ceci.");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
 
-    let banembed = new Discord.RichEmbed()
-    .setDescription("**Ban**")
+    let banEmbed = new Discord.RichEmbed()
+    .setDescription("Ban")
     .setColor("#FF9900")
-    .addField("Utilisateur Banni", `${bUser} ID : ${bUser.id}`)
-    .addField("Ban par", `${message.author} ID : ${message.author.id}`)
+    .addField("Utilisateur Banni", `${bUser} avec l'ID ${bUser.id}`)
+    .addField("Ban par", `${message.author.id} avec l'ID ${message.author.id}`)
     .addField("Ban depuis", message.channel)
     .addField("Temps", message.createdAt)
-    .addField("Raison", bReason)
+    .addField("Raison", bReason);
 
-    let banchannel = message.guild.channels.find(`name`, "vchannel");
-    if(!banchannel) return message.channel.send(":x:Impossible de trouver le canal \`vchannel\`.");
+    let incidentchannel = message.guild.channels.find(`name`, "vchannel");
+    if(!incidentchannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
 
     message.guild.member(bUser).ban(bReason);
-    banchannel.send(banembed);
-  bUser.ban()	 
+    incidentchannel.send(banEmbed);
+    bUser.ban()
 
     return;
   }	  	
