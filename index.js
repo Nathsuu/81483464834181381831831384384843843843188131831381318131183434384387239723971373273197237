@@ -175,7 +175,7 @@ info(message, prefix, client)
     message.delete().catch(O_o=>{});
     requestchannel.send(requestembed)
     .then(function (message) {
-        message.react(":robot:")
+        message.react("〰")
     }).catch(function() {
     });	  
 
@@ -202,7 +202,11 @@ info(message, prefix, client)
     if(!approvechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
-    approvechannel.send(approveEmbed);
+    approvechannel.send(approveEmbed)
+    .then(function (message) {
+        message.react("✔")
+    }).catch(function() {
+    });	 	  
 
     return;
   }
@@ -228,7 +232,11 @@ info(message, prefix, client)
     if(!refusechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
-    refusechannel.send(RefuseEmbed);
+    refusechannel.send(RefuseEmbed)
+    .then(function (message) {
+        message.react("❌")
+    }).catch(function() {
+    });		  
 
     return;
   }
