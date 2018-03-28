@@ -37,13 +37,6 @@ info(message, prefix, client)
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();	
 	
-    if(message.content.startsWith(prefix + "setprefix")){
-        if(message.member.permissions.has('ADMINISTRATOR')){
-            if(!args[1]) return message.reply("Met un role");
-                prefix = args[1]
-                message.reply("Le préfix a bien été changer");
-        }
-    }
 	
     if (command === "KickAncienPasTouche") {
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
@@ -476,7 +469,15 @@ message.channel.send("", { embed: {
       message.channel.send(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
 
     }
-  }     
+  } 
+	
+    if(message.content.startsWith(prefix + "changeprefix")){
+        if(message.member.permissions.has('ADMINISTRATOR')){
+            if(!args[1]) return message.reply("Met un prefix");
+                prefix = args[1]
+                message.reply("Le préfix a bien été changer");
+        }
+    }	
 	  
 
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
