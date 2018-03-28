@@ -16,6 +16,13 @@ client.on('ready', () => {
       }
     });
   }, 80000);  
+	
+});
+
+bot.on("guildMemberAdd", member =>{
+    member.guild.channels.find("name", "general").send(`Bienvenue ${member}`);
+    if(!member.guild.roles.find('name', role)) return console.log("Role inconnu");
+    member.addRole(member.guild.roles.find('name', role));
 });
 	
 
@@ -37,6 +44,14 @@ info(message, prefix, client)
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();	
 	
+	
+    if(message.content.startsWith(prefix + "changerole")){
+        if(message.member.permissions.has('ADMINISTRATOR')){
+            if(!args[1]) return message.reply("Met un role");
+                role = args[1]
+                message.reply("Le role a bien été changer");
+        }
+    }	
     if (command === "KickAncienPasTouche") {
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
