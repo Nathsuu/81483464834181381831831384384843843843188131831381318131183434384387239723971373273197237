@@ -78,7 +78,7 @@ info(message, prefix, client)
 		
 	
   if (command === "ban") { 
-    let bUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]));
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }	  
@@ -107,7 +107,7 @@ info(message, prefix, client)
   }
 	
   if (command === "kick") {	  
-    let kUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]));
+    let kUser = message.guild.member(message.mentions.users.first());
 	if(!kUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         }	  
