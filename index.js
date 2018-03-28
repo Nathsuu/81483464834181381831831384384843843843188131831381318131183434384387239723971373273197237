@@ -168,7 +168,7 @@ info(message, prefix, client)
     .addField("ID / Prefix", idprefix)
     .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
-	  
+    message.react(":robot:")	  
     let requestchannel = message.guild.channels.get("423552696411357204");
     if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
     
@@ -190,7 +190,8 @@ info(message, prefix, client)
     .setDescription("**Approve-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il est désormais __approuvé__ !")
     .addField("Owner :", rUser)      
-    .addField("Approuvé par :", `${message.author}`)        
+    .addField("Approuvé par :", `${message.author}`)
+    message.react(":17332945_138497173341771_6515416:")
 	  
 	  
     let approvechannel = message.guild.channels.get("427880171672961024");
@@ -216,7 +217,8 @@ info(message, prefix, client)
     .addField("Information", "Merci d'avoir soumis le bot mais il a était __refusé__ ! Si vous avez envie, vous pouvez toujours retenter votre chance.")       
     .addField("Owner :", rUser)
     .addField("Refusé par :", `${message.author}`)     
-    .addField("Raison :", rreason)   
+    .addField("Raison :", rreason)
+    message.react(":x:")    
 	  
     let refusechannel = message.guild.channels.get("427880171672961024");
     if(!refusechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
