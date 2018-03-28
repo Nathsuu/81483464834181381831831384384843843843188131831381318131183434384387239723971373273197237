@@ -96,7 +96,7 @@ info(message, prefix, client)
     let incidentchannel = message.guild.channels.find(`name`, "vchannel");
     if(!incidentchannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
 
-    message.guild.member(bUser).ban(bReason);
+    message.guild.member(bUser);
     incidentchannel.send(banEmbed);
     bUser.ban()
 
@@ -122,7 +122,7 @@ info(message, prefix, client)
     if(!banChannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
 	  
 
-    message.guild.member(kUser).kick(kReason);
+    message.guild.member(kUser);
     banChannel.send(banEmbed);
     kUser.kick()
 
