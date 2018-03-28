@@ -94,7 +94,7 @@ info(message, prefix, client)
     .addField("Ban par", `${message.author} ID : ${message.author.id}`)
     .addField("Ban depuis", message.channel)
     .addField("Temps", message.createdAt)
-    .addField("Raison", bReason);
+    .addField("Raison", bReason)
 
     let incidentchannel = message.guild.channels.find(`name`, "vchannel");
     if(!incidentchannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
@@ -122,7 +122,7 @@ info(message, prefix, client)
     .addField("Kick par", `${message.author} ID : ${message.author.id}`)
     .addField("Kick depuis", message.channel)
     .addField("Temps", message.createdAt)
-    .addField("Raison", kReason);
+    .addField("Raison", kReason)
 	  
     let banChannel = message.guild.channels.find(`name`, "vchannel");
     if(!banChannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
@@ -140,7 +140,7 @@ info(message, prefix, client)
 	if(!rUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`").catch(console.error);
         }	  
-    let rreason = args.join(" ").slice(3);
+    let rreason = args.join(" ").slice(18);
 
     let reportembed = new Discord.RichEmbed()
     .setDescription("**Report**")
@@ -148,7 +148,7 @@ info(message, prefix, client)
     .addField("Utilisateur Report", `${rUser} ID : ${rUser.id}`)
     .addField("Report par", `${message.author} ID : ${message.author.id}`)
     .addField("Depuis le Channel", message.channel)
-    .addField("Raison", rreason);
+    .addField("Raison", rreason)
 
     let reportschannel = message.guild.channels.find(`name`, "vchannel");
     if(!reportschannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
