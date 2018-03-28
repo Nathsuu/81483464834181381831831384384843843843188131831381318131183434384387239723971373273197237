@@ -140,7 +140,7 @@ info(message, prefix, client)
 	if(!rUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`").catch(console.error);
         }	  
-    let rreason = args.join(" ").slice(18);
+    let rreason = args.join(" ").slice(21);
 
     let reportembed = new Discord.RichEmbed()
     .setDescription("**Report**")
