@@ -34,7 +34,7 @@ unmute(message, prefix, client)
 info(message, prefix, client)	
 	
     let command = message.content.split(" ")[0];
-    var args = message.content.substring(prefix.length).split(' ');	
+    const args = message.content.slice(prefix.length).split(/ +/);	
     command = args.shift().toLowerCase();	
 	
 	
@@ -470,14 +470,6 @@ message.channel.send("", { embed: {
 
     }
   } 
-	
-    if(message.content.startsWith(prefix + "setprefix")){
-        if(message.member.permissions.has('ADMINISTRATOR')){
-            if(!args[1]) return message.reply("Met un prefix");
-                prefix = args[1]
-                message.reply("Le préfix a bien été changer");
-        }
-    }	
 	  
 
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
