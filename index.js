@@ -34,7 +34,6 @@ unmute(message, prefix, client)
 info(message, prefix, client)	
 	
     let command = message.content.split(" ")[0];
-    const args = message.content.slice(prefix.length).split(/ +/);
     var args = message.content.substring(prefix.length).split(' ');	
     command = args.shift().toLowerCase();	
 	
