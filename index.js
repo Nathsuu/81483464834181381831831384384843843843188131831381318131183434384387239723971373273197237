@@ -35,6 +35,7 @@ info(message, prefix, client)
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);
+    var args = message.content.substring(prefix.length).split(' ');	
     command = args.shift().toLowerCase();	
 	
 	
@@ -474,7 +475,7 @@ message.channel.send("", { embed: {
     if(message.content.startsWith(prefix + "setprefix")){
         if(message.member.permissions.has('ADMINISTRATOR')){
             if(!args[1]) return message.reply("Met un prefix");
-                prefix = args[0]
+                prefix = args[1]
                 message.reply("Le préfix a bien été changer");
         }
     }	
