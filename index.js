@@ -82,7 +82,7 @@ info(message, prefix, client)
 	if(!bUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }	  
-    let bReason = args.join(" ").slice(22);	  
+    let bReason = args.join(" ").slice(1);	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }
@@ -140,7 +140,7 @@ info(message, prefix, client)
 	if(!rUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`").catch(console.error);
         }	  
-    let rreason = args.join(" ").slice(22);
+    let rreason = args.join(" ").slice(2);
 
     let reportembed = new Discord.RichEmbed()
     .setDescription("**Report**")
@@ -163,7 +163,7 @@ info(message, prefix, client)
 		
 	
   if (command === "request-bot") {	  
-    let idprefix = args.join(" ").slice(0);
+    let idprefix = args.join(" ").slice(2);
     if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
 
     let requestembed = new Discord.RichEmbed()
@@ -177,9 +177,11 @@ info(message, prefix, client)
 	  
     let requestchannel = message.guild.channels.get("423552696411357204");
     if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
-
+    
     message.delete().catch(O_o=>{});
     requestchannel.send(requestembed);
+    message.react("✅")
+    message.react("❌")	  
 
     return;
   }
