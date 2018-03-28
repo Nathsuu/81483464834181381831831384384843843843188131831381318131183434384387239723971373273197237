@@ -168,12 +168,16 @@ info(message, prefix, client)
     .addField("ID / Prefix", idprefix)
     .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
-    message.react(":robot:")	  
+	  
     let requestchannel = message.guild.channels.get("423552696411357204");
     if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
     
     message.delete().catch(O_o=>{});
-    requestchannel.send(requestembed);  
+    requestchannel.send(requestembed)
+    .then(function (message) {
+        message.react(":robot:")
+    }).catch(function() {
+    });	  
 
     return;
   }
