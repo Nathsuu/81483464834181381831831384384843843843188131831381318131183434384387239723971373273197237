@@ -37,6 +37,13 @@ info(message, prefix, client)
     const args = message.content.slice(prefix.length).split(/ +/);
     command = args.shift().toLowerCase();	
 	
+    if(message.content.startsWith(prefix + "setprefix")){
+        if(message.member.permissions.has('ADMINISTRATOR')){
+            if(!args[1]) return message.reply("Met un role");
+                prefix = args[1]
+                message.reply("Le préfix a bien été changer");
+        }
+    }
 	
     if (command === "KickAncienPasTouche") {
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
