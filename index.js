@@ -473,8 +473,8 @@ message.channel.send("", { embed: {
 	
     if(message.content.startsWith(prefix + "setprefix")){
         if(message.member.permissions.has('ADMINISTRATOR')){
-            if(!args[1]) return message.reply("Met un prefix");
-                prefix = args[1]
+            if(!args[0]) return message.reply("Met un prefix");
+                prefix = args[0]
                 message.reply("Le préfix a bien été changer");
         }
     }	
