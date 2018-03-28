@@ -87,7 +87,7 @@ info(message, prefix, client)
         }
     if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");	  	  
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("Ban")
+    .setDescription("**Ban**")
     .setColor("#FF9900")
     .addField("Utilisateur Banni", `${bUser} ID : ${bUser.id}`)
     .addField("Ban par", `${message.author} ID : ${message.author.id}`)
@@ -112,7 +112,7 @@ info(message, prefix, client)
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ou :x: vous n'avez pas la permission de faire cette commande. ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         } 
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("Kick")
+    .setDescription("**Kick**")
     .setColor("#FF9900")
     .addField("Utilisateur Kick", `${kUser} ID : ${kUser.id}`)
     .addField("Kick par", `${message.author} ID : ${message.author.id}`)
@@ -157,7 +157,7 @@ info(message, prefix, client)
 		
 	
   if (command === "request-bot") {	  
-    let idprefix = args.join(" ").slice(2);
+    let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
 
     let requestembed = new Discord.RichEmbed()
