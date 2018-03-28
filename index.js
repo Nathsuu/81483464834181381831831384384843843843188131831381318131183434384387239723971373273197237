@@ -179,9 +179,9 @@ info(message, prefix, client)
     if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
     
     message.delete().catch(O_o=>{});
-    requestchannel.send(requestembed);
+    requestchannel.send(requestembed)
     message.react("✅")
-    message.react("❌")	  
+    message.react("❌");	  
 
     return;
   }
@@ -238,7 +238,7 @@ info(message, prefix, client)
   if (command === "blacklist") {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
-    let blacklist = args.join(" ").slice(22);
+    let blacklist = args.join(" ").slice(1);
 	if(!message.member.hasPermission("ADMINISTRATOR")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }	  
