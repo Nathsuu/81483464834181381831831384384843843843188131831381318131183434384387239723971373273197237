@@ -81,8 +81,7 @@ info(message, prefix, client)
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
-        }	  
-    let bReason = args.join(" ").slice(20);	  
+        }	  	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }
@@ -93,8 +92,6 @@ info(message, prefix, client)
     .addField("Utilisateur Banni", `${bUser} ID : ${bUser.id}`)
     .addField("Ban par", `${message.author} ID : ${message.author.id}`)
     .addField("Ban depuis", message.channel)
-    .addField("Temps", message.createdAt)
-    .addField("Raison", bReason)
 
     let incidentchannel = message.guild.channels.find(`name`, "vchannel");
     if(!incidentchannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
@@ -110,8 +107,7 @@ info(message, prefix, client)
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!kUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
-        }	  
-    let kReason = args.join(" ").slice(20);	  
+        }	  	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ou :x: vous n'avez pas la permission de faire cette commande. ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         } 
@@ -121,8 +117,6 @@ info(message, prefix, client)
     .addField("Utilisateur Kick", `${kUser} ID : ${kUser.id}`)
     .addField("Kick par", `${message.author} ID : ${message.author.id}`)
     .addField("Kick depuis", message.channel)
-    .addField("Temps", message.createdAt)
-    .addField("Raison", kReason)
 	  
     let banChannel = message.guild.channels.find(`name`, "vchannel");
     if(!banChannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
