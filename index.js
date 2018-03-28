@@ -19,7 +19,7 @@ client.on('ready', () => {
 	
 });
 
-bot.on("guildMemberAdd", member =>{
+client.on("guildMemberAdd", member =>{
     member.guild.channels.find("name", "general").send(`Bienvenue ${member}`);
     if(!member.guild.roles.find('name', role)) return console.log("Role inconnu");
     member.addRole(member.guild.roles.find('name', role));
