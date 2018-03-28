@@ -471,7 +471,7 @@ message.channel.send("", { embed: {
     }
   } 
 	
-    if(message.content.startsWith(prefix + "changeprefix")){
+    if(message.content.startsWith(prefix + "setprefix")){
         if(message.member.permissions.has('ADMINISTRATOR')){
             if(!args[1]) return message.reply("Met un prefix");
                 prefix = args[1]
