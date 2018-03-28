@@ -107,11 +107,11 @@ info(message, prefix, client)
   }
 	
   if (command === "kick") {	  
-    let kUser = message.guild.member(message.mentions.users.first());
+    let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!kUser) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         }	  
-    let kReason = args.join(" ").slice(22);	  
+    let kReason = args.join(" ").slice(1);	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
             return message.reply(":x: Vous n'avez mentionné aucun utilisateur ou :x: vous n'avez pas la permission de faire cette commande. ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         } 
