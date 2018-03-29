@@ -26,9 +26,14 @@ module.exports.run = async (client, message) => {
   .addField("Vous avez rejoint le", message.member.joinedAt, true)
   .addField('Vos roles actuels', message.guild.members.get(getvalueof.id).roles.array().map(g => "" + g.name + "").join(', ')) 
   .addBlankField()
+  .addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount 
   .addField(":floppy_disk: Total serveurs :", client.guilds.size)
   .addField(":floppy_disk: Total utilisateurs :", client.users.size)
-  .addField(":floppy_disk: Utilisateurs sur le discord :", message.guild.memberCount)
+  .addField(":floppy_disk: Total Channels :", client.channels.size)             
+  .addField(":floppy_disk: Mem Usage :", (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)})
+  .addField(":floppy_disk: Node :", process.version)            
+            
+            
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
   message.channel.send(embed)
 
