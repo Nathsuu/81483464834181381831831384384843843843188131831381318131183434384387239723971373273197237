@@ -27,7 +27,7 @@ module.exports.run = async (client, message) => {
   .addField('Vos roles actuels', message.guild.members.get(getvalueof.id).roles.array().map(g => "" + g.name + "").join(', ')) 
   .addBlankField() 
   .addField(":floppy_disk: Utilisateurs sur le Discord :", message.guild.memberCount)
-  .addField(":floppy_disk: Channels sur le Discord :", message.guild.channelCount)
+  .addField(":floppy_disk: Channels sur le Discord :", message.guild.channelsCount)
   .addBlankField() 
   .addField(":floppy_disk: Total Serveurs :", client.guilds.size)
   .addField(":floppy_disk: Total Utilisateurs :", client.users.size)
