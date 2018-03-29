@@ -313,7 +313,7 @@ if(command === "pfc") {
     }
   }	
 		
-  if (command === "8ball") {
+  if (command === prefix + "8ball") {
   if(!args[2]) return message.reply(":x: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
 
