@@ -3,16 +3,16 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
 
-  if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":x: Il vous faut la permission `manage-guild` pour executer cette commande.");
+  if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":comet: Il vous faut la permission `manage-guild` pour executer cette commande.");
   if(args[0] == "help"){
-    message.reply(":x: Vous n'avez pas mentionné un utilisateur ! Exemple : ``Exemple : ``v!mute @User Insulte``");
+    message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple : ``Exemple : ``v!mute @User Insulte``");
     return;
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.reply(":x: Vous n'avez pas mentionné un nombre ! Exemple : ``v!mute @User Insulte``");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":x: Vous n'avez pas la permission de faire cette commande sur lui.");
+  if(!tomute) return message.reply(":comet: Vous n'avez pas mentionné un nombre ! Exemple : ``v!mute @User Insulte``");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":comet: Vous n'avez pas la permission de faire cette commande sur lui.");
   let reason = args.slice(1).join(" ");
-  if(!reason) return message.reply(":x: Il me faut une raison.");
+  if(!reason) return message.reply(":comet: Il me faut une raison.");
 
   let muterole = message.guild.roles.find(`name`, "vmuted");
 
@@ -39,7 +39,7 @@ module.exports.run = async (bot, message, args) => {
   try{
     await tomute.send(`:exclamation: Vous venez d'être mute sur un serveur m'utilisant.`)
   }catch(e){
-    message.channel.send(`L'utilisateur a été mute, mais sont DM est verrouillés.`)
+    message.channel.send(`:comet: L'utilisateur a été mute, mais sont DM est verrouillés.`)
   }
 
   let muteembed = new Discord.RichEmbed()
@@ -51,14 +51,14 @@ module.exports.run = async (bot, message, args) => {
   .addField("Raison", reason);
 
   let vchannelchannel = message.guild.channels.find(`name`, "vchannel");
-  if(!vchannelchannel) return message.reply(":x: Impossible de trouver le canal \`vchannel\`.");
+  if(!vchannelchannel) return message.reply(":comet: Impossible de trouver le canal \`vchannel\`.");
   vchannelchannel.send(muteembed);
 
   await(tomute.addRole(muterole.id));
 
   setTimeout(function(){
     tomute.removeRole(muterole.id);
-    message.channel.send(`:white_check_mark: <@${tomute.id}> a bien été mute !`);
+    message.channel.send(`:comet: <@${tomute.id}> a bien été mute !`);
   }, ms(mutetime));
 
 
