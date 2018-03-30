@@ -82,10 +82,10 @@ info(message, prefix, client)
 	if(!bUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }	  	  
-	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
-            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
+	if(!message.member.hasPermission("BAN_MEMBERS")) {	
+            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }
-    if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");	  	  
+    if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");	  	  
     let banEmbed = new Discord.RichEmbed()
     .setDescription("**Ban**")
     .setColor("#FF9900")
@@ -108,8 +108,8 @@ info(message, prefix, client)
 	if(!kUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         }	  	  
-	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
-            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ou :x: vous n'avez pas la permission de faire cette commande. ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
+	if(!message.member.hasPermission("KICK_MEMBERS")) {	
+            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         } 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("**Kick**")
