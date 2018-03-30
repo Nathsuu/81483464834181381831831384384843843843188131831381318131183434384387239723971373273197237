@@ -80,12 +80,12 @@ info(message, prefix, client)
   if (command === "ban") { 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
-            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }	  	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
-            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }
-    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");	  	  
+    if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`");	  	  
     let banEmbed = new Discord.RichEmbed()
     .setDescription("**Ban**")
     .setColor("#FF9900")
@@ -94,7 +94,7 @@ info(message, prefix, client)
     .addField("Ban depuis", message.channel)
 
     let incidentchannel = message.guild.channels.find(`name`, "vchannel");
-    if(!incidentchannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
+    if(!incidentchannel) return message.channel.send(":comet: Impossible de trouver le canal \`vchannel\`.");
 
     message.guild.member(bUser);
     incidentchannel.send(banEmbed);
@@ -106,10 +106,10 @@ info(message, prefix, client)
   if (command === "kick") {	  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!kUser) {	
-            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         }	  	  
 	if(!message.member.hasPermission("MANAGE_MEMBERS")) {	
-            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ou :x: vous n'avez pas la permission de faire cette commande. ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ou :x: vous n'avez pas la permission de faire cette commande. ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         } 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("**Kick**")
@@ -119,7 +119,7 @@ info(message, prefix, client)
     .addField("Kick depuis", message.channel)
 	  
     let banChannel = message.guild.channels.find(`name`, "vchannel");
-    if(!banChannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
+    if(!banChannel) return message.channel.send(":comet: Impossible de trouver le canal \`vchannel\`.");
 	  
 
     message.guild.member(kUser);
@@ -132,7 +132,7 @@ info(message, prefix, client)
   if (command === "report") {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!rUser) {	
-            return message.reply(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`").catch(console.error);
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`").catch(console.error);
         }	  
     let rreason = args.join(" ").slice(20);
 
@@ -145,7 +145,7 @@ info(message, prefix, client)
     .addField("Raison", rreason)
 
     let reportschannel = message.guild.channels.find(`name`, "vchannel");
-    if(!reportschannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
+    if(!reportschannel) return message.channel.send(":comet: Impossible de trouver le canal \`vchannel\`.");
 
 
     message.delete().catch(O_o=>{});
@@ -158,7 +158,7 @@ info(message, prefix, client)
 	
   if (command === "request-bot") {	  
     let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply(":x: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
+    if(!idprefix) return message.reply(":comet: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
 
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
@@ -170,7 +170,7 @@ info(message, prefix, client)
     .setTimestamp()	  
 	  
     let requestchannel = message.guild.channels.get("423552696411357204");
-    if(!requestchannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
+    if(!requestchannel) return message.channel.send(":comet: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
     
     message.delete().catch(O_o=>{});
     requestchannel.send(requestembed)
@@ -186,7 +186,7 @@ info(message, prefix, client)
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
 	if(!message.author.id== "282123215537569793") {	
-            return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
         }   	  
 
     let approveEmbed = new Discord.RichEmbed()
@@ -199,7 +199,7 @@ info(message, prefix, client)
 	  
 	  
     let approvechannel = message.guild.channels.get("427880171672961024");
-    if(!approvechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
+    if(!approvechannel) return message.channel.send(":comet: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
     approvechannel.send(approveEmbed)
@@ -216,7 +216,7 @@ info(message, prefix, client)
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
 	if(!message.author.id== "282123215537569793") {	
-            return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
         } 	  
 
     let RefuseEmbed = new Discord.RichEmbed()
@@ -229,7 +229,7 @@ info(message, prefix, client)
     message.react(":x:")    
 	  
     let refusechannel = message.guild.channels.get("427880171672961024");
-    if(!refusechannel) return message.channel.send(":x: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
+    if(!refusechannel) return message.channel.send(":comet: Impossible de trouver le canal avec l'id ``427880171672961024`` L'ID du cannal est un channel du support du bot.");	  
 
     message.delete().catch(O_o=>{});
     refusechannel.send(RefuseEmbed)
@@ -243,10 +243,10 @@ info(message, prefix, client)
 	
   if (command === "blacklist") {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
+    if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
     let blacklist = args.join(" ").slice(1);
 	if(!message.member.hasPermission("ADMINISTRATOR")) {	
-            return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }	  
   
     let blacklistembed = new Discord.RichEmbed()
@@ -257,7 +257,7 @@ info(message, prefix, client)
     .addField("Blacklist depuis", message.channel) 
 
     let blacklistchannel = message.guild.channels.find(`name`, "vchannel");
-    if(!blacklistchannel) return message.channel.send(":x: Impossible de trouver le canal \`vchannel\`.");
+    if(!blacklistchannel) return message.channel.send(":comet: Impossible de trouver le canal \`vchannel\`.");
 	  
     message.delete().catch(O_o=>{});
     message.guild.member(bUser).kick("Blacklist");	  
@@ -314,7 +314,7 @@ if(command === "pfc") {
   }	
 		
   if (command === "8ball") {
-  if(!args[2]) return message.reply(":x: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
+  if(!args[2]) return message.reply(":comet: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
 
   let result = Math.floor((Math.random() * replies.length));
@@ -330,7 +330,7 @@ if(command === "pfc") {
   }
 	
   if (command === "flip") {
-  if(!args[0]) return message.reply(":x: Vous n'avez pas mentionné Pile ou Face ! Exemple : \`v!flip Face\`");	  
+  if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné Pile ou Face ! Exemple : \`v!flip Face\`");	  
   let replies = ["Pile.", "Face."];
 
   let result = Math.floor((Math.random() * replies.length));
@@ -346,7 +346,7 @@ if(command === "pfc") {
   }	 
 	
   if (command === "dé") {
-  if(!args[0]) return message.reply(":x: Vous n'avez pas mentionné un nombre ! Exemple : \`v!dé 5\`");	  
+  if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné un nombre ! Exemple : \`v!dé 5\`");	  
   let replies = ["1", "2", "3", "4", "5", "6"];
 
   let result = Math.floor((Math.random() * replies.length));
@@ -375,7 +375,7 @@ if(command === "pfc") {
   }
 
   if(message.content.startsWith(prefix + "triggered")) {
-  if(!args[0]) return message.reply(":x: Vous n'avez pas mentionné une personne ! Exemple : \`v!triggered @User\`");	  
+  if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné une personne ! Exemple : \`v!triggered @User\`");	  
   var image; 
   if(args){ 
   if(message.mentions.users.first()){
@@ -462,7 +462,7 @@ message.channel.send("", { embed: {
      
        message.channel.send(args.join(` `))
        }else{
-       return message.reply(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut pour le moment.");
+       return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut pour le moment.");
        }
        }
 	
@@ -480,7 +480,7 @@ message.channel.send("", { embed: {
 
     } else {
 
-      message.channel.send(":x: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
+      message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
 
     }
   } 
@@ -514,14 +514,11 @@ message.channel.send("", { embed: {
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
-        .addField(":clipboard: Espaces Utiles", "```v!help \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!stats \nv!ping \nv!request-bot```", true)
+        .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!ping \nv!request-bot```", true)
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot```", true)
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)")
-        .addField(":paperclip:  Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")	
-	.addField(":chart_with_upwards_trend: Total serveurs :", client.guilds.size)
-	.addField(":chart_with_downwards_trend: Total utilisateurs :", client.users.size)
-	.addField(":bar_chart:  Utilisateurs sur le Discord :", message.guild.memberCount)	
+        .addField(":paperclip:  Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")		
         .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
