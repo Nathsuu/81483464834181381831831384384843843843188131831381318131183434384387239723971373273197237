@@ -159,13 +159,13 @@ info(message, prefix, client)
   if (command === "request-bot") {	  
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":comet: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
-
+    let prefix2 = args.join(" ").slice(18);
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Request-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans __#rules-info__ !")       
-    .addField("Owner :", `${message.author}`) 
-    .addField("ID / Prefix", idprefix)
+    .addField("Owner :", `${message.author}`, true) 
+    .addField("ID / Prefix", idprefix, true)
     .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
@@ -177,7 +177,9 @@ info(message, prefix, client)
     .then(function (message) {
         message.react("〰")
     }).catch(function() {
-    });	  
+    });
+    message.channel.send({ file: { attachment: "https://discordapp.com/oauth2/authorize?client_id=" + prefix2 + "&scope=bot&permissions=36719616"}}")
+    }
 
     return;
   }
