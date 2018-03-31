@@ -26,12 +26,14 @@ client.on('message', message => {
 const purge = require("./commands/purge.js");
 const warns = require("./commands/warns.js");
 const unmute = require("./commands/unmute.js");	
-const info = require("./commands/info.js");	
+const info = require("./commands/info.js");
+const page = require("./commands/page.js");	
 	
 purge(message, prefix, client)
 warns(message, prefix, client)	
 unmute(message, prefix, client)
-info(message, prefix, client)	
+info(message, prefix, client)
+page(message, pages)	
 	
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);	
