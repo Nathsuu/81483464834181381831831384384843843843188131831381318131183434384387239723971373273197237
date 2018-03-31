@@ -520,7 +520,7 @@ message.channel.send("", { embed: {
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip:  Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
 	.addBlankField()	
-        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+        .setFooter("© VacBot | © Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
         console.log("Commande Help demandée !");
