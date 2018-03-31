@@ -166,6 +166,7 @@ info(message, prefix, client)
     .addField("Information", "Merci d'avoir soumis le bot, il sera invité sous peu. En attendant, vous pouvez lire les règles du bot dans __#rules-info__ !")       
     .addField("Owner :", `${message.author}`, true) 
     .addField("ID / Prefix", idprefix, true)
+    .addField({ file: { attachment: "https://discordapp.com/oauth2/authorize?client_id=" + prefix2 + "&scope=bot&permissions=36719616"}})
     .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
@@ -178,9 +179,7 @@ info(message, prefix, client)
         message.react("〰")
     }).catch(function() {
     });
-    message.channel.send({ file: { attachment: "https://discordapp.com/oauth2/authorize?client_id=" + prefix2 + "&scope=bot&permissions=36719616"}}")
-    }
-
+    
     return;
   }
 	
