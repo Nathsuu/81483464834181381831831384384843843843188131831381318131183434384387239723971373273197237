@@ -159,7 +159,6 @@ info(message, prefix, client)
   if (command === "request-bot") {	  
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":comet: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
-    let prefix2 = args.join(" ").slice(18);
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Request-Bot**")
@@ -194,7 +193,8 @@ info(message, prefix, client)
     .setColor("#FF9900")
     .setDescription("**Approve-Bot**")
     .addField("Information", "Merci d'avoir soumis le bot, il est désormais __approuvé__ !")
-    .addField("Owner :", rUser)      
+    .addField("Owner :", rUser)
+    .addField("Invitation", "Lien [ICI](https://discordapp.com/oauth2/authorize?client_id=" + message.content.split(" ")[1] + "&scope=bot&permissions=36719616)")    
     .addField("Approuvé par :", `${message.author}`)
     message.react(":17332945_138497173341771_6515416:")
 	  
