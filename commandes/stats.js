@@ -35,7 +35,8 @@ module.exports.run = async (client, message) => {
   .addField(":floppy_disk: Total Utilisateurs :", client.users.size)
   .addField(":floppy_disk: Total Channels :", client.channels.size)             
   .addField(":floppy_disk: Node :", process.version)
-  .addField(":floppy_disk: Ping :", `${Date.now() - startTime} ms`) 
+  .addField(":floppy_disk: Ping :", `${Date.now() - startTime} ms`)
+  .addBlankField()  
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
   message.channel.send(embed)
 
