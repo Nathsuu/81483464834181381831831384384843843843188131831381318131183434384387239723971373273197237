@@ -62,8 +62,7 @@ info(message, prefix, client)
 	}).catch(console.error)	
     }
 	  
-	
-    if (command === "botinfo") {
+    if (message.content === prefix + "botinfo"){	
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setDescription("Information du Bot")
@@ -76,8 +75,7 @@ info(message, prefix, client)
     return message.channel.send(botembed);
   }		
 		
-	
-  if (command === "ban") { 
+  if (message.content === prefix + "ban"){	 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
@@ -102,8 +100,8 @@ info(message, prefix, client)
 
     return;
   }
-	
-  if (command === "kick") {	  
+
+  if (message.content === prefix + "kick"){		  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!kUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
@@ -127,9 +125,9 @@ info(message, prefix, client)
     kUser.kick()
 
     return;
-  }	
+  }
 	
-  if (command === "report") {
+  if (message.content === prefix + "report"){	
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!rUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`").catch(console.error);
@@ -154,9 +152,30 @@ info(message, prefix, client)
     return;
   }
 	
+  if (message.content === prefix + "google"){		  
+    let idprefix = args.join(" ").slice(0);
+    if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!google <RECHERCHE>`");	  
+    let requestembed = new Discord.RichEmbed()
+    .setColor("#FF9900")
+    .setDescription("**Google**")
+    .addField("Recherche", "Lien [ICI](https://www.google.com/search?q=" + idprefix)
+    .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setTimestamp()	  
+	  
+    let requestchannel = message.guild.channels.get("423552696411357204");
+    if(!requestchannel) return message.channel.send(":comet: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
+    
+    message.delete().catch(O_o=>{});
+    requestchannel.send(requestembed)
+    .then(function (message) {
+        message.react("〰")
+    }).catch(function() {
+    });
+    
+    return;
+  }	
 		
-	
-  if (command === "request-bot") {	  
+  if (message.content === prefix + "request-bot"){		  
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":comet: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
     let requestembed = new Discord.RichEmbed()
@@ -182,7 +201,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (command === "approve-bot") {
+  if (message.content === prefix + "approve-bot"){	
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
 	if(!message.author.id== "282123215537569793") {	
@@ -211,7 +230,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (command === "refuse-bot") {
+  if (message.content === prefix + "refuse-bot"){	
     let rreason = args.join(" ").slice(22);	  
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
@@ -241,7 +260,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (command === "blacklist") {
+  if (message.content === prefix + "blacklist"){	
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
     let blacklist = args.join(" ").slice(1);
@@ -269,8 +288,7 @@ info(message, prefix, client)
   }	
 	
 	
-		
-if(command === "pfc") {
+if (message.content === prefix + "pfc"){		
     var rps = args.join(" ");
     if (!rps || rps != "pierre" && rps != "papier" && rps != "ciseaux") {
       message.reply("S'il vous plaît entrer soit pierre, papier ou ciseaux");
@@ -313,7 +331,7 @@ if(command === "pfc") {
     }
   }	
 		
-  if (command === "8ball") {
+  if (message.content === prefix + "8ball"){
   if(!args[2]) return message.reply(":comet: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
 
@@ -329,7 +347,7 @@ if(command === "pfc") {
   message.channel.sendEmbed(help_embed)
   }
 	
-  if (command === "flip") {
+  if (message.content === prefix + "flip"){
   if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné Pile ou Face ! Exemple : \`v!flip Face\`");	  
   let replies = ["Pile.", "Face."];
 
@@ -345,7 +363,7 @@ if(command === "pfc") {
   message.channel.sendEmbed(help_embed)
   }	 
 	
-  if (command === "dé") {
+  if (message.content === prefix + "dé"){
   if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné un nombre ! Exemple : \`v!dé 5\`");	  
   let replies = ["1", "2", "3", "4", "5", "6"];
 
@@ -361,7 +379,7 @@ if(command === "pfc") {
   message.channel.sendEmbed(help_embed)
   }
 	
-  if (command === "fish") {
+  if (message.content === prefix + "fish"){
   let replies = ["🦑", "🦐", "🦀", "🐚", "🐙", "🦈", "🐡", "🐠", "🐟", "🐬", "🐋", "🐳", "🐢"];  
 
   let result = Math.floor((Math.random() * replies.length));
@@ -394,7 +412,7 @@ if(command === "pfc") {
   }}) 
   }
 	
-  if (command === "roll") {
+  if (message.content === prefix + "role"){
   let rolls = Math.floor((Math.random() * 100) + 1);  
 	
   var help_embed = new Discord.RichEmbed()
