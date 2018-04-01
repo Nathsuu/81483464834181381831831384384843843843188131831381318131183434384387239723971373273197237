@@ -61,7 +61,7 @@ info(message, prefix, client)
 	    message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été expulsé du discord par **${message.author.username}**`)
 	}).catch(console.error)	
     }
-	  
+	
     if (message.content === prefix + "botinfo"){	
     let bicon = client.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -73,9 +73,9 @@ info(message, prefix, client)
     .addField("Créer le", client.user.createdAt);
 
     return message.channel.send(botembed);
-  }		
-		
-  if (message.content === prefix + "ban"){	 
+  }	
+	
+  if (message.content.startsWith(prefix + "ban")) {			 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
@@ -101,7 +101,7 @@ info(message, prefix, client)
     return;
   }
 
-  if (message.content === prefix + "kick"){		  
+  if (message.content.startsWith(prefix + "kick")) {		  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!kUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
@@ -127,7 +127,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (message.content === prefix + "report"){	
+  if (message.content.startsWith(prefix + "kick")) {	
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!rUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`").catch(console.error);
@@ -152,7 +152,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (message.content === prefix + "google"){		  
+  if (message.content.startsWith(prefix + "google")) {		  
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!google <RECHERCHE>`");	  
     let requestembed = new Discord.RichEmbed()
@@ -174,8 +174,8 @@ info(message, prefix, client)
     
     return;
   }	
-		
-  if (message.content === prefix + "request-bot"){		  
+	
+  if (message.content.startsWith(prefix + "request-bot")) {				  
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":comet: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
     let requestembed = new Discord.RichEmbed()
@@ -200,8 +200,8 @@ info(message, prefix, client)
     
     return;
   }
-	
-  if (message.content === prefix + "approve-bot"){	
+
+  if (message.content.startsWith(prefix + "approve-bot")) {		
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
 	if(!message.author.id== "282123215537569793") {	
@@ -230,7 +230,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (message.content === prefix + "refuse-bot"){	
+  if (message.content.startsWith(prefix + "refuse-bot")) {	
     let rreason = args.join(" ").slice(22);	  
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
@@ -260,7 +260,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (message.content === prefix + "blacklist"){	
+  if (message.content.startsWith(prefix + "blacklist")) {	
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
     let blacklist = args.join(" ").slice(1);
@@ -288,7 +288,7 @@ info(message, prefix, client)
   }	
 	
 	
-if (message.content === prefix + "pfc"){		
+if (message.content.startsWith(prefix + "pfc")) {		
     var rps = args.join(" ");
     if (!rps || rps != "pierre" && rps != "papier" && rps != "ciseaux") {
       message.reply("S'il vous plaît entrer soit pierre, papier ou ciseaux");
@@ -330,8 +330,8 @@ if (message.content === prefix + "pfc"){
       message.channel.send(msgArray);
     }
   }	
-		
-  if (message.content === prefix + "8ball"){
+	
+  if (message.content.startsWith(prefix + "8ball")) {		
   if(!args[2]) return message.reply(":comet: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
 
@@ -347,7 +347,7 @@ if (message.content === prefix + "pfc"){
   message.channel.sendEmbed(help_embed)
   }
 	
-  if (message.content === prefix + "flip"){
+  if (message.content.startsWith(prefix + "flip")) {	
   if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné Pile ou Face ! Exemple : \`v!flip Face\`");	  
   let replies = ["Pile.", "Face."];
 
@@ -361,9 +361,9 @@ if (message.content === prefix + "pfc"){
   .addField("Réponse", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
-  }	 
+  }	
 	
-  if (message.content === prefix + "dé"){
+  if (message.content.startsWith(prefix + "dé")) {	
   if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné un nombre ! Exemple : \`v!dé 5\`");	  
   let replies = ["1", "2", "3", "4", "5", "6"];
 
@@ -412,7 +412,7 @@ if (message.content === prefix + "pfc"){
   }}) 
   }
 	
-  if (message.content === prefix + "role"){
+  if (message.content.startsWith(prefix + "role")) {
   let rolls = Math.floor((Math.random() * 100) + 1);  
 	
   var help_embed = new Discord.RichEmbed()
