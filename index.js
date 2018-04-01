@@ -163,7 +163,7 @@ info(message, prefix, client)
     .setTimestamp()	  
 	  
     message.delete().catch(O_o=>{});
-    
+    requestembed.send(requestembed);
     return;
   }	
 	
