@@ -158,7 +158,7 @@ info(message, prefix, client)
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Google**")
-    .addField("Recherche", "Lien [ICI](https://www.google.com/search?q=" + idprefix)")
+    .addField("Recherche", "Lien [ICI](https://www.google.com/search?q=" + idprefix)
     .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
