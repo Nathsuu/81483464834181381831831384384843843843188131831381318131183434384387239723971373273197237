@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+new Discord.Client(options);
 
 module.exports.run = async (client, message) => {
  let sicon = message.guild.iconURL;
