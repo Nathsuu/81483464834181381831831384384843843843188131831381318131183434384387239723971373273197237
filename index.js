@@ -127,38 +127,13 @@ info(message, prefix, client)
     return;
   }
 	
-  if (message.content.startsWith(prefix + "kick")) {	
-    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-	if(!rUser) {	
-            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!report @User Insulte\`").catch(console.error);
-        }	  
-    let rreason = args.join(" ").slice(20);
-
-    let reportembed = new Discord.RichEmbed()
-    .setDescription("**Report**")
-    .setColor("#FF9900")
-    .addField("Utilisateur Report", `${rUser} ID : ${rUser.id}`)
-    .addField("Report par", `${message.author} ID : ${message.author.id}`)
-    .addField("Depuis le Channel", message.channel)
-    .addField("Raison", rreason)
-
-    let reportschannel = message.guild.channels.find(`name`, "vchannel");
-    if(!reportschannel) return message.channel.send(":comet: Impossible de trouver le canal \`vchannel\`.");
-
-
-    message.delete().catch(O_o=>{});
-    reportschannel.send(reportembed);
-
-    return;
-  }
-	
   if (message.content.startsWith(prefix + "google")) {				  
     let idprefix = args.join(" ").slice(0);
     if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!google <RECHERCHE>`");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Google**")
-    .addField("Votre recherche à bien été effectué", "Lien [ICI](https://www.google.com/search?q=" + idprefix + " )")
+    .addField("Votre recherche à bien été effectué !" + idprefix, "Lien [ICI](https://www.google.com/search?q=" + idprefix + " )")
     .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
@@ -167,6 +142,39 @@ info(message, prefix, client)
     
     return;
   }
+	
+  if (message.content.startsWith(prefix + "twitter")) {				  
+    let idprefix = args.join(" ").slice(0);
+    if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!twitter <RECHERCHE>`");	  
+    let requestembed = new Discord.RichEmbed()
+    .setColor("#FF9900")
+    .setDescription("**Twitter**")
+    .addField("Votre recherche à bien été effectué !" + idprefix, "Lien [ICI](https://twitter.com/search?q=" + idprefix + "&src=typd)")    
+    .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setTimestamp()	  
+	  
+    message.delete().catch(O_o=>{});
+    message.channel.send(requestembed);
+    
+    return;
+  }
+	
+  if (message.content.startsWith(prefix + "youtube")) {				  
+    let idprefix = args.join(" ").slice(0);
+    if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!youtube <RECHERCHE>`");	  
+    let requestembed = new Discord.RichEmbed()
+    .setColor("#FF9900")
+    .setDescription("**Youtube**")
+    .addField("Votre recherche à bien été effectué !" + idprefix, "Lien [ICI](https://www.youtube.com/results?search_query=" + idprefix + " )")    
+    .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setTimestamp()	  
+	  
+    message.delete().catch(O_o=>{});
+    message.channel.send(requestembed);
+    
+    return;
+  }	
+		
 	
 	
   if (message.content.startsWith(prefix + "request-bot")) {				  
@@ -528,6 +536,8 @@ message.channel.send("", { embed: {
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!ping \nv!request-bot \nv!google```", true)
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot```", true)
+	.addBlankField()
+	.addField(":globe_with_meridians: Recherche", "```v!google \nv!twitter \nv!youtube \nv!```", true)
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
