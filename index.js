@@ -73,6 +73,7 @@ info(message, prefix, client)
     .addField("Créer le", client.user.createdAt);
 
     return message.channel.send(botembed);
+    console.log("Commande v!botinfo demandée !");	    
   }	
 	
   if (message.content.startsWith(prefix + "ban")) {			 
@@ -139,6 +140,7 @@ info(message, prefix, client)
 	  
     message.delete().catch(O_o=>{});
     message.channel.send(requestembed);
+    console.log("Commande v!google demandée !");	  
     
     return;
   }
@@ -155,6 +157,7 @@ info(message, prefix, client)
 	  
     message.delete().catch(O_o=>{});
     message.channel.send(requestembed);
+    console.log("Commande v!twitter demandée !");	  
     
     return;
   }
@@ -171,6 +174,7 @@ info(message, prefix, client)
 	  
     message.delete().catch(O_o=>{});
     message.channel.send(requestembed);
+    console.log("Commande v!youtube demandée !");	  
     
     return;
   }	
@@ -283,6 +287,7 @@ info(message, prefix, client)
     message.delete().catch(O_o=>{});
     message.guild.member(bUser).kick("Blacklist");	  
     blacklistchannel.send(blacklistembed);
+    console.log("Commande v!blacklist demandé !");	  
   bUser.ban()	  	  
 
 
@@ -330,6 +335,7 @@ if (message.content.startsWith(prefix + "pfc")) {
       else msgArray.push("```fix\nQuelque chose s'est mal passé! Réessayer !```");
  
       message.channel.send(msgArray);
+      console.log("Commande v!pfc demandée !");    
     }
   }	
 	
@@ -347,6 +353,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   .addField("Réponse", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
+  console.log("Commande v!8ball demandée !");	  
   }
 	
   if (message.content.startsWith(prefix + "flip")) {	
@@ -363,6 +370,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   .addField("Réponse", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
+  console.log("Commande v!flip demandée !");	  
   }	
 	
   if (message.content.startsWith(prefix + "dé")) {	
@@ -379,6 +387,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   .addField("Nombre gagant", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
+  console.log("Commande v!dé demandée !");	  
   }
 	
   if (message.content === prefix + "fish"){
@@ -392,6 +401,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   .addField("Tu as pêché", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
+  console.log("Commande v!fish demandée !");	  
   }
 
   if(message.content.startsWith(prefix + "triggered")) {
@@ -411,7 +421,8 @@ if (message.content.startsWith(prefix + "pfc")) {
 
   } 
   message.channel.send({ file: { attachment: "http://www.triggered-api.tk/api/v1/url=" + image + message.author.avatarURL.replace("jpg", "png"), name: "triggered.gif"  
-  }}) 
+  }})
+  console.log("Commande v!triggered demandée !");	  
   }
 	
   if (message.content.startsWith(prefix + "role")) {
@@ -423,6 +434,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   .addField("Ton roll", rolls)
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);	  
   message.channel.sendEmbed(help_embed)
+  console.log("Commande v!role demandée !");	  
   }	
 	
   if (command === "buildinvite") {	  
@@ -545,7 +557,7 @@ message.channel.send("", { embed: {
         .setFooter("© VacBot | © Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
 	.setTimestamp() 
     message.channel.sendEmbed(help_embed)
-        console.log("Commande Help demandée !");
+        console.log("Commande v!help demandée !");
     }
 	if (message.content === prefix + "servlist"){
         message.channel.send("```" + client.guilds.array().map( g => g.name + " | " + g.id + " | " + g.members.size ).join(" membres\n") + "```")   
@@ -559,7 +571,7 @@ message.channel.send("", { embed: {
        .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
-
+       console.log("Commande v!calin demandée !");
        }
 	
     if(message.content.startsWith ("v!claque")) {
@@ -569,7 +581,7 @@ message.channel.send("", { embed: {
        .setImage("https://cdn.weeb.sh/images/rJvR71KPb.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
-
+       console.log("Commande v!claque demandée !");
        }
 	
     if(message.content.startsWith ("v!tire")) {
@@ -579,6 +591,7 @@ message.channel.send("", { embed: {
        .setImage("http://image.noelshack.com/fichiers/2017/34/5/1503625646-a8c8c726-iloveimg-cropped-1.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
+       console.log("Commande v!tire demandée !");	    
 
        }
 	
@@ -589,6 +602,7 @@ message.channel.send("", { embed: {
        .setImage("https://cdn.weeb.sh/images/SJrBZrMBz.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
+       console.log("Commande v!bisous demandée !");	    
 
        }
 	
@@ -599,6 +613,7 @@ message.channel.send("", { embed: {
        .setImage("https://source.unsplash.com/random")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
+       console.log("Commande v!random demandée !");	    
 
        }
 	
@@ -609,6 +624,7 @@ message.channel.send("", { embed: {
        .setImage("https://78.media.tumblr.com/93bc8521787c0b1dfe39293a99d18c4d/tumblr_ora9etSmp91tvq1hxo1_1280.jpg")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
+       console.log("Commande v!girl demandée !");	    
 
     }
 	
@@ -619,6 +635,7 @@ message.channel.send("", { embed: {
        .setImage("https://cdn.weeb.sh/images/BJO2j1Fv-.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
+       console.log("Commande v!wasted demandée !");	    
 
     }
 	
@@ -629,6 +646,7 @@ message.channel.send("", { embed: {
        .setImage("https://cdn.discordapp.com/attachments/360034958129233930/414181135350890496/a.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
+       console.log("Commande v!dance demandée !");	    
 
     }
 	
@@ -639,6 +657,7 @@ message.channel.send("", { embed: {
        .setImage("https://petitponey.owns-this.site/0f55e45a.gif")
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
+       console.log("Commande v!bvn demandée !");	    
 
     }	
 	
