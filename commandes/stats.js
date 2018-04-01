@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-new Discord.Client(options);
 
 module.exports.run = async (client, message) => {
  let sicon = message.guild.iconURL;
@@ -26,8 +25,7 @@ module.exports.run = async (client, message) => {
   .addField("Propriétaire du Serveur", message.guild.owner.user.username)
   .addField("Serveur créer le", message.guild.createdAt, true)
   .addField("Vous avez rejoint le", message.member.joinedAt, true)
-  .addField('Vos roles actuels', message.guild.members.get(getvalueof.id).roles.array().map(g => "" + g.name + "").join(', '))
-  .addField('Meilleures Invitations', message.guild.members.get(getvalueof.id).inviter.client.array().map(g => "" + g.name + "").join(', ')) 
+  .addField('Vos roles actuels', message.guild.members.get(getvalueof.id).roles.array().map(g => "" + g.name + "").join(', ')) 
   .addBlankField() 
   .addField(":floppy_disk: Utilisateurs sur le Discord :", message.guild.memberCount)
   .addField(":floppy_disk: Channels sur le Discord :", message.guild.channels.size)
