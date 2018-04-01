@@ -158,14 +158,34 @@ info(message, prefix, client)
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Google**")
-    .addField("Recherche", "Lien [ICI](https://www.google.com/search?q=" + idprefix)
+    .addField("Recherche", "Lien [ICI](https://www.google.com/search?q=" + idprefix))"
     .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
     message.delete().catch(O_o=>{});
     requestembed.send(requestembed);
     return;
-  }	
+  }
+	
+  if (message.content.startsWith(prefix + "google")) {				  
+    let idprefix = args.join(" ").slice(0);
+    if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!google <RECHERCHE>`");	  
+    let requestembed = new Discord.RichEmbed()
+    .setColor("#FF9900")
+    .setDescription("**Google**")
+    .addField("Invitation", "Lien [ICI](https://www.google.com/search?q=" + idprefix + " )")
+    .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
+    .setTimestamp()	  
+	  
+    let requestchannel = message.guild.channels.get("423552696411357204");
+    if(!requestchannel) return message.channel.send(":comet: Impossible de trouver le canal avec l'id ``423552696411357204`` L'ID du cannal est un channel du support du bot.");	  
+    
+    message.delete().catch(O_o=>{});
+    requestchannel.send(requestembed)
+    
+    return;
+  }
+	
 	
   if (message.content.startsWith(prefix + "request-bot")) {				  
     let idprefix = args.join(" ").slice(0);
