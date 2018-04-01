@@ -158,15 +158,12 @@ info(message, prefix, client)
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Google**")
-    .addField("Invitation", "Lien [ICI](https://www.google.com/search?q=" + idprefix + " )")
+    .addField("Votre recherche à bien été effectué", "Lien [ICI](https://www.google.com/search?q=" + idprefix + " )")
     .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
     .setTimestamp()	  
 	  
-    let requestchannel = message.guild.channels.find(`name`, "vchannel");
-    if(!requestchannel) return message.channel.send(":comet: Impossible de trouver le canal \`vchannel\`.");  
-    
     message.delete().catch(O_o=>{});
-    requestchannel.send(requestembed)
+    requestembed.send
     
     return;
   }
