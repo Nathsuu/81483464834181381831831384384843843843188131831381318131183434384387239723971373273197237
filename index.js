@@ -353,7 +353,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   .addField("Réponse", replies[result])
   .setFooter("Demande par " + message.author.tag, message.author.displayAvatarURL);
   message.channel.sendEmbed(help_embed)
-  console.log("Commande v!8ball demandé par {message.author.username}.");	  
+  console.log("Commande v!8ball demandé !");	  
   }
 	
   if (message.content.startsWith(prefix + "flip")) {	
