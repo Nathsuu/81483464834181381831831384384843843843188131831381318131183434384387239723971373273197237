@@ -525,7 +525,7 @@ message.channel.send("", { embed: {
     var input = message.content.toUpperCase();
 
     if (message.content == ("v!fakehacker")){
-	message.channel.send("LE DISCORD VIENS DE SE FAIRE HACKER !", {
+	message.channel.send("LE DISCORD VIENS DE SE FAIRE HACKé !", {
         tts: true
         })    		    
 	message.channel.send('**__[HACKING]__** **LANCEMENT DU PROCESSEUR**')
@@ -546,7 +546,7 @@ message.channel.send("", { embed: {
 	message.channel.send('**__[HACKING]__** **90%**')
 	message.channel.send('**__[HACKING]__** **100%**')
 	message.channel.send('**__[HACKING]__** **LE PIRATAGE EST UN SUCCES !**')
-	message.channel.send("LE DISCORD A BIEN ETE HACKER !", {
+	message.channel.send("LE DISCORD A BIEN ETE HACKé !", {
         tts: true
         })    
 }	
