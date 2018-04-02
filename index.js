@@ -534,7 +534,7 @@ message.channel.send("", { embed: {
 	message.channel.send('**__[HACKING]__** **30%**')
 	message.channel.send('**__[HACKING]__** **40%**')
 	message.channel.send('**__[HACKING]__** **50%**')
-	message.channel.send("50 % RESANTS", {    
+	message.channel.send("50 % RESTANTS", {    
         tts: true
         }) 	    
 	message.channel.send('**__[HACKING]__** **MODIFICATION DU DISCORD.....**')
@@ -576,7 +576,7 @@ message.channel.send("", { embed: {
 	message.channel.send('**__[HACKING]__** **30%**')
 	message.channel.send('**__[HACKING]__** **40%**')
 	message.channel.send('**__[HACKING]__** **50%**')
-	message.channel.send("50 % RESANTS", {    
+	message.channel.send("50 % RESTANTS", {    
         tts: true
         }) 	    
 	message.channel.send('**__[HACKING]__** **MODIFICATION DU DISCORD.....**')
