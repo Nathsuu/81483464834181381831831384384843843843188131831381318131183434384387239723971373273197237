@@ -425,7 +425,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   console.log("Commande v!triggered demandé !");	  
   }
 	
-  if (message.content.startsWith(prefix + "role")) {
+  if (message.content === prefix + "role"){
   let rolls = Math.floor((Math.random() * 100) + 1);  
 	
   var help_embed = new Discord.RichEmbed()
