@@ -82,7 +82,7 @@ info(message, prefix, client)
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
         }	  	  
 	if(!message.member.hasPermission("BAN_MEMBERS")) {	
-            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas la permission ``BAN_MEMBERS`` pour faire cette commande.").catch(console.error);
         }
     if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");	  	  
     let banEmbed = new Discord.RichEmbed()
@@ -108,7 +108,7 @@ info(message, prefix, client)
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
         }	  	  
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
-            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas la permission ``KICK_MEMBERS`` pour faire cette commande.").catch(console.error);
         } 
     let banEmbed = new Discord.RichEmbed()
     .setDescription("**Kick**")
@@ -271,7 +271,7 @@ info(message, prefix, client)
     if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
     let blacklist = args.join(" ").slice(1);
 	if(!message.member.hasPermission("ADMINISTRATOR")) {	
-            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas la permission ``ADMINISTRATOR`` pour faire cette commande.").catch(console.error);
         }	  
   
     let blacklistembed = new Discord.RichEmbed()
@@ -520,7 +520,7 @@ message.channel.send("", { embed: {
 	
   if (message.content.startsWith(prefix + "fakehacker")) {	
 	if(!message.member.hasPermission("ADMINISTRATOR")) {	
-            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas la permission ``ADMINISTRATOR`` pour faire cette commande.").catch(console.error);
         }
   	message.channel.send("LE DISCORD VIENS DE SE FAIRE HACKé !", {
         tts: true
@@ -611,7 +611,7 @@ message.channel.send("", { embed: {
 	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Mes listes de mes commandes :")
 	.addBlankField()	
         .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!blacklist \nv!kick \nv!mute \nv!unmute \nv!tempmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```", true)	
-        .addField(":space_invader: Espaces Jeux", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc```", true)	
+        .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker```", true)	
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
