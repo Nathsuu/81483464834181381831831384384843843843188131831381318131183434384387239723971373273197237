@@ -129,8 +129,8 @@ info(message, prefix, client)
   }
 	
   if (message.content.startsWith(prefix + "google")) {				  
-    let idprefix = args.join(" ").slice(10);
-    if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!google <RECHERCHE>`");	  
+    let idprefix = args.join(" ").slice(0);
+    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple : `v!google <RECHERCHE>`. Pas d'espace dans la recherche.");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Google**")
@@ -147,7 +147,7 @@ info(message, prefix, client)
 	
   if (message.content.startsWith(prefix + "twitter")) {				  
     let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!twitter <RECHERCHE>`");	  
+    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple : `v!twitter <RECHERCHE>`. Pas d'espace dans la recherche.");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Twitter**")
@@ -164,7 +164,7 @@ info(message, prefix, client)
 	
   if (message.content.startsWith(prefix + "youtube")) {				  
     let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!youtube <RECHERCHE>`");	  
+    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple : `v!youtube <RECHERCHE>`. Pas d'espace dans la recherche.");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Youtube**")
