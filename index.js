@@ -129,7 +129,7 @@ info(message, prefix, client)
   }
 	
   if (message.content.startsWith(prefix + "google")) {				  
-    let idprefix = args.join(" ").slice(0);
+    let idprefix = args.join(" ").slice(10);
     if(!idprefix) return message.reply(":comet: Il me faut une recherche. Exemple : `v!google <RECHERCHE>`");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
