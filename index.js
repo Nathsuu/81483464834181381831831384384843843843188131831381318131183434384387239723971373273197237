@@ -523,7 +523,28 @@ message.channel.send("", { embed: {
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces	
     var input = message.content.toUpperCase();
-				
+
+    if (message.content == ("v!fakehacker")){     
+	message.reply('**__[HACKING]__** **LANCEMENT DU PROCESSEUR**')
+	message.reply('**__[HACKING]__** **486846868486464868468464864846846846868468448468686864846864846846446665765476547657465476547657**')
+	message.reply('**__[HACKING]__** **PIRATAGE EN COURS......**') 
+	message.reply('**__[HACKING]__** **SUPPRESSION DES DONNEES**') 
+	message.reply('**__[HACKING]__** **10%**')
+	message.reply('**__[HACKING]__** **20%**')
+	message.reply('**__[HACKING]__** **30%**')
+	message.reply('**__[HACKING]__** **40%**')
+	message.reply('**__[HACKING]__** **50%**')
+	message.reply('**__[HACKING]__** **50%**')
+	message.reply('**__[HACKING]__** **MODIFICATION DU DISCORD.....**')
+	message.reply('**__[HACKING]__** **.........................**')
+	message.reply('**__[HACKING]__** **LANCEMENT DE VAC.EXE**')
+	message.reply('**__[HACKING]__** **60%**')
+	message.reply('**__[HACKING]__** **70%**')
+	message.reply('**__[HACKING]__** **80%**')
+	message.reply('**__[HACKING]__** **90%**')
+	message.reply('**__[HACKING]__** **100%**')
+	message.reply('**__[HACKING]__** **LE PIRATAGE EST UN SUCCES !**')	    
+}	
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
 }		
