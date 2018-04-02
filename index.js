@@ -563,7 +563,7 @@ message.channel.send("", { embed: {
     let cont = message.content.slice(prefix.length).split(" ")[0]; // This variable slices off the prefix, then puts the rest in an array based off the spaces	
     var input = message.content.toUpperCase();
 
-    if (message.content == ("v!fakehackerr")){  		    
+    if (message.content == ("v!topinvite")){  		    
 	client.fetchInvite(("qfYACVE")).then(invite => message.channel.send(invite.inviter.username))
    
 }	
