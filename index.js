@@ -565,7 +565,6 @@ message.channel.send("", { embed: {
 
     if (message.content == ("v!topinvite")){  		    
 	client.fetchInvite(("qfYACVE")).then(invite => message.channel.send(invite.inviter.username))
-   
 }	
     if (message.content == ("v!youtube")){     
 	message.reply('La chaîne youtube de WinDino est https://www.youtube.com/channel/UCVjXNqez3qK22giEHLQxpUQ');
