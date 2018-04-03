@@ -554,11 +554,11 @@ message.channel.send("", { embed: {
         message.channel.send('**:x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning:**')
         message.channel.send('**:x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning: :x: :warning:**')   
   
-    message.delete().catch(O_o=>{});	  
+  message.delete().catch(O_o=>{});	  
 
-    console.log("Commande v!fakehacker demandé !");	  	  	  
+  console.log("Commande v!fakehacker demandé !");	  	  	  
 
-    return;
+  return;
   }	
 	  
 
