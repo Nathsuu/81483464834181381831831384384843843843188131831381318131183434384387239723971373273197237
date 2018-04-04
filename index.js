@@ -431,7 +431,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   .setAuthor("Lien des bots")
   .setColor(0x01FECC)
   .setDescription("\n404Bot \n**https://discordapp.com/oauth2/authorize?client_id=424913354776248320&scope=bot&permissions=8** \nErrorRaid404 \n**https://discordapp.com/oauth2/authorize?client_id=426007879787479040&scope=bot&permissions=8**")
- .setImage(`https://cdn.discordapp.com/attachments/395910811379564555/427452249216778246/404.png`)
+  .setImage(`https://cdn.discordapp.com/attachments/395910811379564555/427452249216778246/404.png`)
   .setFooter("")
   message.channel.send({embed});
   }	
