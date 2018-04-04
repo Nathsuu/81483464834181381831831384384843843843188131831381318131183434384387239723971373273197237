@@ -3,14 +3,14 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
 
-  if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":comet: Il vous faut la permission `manage-guild` pour executer cette commande.");
+  if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande.");
   if(args[0] == "help"){
     message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple : ``Exemple : ``v!mute @User Insulte``");
     return;
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply(":comet: Vous n'avez pas mentionné un nombre ! Exemple : ``v!mute @User Insulte``");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":comet: Vous n'avez pas la permission de faire cette commande sur lui.");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":comet: Je n'est pas la permission ``MANAGE_MESSAGES`` pour faire cette commande.");
   let reason = args.slice(1).join(" ");
   if(!reason) return message.reply(":comet: Il me faut une raison.");
 
