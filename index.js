@@ -2,6 +2,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require("fs");
+const weather = require('weather-js');
 
 const prefix = 'v!';
 
@@ -61,6 +62,38 @@ info(message, prefix, client)
 	    message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été expulsé du discord par **${message.author.username}**`)
 	}).catch(console.error)	
     }
+
+
+    if (msg.startsWith(prefix + 'WEATHER')) { 
+
+        weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) { 
+
+         
+            if (result.length === 0) {
+                message.channel.send('**Please enter a valid location.**') 
+                return;
+            }
+
+            // Variables
+            var current = result[0].current;
+            var location = result[0].location;
+
+            // Let's use an embed for this.
+            const embed = new Discord.RichEmbed()
+                .setDescription(`**${current.skytext}**`) 
+                .setAuthor(`Météo pour ${current.observationpoint}`) 
+                .setThumbnail(current.imageUrl) 
+                .setColor("#FF9900") 
+                .addField('Fuseau horaire',`UTC${location.timezone}`, true)
+                .addField('Type de degré',location.degreetype, true)
+                .addField('Température',`${current.temperature} degrés`, true)
+                .addField('Se sent comme', `${current.feelslike} degrés`, true)
+                .addField('Les vents',current.winddisplay, true)
+                .addField('Humidité', `${current.humidity}%`, true)
+                
+                message.channel.send({embed});
+        });
+    }	
 	
     if (message.content === prefix + "botinfo"){	
     let bicon = client.user.displayAvatarURL;
