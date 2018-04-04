@@ -432,8 +432,6 @@ if (message.content.startsWith(prefix + "pfc")) {
   .setColor("#FF9900")
   .addField("Test", "Test", true)
   .setImage(`https://cdn.discordapp.com/attachments/395910811379564555/427452249216778246/404.png`, true)
-  .addField("Test", "Test", true)
-  .setImage(`https://cdn.discordapp.com/attachments/395910811379564555/427452249216778246/404.png`, true)  
   .setFooter("")
   message.channel.send({embed});
   }	
