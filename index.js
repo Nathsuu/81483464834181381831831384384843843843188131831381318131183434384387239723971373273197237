@@ -2,7 +2,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require("fs");
-const weather = require('weather-js');
 
 const prefix = 'v!';
 
@@ -64,7 +63,7 @@ info(message, prefix, client)
     }
 
 
-    if (msg.startsWith(prefix + 'WEATHER')) { 
+    if (message.startsWith(prefix + 'WEATHER')) { 
 
         weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) { 
 
