@@ -364,7 +364,8 @@ if (message.content.startsWith(prefix + "pfc")) {
   let result = Math.floor((Math.random() * replies.length));
   let question = args.slice(0).join(" ");
 	
-  message.channel.send('*Discord Résolver...*').then(m => m.edit(`:comet: L'adresse ip de `+ iUser +` est ` +replies[result]));	  
+  message.channel.send('*Discord Résolver...*').then(m => m.edit(`:comet: L'adresse ip de `+ iUser +` est ` +replies[result]));
+  console.log("Commande v!ip demandé !");	  
   }	
 	
   if (message.content.startsWith(prefix + "flip")) {	
