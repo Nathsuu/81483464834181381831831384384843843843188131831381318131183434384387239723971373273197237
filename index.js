@@ -359,7 +359,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   if (message.content.startsWith(prefix + "ip")) {
   let iUser = message.guild.member(message.mentions.users.first());
   if(!iUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ip @User\`");	  
-  let replies = ["151.80.140.233", "162.246.200.100", "198.50.243.147", "218.50.2.102", "147.135.210.114"];
+  let replies = ["151.80.140.233", "162.246.200.100", "198.50.243.147", "218.50.2.102", "147.135.210.114", "197.97.138.21", "147.135.210.114", "128.199.199.41", "88.99.149.188", "104.46.34.250", "162.246.200.100", "210.152.139.40"];
 
   let result = Math.floor((Math.random() * replies.length));
   let question = args.slice(0).join(" ");
