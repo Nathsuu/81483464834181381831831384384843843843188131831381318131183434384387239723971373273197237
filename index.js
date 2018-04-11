@@ -356,6 +356,18 @@ if (message.content.startsWith(prefix + "pfc")) {
   console.log("Commande v!8ball demandé !");	  
   }
 	
+  if (message.content.startsWith(prefix + "ip")) {
+  let iUser = message.guild.member(message.mentions.users.first());
+  if(!iUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ip @User\`");	  
+  if(!args[2]) return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ip @User\`");
+  let replies = ["151.80.140.233", "162.246.200.100", "198.50.243.147", "218.50.2.102", "147.135.210.114"];
+
+  let result = Math.floor((Math.random() * replies.length));
+  let question = args.slice(0).join(" ");
+	
+  message.channel.send('Discord Résolver...').then(m => m.edit(`:comet: L'adresse ip de `+ iUser +` est ` +replies[result]));	  
+  }	
+	
   if (message.content.startsWith(prefix + "flip")) {	
   if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné Pile ou Face ! Exemple : \`v!flip Face\`");	  
   let replies = ["Pile.", "Face."];
