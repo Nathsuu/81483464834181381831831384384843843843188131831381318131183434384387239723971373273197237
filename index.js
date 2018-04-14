@@ -211,7 +211,7 @@ info(message, prefix, client)
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
 	if(!message.member.roles.has('430105539775823882')) {	
-            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas le grade ``VACJURY`` pour de faire cette commande.").catch(console.error);
         }   	  
 
     let approveEmbed = new Discord.RichEmbed()
@@ -241,7 +241,7 @@ info(message, prefix, client)
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
 	if(!message.member.roles.has('430105539775823882')) {	
-            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
+            return message.reply(":comet: Vous n'avez pas le grade ``VACJURY`` pour de faire cette commande.").catch(console.error);
         } 	  
 
     let RefuseEmbed = new Discord.RichEmbed()
