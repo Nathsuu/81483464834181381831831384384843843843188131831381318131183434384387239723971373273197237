@@ -210,8 +210,8 @@ info(message, prefix, client)
   if (message.content.startsWith(prefix + "approve-bot")) {		
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
-	if(!message.author.id== "282123215537569793") {	
-            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
+	if(!message.member.roles.has('434454627979755521')) {	
+            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         }   	  
 
     let approveEmbed = new Discord.RichEmbed()
@@ -240,8 +240,8 @@ info(message, prefix, client)
     let rreason = args.join(" ").slice(22);	  
     let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
-	if(!message.author.id== "282123215537569793") {	
-            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
+	if(!message.member.roles.has('434454627979755521')) {	
+            return message.reply(":comet: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
         } 	  
 
     let RefuseEmbed = new Discord.RichEmbed()
