@@ -356,7 +356,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   console.log("Commande v!8ball demandé !");	  
   }
 	
-  if (message.content.startsWith(prefix + "ip")) {
+  if (message.content.startsWith(prefix + "fakeip")) {
   let iUser = message.guild.member(message.mentions.users.first());
   if(!iUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ip @User\`");	  
   let replies = ["151.80.140.233", "162.246.200.100", "198.50.243.147", "218.50.2.102", "147.135.210.114", "197.97.138.21", "147.135.210.114", "128.199.199.41", "88.99.149.188", "104.46.34.250", "162.246.200.100", "210.152.139.40"];
@@ -609,7 +609,7 @@ message.channel.send("", { embed: {
 	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Mes listes de mes commandes :")
 	.addBlankField()	
         .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!blacklist \nv!kick \nv!mute \nv!unmute \nv!tempmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```", true)	
-        .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!ip```", true)	
+        .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!fakeip```", true)	
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
@@ -617,7 +617,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
-	.addField(":sparkles: News", "```v!ip```", true)	
+	.addField(":sparkles: News", "```v!fakeip```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
