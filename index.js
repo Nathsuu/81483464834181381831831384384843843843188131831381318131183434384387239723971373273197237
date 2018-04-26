@@ -22,11 +22,11 @@ client.on('ready', () => {
 client.login(process.env.TOKEN);
 
 client.on('guildCreate', (guild) => {
-    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens de m ajouter !** \n '+guild.name+', **Propriétaire: **'+guild.owner.user.username+', **Nombre de membres: **'+guild.memberCount);
+    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens de m ajouter !** \n '+guild.name+', **Propriétaire : **'+guild.owner.user.username+', **Nombre de membres : **'+guild.memberCount);
 });
 
 client.on('guildRemove', (guild) => {
-    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens de me retirer !** \n '+guild.name+', **Propriétaire: **'+guild.owner.user.username+', **Nombre de membres: **'+guild.memberCount);
+    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens de me retirer !** \n '+guild.name+', **Propriétaire : **'+guild.owner.user.username+', **Nombre de membres : **'+guild.memberCount);
 });
 
 client.on('message', message => {
@@ -76,7 +76,7 @@ info(message, prefix, client)
      var chat2 = message.guild.channels.find('name', 'vchat');
      if(!chat2) {
          message.guild.createChannel('vchat');
-         return message.reply("Le channel \`vchat\` viens d'être créer.")
+         return message.reply("Si j'ai la permission, le channel \`vchat\` viens d'être créer.")
      }
      chat.forEach(channel => {
          message.delete();
@@ -90,11 +90,12 @@ info(message, prefix, client)
             var vmsg = message.content.substr(8)
             var embed = new Discord.RichEmbed()
             .setColor(reponse)
-            .setAuthor(" |vchat | Chat Commun", client.user.avatarURL)
+            .setAuthor(" | vchat | Chat Commun", client.user.avatarURL)
             .addField("Serveur", message.guild.name, true)
             .addField("Utilisateur", message.author + "**#" + message.author.discriminator + "**", true)
+	    .addBlankField()
             .addField("Message", vmsg)
-            .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
+            .setFooter("VacBot | Vaction")
             .setTimestamp()
         channel.send(embed)
             })
