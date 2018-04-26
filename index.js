@@ -22,11 +22,11 @@ client.on('ready', () => {
 client.login(process.env.TOKEN);
 
 client.on('guildCreate', (guild) => {
-    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens d ajouter Vaction !** '+guild.name+', **Propriétaire: **'+guild.owner.user.username+', **Nombre de membres: **'+guild.memberCount);
+    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens d ajouter Vaction !** \n '+guild.name+', **Propriétaire: **'+guild.owner.user.username+', **Nombre de membres: **'+guild.memberCount);
 });
 
 client.on('guildRemove', (guild) => {
-    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens de retirer Vaction !** '+guild.name+', **Propriétaire: **'+guild.owner.user.username+', **Nombre de membres: **'+guild.memberCount);
+    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens de retirer Vaction !** \n '+guild.name+', **Propriétaire: **'+guild.owner.user.username+', **Nombre de membres: **'+guild.memberCount);
 });
 
 client.on('message', message => {
