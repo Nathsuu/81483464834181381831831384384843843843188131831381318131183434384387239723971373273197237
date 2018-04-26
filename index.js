@@ -87,7 +87,7 @@ info(message, prefix, client)
             ];
         
             let reponse = (replys[Math.floor(Math.random() * replys.length)])
-            var vmsg = message.content.substr(8)
+            var vmsg = message.content.substr(7)
             var embed = new Discord.RichEmbed()
             .setColor(reponse)
             .setAuthor(" | vchat | Chat Commun", client.user.avatarURL)
