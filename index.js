@@ -70,7 +70,7 @@ info(message, prefix, client)
 	}).catch(console.error)	
     }
 
-  if(message.content.startsWith(prefix + "vchat")) {
+  if(message.content.startsWith(prefix + "chat")) {
      message.delete();
      var chat = client.channels.findAll('name', 'vchat');
      var chat2 = message.guild.channels.find('name', 'vchat');
@@ -98,6 +98,7 @@ info(message, prefix, client)
             .setFooter("VacBot | Vaction")
             .setTimestamp()
         channel.send(embed)
+	console.log("Commande v!chat demandé !");     
             })
         }	
 	
