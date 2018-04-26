@@ -75,7 +75,7 @@ info(message, prefix, client)
      var chat = client.channels.findAll('name', 'vchat');
      var chat2 = message.guild.channels.find('name', 'vchat');
      if(!chat2) {
-         message.guild.channelCreate('vchat')
+         message.guild.createChannel('vchat');
          return message.reply("Le channel \`vchat\` viens d'être créer.")
      }
      chat.forEach(channel => {
