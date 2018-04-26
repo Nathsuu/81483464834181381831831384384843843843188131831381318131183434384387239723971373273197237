@@ -87,10 +87,10 @@ info(message, prefix, client)
             ];
         
             let reponse = (replys[Math.floor(Math.random() * replys.length)])
-            var vmsg = message.content.substr(6)
+            var vmsg = message.content.substr(8)
             var embed = new Discord.RichEmbed()
             .setColor(reponse)
-            .setAuthor("🌍 | vchat | Chat Commun", client.user.avatarURL)
+            .setAuthor(" |vchat | Chat Commun", client.user.avatarURL)
             .addField("Serveur", message.guild.name, true)
             .addField("Utilisateur", message.author + "**#" + message.author.discriminator + "**", true)
             .addField("Message", vmsg)
