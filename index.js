@@ -71,6 +71,9 @@ info(message, prefix, client)
     }
 
   if(message.content.startsWith(prefix + "chat")) {
+    let bUser = message.guild.members.get(args[0]);
+	if(!bUser) {	
+            return message.reply(":comet: Vous n'avez mentionné une écriture ! Exemple : \`v!chat Salut\`").catch(console.error);	  
      message.delete();
      var chat = client.channels.findAll('name', 'vchat');
      var chat2 = message.guild.channels.find('name', 'vchat');
