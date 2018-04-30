@@ -32,7 +32,7 @@ module.exports.run = async (client, message) => {
   .addField(":floppy_disk: Channels sur le Discord :", message.guild.channels.size)
   .addField(":floppy_disk: Roles sur le Discord :", message.guild.roles.size)
   .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
-  .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true
+  .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
   .addBlankField() 
   .addField(":floppy_disk: Total Serveurs :", client.guilds.size)
   .addField(":floppy_disk: Total Utilisateurs :", client.users.size)
