@@ -38,7 +38,6 @@ module.exports.run = async (client, message) => {
   .addField(":floppy_disk: Total Serveurs :", client.guilds.size, true)
   .addField(":floppy_disk: Total Utilisateurs :", client.users.size, true)
   .addField(":floppy_disk: Total Channels :", client.channels.size, true) 
-  .addBlankField() 
   .addField(":floppy_disk: Node :", process.version)
   .addField(":floppy_disk: Ping :", `${Date.now() - startTime} ms`)
   .addBlankField()  
