@@ -318,10 +318,11 @@ info(message, prefix, client)
 	
   if (message.content.startsWith(prefix + "seen")) {
 	let user = message.mentions.users.first() || message.author;
+	if(!user) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!seen @User\`");
 	let servers = client.guilds.filter(g => g.members.has(user.id));
 	var message2 = "```";
 	for (var i = 0; i < servers.map(g => g.name).length; i++) {
-		var temp = (i === 0 ? `Guilds in common with ${user.tag}\n` : "") + (i + 1) + ". " + servers.map(g => g.name)[i] + "\n";
+		var temp = (i === 0 ? `Guilds en commun avec ${user.tag}\n` : "") + (i + 1) + ". " + servers.map(g => g.name)[i] + "\n";
 		if ((message2 + temp).length <= 2000 - 3) {
 			message2 += temp;
 		} else {
@@ -682,11 +683,11 @@ message.channel.send("", { embed: {
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
-        .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!ping```", true)
+        .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!ping \nv!seen```", true)
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
-	.addField(":sparkles: News", "```v!chat```", true)	
+	.addField(":sparkles: News", "```v!seen```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
