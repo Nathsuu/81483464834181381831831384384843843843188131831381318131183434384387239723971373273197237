@@ -318,7 +318,6 @@ info(message, prefix, client)
 	
   if (message.content.startsWith(prefix + "seen")) {
 	let user = message.mentions.users.first() || message.author;
-	if(!user) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!seen @User\`");
 	let servers = client.guilds.filter(g => g.members.has(user.id));
 	var message2 = "```";
 	for (var i = 0; i < servers.map(g => g.name).length; i++) {
