@@ -315,6 +315,26 @@ info(message, prefix, client)
     return;
   }
 	
+	
+  if (message.content.startsWith(prefix + "seen")) {
+	let user = message.mentions.users.first() || message.author;
+	let servers = client.guilds.filter(g => g.members.has(user.id));
+	var message2 = "```";
+	for (var i = 0; i < servers.map(g => g.name).length; i++) {
+		var temp = (i === 0 ? `Guilds in common with ${user.tag}\n` : "") + (i + 1) + ". " + servers.map(g => g.name)[i] + "\n";
+		if ((message2 + temp).length <= 2000 - 3) {
+			message2 += temp;
+		} else {
+			message2 += "```";
+			message.channel.send(message2);
+			message2 = "```";
+		}
+	}
+	message2 += "```";
+	message.channel.send(message2);
+  }	  
+	  
+	  
   if (message.content.startsWith(prefix + "blacklist")) {	
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
