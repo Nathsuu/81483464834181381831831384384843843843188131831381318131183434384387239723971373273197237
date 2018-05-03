@@ -677,7 +677,7 @@ message.channel.send("", { embed: {
         .setColor('#FF9900')
 	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Mes listes de mes commandes :")
 	.addBlankField()	
-        .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!blacklist \nv!kick \nv!mute \nv!unmute \nv!tempmute \nv!warn \nv!seewarn \nv!clearwarn \nv!report```", true)	
+        .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!blacklist \nv!kick \nv!mute \nv!unmute \nv!tempmute \nv!warn \nv!seewarn \nv!clearwarn```", true)	
         .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!fakeip \nv!chat```", true)	
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
