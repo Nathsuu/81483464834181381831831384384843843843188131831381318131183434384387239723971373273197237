@@ -507,7 +507,6 @@ if (message.content.startsWith(prefix + "pfc")) {
         name: `triggered.gif`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  }})
   console.log("Commande v!triggered demandé !");	  
   }
 	
