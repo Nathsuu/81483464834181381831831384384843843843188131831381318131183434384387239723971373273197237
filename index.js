@@ -501,7 +501,12 @@ if (message.content.startsWith(prefix + "pfc")) {
   var image = message.author.avatarURL; 
 
   } 
-  message.channel.send({ file: { attachment: "http://www.triggered-api.tk/api/v2/:type?url=" + image + message.author.avatarURL.replace("jpg", "png"), name: "triggered.gif"  
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/triggered?url=${message.author.displayAvatarURL}`,
+        name: `triggered.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   }})
   console.log("Commande v!triggered demandé !");	  
   }
