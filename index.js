@@ -102,7 +102,6 @@ info(message, prefix, client)
 	    .setThumbnail(message.author.avatarURL)
             .addField("Serveur", message.guild.name, true)
             .addField("Utilisateur", message.author + "**#" + message.author.discriminator + "**", true)
-	    .addBlankField()
             .addField("Message", vmsg)
             .setFooter("VacBot | Vaction", client.user.avatarURL)
             .setTimestamp()
@@ -135,11 +134,11 @@ info(message, prefix, client)
         }
     if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");	  	  
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("**Ban**")
+    .setDescription("Sanction de niveau III")
     .setColor("#FF9900")
-    .addField("Utilisateur Banni", `${bUser} ID : ${bUser.id}`)
-    .addField("Ban par", `${message.author} ID : ${message.author.id}`)
-    .addField("Ban depuis", message.channel)
+    .addField("Utilisateur :", `${bUser} (${bUser.id})`, true)
+    .addField("Modérateur :", `${message.author} ID : ${message.author.id}`, true)
+    .addField("Sanction", "Ban")
 
     let incidentchannel = message.guild.channels.find(`name`, "vchannel");
     if(!incidentchannel) return message.channel.send(":comet: Impossible de trouver le canal \`vchannel\`.");
@@ -160,11 +159,11 @@ info(message, prefix, client)
             return message.reply(":comet: Vous n'avez pas la permission ``KICK_MEMBERS`` pour faire cette commande.").catch(console.error);
         } 
     let banEmbed = new Discord.RichEmbed()
-    .setDescription("**Kick**")
+    .setDescription("Sanction de niveau II")
     .setColor("#FF9900")
-    .addField("Utilisateur Kick", `${kUser} ID : ${kUser.id}`)
-    .addField("Kick par", `${message.author} ID : ${message.author.id}`)
-    .addField("Kick depuis", message.channel)
+    .addField("Utilisateur :", `${kUser} (${kUser.id})`, true)
+    .addField("Modérateur :", `${message.author} ID : ${message.author.id}`, true)
+    .addField("Sanction", "Kick")
 	  
     let banChannel = message.guild.channels.find(`name`, "vchannel");
     if(!banChannel) return message.channel.send(":comet: Impossible de trouver le canal \`vchannel\`.");
