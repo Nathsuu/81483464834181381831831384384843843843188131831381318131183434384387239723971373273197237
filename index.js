@@ -82,7 +82,7 @@ info(message, prefix, client)
 	
 	
 	
-	if(message.content.substring(0, 7) == "v!report")
+	if(message.content.substring(0, 7) == "!report")
 	{
 		var commande = message.content.split(" ");
 		
