@@ -487,7 +487,6 @@ if (message.content.startsWith(prefix + "pfc")) {
   }
 
   if(message.content.startsWith(prefix + "triggered")) {
-  if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné une personne ! Exemple : \`v!triggered @User\`");	  
   var image; 
   if(args){ 
   if(message.mentions.users.first()){
