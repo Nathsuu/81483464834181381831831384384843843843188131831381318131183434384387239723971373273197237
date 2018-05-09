@@ -137,7 +137,7 @@ info(message, prefix, client)
     .setDescription("Sanction de niveau III")
     .setColor("#FF9900")
     .addField("Utilisateur :", `${bUser} (${bUser.id})`, true)
-    .addField("Modérateur :", `${message.author} ID : ${message.author.id}`, true)
+    .addField("Modérateur :", `${message.author} (${message.author.id})`, true)
     .addField("Sanction", "Ban")
 
     let incidentchannel = message.guild.channels.find(`name`, "vchannel");
@@ -162,7 +162,7 @@ info(message, prefix, client)
     .setDescription("Sanction de niveau II")
     .setColor("#FF9900")
     .addField("Utilisateur :", `${kUser} (${kUser.id})`, true)
-    .addField("Modérateur :", `${message.author} ID : ${message.author.id}`, true)
+    .addField("Modérateur :", `${message.author} (${message.author.id})`, true)
     .addField("Sanction", "Kick")
 	  
     let banChannel = message.guild.channels.find(`name`, "vchannel");
