@@ -82,7 +82,7 @@ info(message, prefix, client)
 	var dernierAppel = new Array();
 	
 	
-	if(message.content.substring(0, 7) == "!report")
+	if(message.content.substring(0, 7) == "v!report")
 	{
 		var commande = message.content.split(" ");
 		
