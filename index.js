@@ -79,7 +79,7 @@ info(message, prefix, client)
     }
 
 	
-	
+	var dernierAppel = new Array();
 	
 	
 	if(message.content.substring(0, 7) == "!report")
