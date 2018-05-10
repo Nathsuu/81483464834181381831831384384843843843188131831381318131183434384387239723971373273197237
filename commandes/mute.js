@@ -43,19 +43,12 @@ module.exports.run = async (bot, message, args) => {
   }
 
   let muteembed = new Discord.RichEmbed()
-  .setDescription("Mute")
-  .setColor("#FF9900")
-  .addField("Utilisateur Mute", tomute)
-  .addField("Mute par", `${message.author}`)
-  .addField("Mute depuis", message.channel)
-  .addField("Raison", reason);
-  
-    .setDescription("Sanction de niveau II")
-    .setColor("#FF9900")
-    .addField("Utilisateur :", `${tomute} (${tomute.id})`, true)
-    .addField("Modérateur :", `${message.author} (${message.author.id})`, true)
-    .addField("Sanction", "Mute")
-    .addField("Raison", reason)  
+   .setDescription("Sanction de niveau II")
+   .setColor("#FF9900")
+   .addField("Utilisateur :", `${tomute} (${tomute.id})`, true)
+   .addField("Modérateur :", `${message.author} (${message.author.id})`, true)
+   .addField("Sanction", "Mute")
+   .addField("Raison", reason)
 
   let vchannelchannel = message.guild.channels.find(`name`, "vchannel");
   if(!vchannelchannel) return message.reply(":comet: Impossible de trouver le canal \`vchannel\`.");
