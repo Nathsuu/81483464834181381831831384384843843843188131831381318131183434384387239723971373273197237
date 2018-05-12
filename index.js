@@ -676,7 +676,7 @@ message.channel.send("", { embed: {
     if (message.content === prefix + "help"){	    
         var help_embed = new Discord.RichEmbed()
         .setColor('#FF9900')
-	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Mes listes de mes commandes :")
+	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Voici la liste de mes commandes :")
 	.addBlankField()	
         .addField(":hammer_pick: Espaces Modérations", "```v!purge \nv!ban \nv!blacklist \nv!kick \nv!mute \nv!unmute \nv!tempmute \nv!warn \nv!seewarn \nv!clearwarn```", true)	
         .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!fakeip \nv!chat```", true)	
@@ -687,7 +687,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
-	.addField(":sparkles: News", "```v!seen```", true)	
+	.addField(":sparkles: News", "```Modification des commandes v!mute & v!unmute```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
