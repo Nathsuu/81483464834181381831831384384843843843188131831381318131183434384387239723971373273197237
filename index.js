@@ -89,7 +89,6 @@ info(message, prefix, client)
      chat.forEach(channel => {
          message.delete();
     
-        
             var replys = [
                 '#FF9900'
             ];
