@@ -29,3 +29,6 @@ try {
 console.log(err)
 }
 }
+module.exports.help = {
+  name: "bugreport"
+}
