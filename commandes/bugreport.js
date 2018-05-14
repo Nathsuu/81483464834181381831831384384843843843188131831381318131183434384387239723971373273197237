@@ -9,7 +9,7 @@ try {
         return text;
     }
     const bug = args.join(" ")
-    if (!bug) return message.channel.send(':comet: S'il vous plaît spécifier un bug !')
+    if (!bug) return message.channel.send(':comet: S il vous plaît spécifier un bug !')
     const content = clean(`**${message.author.username}**#${message.author.discriminator} (${message.author.id}) a rapporté un bug :\n${bug}\nServer: **${message.guild.name}**\nID: **${message.guild.id}**`);
     const id = 'channel_id';
     new Promise((resolve, reject) => {
