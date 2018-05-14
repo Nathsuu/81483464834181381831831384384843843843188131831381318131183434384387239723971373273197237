@@ -408,7 +408,7 @@ if (message.content.startsWith(prefix + "pfc")) {
 	
   if (message.content.startsWith(prefix + "8ball")) {		
   if(!args[2]) return message.reply(":comet: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
-  let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère."];
+  let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère.", "T'as cru quoi ? Je ne vais pas te dire la réponse.", "Bon, laisse moi tranquille j'en ai marre de tes questions."];
 
   let result = Math.floor((Math.random() * replies.length));
   let question = args.slice(0).join(" ");
