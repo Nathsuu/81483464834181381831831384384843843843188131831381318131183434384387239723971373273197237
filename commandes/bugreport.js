@@ -14,7 +14,7 @@ try {
     const id = '445636165408784386';
     new Promise((resolve, reject) => {
       superagent.post(`https://discordapp.com/api/channels/${id}/messages`)
-        .set('Autorisation', `Bot ${client.token}`).send({ content })
+        .set('Autorisation', `Bot ${process.env.TOKEN}`).send({ content })
         .end((err, res) => {
           if (err) {
             reject(err);
