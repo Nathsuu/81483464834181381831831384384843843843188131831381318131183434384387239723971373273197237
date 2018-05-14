@@ -18,7 +18,7 @@ try {
         .end((err, res) => {
           if (err) {
             reject(err);
-            message.reply('Une erreur s'est produite lors de l'envoi de votre rapport à Vaction Support. Veuillez réessayer plus tard.');
+            message.reply('Une erreur s est produite lors de l envoi de votre rapport à Vaction Support. Veuillez réessayer plus tard.');
           } else {
             resolve(res);
             message.channel.send(`:white_check_mark: **${message.author.username}**, votre rapport a été soumis à l'assistance de Vaction pour examen. Je vous remercie !`);
