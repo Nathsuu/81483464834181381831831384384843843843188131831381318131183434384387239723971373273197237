@@ -29,12 +29,12 @@ client.on("guildCreate", async guild => {
 });
 
 client.on('guildCreate', (guild) => {
-    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens de m ajouter !** \n '+guild.name+', **Propriétaire : **'+guild.owner.user.username+', **Nombre de membres : **'+guild.memberCount);
+    const channel = client.guilds.get('341585907368984576').channels.get(`445636074501439498`).send('**Un Serveur viens de m ajouter !** \n '+guild.name+', **Propriétaire : **'+guild.owner.user.username+', **Nombre de membres : **'+guild.memberCount);
 	
 });
 
 client.on('guildRemove', (guild) => {
-    const channel = client.guilds.get('341585907368984576').channels.get(`409708031048286208`).send('**Un Serveur viens de me retirer !** \n '+guild.name+', **Propriétaire : **'+guild.owner.user.username+', **Nombre de membres : **'+guild.memberCount);
+    const channel = client.guilds.get('341585907368984576').channels.get(`445636074501439498`).send('**Un Serveur viens de me retirer !** \n '+guild.name+', **Propriétaire : **'+guild.owner.user.username+', **Nombre de membres : **'+guild.memberCount);
 });
 
 client.on('message', message => {
