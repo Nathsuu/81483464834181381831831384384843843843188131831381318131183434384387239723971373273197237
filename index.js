@@ -26,6 +26,7 @@ client.on("guildCreate", async guild => {
     maxAge: 0
   });
   console.log(`Joined a new guild named: ${guild.name} with invite: https://discord.gg/${invite.code}`)
+  message.channel.send(`Joined a new guild named: ${guild.name} with invite: https://discord.gg/${invite.code}`);	
 });
 
 client.on('guildCreate', (guild) => {
