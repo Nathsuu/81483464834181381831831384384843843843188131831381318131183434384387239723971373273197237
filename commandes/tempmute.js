@@ -51,8 +51,6 @@ module.exports.run = async (bot, message, args) => {**
     message.channel.send(`<@${tomute.id}> a été unmute.`);
   }, ms(mutetime));
 
-
-//end of module
 }
 
 module.exports.help = {
