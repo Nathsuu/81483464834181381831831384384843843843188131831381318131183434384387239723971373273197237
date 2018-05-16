@@ -92,7 +92,7 @@ info(message, prefix, client)
 			timeout: 10000
 		}));
 	message.channel.messages.fetch({
-			limit: 500
+			limit: amount
 		, })
 		.then((messages) => {
 			if (user) {
