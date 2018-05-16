@@ -681,12 +681,12 @@ message.channel.send("", { embed: {
         .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!fakeip \nv!chat```", true)	
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
-	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
+	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn \nv!mouche```", true)	
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!ping \nv!seen```", true)
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
-	.addField(":sparkles: News", "```Modification des commandes v!mute & v!unmute \nModification du v!8ball```", true)	
+	.addField(":sparkles: News", "```Ajout du v!mouche```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
@@ -794,6 +794,16 @@ message.channel.send("", { embed: {
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
        console.log("Commande v!bvn demandé !");	    
+
+    }
+	
+    if(message.content.startsWith ("v!mouche")) {
+       message.delete();	    
+       var help_embed = new Discord.RichEmbed()
+       .setColor("#FF9900")
+       .setImage("https://cdn.discordapp.com/attachments/422819153242750986/445294660177362968/troll_mouche_discord.png")
+       message.channel.sendEmbed(help_embed)
+       console.log("Commande v!mouche demandé !");	    
 
     }	
 	
