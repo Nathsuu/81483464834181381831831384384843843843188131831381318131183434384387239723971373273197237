@@ -103,7 +103,8 @@ info(message, prefix, client)
 			}
 			message.channel.bulkDelete(messages)
 				.catch(error => console.log(error.stack));
-		}});
+		});
+    }
 	
   if(message.content.startsWith(prefix + "chat")) {	  
      message.delete();
