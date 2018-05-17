@@ -12,8 +12,8 @@ exports.run = (client, message, args, tools) => {
   // Now, we can delete the messages
   message.channel.bulkDelete(args[0])
     .then(messages => message.channel.send(`:comet: Vous venez de supprimer \`${messages.size}/${args[0]}\` messages ! :ok_hand:**`).then(msg => msg.delete({
-      timeout: 100000
-    }))) // This sends how many messages they deleted to chat, we also want to delete this message. This deletes the message after 100000 milliseconds.
+      timeout: 10000000
+    }))) // This sends how many messages they deleted to chat, we also want to delete this message. This deletes the message after 10000000 milliseconds.
 
 }
 
