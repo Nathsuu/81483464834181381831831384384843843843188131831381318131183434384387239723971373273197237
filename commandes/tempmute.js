@@ -4,7 +4,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple : ``v!tempmute @User 1s/m/h/d``");
+  if(!tomute) return message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple/Usage : ``v!tempmute @User 1s/m/h/d``");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande.");
   let muterole = message.guild.roles.find(`name`, "vmuted");
   let reason = args.slice(2).join(" ");
