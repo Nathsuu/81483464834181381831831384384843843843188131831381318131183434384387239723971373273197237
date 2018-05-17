@@ -9,7 +9,7 @@ exports.run = (client, message, args, tools) => {
 
 
   message.channel.bulkDelete(args[0])
-    .then(messages => message.channel.send(`:comet: Vous venez de supprimer \`${messages.size}/${args[0]}\` messages ! :ok_hand:**`).then(msg => msg.delete({
+    .then(messages => message.channel.send(`:comet: Vous venez de supprimer \`${messages.size}/${args[0]}\` messages ! :ok_hand:`).then(msg => msg.delete({
       timeout: 10000
     }))) 
 
