@@ -7,7 +7,7 @@ if (message.channel.type === "dm") return;
 var mentionned = message.mentions.users.first();
 if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":comet: Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
 if(message.mentions.users.size === 0) {
-  return message.channel.send(":comet: Vous n'avez mentionnée aucun utilisateur !");
+  return message.channel.send(":comet: Vous n'avez mentionnée aucun utilisateur ! Exemple/Usage : ``v!warn @User Insulte``");
 }else{
     const args = message.content.split(' ').slice(1);
     const mentioned = message.mentions.users.first();
