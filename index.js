@@ -125,12 +125,12 @@ info(message, prefix, client)
   if (message.content.startsWith(prefix + "ban")) {			 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
-            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`").catch(console.error);
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!ban @User Insulte\`").catch(console.error);
         }	  	  
 	if(!message.member.hasPermission("BAN_MEMBERS")) {	
             return message.reply(":comet: Vous n'avez pas la permission ``BAN_MEMBERS`` pour faire cette commande.").catch(console.error);
         }
-    if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!ban @User Insulte\`");	  	  
+    if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!ban @User Insulte\`");	  	  
     let banEmbed = new Discord.RichEmbed()
     .setDescription("Sanction de niveau III")
     .setColor("#FF9900")
@@ -151,7 +151,7 @@ info(message, prefix, client)
   if (message.content.startsWith(prefix + "kick")) {		  
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!kUser) {	
-            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!kick @User Insulte\`").catch(console.error);
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!kick @User Insulte\`").catch(console.error);
         }	  	  
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
             return message.reply(":comet: Vous n'avez pas la permission ``KICK_MEMBERS`` pour faire cette commande.").catch(console.error);
@@ -176,7 +176,7 @@ info(message, prefix, client)
 	
   if (message.content.startsWith(prefix + "google")) {				  
     let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple : `v!google <RECHERCHE>`. Pas d'espace dans la recherche.");	  
+    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple/Usage : `v!google <RECHERCHE>`. Pas d'espace dans la recherche.");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Google**")
@@ -193,7 +193,7 @@ info(message, prefix, client)
 	
   if (message.content.startsWith(prefix + "twitter")) {				  
     let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple : `v!twitter <RECHERCHE>`. Pas d'espace dans la recherche.");	  
+    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple/Usage : `v!twitter <RECHERCHE>`. Pas d'espace dans la recherche.");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Twitter**")
@@ -210,7 +210,7 @@ info(message, prefix, client)
 	
   if (message.content.startsWith(prefix + "youtube")) {				  
     let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple : `v!youtube <RECHERCHE>`. Pas d'espace dans la recherche.");	  
+    if(!idprefix) return message.reply(":comet: Il me faut une petite recherche. Exemple/Usage : `v!youtube <RECHERCHE>`. Pas d'espace dans la recherche.");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Youtube**")
@@ -229,7 +229,7 @@ info(message, prefix, client)
 	
   if (message.content.startsWith(prefix + "request-bot")) {				  
     let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply(":comet: Il me faut l'ID/PREFIX du Bot. Exemple : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
+    if(!idprefix) return message.reply(":comet: Il me faut l'ID/PREFIX du Bot. Exemple/Usage : `v!request-bot <ID DU BOT> <PREFIX DU BOT>`");	  
     let requestembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setDescription("**Request-Bot**")
@@ -255,7 +255,7 @@ info(message, prefix, client)
 
   if (message.content.startsWith(prefix + "approve-bot")) {		
     let rUser = message.guild.member(message.mentions.users.first());
-    if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!approve-bot @User\`");
+    if(!rUser) return message.channel.send(":x: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!approve-bot @User\`");
 	if(!message.member.roles.has('430105539775823882')) {	
             return message.reply(":comet: Vous n'avez pas le grade ``VACJURY`` pour de faire cette commande.").catch(console.error);
         }   	  
@@ -285,7 +285,7 @@ info(message, prefix, client)
   if (message.content.startsWith(prefix + "refuse-bot")) {	
     let rreason = args.join(" ").slice(22);	  
     let rUser = message.guild.member(message.mentions.users.first());
-    if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple : `v!refuse-bot <Créateur du Bot> <Raison>`");
+    if(!rUser) return message.channel.send(":x: Il me faut une raison. Exemple/Usage : `v!refuse-bot <Créateur du Bot> <Raison>`");
 	if(!message.member.roles.has('430105539775823882')) {	
             return message.reply(":comet: Vous n'avez pas le grade ``VACJURY`` pour de faire cette commande.").catch(console.error);
         } 	  
@@ -334,7 +334,7 @@ info(message, prefix, client)
 	  
   if (message.content.startsWith(prefix + "blacklist")) {	
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!blacklist @User\`");
+    if(!bUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!blacklist @User\`");
     let blacklist = args.join(" ").slice(1);
 	if(!message.member.hasPermission("ADMINISTRATOR")) {	
             return message.reply(":comet: Vous n'avez pas la permission ``ADMINISTRATOR`` pour faire cette commande.").catch(console.error);
@@ -406,7 +406,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   }	
 	
   if (message.content.startsWith(prefix + "8ball")) {		
-  if(!args[2]) return message.reply(":comet: Donne moi une question. Exemple : \`v!8ball T'es beau ?\`");
+  if(!args[2]) return message.reply(":comet: Donne moi une question. Exemple/Usage : \`v!8ball T'es beau ?\`");
   let replies = ["Oui.", "Non.", "Je ne sais pas.", "Peut-être.", "Mystère.", "T'as cru quoi ? Je ne vais pas te dire la réponse.", "Bon, laisse moi tranquille j'en ai marre de tes questions."];
 
   let result = Math.floor((Math.random() * replies.length));
@@ -424,7 +424,7 @@ if (message.content.startsWith(prefix + "pfc")) {
 	
   if (message.content.startsWith(prefix + "fakeip")) {
   let iUser = message.guild.member(message.mentions.users.first());
-  if(!iUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple : \`v!fakeip @User\`");	  
+  if(!iUser) return message.channel.send(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!fakeip @User\`");	  
   let replies = ["151.80.140.233", "162.246.200.100", "198.50.243.147", "218.50.2.102", "147.135.210.114", "197.97.138.21", "147.135.210.114", "128.199.199.41", "88.99.149.188", "104.46.34.250", "162.246.200.100", "210.152.139.40"];
 
   let result = Math.floor((Math.random() * replies.length));
@@ -435,7 +435,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   }	
 	
   if (message.content.startsWith(prefix + "flip")) {	
-  if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné Pile ou Face ! Exemple : \`v!flip Face\`");	  
+  if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné Pile ou Face ! Exemple/Usage : \`v!flip Face\`");	  
   let replies = ["Pile.", "Face."];
 
   let result = Math.floor((Math.random() * replies.length));
@@ -452,7 +452,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   }	
 	
   if (message.content.startsWith(prefix + "dé")) {	
-  if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné un nombre ! Exemple : \`v!dé 5\`");	  
+  if(!args[0]) return message.reply(":comet: Vous n'avez pas mentionné un nombre ! Exemple/Usage : \`v!dé 5\`");	  
   let replies = ["1", "2", "3", "4", "5", "6"];
 
   let result = Math.floor((Math.random() * replies.length));
