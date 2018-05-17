@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (args[1] === undefined) {
 
-      return message.channel.send(':comet: Vous n'avez pas mentionné un de message à traduire ! Exemple/Usage : ``v!translate <language> <text>``');
+      return message.channel.send(':comet: Vous n avez pas mentionné un de message à traduire ! Exemple/Usage : ``v!translate <language> <text>``');
 
     } else {
 
