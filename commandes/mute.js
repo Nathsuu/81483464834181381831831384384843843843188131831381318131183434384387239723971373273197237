@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande.");
   if(args[0] == "help"){
-    message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple : ``Exemple : ``v!mute @User Insulte``");
+    message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple : ``v!mute @User Insulte``");
     return;
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
