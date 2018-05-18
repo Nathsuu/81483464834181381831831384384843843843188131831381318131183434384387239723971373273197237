@@ -134,7 +134,7 @@ info(message, prefix, client)
   let rolls = Math.floor((Math.random() * 100) + 1); 	  
   return message.reply("Le taux d'amour entre ${lUser} et ${lUser2} est de " + rolls + "%")
   console.log("Commande v!love demandé !");	  
-	  
+  }	  
 	  
 	  
   if (message.content.startsWith(prefix + "ban")) {			 
