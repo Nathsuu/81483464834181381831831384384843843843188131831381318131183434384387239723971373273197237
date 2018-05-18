@@ -123,11 +123,11 @@ info(message, prefix, client)
 	
 	
   if (message.content.startsWith(prefix + "love")) {
-  let lUser = args.join(" ").slice(2);
+  let lUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
-  let lUser2 = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[2]));
+  let lUser2 = message.guild.member(message.mentions.users.two() || message.guild.members.get(args[2]));
 	if(!lUser2) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }
