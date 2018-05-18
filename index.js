@@ -127,7 +127,7 @@ info(message, prefix, client)
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
-  let lUser2 = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+  let lUser2 = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[2]));
 	if(!lUser2) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }
