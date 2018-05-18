@@ -132,7 +132,7 @@ info(message, prefix, client)
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }
   let rolls = Math.floor((Math.random() * 100) + 1); 	  
-  return message.reply("Le taux d'amour entre ${lUser} et ${lUser2} est de " + rolls + "%")
+  return message.reply("Le taux d'amour entre " + lUser + " et " + lUser2 + " est de " + rolls + "%")
   console.log("Commande v!love demandé !");	  
   }	  
 	  
