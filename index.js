@@ -121,6 +121,22 @@ info(message, prefix, client)
     console.log("Commande v!botinfo demandé !");	    
   }	
 	
+	
+  if (message.content.startsWith(prefix + "love")) {
+  let lUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+	if(!lUser) {	
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
+        }	  
+  let lUser2 = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+	if(!lUser2) {	
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
+        }
+  let rolls = Math.floor((Math.random() * 100) + 1); 	  
+  return message.reply("Le taux d'amour entre ${lUser} et ${lUser2} est de " + rolls + "%")
+  console.log("Commande v!love demandé !");	  
+	  
+	  
+	  
   if (message.content.startsWith(prefix + "ban")) {			 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
