@@ -991,17 +991,6 @@ message.channel.send("", { embed: {
 
     }
 	
-    if(message.content.startsWith ("v!wasted")) {
-       var help_embed = new Discord.RichEmbed()
-       .setTitle (":boxing_glove: | Wasted")
-       .setColor("#FF9900")
-       .setImage("https://cdn.weeb.sh/images/BJO2j1Fv-.gif")
-       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!wasted demandé !");	    
-
-    }
-	
     if(message.content.startsWith ("v!dance")) {
        var help_embed = new Discord.RichEmbed()
        .setTitle (":headphones: | Dance")
@@ -1021,16 +1010,6 @@ message.channel.send("", { embed: {
        .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
        message.channel.sendEmbed(help_embed)
        console.log("Commande v!bvn demandé !");	    
-
-    }
-	
-    if(message.content.startsWith ("v!mouche")) {
-       message.delete();	    
-       var help_embed = new Discord.RichEmbed()
-       .setColor("#FF9900")
-       .setImage("https://cdn.discordapp.com/attachments/422819153242750986/445294660177362968/troll_mouche_discord.png")
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!mouche demandé !");	    
 
     }	
 	
