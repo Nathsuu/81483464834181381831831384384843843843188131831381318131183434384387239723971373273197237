@@ -135,14 +135,14 @@ info(message, prefix, client)
     return message.channel.send(botembed);
     console.log("Commande v!botinfo demandé !");	    
   }	
-	
+	let game = message.content.split(` `).slice(1);
 	
   if (message.content.startsWith(prefix + "love")) {
-  let lUser = message.guild.member(message.mentions.users.first());
+  let lUser = message.content.split(` `).slice(1);
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
-  let lUser2 = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[2]));
+  let lUser2 = message.guild.member(message.mentions.users.first());
 	if(!lUser2) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }
