@@ -52,6 +52,21 @@ info(message, prefix, client)
     command = args.shift().toLowerCase();	
 	
 	
+    if(message.content.startsWith(prefix + "setgame")){
+       let game = message.content.split(` `).slice(1);
+       message.delete()
+       if (!game){
+       args = null;
+        }
+       if(message.author.id == "282123215537569793"){
+       client.user.setGame('' + game + '')
+       message.channel.send("Game changé !")
+       }else{
+       return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.");
+       }
+       }
+		
+	
     if (command === "KickAncienPasTouche") {
 	if(!message.member.hasPermission("KICK_MEMBERS")) {	
             return message.reply(":x: Vous n'avez pas la permission de faire cette commande.").catch(console.error);
