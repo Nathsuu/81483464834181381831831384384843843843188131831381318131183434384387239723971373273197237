@@ -7,7 +7,7 @@ const prefix = 'v!';
 
 client.on('ready', () => {
   setInterval(function(){
-    guilds = ["Vaction | v!help", "Vaction | v!help | French Bot", "Vaction | by WinDino", `Vaction | ${client.guilds.size} Serveurs`, "Vaction | v!help", `Vaction | ${client.users.size} Utilisateurs`]
+    guilds = ["Vaction | v!help", "Vaction | v!help | French Bot", "Vaction | by WinDino#3781", `Vaction | ${client.guilds.size} Serveurs`, "Vaction | v!help", `Vaction | ${client.users.size} Utilisateurs`]
     lecture = Math.floor((Math.random() * guilds.length));
     client.user.setPresence({
       game:{
