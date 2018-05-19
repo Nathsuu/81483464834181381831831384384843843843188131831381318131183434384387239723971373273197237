@@ -142,7 +142,7 @@ info(message, prefix, client)
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
-  let lUser2 = message.guild.member(message.mentions.users.first());
+  let lUser2 = message.content.split(` `).slice(2);
 	if(!lUser2) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }
