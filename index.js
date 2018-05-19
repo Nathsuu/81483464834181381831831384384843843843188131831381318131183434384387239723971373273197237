@@ -497,6 +497,15 @@ if (message.content.startsWith(prefix + "pfc")) {
   console.log("Commande v!fish demandé !");	  
   }
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
   if(message.content.startsWith(prefix + "triggered")) {
   var image; 
   if(args){ 
@@ -519,7 +528,210 @@ if (message.content.startsWith(prefix + "pfc")) {
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   console.log("Commande v!triggered demandé !");	  
+  }	
+	
+  if(message.content.startsWith(prefix + "wasted")) {
+  var image; 
+  if(args){ 
+  if(message.mentions.users.first()){
+
+  var image = message.mentions.users.first().avatarURL; 
+
+  }else{
+  var image = args; 
   }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/wasted?url=${message.author.displayAvatarURL}`,
+        name: `wasted.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
+  console.log("Commande v!wasted demandé !");	  
+  }	
+
+  if(message.content.startsWith(prefix + "illuminati")) {
+  var image; 
+  if(args){ 
+  if(message.mentions.users.first()){
+
+  var image = message.mentions.users.first().avatarURL; 
+
+  }else{
+  var image = args; 
+  }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/illuminati?url=${message.author.displayAvatarURL}`,
+        name: `illuminati.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
+  console.log("Commande v!illuminati demandé !");	  
+  }
+	
+  if(message.content.startsWith(prefix + "invert")) {
+  var image; 
+  if(args){ 
+  if(message.mentions.users.first()){
+
+  var image = message.mentions.users.first().avatarURL; 
+
+  }else{
+  var image = args; 
+  }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/invert?url=${message.author.displayAvatarURL}`,
+        name: `invert.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
+  console.log("Commande v!invert demandé !");	  
+  }
+	
+  if(message.content.startsWith(prefix + "convmatrix")) {
+  var image; 
+  if(args){ 
+  if(message.mentions.users.first()){
+
+  var image = message.mentions.users.first().avatarURL; 
+
+  }else{
+  var image = args; 
+  }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/convmatrix?url=${message.author.displayAvatarURL}`,
+        name: `convmatrix.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
+  console.log("Commande v!convmatrix demandé !");	  
+  }
+	
+  if(message.content.startsWith(prefix + "tobecontinued")) {
+  var image; 
+  if(args){ 
+  if(message.mentions.users.first()){
+
+  var image = message.mentions.users.first().avatarURL; 
+
+  }else{
+  var image = args; 
+  }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/tobecontinued?url=${message.author.displayAvatarURL}`,
+        name: `tobecontinued.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
+  console.log("Commande v!tobecontinued demandé !");	  
+  }
+	
+  if(message.content.startsWith(prefix + "beautiful")) {
+  var image; 
+  if(args){ 
+  if(message.mentions.users.first()){
+
+  var image = message.mentions.users.first().avatarURL; 
+
+  }else{
+  var image = args; 
+  }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/beautiful?url=${message.author.displayAvatarURL}`,
+        name: `beautiful.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
+  console.log("Commande v!beautiful demandé !");	  
+  }
+	
+  if(message.content.startsWith(prefix + "blood")) {
+  var image; 
+  if(args){ 
+  if(message.mentions.users.first()){
+
+  var image = message.mentions.users.first().avatarURL; 
+
+  }else{
+  var image = args; 
+  }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/blood?url=${message.author.displayAvatarURL}`,
+        name: `blood.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
+  console.log("Commande v!blood demandé !");	  
+  }
+	
+  if(message.content.startsWith(prefix + "bob")) {
+  var image; 
+  if(args){ 
+  if(message.mentions.users.first()){
+
+  var image = message.mentions.users.first().avatarURL; 
+
+  }else{
+  var image = args; 
+  }
+  }else{ 
+
+  var image = message.author.avatarURL; 
+
+  } 
+  message.channel.send({
+      files:[{
+        attachment: `http://triggered-api.tk/api/v2/bob?url=${message.author.displayAvatarURL}`,
+        name: `bob.gif`
+      }]
+    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
+  console.log("Commande v!bob demandé !");	  
+  }		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	  
 	
   if (message.content === 'v!image404') {
   const embed = new Discord.RichEmbed()
@@ -696,12 +908,12 @@ message.channel.send("", { embed: {
         .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!fakeip \nv!chat```", true)	
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
-	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!triggered \nv!bvn```", true)	
+	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!bvn \nv!triggered  \nv!illuminati \nv!invert \nv!convmatrix \nv!tobecontinued \nv!wasted \nv!beautiful \nv!blood \v!bob ```", true)	
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!ping \nv!seen```", true)
         .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
-	.addField(":sparkles: News", "```v!purge remplaçer par le v!clear \nAjout du v!tempmute \nCréation d'un troll...```", true)	
+	.addField(":sparkles: News", "```v!purge remplaçer par le v!clear \nAjout du v!tempmute \nv!illuminati \nv!invert \nv!convmatrix \nv!tobecontinued \nv!wasted \nv!beautiful \nv!blood \v!bob```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
