@@ -56,7 +56,7 @@ info(message, prefix, client)
        let game = message.content.split(` `).slice(1);
        message.delete()
        if (!game){
-       args = null;
+       game = null;
         }
        if(message.author.id == "282123215537569793"){
        client.user.setGame('' + game + '')
