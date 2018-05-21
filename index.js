@@ -142,9 +142,14 @@ info(message, prefix, client)
   let lUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
+        }
+	  
+  let lUser1 = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+	if(!lUser1) {	
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
   let rolls = Math.floor((Math.random() * 100) + 1); 	  
-  return message.reply("Le taux d'amour avec " + lUser + " est de " + rolls + "%")
+  return message.reply("Le taux d'amour avec " + lUser + " et " + lUser1 + " est de " + rolls + "%")
   console.log("Commande v!love demandé !");	  
   }	  
 
