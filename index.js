@@ -138,17 +138,15 @@ info(message, prefix, client)
   }	
 
 	
-  if (message.content.startsWith(prefix + "love")) {	  	  
-  let lUser = message.guild.members.get(args[1]);
+  if (message.content.startsWith(prefix + "love")) {
+  let lUser = message.content.split(` `).slice(1);
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
-        }
-	  
+        }	  
   let rolls = Math.floor((Math.random() * 100) + 1); 	  
   return message.reply("Le taux d'amour avec " + lUser + " est de " + rolls + "%")
   console.log("Commande v!love demandé !");	  
-  }	  
-
+  }
   if (message.content.startsWith(prefix + "ban")) {			 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
