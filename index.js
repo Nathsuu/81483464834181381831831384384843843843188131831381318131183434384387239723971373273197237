@@ -558,7 +558,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   message.channel.send({
       files:[{
         attachment: `http://triggered-api.tk/api/v2/wasted?url=${message.author.displayAvatarURL}`,
-        name: `wasted.gif`
+        name: `wasted.png`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   console.log("Commande v!wasted demandé !");	  
@@ -606,7 +606,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   message.channel.send({
       files:[{
         attachment: `http://triggered-api.tk/api/v2/invert?url=${message.author.displayAvatarURL}`,
-        name: `invert.gif`
+        name: `invert.png`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   console.log("Commande v!invert demandé !");	  
@@ -630,7 +630,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   message.channel.send({
       files:[{
         attachment: `http://triggered-api.tk/api/v2/convmatrix?url=${message.author.displayAvatarURL}`,
-        name: `convmatrix.gif`
+        name: `convmatrix.png`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   console.log("Commande v!convmatrix demandé !");	  
@@ -654,7 +654,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   message.channel.send({
       files:[{
         attachment: `http://triggered-api.tk/api/v2/tobecontinued?url=${message.author.displayAvatarURL}`,
-        name: `tobecontinued.gif`
+        name: `tobecontinued.png`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   console.log("Commande v!tobecontinued demandé !");	  
@@ -678,7 +678,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   message.channel.send({
       files:[{
         attachment: `http://triggered-api.tk/api/v2/beautiful?url=${message.author.displayAvatarURL}`,
-        name: `beautiful.gif`
+        name: `beautiful.png`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   console.log("Commande v!beautiful demandé !");	  
@@ -702,7 +702,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   message.channel.send({
       files:[{
         attachment: `http://triggered-api.tk/api/v2/blood?url=${message.author.displayAvatarURL}`,
-        name: `blood.gif`
+        name: `blood.png`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   console.log("Commande v!blood demandé !");	  
@@ -726,7 +726,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   message.channel.send({
       files:[{
         attachment: `http://triggered-api.tk/api/v2/bob?url=${message.author.displayAvatarURL}`,
-        name: `bob.gif`
+        name: `bob.png`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
   console.log("Commande v!bob demandé !");	  
