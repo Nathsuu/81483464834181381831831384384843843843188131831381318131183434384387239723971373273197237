@@ -25,5 +25,5 @@ exports.run = async (client, message, args, level) => {
 };
 
 exports.help = {
-  name: "eval2"
+  name: "test"
 };
