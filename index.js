@@ -139,7 +139,7 @@ info(message, prefix, client)
 
 	
   if (message.content.startsWith(prefix + "love")) {	  	  
-  let lUser = message.guild.members.get(args[0]);
+  let lUser = message.guild.members.get(args[1]);
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
