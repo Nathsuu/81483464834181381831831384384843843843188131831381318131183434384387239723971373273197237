@@ -139,7 +139,7 @@ info(message, prefix, client)
 
 	
   if (message.content.startsWith(prefix + "love")) {	  	  
-  let lUser = message.guild.members.get(args[1]);
+  let lUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
@@ -148,7 +148,6 @@ info(message, prefix, client)
   console.log("Commande v!love demandé !");	  
   }	  
 
-	  
   if (message.content.startsWith(prefix + "ban")) {			 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!bUser) {	
