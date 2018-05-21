@@ -51,6 +51,17 @@ info(message, prefix, client)
     const args = message.content.slice(prefix.length).split(/ +/);	
     command = args.shift().toLowerCase();	
 	
+
+  if (message.content.startsWith(prefix + "love")) {
+  let lUser = args.join(" ").slice(0);
+	if(!lUser) {	
+            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
+        }	  
+  let rolls = Math.floor((Math.random() * 100) + 1); 	  
+  return message.reply("Le taux d'amour entre les personnes " + lUser + " est de " + rolls + "%")
+  console.log("Commande v!love demandé !");	  
+  }		
+	
 	
     if(message.content.startsWith(prefix + "setgame")){
        let game = message.content.split(` `).slice(1);
@@ -920,15 +931,15 @@ message.channel.send("", { embed: {
 	.addField("Vaction | VacBot | French Bot", ":notepad_spiral: Voici la liste de mes commandes :")
 	.addBlankField()	
         .addField(":hammer_pick: Espaces Modérations", "```v!clear \nv!ban \nv!blacklist \nv!kick \nv!mute \nv!unmute \nv!tempmute \nv!warn \nv!seewarn \nv!clearwarn```", true)	
-        .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!fakeip \nv!chat```", true)	
+        .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!fakeip \nv!chat \nv!love```", true)	
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!bvn \nv!triggered  \nv!illuminati \nv!invert \nv!convmatrix \nv!tobecontinued \nv!wasted \nv!beautiful \nv!blood \nv!bob ```", true)	
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!ping \nv!seen```", true)
-        .addField(":gear: Espaces Configurations", "```v!setgame \nv!say \nv!channel \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
+        .addField(":gear: Espaces Créateurs", "```v!setgame \nv!say \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
-	.addField(":sparkles: News", "```Ajout des commandes : \nv!illuminati \nv!invert \nv!convmatrix \nv!tobecontinued \nv!wasted \nv!beautiful \nv!blood \nv!bob```", true)	
+	.addField(":sparkles: News", "```Ajout de la commande v!love```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
