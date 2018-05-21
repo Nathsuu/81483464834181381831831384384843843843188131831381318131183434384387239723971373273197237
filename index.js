@@ -138,13 +138,8 @@ info(message, prefix, client)
   }	
 
 	
-  if (message.content.startsWith(prefix + "love")) {
-  let lUser1 = message.content.split(` `).slice(0);
-	if(!lUser1) {	
-            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
-        }	  
-	  
-  let lUser = message.content.split(` `).slice(1);
+  if (message.content.startsWith(prefix + "love")) {	  	  
+  let lUser = message.guild.members.get(args[0]);
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
