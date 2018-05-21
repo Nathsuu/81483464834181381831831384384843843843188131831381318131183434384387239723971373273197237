@@ -50,17 +50,7 @@ info(message, prefix, client)
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);	
     command = args.shift().toLowerCase();	
-	
-
-  if (message.content.startsWith(prefix + "love")) {
-  let lUser = args.join(" ").slice(0);
-	if(!lUser) {	
-            return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
-        }	  
-  let rolls = Math.floor((Math.random() * 100) + 1); 	  
-  return message.reply("Le taux d'amour entre les personnes " + lUser + " est de " + rolls + "%")
-  console.log("Commande v!love demandé !");	  
-  }		
+			
 	
 	
     if(message.content.startsWith(prefix + "setgame")){
