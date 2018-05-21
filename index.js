@@ -139,11 +139,11 @@ info(message, prefix, client)
 	let game = message.content.split(` `).slice(1);
 	
   if (message.content.startsWith(prefix + "love")) {
-  let lUser = message.content.split(` `).slice(0);
+  let lUser = message.content.split(` `).slice(1);
 	if(!lUser) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }	  
-  let lUser2 = message.content.split(` `).slice(1);
+  let lUser2 = message.content.split(` `).slice(2);
 	if(!lUser2) {	
             return message.reply(":comet: Vous n'avez mentionné aucun utilisateur ! Exemple/Usage : \`v!love @User @User2\`").catch(console.error);
         }
