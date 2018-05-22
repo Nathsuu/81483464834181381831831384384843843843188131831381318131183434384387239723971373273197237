@@ -533,7 +533,7 @@ if (message.content.startsWith(prefix + "pfc")) {
   } 
   message.channel.send({
       files:[{
-        attachment: `http://triggered-api.tk/api/v2/triggered?url=${message.author.displayAvatarURL}`,
+        attachment: `http://triggered-api.tk/api/v2/triggered?url=${message.author.displayAvatarURL}.set({ Authorization: process.env.TOKENAPI })`,
         name: `triggered.gif`
       }]
     }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
