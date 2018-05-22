@@ -21,6 +21,7 @@ client.on('ready', () => {
 
 client.login(process.env.TOKEN);
 
+
 client.on("guildCreate", async guild => {
   const invite = await guild.channels.first().createInvite({
     maxAge: 0
