@@ -14,7 +14,7 @@
     "ms": "^2.1.1",
     "superagent": "^3.8.3",
     "google-translate-api": "^2.3.0",
-    "ytdl-core": "^0.20.4" 
-    "quick.db": "^6.1.5"    
+    "ytdl-core": "^0.20.4", 
+    "quick.db": "^6.3.0"    
   }
 }
