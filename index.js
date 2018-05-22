@@ -517,29 +517,17 @@ if (message.content.startsWith(prefix + "pfc")) {
 	
 	
 	
-  if(message.content.startsWith(prefix + "triggered")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
+if(message.content.startsWith(prefix + "triggered")) {
+let type = "triggered";
+let url = "${message.author.displayAvatarURL}";
 
-  var image = message.mentions.users.first().avatarURL; 
+snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: process.env.TOKENAPI }).then(response => {
 
-  }else{
-  var image = args; 
-  }
-  }else{ 
+console.log(response.body); //buffer
 
-  var image = message.author.avatarURL; 
-
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/triggered?url=${message.author.displayAvatarURL}.set({ Authorization: (process.env.TOKENAPI) })`,
-        name: `triggered.gif`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!triggered demandé !");	  
-  }	
+}).catch(err => {
+if(err) return console.log("Error");
+});
 	
   if(message.content.startsWith(prefix + "wasted")) {
   var image; 
