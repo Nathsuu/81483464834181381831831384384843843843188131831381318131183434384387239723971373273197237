@@ -527,7 +527,7 @@ console.log(response.body); //buffer
 
 }).catch(err => {
 if(err) return console.log("Error");
-});
+}});
 	
   if(message.content.startsWith(prefix + "wasted")) {
   var image; 
