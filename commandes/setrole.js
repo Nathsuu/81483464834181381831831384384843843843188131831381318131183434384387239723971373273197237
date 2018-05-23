@@ -7,14 +7,13 @@ module.exports.run = async (client, message, args) => {
  if(!role) return message.channel.send("Please mention a role!")
  
  if(role === 'none') {
-  db.set(`autorole_${message.guild.id}`, null).then(message.channel.send({embed: { description: `New Members won't be given any roles!` }})) ;
+  db.set(`autorole_${message.guild.id}`, null).then(message.channel.send({embed: { description: `Les nouveaux membres ne recevront aucun rôle !` }})) ;
   return;
  }
  
  db.set(`autorole_${message.guild.id}`, role.id).then(i => {
  
-   message.channel.send({embed: { description: `New Members will now be given <@&${i}>` }})
- 
+   message.channel.send(`Vous venez de mettre l'autorôle pour les nouveaux membres avec le grade <@&${i}>`);
  });
  
 }
