@@ -3,7 +3,7 @@ const db = require("quick.db");
 module.exports.run = async (client, message, args) => {
  
  let channel = message.mentions.channels.first()
- if(!channel) return message.channel.send("Please mention a channel!")
+ if(!channel) return message.channel.send(":comet: Vous n'avez mentionné aucun channel ! Exemple/Usage : \`v!setchannel #welcome\`")
  
  db.set(`wchannel_${message.guild.id}`, channel.id).then(i => {
  
