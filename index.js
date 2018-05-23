@@ -513,7 +513,7 @@ if (message.content.startsWith(prefix + "pfc")) {
  if(message.content.startsWith(prefix + "tri")) {	
  const snek = require("snekfetch");
  let type = "triggered";
- let url = "${message.author.displayAvatarURL}";
+ let url = `${message.author.displayAvatarURL}`;
 
  snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
