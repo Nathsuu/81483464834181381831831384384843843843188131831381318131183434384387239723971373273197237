@@ -83,7 +83,7 @@ client.on('guildMemberRemove', async member => {
  let leave;
  let channel;
  
- if(fetchleave === null) leave = "{user} left {server}!";
+ if(fetchleave === null) leave = "{user} viens de quitter le serveur {server}!";
  else leave = fetchleave
  
  if(fetchchannel === null) return;
