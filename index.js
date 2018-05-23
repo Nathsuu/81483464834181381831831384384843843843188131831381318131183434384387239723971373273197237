@@ -90,13 +90,12 @@ client.on('guildMemberRemove', async member => {
  
  
  try {
-   member.guild.channels.get(channel).send({embed: { description: leave.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name) }});
+   member.guild.channels.get(channel).send(leave.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name));
  } catch(e) {
    console.log(e)
  }
  
 });
-
 
 
 
