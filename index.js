@@ -509,6 +509,78 @@ if (message.content.startsWith(prefix + "pfc")) {
   }
 
 	
+ if(message.content.startsWith(prefix + "pat")) {	
+ const snek = require("snekfetch");
+ let image = "pat";
+
+ snek.get(`http://www.triggered-api.tk/api/images/${image}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+
+ message.channel.send('Vaction - **pat**',{
+       files:[{
+         attachment: response.body,
+         name: 'pat.png'
+       }]
+     })
+
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }
+	
+ if(message.content.startsWith(prefix + "hug")) {	
+ const snek = require("snekfetch");
+ let image = "hug";
+
+ snek.get(`http://www.triggered-api.tk/api/images/${image}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+
+ message.channel.send('Vaction - **hug**',{
+       files:[{
+         attachment: response.body,
+         name: 'hug.png'
+       }]
+     })
+
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }
+	
+ if(message.content.startsWith(prefix + "kiss")) {	
+ const snek = require("snekfetch");
+ let image = "kiss";
+
+ snek.get(`http://www.triggered-api.tk/api/images/${image}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+
+ message.channel.send('Vaction - **kiss**',{
+       files:[{
+         attachment: response.body,
+         name: 'kiss.png'
+       }]
+     })
+
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }
+	
+ if(message.content.startsWith(prefix + "slap")) {	
+ const snek = require("snekfetch");
+ let image = "slap";
+
+ snek.get(`http://www.triggered-api.tk/api/images/${image}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+
+ message.channel.send('Vaction - **slap**',{
+       files:[{
+         attachment: response.body,
+         name: 'slap.png'
+       }]
+     })
+
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }	
+	
 	
  if(message.content.startsWith(prefix + "triggered")) {	
  const snek = require("snekfetch");
@@ -866,12 +938,12 @@ message.channel.send("", { embed: {
         .addField(":space_invader: Espaces Fun", "```v!8ball \nv!flip \nv!dé \nv!fish \nv!roll \nv!pfc \nv!fakehacker \nv!fakeip \nv!chat \nv!love```", true)	
         .addField("💋 Espaces Nsfw", "```v!e-girl \nv!ass \nv!boobs```", true)
 	.addBlankField()	
-	.addField(":frame_photo: Espaces Images", "```v!random \nv!calin \nv!claque \nv!tire \nv!bisous \nv!wasted \nv!dance \nv!bvn \nv!triggered  \nv!illuminati \nv!invert \nv!convmatrix \nv!tobecontinued \nv!wasted \nv!beautiful \nv!blood \nv!bob ```", true)	
+	.addField(":frame_photo: Espaces Images", "```v!pat \nv!hug \nv!kiss \nv!slap \nv!bvn \nv!triggered  \nv!illuminati \nv!invert \nv!convmatrix \nv!tobecontinued \nv!wasted \nv!beautiful \nv!blood \nv!bob ```", true)	
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!prefix \nv!bot \nv!youtube \nv!invite \nv!servlist \nv!ping \nv!seen```", true)
         .addField(":gear: Espaces Créateurs", "```v!setgame \nv!say \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
-	.addField(":sparkles: News", "```Ajout de la commande v!love```", true)	
+	.addField(":sparkles: News", "```Modification d'images```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
@@ -885,80 +957,6 @@ message.channel.send("", { embed: {
         message.channel.send("```" + client.guilds.array().map( g => g.name + " | " + g.id + " | " + g.members.size ).join(" membres\n") + "```")   
     }	
 	
-    if(message.content.startsWith ("v!calin")) {
-       var help_embed = new Discord.RichEmbed()
-       .setTitle (":heart: | " + message.author.username + " fait un calin ")
-       .setColor("#FF9900")
-       .setImage("https://cdn.weeb.sh/images/SyQ0_umD-.gif")
-       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!calin demandé !");
-       }
-	
-    if(message.content.startsWith ("v!claque")) {
-       var help_embed = new Discord.RichEmbed()
-       .setTitle (":raised_hand: | " + message.author.username + " claque ")
-       .setColor("#FF9900")
-       .setImage("https://cdn.weeb.sh/images/rJvR71KPb.gif")
-       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!claque demandé !");
-       }
-	
-    if(message.content.startsWith ("v!tire")) {
-       var help_embed = new Discord.RichEmbed()
-       .setTitle (":gun: | " + message.author.username + " tire ")
-       .setColor("#FF9900")
-       .setImage("http://image.noelshack.com/fichiers/2017/34/5/1503625646-a8c8c726-iloveimg-cropped-1.gif")
-       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!tire demandé !");	    
-
-       }
-	
-    if(message.content.startsWith ("v!bisous")) {
-       var help_embed = new Discord.RichEmbed()
-       .setTitle (":kiss: | " + message.author.username + " donne un bisous ")
-       .setColor("#FF9900")
-       .setImage("https://cdn.weeb.sh/images/SJrBZrMBz.gif")
-       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!bisous demandé !");	    
-
-       }
-	
-    if(message.content.startsWith ("v!random")) {
-       var help_embed = new Discord.RichEmbed()
-       .setTitle (":footprints: | Random | Encore Soon ")
-       .setColor("#FF9900")
-       .setImage("https://source.unsplash.com/random")
-       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!random demandé !");	    
-
-       }
-	
-    if(message.content.startsWith ("v!girl")) {
-       var help_embed = new Discord.RichEmbed()
-       .setTitle (":revolving_hearts: | girl | Encore Soon ")
-       .setColor("#FF9900")
-       .setImage("https://78.media.tumblr.com/93bc8521787c0b1dfe39293a99d18c4d/tumblr_ora9etSmp91tvq1hxo1_1280.jpg")
-       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!girl demandé !");	    
-
-    }
-	
-    if(message.content.startsWith ("v!dance")) {
-       var help_embed = new Discord.RichEmbed()
-       .setTitle (":headphones: | Dance")
-       .setColor("#FF9900")
-       .setImage("https://cdn.discordapp.com/attachments/360034958129233930/414181135350890496/a.gif")
-       .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
-       message.channel.sendEmbed(help_embed)
-       console.log("Commande v!dance demandé !");	    
-
-    }
 	
     if(message.content.startsWith ("v!bvn")) {
        var help_embed = new Discord.RichEmbed()
