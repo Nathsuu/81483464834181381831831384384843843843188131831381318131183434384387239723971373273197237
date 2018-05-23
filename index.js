@@ -517,7 +517,12 @@ if (message.content.startsWith(prefix + "pfc")) {
 
  snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
- console.log(response.body); //buffer
+ message.channel.send('Généré par **www.triggered-api.tk**',{
+       files:[{
+         attachment: response.body,
+         name: 'triggered.gif'
+       }]
+     })
 
  }).catch(err => {
  if(err) return console.log("Error");
