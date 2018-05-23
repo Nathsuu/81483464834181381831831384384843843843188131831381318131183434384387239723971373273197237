@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
  let role = message.mentions.roles.first() || args.join(" ");
  
  if(!role) return message.channel.send(":comet: Vous n'avez mentionné aucun role ! Exemple/Usage : \`v!setrole @Role \`")
- 
+ if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande.");
  if(role === 'none') {
   db.set(`autorole_${message.guild.id}`, null).then(message.channel.send(`Les nouveaux membres ne recevront aucun rôle !`));
   return;
