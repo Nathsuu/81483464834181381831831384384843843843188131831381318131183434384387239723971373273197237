@@ -68,8 +68,7 @@ client.on('guildMemberAdd', async member => {
    if(!role) return
    else member.addRole(role);
    
-   member.guild.channels.get(channel).send({embed: { description: welcome.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name) }});
-   
+   member.guild.channels.get(channel).send(welcome.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name));
  } catch(e) {
    console.log(e)
  }
