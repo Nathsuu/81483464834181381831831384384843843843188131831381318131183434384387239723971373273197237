@@ -40,6 +40,66 @@ client.on('guildRemove', (guild) => {
 });
 
 
+
+
+client.on('guildMemberAdd', async member => {
+
+ let fetchwelcome = await db.fetch(`wmsg_${member.guild.id}`);
+ let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
+ let fetchautorole = await db.fetch(`autorole_${member.guild.id}`);
+ 
+ let welcome;
+ let channel;
+ let autorole;
+ 
+ if(fetchwelcome === null) welcome = "Bienvenue dans {server}, {user}!";
+ else welcome = fetchwelcome
+ 
+ if(fetchchannel === null) return;
+ else channel = fetchchannel
+ 
+ if(fetchautorole === null) return;
+ else autorole = fetchautorole
+ 
+ try {
+   
+   let role = member.guild.roles.get(autorole);
+   if(!role) return
+   else member.addRole(role);
+   
+   member.guild.channels.get(channel).send({embed: { description: welcome.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name) }});
+   
+ } catch(e) {
+   console.log(e)
+ }
+ 
+});
+client.on('guildMemberRemove', async member => {
+
+ let fetchleave = await db.fetch(`lmsg_${member.guild.id}`);
+ let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
+ 
+ let leave;
+ let channel;
+ 
+ if(fetchleave === null) leave = "{user} left {server}!";
+ else leave = fetchleave
+ 
+ if(fetchchannel === null) return;
+ else channel = fetchchannel
+ 
+ 
+ try {
+   member.guild.channels.get(channel).send({embed: { description: leave.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name) }});
+ } catch(e) {
+   console.log(e)
+ }
+ 
+});
+
+
+
+
 client.on('message', message => {
 	
 const warns = require("./commands/warns.js");
