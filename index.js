@@ -515,7 +515,7 @@ if (message.content.startsWith(prefix + "pfc")) {
  let type = "triggered";
  let url = "${message.author.displayAvatarURL}";
 
- snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: process.env.TOKENAPI }).then(response => {
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
  console.log(response.body); //buffer
 
