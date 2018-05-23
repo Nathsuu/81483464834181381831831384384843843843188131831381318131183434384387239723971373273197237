@@ -510,14 +510,14 @@ if (message.content.startsWith(prefix + "pfc")) {
 
 	
 	
- if(message.content.startsWith(prefix + "tri")) {	
+ if(message.content.startsWith(prefix + "triggered")) {	
  const snek = require("snekfetch");
  let type = "triggered";
  let url = `${message.author.displayAvatarURL}`;
 
  snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
- message.channel.send('Généré par **www.triggered-api.tk**',{
+ message.channel.send('Vaction - **triggered**',{
        files:[{
          attachment: response.body,
          name: 'triggered.gif'
@@ -525,234 +525,164 @@ if (message.content.startsWith(prefix + "pfc")) {
      })
 
  }).catch(err => {
- if(err) return console.log("Error");
+ if(err) return console.log(":x: Une erreur s'est produite.");
  });
  }	
 	
-	
-	
-	
-	
-  if(message.content.startsWith(prefix + "triggered")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
+ if(message.content.startsWith(prefix + "wasted")) {	
+ const snek = require("snekfetch");
+ let type = "wasted";
+ let url = `${message.author.displayAvatarURL}`;
 
-  var image = message.mentions.users.first().avatarURL; 
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
-  }else{
-  var image = args; 
-  }
-  }else{ 
+ message.channel.send('Vaction - **wasted**',{
+       files:[{
+         attachment: response.body,
+         name: 'wasted.png'
+       }]
+     })
 
-  var image = message.author.avatarURL; 
-
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/triggered?url=${message.author.displayAvatarURL}`,
-        name: `triggered.gif`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande k!triggered demandé !");	  
-  }	
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }	
 	     
+ if(message.content.startsWith(prefix + "illuminati")) {	
+ const snek = require("snekfetch");
+ let type = "illuminati";
+ let url = `${message.author.displayAvatarURL}`;
+
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+
+ message.channel.send('Vaction - **illuminati**',{
+       files:[{
+         attachment: response.body,
+         name: 'illuminati.gif'
+       }]
+     })
+
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }
 	
-  if(message.content.startsWith(prefix + "wasted")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
+ if(message.content.startsWith(prefix + "invert")) {	
+ const snek = require("snekfetch");
+ let type = "invert";
+ let url = `${message.author.displayAvatarURL}`;
 
-  var image = message.mentions.users.first().avatarURL; 
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
-  }else{
-  var image = args; 
-  }
-  }else{ 
+ message.channel.send('Vaction - **invert**',{
+       files:[{
+         attachment: response.body,
+         name: 'invert.png'
+       }]
+     })
 
-  var image = message.author.avatarURL; 
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }	
 
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/wasted?url=${message.author.displayAvatarURL}`,
-        name: `wasted.png`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!wasted demandé !");	  
-  }	
+ if(message.content.startsWith(prefix + "convmatrix")) {	
+ const snek = require("snekfetch");
+ let type = "convmatrix";
+ let url = `${message.author.displayAvatarURL}`;
 
-  if(message.content.startsWith(prefix + "illuminati")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
-  var image = message.mentions.users.first().avatarURL; 
+ message.channel.send('Vaction - **convmatrix**',{
+       files:[{
+         attachment: response.body,
+         name: 'convmatrix.png'
+       }]
+     })
 
-  }else{
-  var image = args; 
-  }
-  }else{ 
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }	
 
-  var image = message.author.avatarURL; 
+ if(message.content.startsWith(prefix + "tobecontinued")) {	
+ const snek = require("snekfetch");
+ let type = "tobecontinued";
+ let url = `${message.author.displayAvatarURL}`;
 
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/illuminati?url=${message.author.displayAvatarURL}`,
-        name: `illuminati.gif`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!illuminati demandé !");	  
-  }
-	
-  if(message.content.startsWith(prefix + "invert")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
-  var image = message.mentions.users.first().avatarURL; 
+ message.channel.send('Vaction - **tobecontinued**',{
+       files:[{
+         attachment: response.body,
+         name: 'tobecontinued.png'
+       }]
+     })
 
-  }else{
-  var image = args; 
-  }
-  }else{ 
-
-  var image = message.author.avatarURL; 
-
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/invert?url=${message.author.displayAvatarURL}`,
-        name: `invert.png`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!invert demandé !");	  
-  }
-	
-  if(message.content.startsWith(prefix + "convmatrix")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
-
-  var image = message.mentions.users.first().avatarURL; 
-
-  }else{
-  var image = args; 
-  }
-  }else{ 
-
-  var image = message.author.avatarURL; 
-
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/convmatrix?url=${message.author.displayAvatarURL}`,
-        name: `convmatrix.png`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!convmatrix demandé !");	  
-  }
-	
-  if(message.content.startsWith(prefix + "tobecontinued")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
-
-  var image = message.mentions.users.first().avatarURL; 
-
-  }else{
-  var image = args; 
-  }
-  }else{ 
-
-  var image = message.author.avatarURL; 
-
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/tobecontinued?url=${message.author.displayAvatarURL}`,
-        name: `tobecontinued.png`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!tobecontinued demandé !");	  
-  }
-	
-  if(message.content.startsWith(prefix + "beautiful")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
-
-  var image = message.mentions.users.first().avatarURL; 
-
-  }else{
-  var image = args; 
-  }
-  }else{ 
-
-  var image = message.author.avatarURL; 
-
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/beautiful?url=${message.author.displayAvatarURL}`,
-        name: `beautiful.png`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!beautiful demandé !");	  
-  }
-	
-  if(message.content.startsWith(prefix + "blood")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
-
-  var image = message.mentions.users.first().avatarURL; 
-
-  }else{
-  var image = args; 
-  }
-  }else{ 
-
-  var image = message.author.avatarURL; 
-
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/blood?url=${message.author.displayAvatarURL}`,
-        name: `blood.png`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!blood demandé !");	  
-  }
-	
-  if(message.content.startsWith(prefix + "bob")) {
-  var image; 
-  if(args){ 
-  if(message.mentions.users.first()){
-
-  var image = message.mentions.users.first().avatarURL; 
-
-  }else{
-  var image = args; 
-  }
-  }else{ 
-
-  var image = message.author.avatarURL; 
-
-  } 
-  message.channel.send({
-      files:[{
-        attachment: `http://triggered-api.tk/api/v2/bob?url=${message.author.displayAvatarURL}`,
-        name: `bob.png`
-      }]
-    }).catch(err => { if(err) return message.channel.send("**❌ Une erreur s'est produite**") })
-  console.log("Commande v!bob demandé !");	  
-  }		
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }
 		
+ if(message.content.startsWith(prefix + "beautiful")) {	
+ const snek = require("snekfetch");
+ let type = "beautiful";
+ let url = `${message.author.displayAvatarURL}`;
+
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+
+ message.channel.send('Vaction - **beautiful**',{
+       files:[{
+         attachment: response.body,
+         name: 'beautiful.png'
+       }]
+     })
+
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }	
+
+ if(message.content.startsWith(prefix + "blood")) {	
+ const snek = require("snekfetch");
+ let type = "blood";
+ let url = `${message.author.displayAvatarURL}`;
+
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+
+ message.channel.send('Vaction - **blood**',{
+       files:[{
+         attachment: response.body,
+         name: 'blood.png'
+       }]
+     })
+
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }
 	
+ if(message.content.startsWith(prefix + "bob")) {	
+ const snek = require("snekfetch");
+ let type = "bob";
+ let url = `${message.author.displayAvatarURL}`;
+
+ snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+
+ message.channel.send('Vaction - **bob**',{
+       files:[{
+         attachment: response.body,
+         name: 'bob.png'
+       }]
+     })
+
+ }).catch(err => {
+ if(err) return console.log(":x: Une erreur s'est produite.");
+ });
+ }
 	
-	
+		
+		
 	
 	
 	
