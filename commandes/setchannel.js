@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
  
  db.set(`wchannel_${message.guild.id}`, channel.id).then(i => {
  
-   message.channel.send({embed: { description: `Welcome/Leave channel was updated to <#${i}>` }});
+   message.channel.send(`Le channel de welcome a été changé en :\n\n<#${i}>`);
    
  });
  
