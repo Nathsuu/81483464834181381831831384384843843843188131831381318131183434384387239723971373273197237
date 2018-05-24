@@ -181,39 +181,6 @@ info(message, prefix, client)
 	    message.guild.channels.find("name", "vchannel").send(`**${member.user.username}** a été expulsé du discord par **${message.author.username}**`)
 	}).catch(console.error)	
     }
-
-  if(message.content.startsWith(prefix + "chattttttttttttt")) {	  
-     message.delete();
-     var chat = client.channels.findAll('name', 'vchat');
-     var chat2 = message.guild.channels.find('name', 'vchat');
-     if(!chat) {
-         message.guild.createChannel('vchat');
-         return message.reply("Si j'ai la permission, le channel \`vchat\` viens d'être créer.")
-     }
-     chat.forEach(channel => {
-         message.delete();
-    
-            var replys = [
-                '#FF9900'
-            ];
-        
-            let reponse = (replys[Math.floor(Math.random() * replys.length)])
-            var vmsg = message.content.substr(7)
-            var embed = new Discord.RichEmbed()
-            .setColor(reponse)
-            .setAuthor("vchat | Chat Commun")
-	    .setThumbnail(message.author.avatarURL)
-            .addField("Serveur", message.guild.name, true)
-            .addField("Utilisateur", message.author + "#" + message.author.discriminator + "", true)
-            .addField("Message", vmsg)
-            .setFooter("VacBot | Vaction", client.user.avatarURL)
-            .setTimestamp()
-        channel.send(embed)
-	console.log("Commande v!chat demandé !");     
-            })
-        }	
-	
-	
 	
 	
     if (message.content === prefix + "botinfo"){	
