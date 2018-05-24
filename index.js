@@ -115,7 +115,6 @@ info(message, prefix, client)
 
 	
   let points = JSON.parse(fs.readFileSync("./data/points.json", "utf8"));
-  const prefix = "v!";
 
 
   if (!message.content.startsWith(prefix)) return;
