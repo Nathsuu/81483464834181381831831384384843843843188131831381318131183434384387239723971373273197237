@@ -115,7 +115,7 @@ info(message, prefix, client)
 
 	
   let points = JSON.parse(fs.readFileSync("./data/points.json", "utf8"));
-  const prefix = "+";
+  const prefix = "v!";
 
 
   if (!message.content.startsWith(prefix)) return;
@@ -142,7 +142,6 @@ info(message, prefix, client)
     if (err) console.error(err)
   });
 
-);
 
 
     if(message.content.startsWith(prefix + "setgame")){
