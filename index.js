@@ -152,11 +152,11 @@ info(message, prefix, client)
 	}).catch(console.error)	
     }
 
-  if(message.content.startsWith(prefix + "chat")) {	  
+  if(message.content.startsWith(prefix + "chattttttttttttt")) {	  
      message.delete();
      var chat = client.channels.findAll('name', 'vchat');
      var chat2 = message.guild.channels.find('name', 'vchat');
-     if(!chat2) {
+     if(!chat) {
          message.guild.createChannel('vchat');
          return message.reply("Si j'ai la permission, le channel \`vchat\` viens d'être créer.")
      }
@@ -182,6 +182,9 @@ info(message, prefix, client)
 	console.log("Commande v!chat demandé !");     
             })
         }	
+	
+	
+	
 	
     if (message.content === prefix + "botinfo"){	
     let bicon = client.user.displayAvatarURL;
