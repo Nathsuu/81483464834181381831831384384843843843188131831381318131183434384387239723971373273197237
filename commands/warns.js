@@ -1,7 +1,7 @@
 function warns(message,prefix,client){
   
 var fs = require('fs');
-let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
+let warns = JSON.parse(fs.readFileSync("./data/warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
 if (message.channel.type === "dm") return;
 var mentionned = message.mentions.users.first();
@@ -28,7 +28,7 @@ if(message.mentions.users.size === 0) {
                 time: date,
                 user: message.author.id};
             }
-            fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
+            fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
 message.delete();
             message.channel.send(':comet: '+mentionned.tag+' a bien été averti !');
 message.mentions.users.first().send(`:comet: Vous venez d'être warn sur le serveur **${message.guild.name}** par **${message.author.username}**\n\n**Pour la Raison:** ` + args.slice(1).join(' '))
@@ -110,7 +110,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
               warns[message.guild.id][mentioned.id][key]=val;
               i++;
             });
-            fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
+            fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
             if (Object.keys(warns[message.guild.id][mentioned.id]).length === 0) {
               delete warns[message.guild.id][mentioned.id];
             }
@@ -118,7 +118,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
             return;
           } if (args[1] === "all") {
             delete warns[message.guild.id][mentioned.id];
-            fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
+            fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
             message.channel.send(`:comet:  Les warns de **${mentioned.tag}** ont tous été enlevés !`);
             return;
           } else {
