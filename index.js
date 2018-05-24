@@ -144,7 +144,7 @@ const prefix = "v!";
     if (err) console.error(err)
   });
 
-);
+});
 
 
 module.exports.help = {
