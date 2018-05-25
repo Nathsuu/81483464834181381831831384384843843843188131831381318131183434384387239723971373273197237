@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple/Usage : ``v!tempmute @User 1s/m/h/d``");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande soit je n'ai pas la permission. La personne à qui vous essayez de mute est peut-être intouchable.");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande soit je n'ai pas la permission d'ajouter/retirer un rôle. La personne à qui vous essayez de mute est peut-être intouchable.");
   let muterole = message.guild.roles.find(`name`, "vmuted");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply(":comet: Il me faut une raison.");  
