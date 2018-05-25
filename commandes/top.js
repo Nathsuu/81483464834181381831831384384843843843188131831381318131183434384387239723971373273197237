@@ -1,7 +1,7 @@
-const Discord = require('discord.js'), 
-      arraySort = require('array-sort'), 
-      table = require('table'); 
-      send = require('quick.hook'); 
+const Discord = require('discord.js');
+const arraySort = require('array-sort');
+const table = require('table'); 
+const send = require('quick.hook'); 
 const client = new Discord.Client();
 
 exports.run = async (bot, message, args, tools) => {
