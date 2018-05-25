@@ -3,7 +3,7 @@ const prefix = 'v!';
 module.exports.run = async (bot, message, args) => {
 
 
-  if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande.");
+  if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande soit je n'ai pas la permission. La personne à qui vous essayez d'unmute est peut-être intouchable.");
   if(args[0] == "help"){
     message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple/Usage : ``v!unmute @User N'insulte plus``");
     return;
