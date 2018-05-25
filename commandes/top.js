@@ -4,7 +4,7 @@ const Discord = require('discord.js'),
       send = require('quick.hook'); 
 const client = new Discord.Client();
 
-exports.run = async (client, message, args, tools) => {
+exports.run = async (bot, message, args, tools) => {
 
 
     let invites = await message.guild.fetchInvites().catch(error => { 
