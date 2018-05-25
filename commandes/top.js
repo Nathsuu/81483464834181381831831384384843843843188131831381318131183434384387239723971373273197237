@@ -9,7 +9,7 @@ exports.run = async (client, message, args, tools) => {
 
     let invites = await message.guild.fetchInvites().catch(error => { 
      
-        return message.channel.send('Sorry, I don\'t have the proper permissions to view invites!');
+        return message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande.");
     }) 
 
    
@@ -19,7 +19,7 @@ exports.run = async (client, message, args, tools) => {
     arraySort(invites, 'uses', { reverse: true }); 
 
 
-    let possibleInvites = [['User', 'Uses']]; 
+    let possibleInvites = [['Utilisateur', 'Invites']]; 
     invites.forEach(function(invite) {
         possibleInvites.push([invite.inviter.username, invite.uses]); 
     })
@@ -27,13 +27,13 @@ exports.run = async (client, message, args, tools) => {
      
     let embed = new Discord.RichEmbed()
    .setColor("#FF9900")
-   .addField('Leaderboard', `\`\`\`${table.table(possibleInvites)}\`\`\``);  
+   .addField('Top joueurs', `\`\`\`${table.table(possibleInvites)}\`\`\``);  
 
 
 
     send(message.channel, embed, {
-        name: 'Server Invites',
-        icon: 'https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/trophy-128.png'
+        name: 'Vaction',
+        icon: 'https://cdn.discordapp.com/attachments/439036803366912015/449670314192928768/Vaction_Logo.png'
     })
     
 }
