@@ -9,7 +9,7 @@ exports.run = async (client, message, args, tools) => {
 
     let invites = await message.guild.fetchInvites().catch(error => { 
      
-        return message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande.");
+        return message.channel.send(":comet: Je n'est pas la permission de voir la liste d'invitation.");
     }) 
 
    
