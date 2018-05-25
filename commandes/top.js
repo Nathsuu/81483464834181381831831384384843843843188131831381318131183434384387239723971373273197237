@@ -1,7 +1,7 @@
 
 const Discord = require('discord.js'), 
-      arraySort = require('array-sort'),s
-      table = require('table');
+      arraySort = require('array-sort'),
+      table = require('table'); 
       send = require('quick.hook'); 
 
 // We can call our command handler here
