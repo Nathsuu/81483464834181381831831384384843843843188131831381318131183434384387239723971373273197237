@@ -24,11 +24,11 @@ exports.run = async (client, message, args, tools) => {
         possibleInvites.push([invite.inviter.username, invite.uses]); 
     })
 
- 
-    const embed = new Discord.MessageEmbed()
-        .setColor(0xCB5A5E)
-        .addField('Leaderboard', `\`\`\`${table.table(possibleInvites)}\`\`\``); 
      
+    let embed = new Discord.RichEmbed()
+   .setColor("#FF9900")
+   .addField('Leaderboard', `\`\`\`${table.table(possibleInvites)}\`\`\``);  
+
 
 
     send(message.channel, embed, {
