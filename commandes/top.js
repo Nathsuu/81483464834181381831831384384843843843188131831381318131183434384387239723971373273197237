@@ -22,11 +22,11 @@ exports.run = async (client, message, args, tools) => {
         invites.forEach(function(invite) { 
         User.push([invite.inviter.username, invite.uses]); 
     })
-    let User2 = [['']];
+    let User2 = [[]];
     invites.forEach(function(invite) {  
         User2.push([invite.uses]); 
     })   
-    let User5 = [['']];
+    let User5 = [[]];
     invites.forEach(function(invite) {
         User5.push([invite.inviter.username]); 
     })
@@ -37,7 +37,7 @@ exports.run = async (client, message, args, tools) => {
     var message2 = "";
     
     for (var i = 0; i < User.length; i++) {
-        var temp = (i === 0 ? `Top Invitation Joueurs\n` : "") + (i + 1) + " :small_orange_diamond: " + User5[i] + " *" + User2[i] + " invites*\n";
+        var temp = (i === 0 ? `Top Invitation Joueurs\n` : "") + (i + 1) + " :small_orange_diamond: **" + User5[i] + "** " + User2[i] + " *invites*\n";
             if ((message2 + temp).length <= 2000 - 3) {
             message2 += temp;
         } else {
