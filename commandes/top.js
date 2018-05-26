@@ -27,9 +27,6 @@ exports.run = async (client, message, args, tools) => {
         User2.push([invite.uses]); 
     })	
 
-    let embed = new Discord.RichEmbed()
-    .setColor("#FF9900")
-    .addField('Top joueurs invitation', `\`\`\`${table.table(User)}\`\`\``);
 		
     var message2 = "";
 	
