@@ -43,7 +43,7 @@ exports.run = async (client, message, args, tools) => {
 			message2 += "";
 			message.channel.send(message2);
 			message2 = "";
-		}}
+		}
     }
 	message2 += "";
 	message.channel.send(message2);
