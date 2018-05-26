@@ -28,10 +28,20 @@ exports.run = async (client, message, args, tools) => {
     let embed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .addField('Top joueurs', `\`\`\`${(possibleInvites)}\`\`\``);  
-
+    var message2 = "```";
     for (var i = 0; i < possibleInvites.length; i++) {
 		var temp = (i === 0 ? `Top joueurs\n` : "") + (i + 1) + " :small_orange_diamond: " + possibleInvites[i] + "\n";
+    		if ((message2 + temp).length <= 2000 - 3) {
+			message2 += temp;
+		} else {
+			message2 += "```";
+			message.channel.send(message2);
+			message2 = "```";
+		}
     }
+	message2 += "```";
+	message.channel.send(message2);
+	
     send(message.channel, embed, {
         name: 'Vaction',
         icon: 'https://cdn.discordapp.com/attachments/439036803366912015/449670314192928768/Vaction_Logo.png'
