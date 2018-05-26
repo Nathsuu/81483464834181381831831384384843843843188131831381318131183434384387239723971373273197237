@@ -28,10 +28,7 @@ exports.run = async (client, message, args, tools) => {
     let embed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .addField('Top joueurs', `\`\`\`${(possibleInvites)}\`\`\``);
-	
-    let embed2 = new Discord.RichEmbed()
-    .setColor("#FF9900")
-    .addField('Top joueurs', `Top joueurs\n` : " :small_orange_diamond: " + possibleInvites + "\n"); 	
+		
     var message2 = "";
 	
     for (var i = 0; i < possibleInvites.length; i++) {
