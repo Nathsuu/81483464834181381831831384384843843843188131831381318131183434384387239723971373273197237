@@ -29,7 +29,7 @@ exports.run = async (client, message, args, tools) => {
     .setColor("#FF9900")
     .addField('Top joueurs', `\`\`\`${(possibleInvites)}\`\`\``);  
 
-    for (var i = 0; i < possibleInvites(g => g.name).length; i++) {
+    for (var i = 0; i < possibleInvites.length; i++) {
 		var temp = (i === 0 ? `Top joueurs\n` : "") + (i + 1) + " :small_orange_diamond: " + possibleInvites[i] + "\n";
     }
     send(message.channel, embed, {
