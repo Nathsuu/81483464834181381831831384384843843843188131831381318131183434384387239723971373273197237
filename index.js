@@ -1002,7 +1002,7 @@ message.channel.send("", { embed: {
         .addField(":gear: Espaces Créateurs", "```v!setgame \nv!say \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
-	.addField(":sparkles: News", "```Nouvelles commandes \nv!top \nv!createinvite```", true)	
+	.addField(":sparkles: News", "```Nouvelles commandes \nv!top (encore soon) \nv!createinvite```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
         .addField(":paperclip: Invitation du Bot", "[[Invitation]](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)", true)
