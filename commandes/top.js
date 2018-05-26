@@ -19,7 +19,7 @@ exports.run = async (client, message, args, tools) => {
     arraySort(invites, 'uses', { reverse: true }); 
 
 
-    let possibleInvites = [['Utilisateur', 'Utilisation']]; 
+    let possibleInvites = [['', '']]; 
     invites.forEach(function(invite) {
         possibleInvites.push([invite.inviter.username, invite.uses]); 
     })
