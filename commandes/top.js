@@ -27,7 +27,7 @@ exports.run = async (client, message, args, tools) => {
      
     let embed = new Discord.RichEmbed()
     .setColor("#FF9900")
-    .addField('Top joueurs', `\`\`\`${table.table(possibleInvites)}\`\`\``);  
+    .addField('Top joueurs', `\`\`\`${table(possibleInvites)}\`\`\``);  
 
 
 
