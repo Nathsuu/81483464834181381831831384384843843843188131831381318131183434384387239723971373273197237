@@ -30,7 +30,7 @@ exports.run = async (client, message, args, tools) => {
     .addField('Top joueurs', `\`\`\`${(possibleInvites)}\`\`\``);  
     var message2 = "";
     for (var i = 0; i < possibleInvites.length; i++) {
-		var temp = (i === 0 ? `Top joueurs\n` : "") + (i + 1) + " :small_orange_diamond: " + possibleInvites[i] + "\n";
+		var temp = (i === 0 ? `Top joueurs\n` : "") + (i + 1) + " :small_orange_diamond: " + possibleInvites[i] + "\n" + invite.inviter.username[i] + invite.uses + "\n";
     		if ((message2 + temp).length <= 2000 - 3) {
 			message2 += temp;
 		} else {
@@ -39,7 +39,7 @@ exports.run = async (client, message, args, tools) => {
 			message2 = "";
 		}
     }
-	message2 += "```";
+	message2 += "";
 	message.channel.send(message2);
 	
     send(message.channel, embed, {
