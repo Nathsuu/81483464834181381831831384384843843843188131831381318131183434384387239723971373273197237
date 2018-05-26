@@ -49,11 +49,6 @@ exports.run = async (client, message, args, tools) => {
     message2 += "";
     message.channel.send(message2);
     
-    send(message.channel, embed, {
-        name: 'Vaction',
-        icon: 'https://cdn.discordapp.com/attachments/439036803366912015/449670314192928768/Vaction_Logo.png'
-    })
-    
 }
 
 module.exports.help = {
