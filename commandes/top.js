@@ -18,10 +18,14 @@ exports.run = async (client, message, args, tools) => {
 
     arraySort(invites, 'uses', { reverse: true }); 
 	
-    let possibleInvites = [['Utilisateur', 'Invitation']];
+    let User = [['Utilisateur']];
         invites.forEach(function(invite) { 
-        possibleInvites.push([invite.inviter.username, invite.uses]); 
+        User.push([invite.inviter.username, invite.uses]); 
     })
+    let User2 = [['Invitation']];
+        invites.forEach(function(invite) { 
+        User2.push([invite.uses]); 
+    })	
 
     let embed = new Discord.RichEmbed()
     .setColor("#FF9900")
@@ -30,7 +34,7 @@ exports.run = async (client, message, args, tools) => {
     var message2 = "";
 	
     for (var i = 0; i < possibleInvites.length; i++) {
-		var temp = (i === 0 ? `Top joueurs\n` : "") + (i + 1) + " :small_orange_diamond: **" + possibleInvites[i] + "**\n";
+		var temp = (i === 0 ? `Top joueurs\n` : "") + (i + 1) + " :small_orange_diamond: " + User[i] + "\n" + User2[i] + "\n";
     		if ((message2 + temp).length <= 2000 - 3) {
 			message2 += temp;
 		} else {
