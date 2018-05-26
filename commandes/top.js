@@ -25,7 +25,7 @@ exports.run = async (client, message, args, tools) => {
 
     let embed = new Discord.RichEmbed()
     .setColor("#FF9900")
-    .addField('Top joueurs invitation', `\`\`\`${table.table(possibleInvites)}possibleInvites.sort((a, b) => a.uses - b.uses).reverse()\`\`\``);
+    .addField('Top joueurs invitation', `\`\`\`${table.table(possibleInvites)}\`\`\``);
 		
     var message2 = "";
 	
