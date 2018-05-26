@@ -22,10 +22,12 @@ exports.run = async (client, message, args, tools) => {
         invites.forEach(function(invite) { 
         User.push([invite.inviter.username, invite.uses]); 
     })
-    let User2 = invites.forEach(function(invite) {  
+    let User2 = [['']];
+    invites.forEach(function(invite) {  
         User2.push([invite.uses]); 
     })   
-    let User5 = invites.forEach(function(invite) {
+    let User5 = [['']];
+    invites.forEach(function(invite) {
         User5.push([invite.inviter.username]); 
     })
 
