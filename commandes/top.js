@@ -19,14 +19,15 @@ exports.run = async (client, message, args, tools) => {
     arraySort(invites, 'uses', { reverse: true }); 
 
 
-    let possibleInvites = invites.forEach(function(invite) { 
+    let possibleInvites = let possibleInvites = [['Utilisateur', 'Utilisation']];
+        invites.forEach(function(invite) { 
         possibleInvites.push([invite.inviter.username, invite.uses]); 
     })
 
      
     let embed = new Discord.RichEmbed()
     .setColor("#FF9900")
-    .addField('Top joueurs', `\`\`\`${(table.tablepossibleInvites)}\`\`\``);
+    .addField('Top joueurs invitation', `\`\`\`${table.table(possibleInvites)}\`\`\``);
 		
     var message2 = "";
 	
