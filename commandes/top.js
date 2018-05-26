@@ -27,12 +27,12 @@ exports.run = async (client, message, args, tools) => {
      
     let embed = new Discord.RichEmbed()
     .setColor("#FF9900")
-    .addField('Top joueurs', `\`\`\`${(possibleInvites)}\`\`\``);
+    .addField('Top joueurs', `\`\`\`${(table.tablepossibleInvites)}\`\`\``);
 		
     var message2 = "";
 	
     for (var i = 0; i < possibleInvites.length; i++) {
-		var temp = (i === 0 ? `Top joueurs\n` : "") + (i + 1) + " :small_orange_diamond: " + possibleInvites[i] + "\n";
+		var temp = (i === 0 ? `Top joueurs\n` : "") + (i + 1) + " :small_orange_diamond: **" + possibleInvites[i] + "**\n";
     		if ((message2 + temp).length <= 2000 - 3) {
 			message2 += temp;
 		} else {
