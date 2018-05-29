@@ -838,7 +838,7 @@ if (message.content.startsWith(prefix + "pfc")) {
 
  snek.get(`http://www.triggered-api.tk/api/v2/${type}?url=${url}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
 
- message.channel.send('Vaction - **magik**',{
+ message.channel.send('Vaction - **distortion**',{
        files:[{
          attachment: response.body,
          name: 'distortion.png'
