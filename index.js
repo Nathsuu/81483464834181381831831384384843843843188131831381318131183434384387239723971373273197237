@@ -1077,7 +1077,7 @@ message.channel.send("", { embed: {
             //console.error(err);
         }
 		
-	
+});	
 client.commands = new Discord.Collection();
 
 fs.readdir("./commandes/", (err, files) => {
