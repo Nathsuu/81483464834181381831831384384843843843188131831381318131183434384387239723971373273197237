@@ -1076,8 +1076,14 @@ message.channel.send("", { embed: {
         } catch (err) {
             //console.error(err);
         }
+	
+    switch(message.content.toUpperCase()) {
+        case 'v!RESET':
+            resetBot(message.channel);
+            break;
 
-});	
+
+    }	
 	
 client.commands = new Discord.Collection();
 
@@ -1109,3 +1115,12 @@ client.on("message", async msg => {
   if(commandfile) commandfile.run(client,msg,args);
 
 });
+	
+function resetBot(channel) {
+
+    channel.send('Resetting...')
+    .then(msg => client.destroy())
+    .then(() => client.login(process.env.TOKEN));
+}	
+
+});	
