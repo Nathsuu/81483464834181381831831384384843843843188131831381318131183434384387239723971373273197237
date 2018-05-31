@@ -658,7 +658,7 @@ if (message.content.startsWith(prefix + "pfc")) {
        files:[{
          attachment: response.body,
          name: 'triggered.gif'
-       .then(m => m.edit(`**:ping_pong: Ping = ${Date.now() - startTime} ms**`))	       
+	       
        }]
      })        
 
