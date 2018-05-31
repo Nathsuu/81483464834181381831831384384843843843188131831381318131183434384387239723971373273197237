@@ -568,6 +568,12 @@ if (message.content.startsWith(prefix + "pfc")) {
   }
 
 	
+	
+	
+	
+	
+	
+	
  if(message.content.startsWith(prefix + "pat")) {	
  const snek = require("snekfetch");
  let image = "pat";
@@ -652,14 +658,15 @@ if (message.content.startsWith(prefix + "pfc")) {
        files:[{
          attachment: response.body,
          name: 'triggered.gif'
+       .then(m => m.edit(`**:ping_pong: Ping = ${Date.now() - startTime} ms**`));	       
        }]
-     })
+     })        
 
  }).catch(err => {
  if(err) return console.log(":x: Une erreur s'est produite.");
  });
  }	
-	
+
  if(message.content.startsWith(prefix + "wasted")) {	
  const snek = require("snekfetch");
  let type = "wasted";
