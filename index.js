@@ -1044,7 +1044,7 @@ message.channel.send("", { embed: {
 	.addBlankField()	
 	.addField(":frame_photo: Espaces Images", "```v!pat \nv!hug \nv!kiss \nv!slap \nv!bvn \nv!triggered  \nv!illuminati \nv!invert \nv!convmatrix \nv!tobecontinued \nv!wasted \nv!beautiful \nv!blood \nv!bob ```", true)	
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!bot \nv!invite \nv!servlist \nv!ping \nv!seen \nv!setwelcome \nv!setleave \nv!setrole \nv!setchannel \nv!top \nv!createinvite```", true)
-        .addField(":gear: Espaces Créateurs", "```v!setgame \nv!say \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot \nv!debug```", true)
+        .addField(":gear: Espaces Créateurs", "```v!setgame \nv!say \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot```", true)
 	.addBlankField()
 	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
 	.addField(":sparkles: News", "```Nouvelles commandes \nv!top (encore soon) \nv!magik \nv!distortion```", true)	
