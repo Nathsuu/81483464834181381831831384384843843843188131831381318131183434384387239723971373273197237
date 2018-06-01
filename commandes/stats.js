@@ -1,6 +1,14 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (client, message) => {
+ 
+let totalSeconds = (client.uptime / 1000);
+let hours = Math.floor(totalSeconds / 3600);
+totalSeconds %= 3600;
+let minutes = Math.floor(totalSeconds / 60);
+let seconds = totalSeconds % 60;
+let uptime = `${hours} heures, ${minutes} minutes et ${seconds} secondes`;
+ 
  let sicon = message.guild.iconURL;
  var mentionned = message.mentions.users.first();
  var getvalueof;
@@ -33,6 +41,7 @@ module.exports.run = async (client, message) => {
   .addField(":floppy_disk: Total Channels :", client.channels.size) 
   .addField(":floppy_disk: Node :", process.version)
   .addField(":floppy_disk: Ping :", `${Date.now() - startTime} ms`)
+  .addField(":floppy_disk: UpTime :", uptime) 
   .addBlankField()  
   .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)
   message.channel.send(embed)
