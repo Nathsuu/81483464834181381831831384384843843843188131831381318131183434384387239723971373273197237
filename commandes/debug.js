@@ -2,9 +2,11 @@
 
 module.exports.run = async (client, message) => {
    
-if(message.author.id == "282123215537569793"){	
-    return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
-} 
+ if(message.author.id == "282123215537569793"){
+
+ } else {
+      message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
+ }
 let totalSeconds = (client.uptime / 1000);
 let hours = Math.floor(totalSeconds / 3600);
 totalSeconds %= 3600;
