@@ -30,7 +30,7 @@ module.exports.run = async (client, message) => {
   .addField(':books: Lib', "Discord.js " + process.version)
   message.channel.send(embed)
  } else {
-      message.channel.send("🧠 Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
+      message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
  } 
 } 
 module.exports.help = {
