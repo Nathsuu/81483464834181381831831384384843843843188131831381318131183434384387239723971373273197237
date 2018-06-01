@@ -2,9 +2,9 @@
 
 module.exports.run = async (client, message) => {
    
-   
-   if (message.content.startsWith(prefix + "debug")) {
-
+if(!message.author.id('282123215537569793')) {	
+    return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
+} 
 let totalSeconds = (client.uptime / 1000);
 let hours = Math.floor(totalSeconds / 3600);
 totalSeconds %= 3600;
@@ -28,11 +28,8 @@ let uptime = `${hours} Heure(s), ${minutes} minute(s) et ${seconds} seconde(s)`;
   .addField(":calendar_spiral: Dernière connexion", uptime)
   .addField(':books: Lib', "Discord.js" + process.version)
   message.channel.send(embed)
-
-    } else {
-
-      message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
-
-    }
-  } 
-}  
+  
+} 
+module.exports.help = {
+  name: "debug"
+}
