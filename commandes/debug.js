@@ -4,24 +4,21 @@ module.exports.run = async (client, message) => {
    
  if(message.author.id == "282123215537569793"){
 
- } else {
-      message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
- }
-let totalSeconds = (client.uptime / 1000);
-let hours = Math.floor(totalSeconds / 3600);
-totalSeconds %= 3600;
-let minutes = Math.floor(totalSeconds / 60);
-let seconds = totalSeconds % 60;
-let uptime = `${hours} Heure(s), ${minutes} minute(s) et ${seconds} seconde(s)`;
-let sicon = message.guild.iconURL;
-var startTime = Date.now(); 
+  let totalSeconds = (client.uptime / 1000);
+  let hours = Math.floor(totalSeconds / 3600);
+  totalSeconds %= 3600;
+  let minutes = Math.floor(totalSeconds / 60);
+  let seconds = totalSeconds % 60;
+  let uptime = `${hours} Heure(s), ${minutes} minute(s) et ${seconds} seconde(s)`;
+  let sicon = message.guild.iconURL;
+  var startTime = Date.now(); 
    
   const embed = new Discord.RichEmbed()
   .setThumbnail(sicon)
-  .setColor("#FF9900")
-  .addField(':paperclip: Nom complet', "Vaction#7169")
-  .addField(':id: ID', "417993047427776512")
-  .addField(':hash: Descriminateur', "#7169")
+  .setColor("#FFEC00")
+  .addField(':paperclip: Nom complet', "KroKro'Bot#2356")
+  .addField(':id: ID', "441287185749114900")
+  .addField(':hash: Descriminateur', "#2356")
   .addField(":triangular_flag_on_post: Nombre de serveurs", client.guilds.size)
   .addField(":map: Nombre de joueurs", client.users.size)  
   .addField(":bust_in_silhouette: Developpeur du bot", "**WinDino#3781**")
@@ -32,7 +29,9 @@ var startTime = Date.now();
   .addField(":calendar_spiral: Dernière connexion", uptime)
   .addField(':books: Lib', "Discord.js " + process.version)
   message.channel.send(embed)
-  
+ } else {
+      message.channel.send("🧠 Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
+ } 
 } 
 module.exports.help = {
   name: "debug"
