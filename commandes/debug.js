@@ -2,7 +2,7 @@
 
 module.exports.run = async (client, message) => {
    
-if(!message.author.id('282123215537569793')) {	
+if(message.author.id == "282123215537569793"){	
     return message.reply(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.").catch(console.error);
 } 
 let totalSeconds = (client.uptime / 1000);
