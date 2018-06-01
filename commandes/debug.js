@@ -29,7 +29,7 @@ let sicon = message.guild.iconURL;
   .addField(":wrench: CPU", "143.67%")
   .addField(":level_slider: RAM", "134 MB / 1998 MB (7%)")
   .addField(":calendar_spiral: Dernière connexion", uptime)
-  .addField(':books: Lib', "Discord.js" + process.version)
+  .addField(':books: Lib', "Discord.js " + process.version)
   message.channel.send(embed)
   
 } 
