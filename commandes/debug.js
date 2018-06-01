@@ -13,7 +13,8 @@ totalSeconds %= 3600;
 let minutes = Math.floor(totalSeconds / 60);
 let seconds = totalSeconds % 60;
 let uptime = `${hours} Heure(s), ${minutes} minute(s) et ${seconds} seconde(s)`;
-
+let sicon = message.guild.iconURL;
+   
   const embed = new Discord.RichEmbed()
   .setThumbnail(sicon)
   .setColor("#FF9900")
