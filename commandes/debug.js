@@ -15,7 +15,7 @@ module.exports.run = async (client, message) => {
    
   const embed = new Discord.RichEmbed()
   .setThumbnail(sicon)
-  .setColor("#FFEC00")
+  .setColor("#FF9900")
   .addField(':paperclip: Nom complet', "Vaction#7169")
   .addField(':id: ID', "417993047427776512")
   .addField(':hash: Descriminateur', "#7169")
