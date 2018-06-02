@@ -28,6 +28,7 @@ module.exports.run = async (client, message) => {
   .addField(":level_slider: RAM", "134 MB / 1998 MB (7%)")
   .addField(":calendar_spiral: Dernière connexion", uptime)
   .addField(':books: Lib', "Discord.js " + process.version)
+  .addField(":calling: Invitation", "Lien [ICI](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")
   message.channel.send(embed)
  } else {
       message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
