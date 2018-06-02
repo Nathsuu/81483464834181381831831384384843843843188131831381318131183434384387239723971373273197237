@@ -35,9 +35,9 @@ exports.run = async (client, message, args, tools) => {
     let User4 = [['Utilisateur']];    
         
     var message2 = "";
-    
-    for (var i = 0; i < User.length; i++) {
-        var temp = (i === 0 ? `1 :small_orange_diamond: Listes des meilleurs invites` : "") + (i + 1) + " :small_orange_diamond: **" + User5[i] + "** " + User2[i] + " *invites*\n";
+    message.channel.send(`1 :small_orange_diamond: Listes des meilleurs invites`);
+    for (var i = 1; i < User.length; i++) {
+        var temp = (i === 0 ? `` : "") + (i + 1) + " :small_orange_diamond: **" + User5[i] + "** " + User2[i] + " *invites*\n";
             if ((message2 + temp).length <= 2000 - 3) {
             message2 += temp;
         } else {
