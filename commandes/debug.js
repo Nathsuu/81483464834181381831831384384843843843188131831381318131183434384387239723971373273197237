@@ -24,8 +24,6 @@ module.exports.run = async (client, message) => {
   .addField(":bust_in_silhouette: Developpeur du bot", "**WinDino#3781**")
   .addField(":computer: OS", "linux")
   .addField(":ping_pong: Ping", `${Date.now() - startTime} ms`)
-  .addField(":wrench: CPU", "143.67%")
-  .addField(":level_slider: RAM", "134 MB / 1998 MB (7%)")
   .addField(":calendar_spiral: Dernière connexion", uptime)
   .addField(':books: Lib', "Discord.js " + process.version)
   .addField(":calling: Invitation", "Lien [ICI](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")
