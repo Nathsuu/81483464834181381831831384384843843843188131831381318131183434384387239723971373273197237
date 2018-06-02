@@ -20,7 +20,7 @@ module.exports.run = async (client, message) => {
   .addField(':id: ID', "417993047427776512")
   .addField(':hash: Descriminateur', "#7169")
   .addField(":triangular_flag_on_post: Nombre de serveurs", client.guilds.size)
-  .addField(":map: Nombre de joueurs", client.users.size)  
+  .addField(":map: Nombre d'utilisateurs", client.users.size)  
   .addField(":bust_in_silhouette: Developpeur du bot", "**WinDino#3781**")
   .addField(":computer: OS", "linux")
   .addField(":ping_pong: Ping", `${Date.now() - startTime} ms`)
