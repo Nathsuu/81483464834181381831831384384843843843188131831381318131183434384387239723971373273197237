@@ -22,11 +22,11 @@ module.exports.run = async (client, message) => {
   .addField(":triangular_flag_on_post: Nombre de serveurs", client.guilds.size)
   .addField(":map: Nombre d'utilisateurs", client.users.size)  
   .addField(":bust_in_silhouette: Developpeur du bot", "**WinDino#3781**")
+  .addField(":calling: Invitation", "Lien [ICI](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")  
   .addField(":computer: OS", "linux")
   .addField(":ping_pong: Ping", `${Date.now() - startTime} ms`)
   .addField(":calendar_spiral: Dernière connexion", uptime)
   .addField(':books: Lib', "Discord.js " + process.version)
-  .addField(":calling: Invitation", "Lien [ICI](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")
   message.channel.send(embed)
  } else {
       message.channel.send(":comet: Vous n'avez pas la permission de faire cette commande. Seul mon créateur le peut.")
