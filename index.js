@@ -44,15 +44,20 @@ client.on('guildRemove', (guild) => {
 
 
 client.on('guildMemberAdd', async member => {
-
+	
+ let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
  let fetchwelcome = await db.fetch(`wmsg_${member.guild.id}`);
- let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
+ let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);	
  let fetchautorole = await db.fetch(`autorole_${member.guild.id}`);
- 
+	
+ let Pchannel;	
  let welcome;
  let channel;
  let autorole;
  
+ if(fetchPchannel === null) return;
+ else Pchannel = fetchPchannel
+	
  if(fetchwelcome === null) welcome = "Bienvenue dans {server}, {user}!";
  else welcome = fetchwelcome
  
@@ -69,6 +74,7 @@ client.on('guildMemberAdd', async member => {
    else member.addRole(role);
    
    member.guild.channels.get(channel).send(welcome.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name));
+   member.guild.channels.get(Pchannel).send(Pchannel.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name));	 
  } catch(e) {
    console.log(e)
  }
@@ -78,15 +84,20 @@ client.on('guildMemberRemove', async member => {
 
  let fetchleave = await db.fetch(`lmsg_${member.guild.id}`);
  let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
+ let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);	
  
  let leave;
  let channel;
+ let Pchannel;	
  
  if(fetchleave === null) leave = "{user} viens de quitter le serveur {server}!";
  else leave = fetchleave
  
  if(fetchchannel === null) return;
  else channel = fetchchannel
+	
+ if(fetchPchannel === null) return;
+ else Pchannel = fetchPchannel	
  
  
  try {
@@ -185,7 +196,7 @@ info(message, prefix, client)
     if (message.content === "v!loop") { 
       var interval = setInterval (function () {
         message.channel.send("123")
-      }, 1 * 1000); 
+      }, 1 * 80000); 
     }	
 	
 	
