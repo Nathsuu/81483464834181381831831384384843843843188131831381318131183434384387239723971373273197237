@@ -182,6 +182,12 @@ info(message, prefix, client)
 	}).catch(console.error)	
     }
 	
+    if (message.content === "v!loop") { 
+      var interval = setInterval (function () {
+        message.channel.send("123")
+      }, 1 * 1000); 
+    }	
+	
 	
     if (message.content === prefix + "botinfo"){	
     let bicon = client.user.displayAvatarURL;
