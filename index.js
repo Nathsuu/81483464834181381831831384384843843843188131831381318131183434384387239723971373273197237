@@ -61,7 +61,8 @@ client.on('guildMemberAdd', async member => {
  else Pchannel = fetchPchannel
 	
  if(fetchP === null) return;
- else partners = fetchP	
+ else partners = fetchP
+
 	
  if(fetchwelcome === null) welcome = "Bienvenue dans {server}, {user}!";
  else welcome = fetchwelcome
@@ -156,6 +157,8 @@ info(message, prefix, client)
   fs.writeFile("./data/points.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   });
+	
+	
 
 
 
@@ -199,9 +202,10 @@ info(message, prefix, client)
     }
 	
     if (message.content === "v!loop") { 
+      let partners;
       var interval = setInterval (function () {
-        message.channel.send("123")
-      }, 1 * 80000); 
+        message.channel.send(`wPsg_${partners}`)
+      }, 1 * 200000); 
     }	
 	
 	
