@@ -1,17 +1,21 @@
-const Discord = require("discord.js");
-module.exports.run = async (client, message, args) => {
+const {RichEmbed} = require("discord.js");
+exports.run = async (client, message, args, level) => {
+       
+ if(message.author.id == "282123215537569793"){
+  let embed = new RichEmbed()
+  .setColor("#FF9900")
+  .setTitle("Restarting...")
+  await message.channel.send(embed); 
 
 
-case "restart":
-       resetBot(message.channel);
-            function resetBot(channel) {
-                message.react('✅')
-                    .then(message => client.destroy())
-                    .then(() => client.login (process.env.TOKEN);
-                message.channel.send("``Ayerety is sucessfully restarted!``")
-            }
-            break;
-}            
+  client.commands.forEach( async cmd => {
+    await client.unloadCommand(cmd);
+  }); 
+
+  process.exit(1);
+  };
+}       
+
 module.exports.help = {
   name: "reboot"
-}            
+}
