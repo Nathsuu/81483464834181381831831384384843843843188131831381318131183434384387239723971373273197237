@@ -159,7 +159,10 @@ info(message, prefix, client)
   });
 	
 	
-
+  if (message.content.startsWith(prefix + "10-8")) {			    
+	message.channel.send('**10-4**, Je vous invite à aller dans le __Canal 1__. Bon service à vous !')	  	  	  
+  return;
+  }
 
 
     if(message.content.startsWith(prefix + "setgame")){
@@ -204,8 +207,8 @@ info(message, prefix, client)
     if (message.content === "v!loop") { 
       let partners;
       var interval = setInterval (function () {
-        message.channel.send(`wPsg_${partners}`)
-      }, 1 * 200000); 
+        message.channel.send(`wPsg_${partners.guild.id}`)
+      }, 1 * 2000000); 
     }	
 	
 	
