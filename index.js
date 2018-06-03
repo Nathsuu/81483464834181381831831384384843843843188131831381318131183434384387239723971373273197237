@@ -46,17 +46,22 @@ client.on('guildRemove', (guild) => {
 client.on('guildMemberAdd', async member => {
 	
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
+ let fetchP = await db.fetch(`wPsg_${member.guild.id}`);	
  let fetchwelcome = await db.fetch(`wmsg_${member.guild.id}`);
  let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);	
  let fetchautorole = await db.fetch(`autorole_${member.guild.id}`);
 	
- let Pchannel;	
+ let Pchannel;
+ let partners;	
  let welcome;
  let channel;
  let autorole;
  
  if(fetchPchannel === null) return;
  else Pchannel = fetchPchannel
+	
+ if(fetchP === null) return;
+ else partners = fetchP	
 	
  if(fetchwelcome === null) welcome = "Bienvenue dans {server}, {user}!";
  else welcome = fetchwelcome
