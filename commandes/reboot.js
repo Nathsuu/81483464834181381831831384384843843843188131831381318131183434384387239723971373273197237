@@ -13,7 +13,7 @@ exports.run = async (client, message, args, level) => {
   }); 
 
   process.exit(1);
-  };
+};
 }       
 
 module.exports.help = {
