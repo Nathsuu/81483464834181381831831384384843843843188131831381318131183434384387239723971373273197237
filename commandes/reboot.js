@@ -7,7 +7,7 @@ case "restart":
             function resetBot(channel) {
                 message.react('✅')
                     .then(message => client.destroy())
-                    .then(() => client.login(process.env.TOKEN));
+                    .then(() => client.login (process.env.TOKEN);
                 message.channel.send("``Ayerety is sucessfully restarted!``")
             }
             break;
