@@ -1,13 +1,3 @@
- let prefix;
- 
- let fetch = await db.fetch(`prefix_${message.guild.id}`);
- if(fetch === null) prefix = '&'
- else prefix = fetch
- 
- 
- 
- 
- 
  
 const db = require("quick.db");
 
