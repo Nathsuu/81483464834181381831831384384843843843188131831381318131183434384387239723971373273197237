@@ -116,7 +116,7 @@ client.on('guildMemberRemove', async member => {
 
 
 
-client.on('message', message => {
+client.on('message', async message => {
 	
 const warns = require("./commands/warns.js");
 const info = require("./commands/info.js");	
@@ -128,41 +128,12 @@ info(message, prefix, client)
     const args = message.content.slice(prefix.length).split(/ +/);	
     command = args.shift().toLowerCase();	
 			
-	
-
-	
-  let points = JSON.parse(fs.readFileSync("./data/points.json", "utf8"));
-
-
-  if (!message.content.startsWith(prefix)) return;
-  if (message.author.bot) return;
-
-  if (!points[message.author.id]) points[message.author.id] = {
-    points: 0,
-    level: 0
-  };
-  let userData = points[message.author.id];
-  userData.points++;
-
-  let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
-  if (curLevel > userData.level) {
-    // Level up!
-    userData.level = curLevel;
-    message.reply(`Vous avez atteint le niveau **${curLevel}** !`);
-  }
-
-  if (message.content.startsWith(prefix + "level")) {
-    message.reply(`Vous êtes actuellement niveau ${userData.level}, avec ${userData.points} points.`);
-  }
-  fs.writeFile("./data/points.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err)
-  });
-	
-	
-  if (message.content.startsWith(prefix + "10-8")) {			    
-	message.channel.send('**10-4**, Je vous invite à aller dans le __Canal 1__. Bon service à vous !')	  	  	  
-  return;
-  }
+const db = require("quick.db");	
+ let prefix;
+ 
+ let fetch = await db.fetch(`prefix_${message.guild.id}`);
+ if(fetch === null) prefix = 'v!'
+ else prefix = fetch
 
 
     if(message.content.startsWith(prefix + "setgame")){
