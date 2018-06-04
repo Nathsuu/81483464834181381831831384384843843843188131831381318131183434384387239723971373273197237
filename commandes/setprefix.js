@@ -1,30 +1,36 @@
 const Discord = require("discord.js");
-const fs = require("fs");
+ let prefix;
+client.on('message', message => { 
+ let fetch = await db.fetch(`prefix_${message.guild.id}`);
+ if(fetch === null) prefix = '&'
+ else prefix = fetch
+const db = require("quick.db");
 
-module.exports.run = async (bot, message, args) => {
-
-  if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("non");
-  if(!args[0] || args[0 == "help"]) return message.reply(":x: Vous n'avez mentionné aucun prefix ! Exemple : \`v!setprefix <PREFIX ICI>\`");
-
-  let setprefix = JSON.parse(fs.readFileSync("./data/setprefix.json", "utf8"));
-
-  setprefix[message.guild.id] = {
-    setprefix: args[0]
-  };
-
-  fs.writeFile("./data/setprefix.json", JSON.stringify(setprefix), (err) => {
-    if (err) console.log(err)
-  });
-
-  let sEmbed = new Discord.RichEmbed()
-  .setColor("#FF9900")
-  .setTitle("Nouveau Prefix !")
-  .setDescription(`Votre nouveau prefix est maintenant sur ce serveur : ${args[0]}`);
-
-  message.channel.send(sEmbed);
-
+module.exports.run = async (client, message, args) => {
+ 
+ let prefix;
+ let fetch = await db.fetch(`prefix_${message.guild.id}`);
+ if(fetch === null) prefix = '&'
+ else prefix = fetch
+ 
+ if(!args.join(" ")) return message.channel.send(`Mon préfixe actuel est ${prefix}`)
+ if(!args.slice(1).join(" ")) return message.channel.send(`Mon préfixe actuel est ${prefix}`)
+ 
+ if(args[0] === 'set') {
+  
+   let nPrefix = args.slice(1).join(" ");
+   
+   db.set(`prefix_${message.guild.id}`, nPrefix).then(i => {
+   
+     message.channel.send(`Votre nouveau prefix est désormais : ${i}`)
+   
+   });
+   
+ }
+   
 }
+});
 
-module.exports.help = {
-  name: "setprefix"
+exports.help = {
+  name: 'setprefix',
 }
