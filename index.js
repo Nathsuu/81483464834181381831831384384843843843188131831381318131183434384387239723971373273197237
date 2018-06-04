@@ -116,7 +116,7 @@ client.on('guildMemberRemove', async member => {
 
 
 
-client.on('message', async message => {
+client.on('message', message => {
 	
 const warns = require("./commands/warns.js");
 const info = require("./commands/info.js");	
@@ -127,13 +127,7 @@ info(message, prefix, client)
     let command = message.content.split(" ")[0];
     const args = message.content.slice(prefix.length).split(/ +/);	
     command = args.shift().toLowerCase();	
-			
-const db = require("quick.db");	
- let prefix;
- 
- let fetch = await db.fetch(`prefix_${message.guild.id}`);
- if(fetch === null) prefix = 'v!'
- else prefix = fetch
+
 
 
     if(message.content.startsWith(prefix + "setgame")){
