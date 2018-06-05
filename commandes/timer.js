@@ -16,7 +16,7 @@ if(args[0] <= 0){
 message.channel.send(":white_check_mark: La minuterie a été définie pour : " + `${ms(ms(Timer), {long: true})}`)
 
 setTimeout(function(){
-  message.channel.send(`La minuterie est terminée, cela a duré : ${ms(ms(Timer), {long: true})}` + message.author.toString())
+  message.channel.send(`La minuterie est terminée, cela a duré : ${ms(ms(Timer), {long: true})}`)
 
 }, ms(Timer));
 }
