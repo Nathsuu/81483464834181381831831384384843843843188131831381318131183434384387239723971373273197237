@@ -3,14 +3,14 @@ const prefix = 'v!';
 module.exports.run = async (bot, message, args) => {
 
 
-  if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply(":comet: Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande soit je n'ai pas la permission d'ajouter/retirer un rôle. La personne à qui vous essayez d'unmute est peut-être intouchable.");
+  if(!message.member.hasPermission("MANAGE_GUILD")) return message.reply("Vous n'avez pas la permission ``MANAGE_GUILD`` pour faire cette commande soit je n'ai pas la permission d'ajouter/retirer un rôle. La personne à qui vous essayez d'unmute est peut-être intouchable.");
   if(args[0] == "help"){
-    message.reply(":comet: Vous n'avez pas mentionné un utilisateur ! Exemple/Usage : ``v!unmute @User N'insulte plus``");
+    message.reply("Vous n'avez pas mentionné un utilisateur ! Exemple/Usage : ``v!unmute @User N'insulte plus``");
     return;
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.reply(":comet: Vous n'avez pas mentionné un nombre ! Exemple/Usage : ``v!unmute @User N'insulte plus``");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":comet: Je n'est pas la permission ``MANAGE_MESSAGES`` pour faire cette commande.");
+  if(!tomute) return message.reply("Vous n'avez pas mentionné un nombre ! Exemple/Usage : ``v!unmute @User N'insulte plus``");
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Je n'est pas la permission ``MANAGE_MESSAGES`` pour faire cette commande.");
   
   var roledel = message.guild.roles.find('name', 'vmuted');
   message.delete().catch(O_o=>{});
@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
   try{
     await tomute.send(`:exclamation: Vous venez d'être unmute sur un serveur m'utilisant.`)
   }catch(e){
-    message.channel.send(`:comet: L'utilisateur a été unmute, mais sont DM est verrouillés.`)
+    message.channel.send(`L'utilisateur a été unmute, mais sont DM est verrouillés.`)
   }
 
   let muteembed = new Discord.RichEmbed()
@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
    .addField("Sanction", "Unmute")
 
   let vchannelchannel = message.guild.channels.find(`name`, "vchannel");
-  if(!vchannelchannel) return message.reply(":comet: Impossible de trouver le canal \`vchannel\`.");
+  if(!vchannelchannel) return message.reply("Impossible de trouver le canal \`vchannel\`.");
   vchannelchannel.send(muteembed);
 
   await(tomute.removeRole(roledel.id));
