@@ -5,9 +5,9 @@ let warns = JSON.parse(fs.readFileSync("./data/warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
 if (message.channel.type === "dm") return;
 var mentionned = message.mentions.users.first();
-if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":comet: Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
 if(message.mentions.users.size === 0) {
-  return message.channel.send(":comet: Vous n'avez mentionnée aucun utilisateur ! Exemple/Usage : ``v!warn @User Insulte``");
+  return message.channel.send("Vous n'avez mentionnée aucun utilisateur ! Exemple/Usage : ``v!warn @User Insulte``");
 }else{
     const args = message.content.split(' ').slice(1);
     const mentioned = message.mentions.users.first();
@@ -30,26 +30,26 @@ if(message.mentions.users.size === 0) {
             }
             fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
 message.delete();
-            message.channel.send(':comet: '+mentionned.tag+' a bien été averti !');
-message.mentions.users.first().send(`:comet: Vous venez d'être warn sur le serveur **${message.guild.name}** par **${message.author.username}**\n\n**Pour la Raison:** ` + args.slice(1).join(' '))
+            message.channel.send(''+mentionned.tag+' a bien été averti !');
+message.mentions.users.first().send(`Vous venez d'être warn sur le serveur **${message.guild.name}** par **${message.author.username}**\n\n**Pour la Raison:** ` + args.slice(1).join(' '))
           } else {
-            message.channel.send(":comet: Erreur ! Exemple : "+prefix+"warn <user> <raison>");
+            message.channel.send("Erreur ! Exemple : "+prefix+"warn <user> <raison>");
           }
         } else {
-          message.channel.send(":comet: Erreur ! Exemple : "+prefix+"warn <user> <raison>");
+          message.channel.send("Erreur ! Exemple : "+prefix+"warn <user> <raison>");
         }
       } else {
-        message.channel.send(":comet: Erreur ! Exemple : "+prefix+"warn <user> <raison>");
+        message.channel.send("Erreur ! Exemple : "+prefix+"warn <user> <raison>");
       }
     } else {
-      message.channel.send(":comet: Vous n'avez pas la permission `manage-guild`.");
+      message.channel.send("Vous n'avez pas la permission `manage-guild`.");
     }
   }
 }
 
   if (message.content.startsWith(prefix+"seewarn")||message.content===prefix+"seewarns") {
 if (message.channel.type === "dm") return;
-if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":comet: Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
     const mentioned = message.mentions.users.first();
     const args = message.content.split(' ').slice(1);
     if (message.member.hasPermission('MANAGE_GUILD')){
@@ -72,14 +72,14 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
           }
           message.channel.send(arr.join('\n'));
         } else {
-          message.channel.send(":comet: Erreur ! Exemple : "+prefix+"seewarn <user> <raison>");
+          message.channel.send("Erreur ! Exemple : "+prefix+"seewarn <user> <raison>");
           console.log(args);
         }
       } else {
-        message.channel.send(":comet: Erreur ! Exemple : "+prefix+"seewarn <user> <raison>");
+        message.channel.send("Erreur ! Exemple : "+prefix+"seewarn <user> <raison>");
       }
     } else {
-      message.channel.send(":comet: Vous n'avez pas la permission `manage-guild`.");
+      message.channel.send("Vous n'avez pas la permission `manage-guild`.");
     }
   }
 
@@ -87,7 +87,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
   if (message.content.startsWith(prefix+"clearwarn") || message.content === prefix + "clearwarn") {
 if (message.channel.type === "dm") return;
 
-if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply(":comet: Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("Il vous faut la permission `manage-guild` pour executer cette commande.").catch(console.error);
 
    const mentioned = message.mentions.users.first();
     const args = message.content.split(' ').slice(1);
@@ -99,7 +99,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
               message.channel.send(mentioned.tag+" n'a pas de warn");
               return;
             } if (warns[message.guild.id][mentioned.id][arg2] === undefined) {
-              message.channel.send(":comet: Ce warn existe pas");
+              message.channel.send("Ce warn existe pas");
               return;
             }
             delete warns[message.guild.id][mentioned.id][arg2];
@@ -114,21 +114,21 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
             if (Object.keys(warns[message.guild.id][mentioned.id]).length === 0) {
               delete warns[message.guild.id][mentioned.id];
             }
-            message.channel.send(`:comet: Le warn de **${mentioned.tag}**: **n°${args[1]}** a été enlevé !`);
+            message.channel.send(`Le warn de **${mentioned.tag}**: **n°${args[1]}** a été enlevé !`);
             return;
           } if (args[1] === "all") {
             delete warns[message.guild.id][mentioned.id];
             fs.writeFile("./data/warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
-            message.channel.send(`:comet:  Les warns de **${mentioned.tag}** ont tous été enlevés !`);
+            message.channel.send(`Les warns de **${mentioned.tag}** ont tous été enlevés !`);
             return;
           } else {
-            message.channel.send(":comet: Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
+            message.channel.send("Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
           }
         } else {
-          message.channel.send(":comet: Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
+          message.channel.send("Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
         }
       } else {
-       message.channel.send(":comet: Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
+       message.channel.send("Erreur ! Exemple : "+prefix+"clearwarn @User <nombre | tout>");
       }
   }
 }
