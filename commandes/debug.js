@@ -12,7 +12,8 @@ module.exports.run = async (client, message) => {
   let uptime = `${hours} Heure(s), ${minutes} minute(s) et ${seconds} seconde(s)`;
   let sicon = message.guild.iconURL;
   var startTime = Date.now(); 
-   
+  var memory = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)
+  
   const embed = new Discord.RichEmbed()
   .setThumbnail(sicon)
   .setColor("#FF9900")
@@ -24,6 +25,7 @@ module.exports.run = async (client, message) => {
   .addField(":bust_in_silhouette: Developpeur du bot", "**WinDino#3781**")
   .addField(":calling: Invitation", "Lien [ICI](https://discordapp.com/oauth2/authorize?client_id=417993047427776512&scope=bot&permissions=2146958583)")  
   .addField(":computer: OS", "linux")
+  .addField(":level_slider: RAM", "${memory} MB , \u200B")
   .addField(":ping_pong: Ping", `${Date.now() - startTime} ms`)
   .addField(":calendar_spiral: Dernière connexion", uptime)
   .addField(':books: Lib', "Discord.js " + process.version)
