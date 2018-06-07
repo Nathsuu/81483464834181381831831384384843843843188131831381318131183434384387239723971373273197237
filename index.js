@@ -22,14 +22,6 @@ client.on('ready', () => {
 
 client.login(process.env.TOKEN);
 
-client.on('guildMemberAdd', member => {
-let type = "welcome";	
-let username = `${member.user.username}`;
-let description = "Bienvenue sur le serveur !";
-let image = `${member.displayAvatarURL}`;	
-let vchannelchannel = member.guild.channels.find(`name`, "logs");	
-member.guild.channels.get('444182729286877185').send(`https://www.triggered-api.tk/welcome?pseudo={username}&description={description}&avatarurl={image}`);	
-});
 
 client.on("guildCreate", async guild => {
   const invite = await guild.channels.first().createInvite({
@@ -52,6 +44,13 @@ client.on('guildRemove', (guild) => {
 
 
 client.on('guildMemberAdd', async member => {
+	
+  let type = "welcome";	
+  let username = `${member.user.username}`;
+  let description = "Bienvenue sur le serveur !";
+  let image = `${member.displayAvatarURL}`;	
+  let vchannelchannel = member.guild.channels.find(`name`, "logs");	
+  member.guild.channels.get('444182729286877185').send(`https://www.triggered-api.tk/welcome?pseudo={username}&description={description}&avatarurl={image}`);			
 	
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
  let fetchP = await db.fetch(`wPsg_${member.guild.id}`);	
