@@ -22,6 +22,15 @@ client.on('ready', () => {
 
 client.login(process.env.TOKEN);
 
+client.on('guildMemberAdd', member => {
+let type = "welcome";	
+let username = `${member.user.username}`;
+let description = "Bienvenue sur le serveur !";
+let image = `${member.author.displayAvatarURL}`;	
+let vchannelchannel = member.guild.channels.find(`name`, "logs");
+if(!vchannelchannel) return member.reply("🧠 Impossible de trouver le canal \`logs\`.");	
+member.channel.send(`https://www.triggered-api.tk/welcome?pseudo={username}&description={description}&avatarurl={image}`);  	
+});
 
 client.on("guildCreate", async guild => {
   const invite = await guild.channels.first().createInvite({
