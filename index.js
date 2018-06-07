@@ -28,7 +28,7 @@ let username = `${member.user.username}`;
 let description = "Bienvenue sur le serveur !";
 let image = `${member.displayAvatarURL}`;	
 let vchannelchannel = member.guild.channels.find(`name`, "logs");	
-member.guild.channels.send(`https://www.triggered-api.tk/welcome?pseudo={username}&description={description}&avatarurl={image}`);	
+member.guild.channels.get('444182729286877185').send(`https://www.triggered-api.tk/welcome?pseudo={username}&description={description}&avatarurl={image}`);	
 });
 
 client.on("guildCreate", async guild => {
