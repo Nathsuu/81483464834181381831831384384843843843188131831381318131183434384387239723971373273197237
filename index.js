@@ -46,7 +46,7 @@ client.on('guildRemove', (guild) => {
 client.on('guildMemberAdd', async member => {
 	
   let username = `${member.user.username}`;
-  let description = "Bienvenue sur le serveur !";
+  let description = "Bienvenue+sur+le+serveur+!";
   let image = `${member.displayAvatarURL}`;	
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";
   let vchannelchannel = member.guild.channels.find(`name`, "logs");	
