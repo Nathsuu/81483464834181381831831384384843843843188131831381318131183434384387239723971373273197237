@@ -29,7 +29,7 @@ let description = "Bienvenue sur le serveur !";
 let image = `${member.displayAvatarURL}`;	
 let vchannelchannel = member.guild.channels.find(`name`, "logs");
 if(!vchannelchannel) return member.reply("🧠 Impossible de trouver le canal \`logs\`.");	
-member.channel.send(`https://www.triggered-api.tk/welcome?pseudo={username}&description={description}&avatarurl={image}`);  	
+vchannelchannel.send(`https://www.triggered-api.tk/welcome?pseudo={username}&description={description}&avatarurl={image}`);	
 });
 
 client.on("guildCreate", async guild => {
