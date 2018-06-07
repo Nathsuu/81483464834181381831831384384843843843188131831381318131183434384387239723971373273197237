@@ -47,7 +47,7 @@ client.on('guildMemberAdd', async member => {
 	
   let username = `${member.user.username}`;
   let description = "Bienvenue+sur+le+serveur+!";
-  let image = `${member.displayAvatarURL}`;	
+  let image = "https://cdn.discordapp.com/attachments/422069920067616769/454359389445423115/Vaction_Logo.png";	
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";
   let vchannelchannel = member.guild.channels.find(`name`, "logs");	
   member.guild.channels.get('444182729286877185').send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);			
