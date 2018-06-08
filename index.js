@@ -51,20 +51,19 @@ client.on('guildMemberAdd', async member => {
   let image = `${member.user.avatarURL}`;	
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";			
 
- snek.get(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
- var dC= member.guild.channels.find("name", "testing-welcome");	 
-    if (dC) {
- dC.send('Vaction - **Welcome**',{
-       files:[{
-         attachment: response.body,
-         name: 'welcome.png'
-       }]
-     })
+  snek.get(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+  var dC= member.guild.channels.find("name", "testing-welcome");
+  message.channel.send('Vaction - **Welcome**',{
+        files:[{
+          attachment: response.body,
+          name: 'welcome.png'
+        }]
+      })
 
- }).catch(err => {
- if(err) return console.log(":x: Une erreur s'est produite.");
- });
- }	
+  }).catch(err => {
+  if(err) return console.log(":x: Une erreur s'est produite.");
+  });
+ 
 
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
  let fetchP = await db.fetch(`wPsg_${member.guild.id}`);	
