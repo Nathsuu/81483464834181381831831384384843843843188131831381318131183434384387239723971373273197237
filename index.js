@@ -55,12 +55,12 @@ client.on('guildMemberAdd', async member => {
 	
   if (dC) {
   dC.send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`),{
+  	  
         files:[{
           attachment: response.body,
           name: 'welcome.png'
-        }]
-  
-  }}.catch(err => {
+	}}]
+  }.catch(err => {
   if(err) return console.log(":x: Une erreur s'est produite.");
   });
  
