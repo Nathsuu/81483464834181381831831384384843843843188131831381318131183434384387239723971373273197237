@@ -59,10 +59,10 @@ client.on('guildMemberAdd', async member => {
           attachment: response.body,
           name: 'welcome.png'
         }]
-  
+  }
   }.catch(err => {
   if(err) return console.log(":x: Une erreur s'est produite.");
-  }});
+  });
  
 
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
