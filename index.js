@@ -103,7 +103,11 @@ client.on('guildMemberRemove', async member => {
   let description = "N'est+plus+sur+le+serveur+!";
   let image = `${member.user.avatarURL}`;	
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";	
-  member.guild.channels.get('454363738221314073').send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);			
+    var dC= member.guild.channels.find("name", "testing-welcome");
+	
+    if (dC) {
+        dC.send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);
+    } 	
 	
  let fetchleave = await db.fetch(`lmsg_${member.guild.id}`);
  let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
