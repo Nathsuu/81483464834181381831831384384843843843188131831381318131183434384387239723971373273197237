@@ -53,7 +53,7 @@ client.on('guildMemberAdd', async member => {
 
   snek.get(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`).then(response => {
   var dC= member.guild.channels.find("name", "testing-welcome");
-  message.channel.send('Vaction - **Welcome**',{
+  dC.channel.send('Vaction - **Welcome**',{
         files:[{
           attachment: response.body,
           name: 'welcome.png'
