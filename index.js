@@ -53,9 +53,19 @@ client.on('guildMemberAdd', async member => {
 	
   var dC= member.guild.channels.find("name", "testing-welcome");
 	
-  if (dC) {
-  dC.send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);	  
-  }	  
+  if (dC) {	  
+  snek.get(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
+  var dC= member.guild.channels.find("name", "testing-welcome");
+  dC.channel.send('Vaction - **Welcome**',{
+        files:[{
+          attachment: response.body,
+          name: 'welcome.png'
+        }]
+      })
+
+  }).catch(err => {
+  if(err) return console.log(":x: Une erreur s'est produite.");
+  });	
  
 
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
