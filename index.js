@@ -57,6 +57,7 @@ client.on('guildMemberAdd', async member => {
   dC.send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);	  
   const attachment = new MessageAttachment(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);
   dC.channel.send(attachment);
+  }	  
  
 
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
