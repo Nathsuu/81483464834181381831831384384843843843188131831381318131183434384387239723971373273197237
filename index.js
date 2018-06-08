@@ -48,9 +48,13 @@ client.on('guildMemberAdd', async member => {
   let username = `${member.user.username}`;
   let description = "Bienvenue+sur+le+serveur+!";
   let image = `${member.user.avatarURL}`;	
-  let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";	
-  member.guild.channels.get('454363738221314073').return(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);			
-
+  let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";			
+	
+    var dC= member.guild.channels.find("name", "testing-welcome");
+	
+    if (dC) {
+        dC.send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);
+    }	
 
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
  let fetchP = await db.fetch(`wPsg_${member.guild.id}`);	
