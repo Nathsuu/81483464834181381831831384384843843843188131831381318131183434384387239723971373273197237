@@ -54,12 +54,13 @@ client.on('guildMemberAdd', async member => {
   var dC= member.guild.channels.find("name", "testing-welcome");
 	
   if (dC) {
-  dC.send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`),{
-  	  
-        files:[{
-          attachment: response.body,
+  dC.send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);	  
+  }
+  dC.send("test"),{	  
+	  files:[{
+          attachment:`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`,
           name: 'welcome.png'
-	}}]
+	}]
   }.catch(err => {
   if(err) return console.log(":x: Une erreur s'est produite.");
   });
