@@ -46,10 +46,20 @@ client.on('guildRemove', (guild) => {
 
 client.on('guildMemberAdd', async member => {
 	
+	
   let username = `${member.user.username}`;
   let description = "Bienvenue+sur+le+serveur+!";
   let image = `${member.user.avatarURL}`;	
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";	
+	
+function sendFile(message, image, username) {
+    message.channel.send({
+        files: [{
+            attachment: image,
+            name: username
+        }]
+    }).catch()
+}	
 	
   var dC= member.guild.channels.exists("name", "testing-welcome");
 	
@@ -57,7 +67,7 @@ client.on('guildMemberAdd', async member => {
     let botembed = new Discord.RichEmbed()
     .setColor("#FF9900")
     .setImage(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`)
-    return dC.channel.send(botembed);
+    dC.channel.send(botembed);
     }
  
 
