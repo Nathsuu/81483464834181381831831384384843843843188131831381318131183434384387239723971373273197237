@@ -51,9 +51,7 @@ client.on('guildMemberAdd', async member => {
   let image = `${member.user.avatarURL}`;	
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";	
 	
-  var dC= member.guild.channels.find("name", "testing-welcome");
-	
-  if (dC) {	  
+		  
   snek.get(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`).set({ Authorization: (process.env.TOKENAPI) }).then(response => {
   var dC= member.guild.channels.find("name", "testing-welcome");
   dC.channel.send('Vaction - **Welcome**',{
