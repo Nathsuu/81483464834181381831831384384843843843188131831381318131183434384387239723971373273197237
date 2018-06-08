@@ -59,8 +59,8 @@ client.on('guildMemberAdd', async member => {
           attachment: response.body,
           name: 'welcome.png'
         }]
-  }
-  }.catch(err => {
+  
+  }}.catch(err => {
   if(err) return console.log(":x: Une erreur s'est produite.");
   });
  
