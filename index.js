@@ -53,7 +53,7 @@ function sendFile(message, image, username) {
 
 client.on('guildMemberAdd', async member => {
     
-  let username = `${member.user.username}`;
+  let username = `${member.username}`;
   let description = "Bienvenue+sur+le+serveur+!";
   let image = `${member.user.avatarURL}`;    
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
