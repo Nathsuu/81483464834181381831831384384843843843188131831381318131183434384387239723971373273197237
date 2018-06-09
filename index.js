@@ -59,16 +59,11 @@ client.on('guildMemberAdd', async member => {
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
     
           
-  snek.get(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`).then(response => {
-  var dC= member.guild.channels.find("name", "testing-welcome");
-  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png")
-
-  }).catch(err => {
-  if(err) return console.log(":x: Une erreur s'est produite.");
-  }); 
+  
+  var dC= member.guild.channels.exists("name", "testing-welcome");
+  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 
 	  
      
-    
  
 
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
