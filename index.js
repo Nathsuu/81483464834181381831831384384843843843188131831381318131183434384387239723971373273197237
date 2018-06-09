@@ -43,7 +43,7 @@ client.on('guildRemove', (guild) => {
 
 
 function sendFile(dC, image, username) {
-    dC.channel.send({
+    dC.send({
         files: [{
             attachment: image,
             name: username
@@ -51,7 +51,7 @@ function sendFile(dC, image, username) {
     }).catch()
 }
 
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', async member => {
     
   let username = `${member.user.username}`;
   let description = "Vient+d'arriver+sur+le+serveur+!";
@@ -61,11 +61,11 @@ client.on('guildMemberAdd', member => {
   var dC= member.guild.channels.find("name", "testing-welcome")
   sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 	
 	
- let fetchPchannel = db.fetch(`wPchannel_${member.guild.id}`);
- let fetchP = db.fetch(`wPsg_${member.guild.id}`);	
- let fetchwelcome = db.fetch(`wmsg_${member.guild.id}`);
- let fetchchannel = db.fetch(`wchannel_${member.guild.id}`);	
- let fetchautorole = db.fetch(`autorole_${member.guild.id}`);
+ let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
+ let fetchP = await db.fetch(`wPsg_${member.guild.id}`);	
+ let fetchwelcome = await db.fetch(`wmsg_${member.guild.id}`);
+ let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);	
+ let fetchautorole = await db.fetch(`autorole_${member.guild.id}`);
 	
  let Pchannel;
  let partners;	
@@ -102,7 +102,7 @@ client.on('guildMemberAdd', member => {
  }          
  
 });
-client.on('guildMemberRemove', member => {
+client.on('guildMemberRemove', async member => {
 
   let username = `${member.user.username}`;
   let description = "N'est+plus+sur+le+serveur+!";
@@ -113,9 +113,9 @@ client.on('guildMemberRemove', member => {
  var dC= member.guild.channels.find("name", "testing-welcome");
  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 
 
- let fetchleave = db.fetch(`lmsg_${member.guild.id}`);
- let fetchchannel = db.fetch(`wchannel_${member.guild.id}`);
- let fetchPchannel = db.fetch(`wPchannel_${member.guild.id}`);	
+ let fetchleave = await db.fetch(`lmsg_${member.guild.id}`);
+ let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
+ let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);	
  
  let leave;
  let channel;
