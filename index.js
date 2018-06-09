@@ -113,9 +113,9 @@ client.on('guildMemberRemove', member => {
  var dC= member.guild.channels.find("name", "testing-welcome");
  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 
 
- let fetchleave = await db.fetch(`lmsg_${member.guild.id}`);
- let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
- let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);	
+ let fetchleave = db.fetch(`lmsg_${member.guild.id}`);
+ let fetchchannel = db.fetch(`wchannel_${member.guild.id}`);
+ let fetchPchannel = db.fetch(`wPchannel_${member.guild.id}`);	
  
  let leave;
  let channel;
