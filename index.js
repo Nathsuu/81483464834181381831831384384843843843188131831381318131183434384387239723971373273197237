@@ -105,7 +105,7 @@ client.on('guildMemberAdd', async member => {
 client.on('guildMemberRemove', async member => {
 
   let username = `${member.user.username}`;
-  let description = "N'est+plus+sur+le+serveur+!";
+  let description = "Vient+de+quitter+le+serveur+!";
   let image = `${member.user.avatarURL}`;    
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
           
