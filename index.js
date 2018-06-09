@@ -66,11 +66,11 @@ client.on('guildMemberAdd', async member => {
      
  
 
- let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
- let fetchP = await db.fetch(`wPsg_${member.guild.id}`);	
- let fetchwelcome = await db.fetch(`wmsg_${member.guild.id}`);
- let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);	
- let fetchautorole = await db.fetch(`autorole_${member.guild.id}`);
+ let fetchPchannel = db.fetch(`wPchannel_${member.guild.id}`);
+ let fetchP = db.fetch(`wPsg_${member.guild.id}`);	
+ let fetchwelcome = db.fetch(`wmsg_${member.guild.id}`);
+ let fetchchannel = db.fetch(`wchannel_${member.guild.id}`);	
+ let fetchautorole = db.fetch(`autorole_${member.guild.id}`);
 	
  let Pchannel;
  let partners;	
