@@ -42,16 +42,6 @@ client.on('guildRemove', (guild) => {
 });
 
 
-
-
-client.on('guildMemberAdd', async member => {
-	
-	
-  let username = `${member.user.username}`;
-  let description = "Bienvenue+sur+le+serveur+!";
-  let image = `${member.user.avatarURL}`;	
-  let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";	
-	
 function sendFile(message, image, username) {
     message.channel.send({
         files: [{
@@ -59,16 +49,26 @@ function sendFile(message, image, username) {
             name: username
         }]
     }).catch()
-}	
-	
-  var dC= member.guild.channels.exists("name", "testing-welcome");
-	
-  if (dC) {	  
-    let botembed = new Discord.RichEmbed()
-    .setColor("#FF9900")
-    .setImage(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`)
-    dC.channel.send(botembed);
-    }
+}
+
+client.on('guildMemberAdd', async member => {
+    
+  let username = `${member.user.username}`;
+  let description = "Bienvenue+sur+le+serveur+!";
+  let image = `${member.user.avatarURL}`;    
+  let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
+    
+          
+  snek.get(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`).then(response => {
+  var dC= member.guild.channels.find("name", "testing-welcome");
+  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png")
+
+  }).catch(err => {
+  if(err) return console.log(":x: Une erreur s'est produite.");
+  }); 
+	  
+     
+    
  
 
  let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);
@@ -1141,4 +1141,5 @@ client.on("message", async msg => {
   if(commandfile) commandfile.run(client,msg,args);
 
 });
+	
 	
