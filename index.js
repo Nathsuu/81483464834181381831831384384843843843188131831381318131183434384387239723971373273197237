@@ -53,7 +53,7 @@ function sendFile(message, image, username) {
 
 client.on('guildMemberAdd', async member => {
     
-  let username = `${member.username}`;
+  let username = `${member.user.username}`;
   let description = "Bienvenue+sur+le+serveur+!";
   let image = `${member.user.avatarURL}`;    
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
@@ -111,13 +111,14 @@ client.on('guildMemberRemove', async member => {
 
   let username = `${member.user.username}`;
   let description = "N'est+plus+sur+le+serveur+!";
-  let image = `${member.user.avatarURL}`;	
-  let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";	
-    var dC= member.guild.channels.find("name", "testing-welcome");
-	
-    if (dC) {
-        dC.send(`https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`);
-    } 	
+  let image = `${member.user.avatarURL}`;    
+  let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
+    
+          
+  
+  var dC= member.guild.channels.find("name", "testing-welcome");
+  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 
+		
 	
  let fetchleave = await db.fetch(`lmsg_${member.guild.id}`);
  let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
