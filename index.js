@@ -43,7 +43,7 @@ client.on('guildRemove', (guild) => {
 
 
 function sendFile(message, image, username) {
-    message.channel.send({
+    message.send({
         files: [{
             attachment: image,
             name: username
