@@ -42,8 +42,8 @@ client.on('guildRemove', (guild) => {
 });
 
 
-function sendFile(message, image, username) {
-    message.send({
+function sendFile(dC, image, username) {
+    dC.send({
         files: [{
             attachment: image,
             name: username
