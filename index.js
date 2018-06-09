@@ -60,7 +60,7 @@ client.on('guildMemberAdd', async member => {
     
           
   
-  var dC= member.guild.channels.exists("name", "testing-welcome");
+  var dC= member.guild.channels.find("name", "testing-welcome");
   sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 
 	  
      
