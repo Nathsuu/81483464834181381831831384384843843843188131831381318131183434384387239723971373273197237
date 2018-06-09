@@ -983,6 +983,11 @@ message.channel.send("", { embed: {
 
     }
   } 
+	  if (message.content.startsWith(prefix + "welcome")) {
+	    if(!message.guild.channels.exists("name", "welcome")){
+	    message.guild.createChannel('welcome');
+	    message.reply("Si j'ai la permission, le channel ``welcome`` vient d'être créé. Sinon, créez-vous même le channel pour avoir les images dès qu'un joueur rentre/quitte le discord.").catch(console.error);
+	  }
 	
   if (message.content.startsWith(prefix + "fakehacker")) {	
 	if(!message.member.hasPermission("ADMINISTRATOR")) {	
