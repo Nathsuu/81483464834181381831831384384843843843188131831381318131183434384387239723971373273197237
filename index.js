@@ -54,7 +54,7 @@ function sendFile(dC, image, username) {
 client.on('guildMemberAdd', async member => {
     
   let username = `${member.user.username}`;
-  let description = "Bienvenue+sur+le+serveur+!";
+  let description = "Vient+d'arriver+sur+le+serveur+!";
   let image = `${member.user.avatarURL}`;    
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
     
