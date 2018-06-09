@@ -51,7 +51,7 @@ function sendFile(dC, image, username) {
     }).catch()
 }
 
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', async member => {
     
   let username = `${member.user.username}`;
   let description = "Vient+d'arriver+sur+le+serveur+!";
