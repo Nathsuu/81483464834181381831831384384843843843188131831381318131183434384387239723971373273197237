@@ -57,24 +57,85 @@ client.on('guildMemberAdd', member => {
   let description = "Vient+d'arriver+sur+le+serveur+!";
   let image = `${member.user.avatarURL}`;    
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
-    
-          
   
   var dC= member.guild.channels.find("name", "testing-welcome")
-  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 
+  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 	
+	
+ let fetchPchannel = db.fetch(`wPchannel_${member.guild.id}`);
+ let fetchP = db.fetch(`wPsg_${member.guild.id}`);	
+ let fetchwelcome = db.fetch(`wmsg_${member.guild.id}`);
+ let fetchchannel = db.fetch(`wchannel_${member.guild.id}`);	
+ let fetchautorole = db.fetch(`autorole_${member.guild.id}`);
+	
+ let Pchannel;
+ let partners;	
+ let welcome;
+ let channel;
+ let autorole;
+ 
+ if(fetchPchannel === null) return;
+ else Pchannel = fetchPchannel
+	
+ if(fetchP === null) return;
+ else partners = fetchP
+
+	
+ if(fetchwelcome === null) welcome = "Bienvenue dans {server}, {user}!";
+ else welcome = fetchwelcome
+ 
+ if(fetchchannel === null) return;
+ else channel = fetchchannel
+ 
+ if(fetchautorole === null) return;
+ else autorole = fetchautorole
+ 
+ try {
+   
+   let role = member.guild.roles.get(autorole);
+   if(!role) return
+   else member.addRole(role);
+   
+   member.guild.channels.get(channel).send(welcome.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name));
+   member.guild.channels.get(Pchannel).send(Pchannel.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name));	 
+ } catch(e) {
+   console.log(e)
+ }          
+ 
 });
-client.on('guildMemberRemove', member => {
+client.on('guildMemberRemove', async member => {
 
   let username = `${member.user.username}`;
   let description = "N'est+plus+sur+le+serveur+!";
   let image = `${member.user.avatarURL}`;    
   let backgroundimage = "https://i.ytimg.com/vi/LQnBTecpuX0/maxresdefault.jpg";    
-    
           
   
-  var dC= member.guild.channels.find("name", "testing-welcome");
-  sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 
+ var dC= member.guild.channels.find("name", "testing-welcome");
+ sendFile(dC, `https://www.triggered-api.tk/welcome?pseudo=${username}&description=${description}&avatarurl=${image}&background=${backgroundimage}`, "welcome.png") 
 
+ let fetchleave = await db.fetch(`lmsg_${member.guild.id}`);
+ let fetchchannel = await db.fetch(`wchannel_${member.guild.id}`);
+ let fetchPchannel = await db.fetch(`wPchannel_${member.guild.id}`);	
+ 
+ let leave;
+ let channel;
+ let Pchannel;	
+ if(fetchleave === null) leave = "{user} viens de quitter le serveur {server}!";
+ else leave = fetchleave
+ 
+ if(fetchchannel === null) return;
+ else channel = fetchchannel
+	
+ if(fetchPchannel === null) return;
+ else Pchannel = fetchPchannel	
+ 
+ 
+ try {
+   member.guild.channels.get(channel).send(leave.replace('{user}', member.user).replace('{members}', member.guild.memberCount).replace('{server}', member.guild.name));
+ } catch(e) {
+   console.log(e)
+ }
+ 	
 });
 
 
