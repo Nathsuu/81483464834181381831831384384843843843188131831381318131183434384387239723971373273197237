@@ -273,58 +273,7 @@ info(message, prefix, client)
     return;
   }
 	
-  if (message.content.startsWith(prefix + "google")) {				  
-    let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply("Il me faut une petite recherche. Exemple/Usage : `v!google <RECHERCHE>`. Pas d'espace dans la recherche.");	  
-    let requestembed = new Discord.RichEmbed()
-    .setColor("#FF9900")
-    .setDescription("**Google**")
-    .addField("Votre recherche à bien été effectué : " + idprefix, "Lien [ICI](https://www.google.com/search?q=" + idprefix + " )")
-    .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
-    .setTimestamp()	  
-	  
-    message.delete().catch(O_o=>{});
-    message.channel.send(requestembed);
-    console.log("Commande v!google demandé !");	  
-    
-    return;
-  }
-	
-  if (message.content.startsWith(prefix + "twitter")) {				  
-    let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply("Il me faut une petite recherche. Exemple/Usage : `v!twitter <RECHERCHE>`. Pas d'espace dans la recherche.");	  
-    let requestembed = new Discord.RichEmbed()
-    .setColor("#FF9900")
-    .setDescription("**Twitter**")
-    .addField("Votre recherche à bien été effectué : " + idprefix, "Lien [ICI](https://twitter.com/search?q=" + idprefix + "&src=typd)")    
-    .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
-    .setTimestamp()	  
-	  
-    message.delete().catch(O_o=>{});
-    message.channel.send(requestembed);
-    console.log("Commande v!twitter demandé !");	  
-    
-    return;
-  }
-	
-  if (message.content.startsWith(prefix + "youtube")) {				  
-    let idprefix = args.join(" ").slice(0);
-    if(!idprefix) return message.reply("Il me faut une petite recherche. Exemple/Usage : `v!youtube <RECHERCHE>`. Pas d'espace dans la recherche.");	  
-    let requestembed = new Discord.RichEmbed()
-    .setColor("#FF9900")
-    .setDescription("**Youtube**")
-    .addField("Votre recherche à bien été effectué : " + idprefix, "Lien [ICI](https://www.youtube.com/results?search_query=" + idprefix + " )")    
-    .setFooter("VacBot | Vaction | Demande par " + message.author.tag, message.author.displayAvatarURL)	  
-    .setTimestamp()	  
-	  
-    message.delete().catch(O_o=>{});
-    message.channel.send(requestembed);
-    console.log("Commande v!youtube demandé !");	  
-    
-    return;
-  }	
 		
-	
 	
   if (message.content.startsWith(prefix + "request-bot")) {				  
     let idprefix = args.join(" ").slice(0);
@@ -1069,7 +1018,6 @@ message.channel.send("", { embed: {
         .addField(":clipboard: Espaces Utiles", "```v!help \nv!stats \nv!bot \nv!invite \nv!servlist \nv!ping \nv!seen \nv!setwelcome \nv!setleave \nv!setrole \nv!setchannel \nv!top \nv!createinvite```", true)
         .addField(":gear: Espaces Créateurs", "```v!setgame \nv!say \nv!eval \nv!logout \nv!approve-bot \nv!refuse-bot \nv!request-bot \nv!debug```", true)
 	.addBlankField()
-	.addField(":globe_with_meridians: Recherches", "```v!google \nv!twitter \nv!youtube```", true)
 	.addField(":sparkles: News", "```Nouvelles commandes \nv!top \nv!welcome```", true)	
 	.addBlankField()	
         .addField(":notepad_spiral: Support", "[[Serveur Support]](https://discord.gg/qfYACVE)", true)
