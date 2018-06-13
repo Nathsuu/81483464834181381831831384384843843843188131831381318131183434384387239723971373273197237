@@ -18,3 +18,7 @@ exports.run = (client, msg, args) => {
   msg.delete();
 
 };
+
+module.exports.help = {
+  name:"achievement"
+}
